@@ -1,0 +1,226 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Diagnóstico Inteligente | Ordone Agroambiental"><meta name="theme-color" content="#173126">
+<title>Diagnóstico Inteligente | Ordone Agroambiental</title><link rel="stylesheet" href="assets/styles.css">
+<!-- V14 SEO START -->
+<meta name="description" content="Pré-atendimento inteligente para organizar sua demanda ambiental antes do contato.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="/diagnostico.html">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Ordone Agroambiental">
+<meta property="og:title" content="Diagnóstico Inteligente">
+<meta property="og:description" content="Pré-atendimento inteligente para organizar sua demanda ambiental antes do contato.">
+<meta property="og:url" content="/diagnostico.html">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Diagnóstico Inteligente">
+<meta name="twitter:description" content="Pré-atendimento inteligente para organizar sua demanda ambiental antes do contato.">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"ProfessionalService",
+  "name":"Ordone Agroambiental",
+  "description":"Pré-atendimento inteligente para organizar sua demanda ambiental antes do contato.",
+  "telephone":"+55 62 98231-5179",
+  "email":"lorenzoagro32@gmail.com",
+  "areaServed":"Brasil",
+  "url":"/diagnostico.html"
+}
+</script>
+<!-- V14 SEO END -->
+
+</head>
+<body><a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+<header class="topbar"><div class="container nav">
+<a class="brand" href="index.html"><span class="brand-mark">O</span><span><strong>ORDONE</strong><small>AGROAMBIENTAL</small></span></a>
+<nav class="menu" aria-label="Menu principal"><a href="problemas.html">Problemas</a><a href="servicos.html">Serviços</a><a href="projetos.html">Projetos</a><a href="biblioteca.html">Biblioteca</a><a href="diagnostico.html">Diagnóstico</a><a href="contato.html">Contato</a></nav>
+<a class="btn btn-primary" href="https://wa.me/5562982315179" target="_blank" rel="noopener">WhatsApp</a>
+</div></header><main id="conteudo">
+<section class="page-hero"><div class="container">
+<div class="breadcrumbs"><a href="index.html">Início</a> / Diagnóstico</div>
+<span class="eyebrow">PRÉ-ATENDIMENTO INTELIGENTE</span>
+<h1>Vamos organizar sua demanda antes do primeiro contato.</h1>
+<p>As perguntas mudam conforme o problema escolhido. No final, o site monta uma ficha técnica resumida para você enviar à Ordone.</p>
+</div></section>
+
+<section class="section">
+<div class="container">
+<div class="card" id="diagnostic-app">
+<div class="field">
+<label>1. Qual situação mais se aproxima do seu caso?</label>
+<select id="demand-type">
+<option value="">Selecione uma opção</option>
+<option value="notificacao">Recebi uma notificação ou exigência</option>
+<option value="prad">Preciso recuperar uma área / PRAD ou PRADA</option>
+<option value="erosao">Tenho erosão ou problema em talude</option>
+<option value="solo">Tenho uma análise de solo</option>
+<option value="mapa">Tenho KML/KMZ e preciso de mapa</option>
+<option value="vegetacao">Preciso de inventário ou levantamento de vegetação</option>
+<option value="agua">Tenho problema envolvendo nascente, APP ou água</option>
+<option value="monitoramento">Preciso comprovar ou acompanhar a evolução de uma área</option>
+<option value="drone">Preciso de levantamento/operação com drone</option>
+<option value="outro">Outro / não sei</option>
+</select>
+</div>
+
+<div id="dynamic-fields"></div>
+
+<hr style="margin:26px 0;border:0;border-top:1px solid var(--line)">
+
+<div class="field-grid">
+<div class="field"><label>Nome <span class="required-mark">*</span></label><input id="lead-name" required></div>
+<div class="field"><label>WhatsApp <span class="required-mark">*</span></label><input id="lead-phone" required></div>
+</div>
+<div class="field"><label>Município / UF <span class="required-mark">*</span></label><input id="lead-city" placeholder="Ex.: Goianésia/GO" required></div>
+<div class="field"><label>Área aproximada</label><input id="lead-area" placeholder="Ex.: 12 ha"></div>
+<div class="field"><label>Descrição complementar</label><textarea id="lead-description" placeholder="Explique com suas palavras o que está acontecendo."></textarea></div>
+<div class="field"><label>Arquivos que você possui</label><div class="form-help">PDF, fotos, KML/KMZ, análise, licença ou outro documento útil. Nesta versão, os arquivos não são armazenados automaticamente.</div><input id="lead-files" type="file" multiple accept=".pdf,.jpg,.jpeg,.png,.doc,.docx,.xls,.xlsx,.kml,.kmz"></div>
+
+<div class="notice" id="consent-lead" style="margin-bottom:14px"><b>Privacidade:</b> use as informações apenas para solicitar atendimento. Nesta versão, os arquivos não são armazenados automaticamente. <a href="privacidade.html">Leia a política</a>.</div><button class="btn btn-primary" id="generate-lead" data-conversion="diagnostico" type="button">Gerar ficha de pré-atendimento</button>
+<div id="lead-output" style="margin-top:18px"></div>
+</div>
+</div>
+</section>
+
+<section class="section alt"><div class="container">
+<div class="section-head"><span class="eyebrow">O que o sistema faz</span><h2>Não é um “robô que dá laudo”.</h2>
+<p>O objetivo é qualificar a entrada: entender o problema, identificar documentos, localizar prazo e organizar as informações para que o atendimento técnico comece melhor.</p></div>
+<div class="process">
+<div class="step"><b>01</b><h3>Identifica</h3><p>Qual é a demanda.</p></div>
+<div class="step"><b>02</b><h3>Pergunta</h3><p>Só o que é relevante para aquele caso.</p></div>
+<div class="step"><b>03</b><h3>Resume</h3><p>Gera uma ficha objetiva.</p></div>
+<div class="step"><b>04</b><h3>Encaminha</h3><p>WhatsApp + arquivos disponíveis.</p></div>
+</div></div></section>
+
+<script>
+const questionSets = {
+ notificacao: [
+  ["Órgão/entidade que emitiu", "text", "Ex.: SEMAD, IBAMA, prefeitura"],
+  ["Número do documento/processo", "text", "Se houver"],
+  ["Existe prazo?", "select", ["Sim","Não","Não sei"]],
+  ["Qual é a data do prazo?", "date", ""],
+  ["O que foi solicitado?", "textarea", "Descreva ou copie o trecho principal"]
+ ],
+ prad: [
+  ["Qual é o objetivo da recuperação?", "select", ["Atendimento a obrigação/condicionante","Recuperação voluntária","Área degradada sem PRAD definido","Não sei"]],
+  ["Como a área está hoje?", "textarea", "Ex.: erosão, solo exposto, pastagem, vegetação em regeneração..."],
+  ["Existe PRAD/PRADA ou documento anterior?", "select", ["Sim","Não","Não sei"]],
+  ["Há prazo ou condicionante?", "select", ["Sim","Não","Não sei"]]
+ ],
+ erosao: [
+  ["Onde está o problema?", "select", ["Talude","Estrada/acesso","Margem de curso d'água","Área de solo exposto","Outro"]],
+  ["Qual é o comportamento observado?", "textarea", "Ex.: sulcos, ravinas, voçoroca, carreamento de solo..."],
+  ["A água passa pelo local?", "select", ["Sim","Não","Não sei"]],
+  ["Possui fotos do local?", "select", ["Sim","Não"]]
+ ],
+ solo: [
+  ["Qual é o objetivo da análise?", "select", ["Recuperação ambiental","Plantio/agricultura","Revegetação de talude","Outro","Não sei"]],
+  ["Você possui o laudo completo?", "select", ["Sim","Não"]],
+  ["O laudo possui identificação da área/amostra?", "select", ["Sim","Não","Não sei"]],
+  ["O que você precisa descobrir?", "textarea", "Ex.: correção, fertilidade, recomendação de insumos..."]
+ ],
+ mapa: [
+  ["Qual é a finalidade do mapa?", "select", ["Relatório ambiental","PRAD/PRADA","Licenciamento","Projeto/obra","Monitoramento","Outro"]],
+  ["Você possui KML/KMZ?", "select", ["Sim","Não"]],
+  ["Precisa de mapa com imagem de satélite?", "select", ["Sim","Não","Não sei"]],
+  ["Precisa delimitar áreas/feições?", "select", ["Sim","Não","Não sei"]]
+ ],
+ vegetacao: [
+  ["Qual é o objetivo?", "select", ["Inventário","Levantamento florístico","Compensação/revegetação","Licenciamento","Não sei"]],
+  ["Existe área delimitada?", "select", ["Sim","Não","Não sei"]],
+  ["Possui mapa ou coordenadas?", "select", ["Sim","Não","Não sei"]]
+ ],
+ agua: [
+  ["Qual situação?", "select", ["Nascente","APP","Curso d'água","Drenagem","Erosão/carreamento para água","Outro"]],
+  ["Existe alteração/degradação visível?", "select", ["Sim","Não","Não sei"]],
+  ["Existe exigência ou condicionante?", "select", ["Sim","Não","Não sei"]]
+ ],
+ monitoramento: [
+  ["O que precisa ser monitorado?", "textarea", "Ex.: plantio, erosão, PRAD, condicionante..."],
+  ["Já existe marco zero?", "select", ["Sim","Não","Não sei"]],
+  ["Possui fotos/relatórios anteriores?", "select", ["Sim","Não"]]
+ ],
+ drone: [
+  ["Qual operação?", "select", ["Levantamento","Mapeamento","Pulverização","Adubação","Semeadura","Outro"]],
+  ["Área aproximada", "text", "Ex.: 80 ha"],
+  ["Possui coordenadas/KML/KMZ?", "select", ["Sim","Não","Não sei"]]
+ ],
+ outro: [
+  ["Explique o problema", "textarea", "Conte com suas palavras. Não precisa usar termos técnicos."]
+ ]
+};
+
+const typeLabels = {
+ notificacao:"Notificação / exigência", prad:"Recuperação / PRAD / PRADA", erosao:"Erosão / talude",
+ solo:"Análise de solo", mapa:"Mapa / KML / KMZ", vegetacao:"Vegetação / inventário",
+ agua:"Água / APP / nascente", monitoramento:"Monitoramento", drone:"Drone / geotecnologia", outro:"Outro"
+};
+
+const typeSelect = document.getElementById("demand-type");
+const dyn = document.getElementById("dynamic-fields");
+
+function renderQuestions(){
+ const type=typeSelect.value;
+ dyn.innerHTML="";
+ if(!type) return;
+ (questionSets[type]||[]).forEach((q,i)=>{
+   const wrap=document.createElement("div"); wrap.className="field";
+   const id="q_"+i;
+   const label=document.createElement("label"); label.textContent=q[0]; wrap.appendChild(label);
+   let el;
+   if(q[1]==="textarea"){el=document.createElement("textarea"); el.placeholder=q[2]||"";}
+   else if(q[1]==="select"){
+      el=document.createElement("select");
+      el.innerHTML='<option value="">Selecione</option>'+q[2].map(x=>`<option>${x}</option>`).join("");
+   } else {el=document.createElement("input"); el.type=q[1]; el.placeholder=q[2]||"";}
+   el.id=id; el.dataset.question=q[0]; wrap.appendChild(el); dyn.appendChild(wrap);
+ });
+}
+typeSelect.addEventListener("change",renderQuestions);
+
+document.getElementById("generate-lead").addEventListener("click",()=>{
+ const type=typeSelect.value;
+ const name=document.getElementById("lead-name").value.trim();
+ const phone=document.getElementById("lead-phone").value.trim();
+ const city=document.getElementById("lead-city").value.trim();
+ if(!type||!name||!phone||!city){
+   document.getElementById("lead-output").innerHTML='<div class="notice"><b>Falta pouco.</b> Preencha a situação, nome, WhatsApp e município.</div>';
+   return;
+ }
+ const answers=[...dyn.querySelectorAll("input,select,textarea")].filter(x=>x.value.trim()).map(x=>`${x.dataset.question}: ${x.value.trim()}`);
+ const files=[...document.getElementById("lead-files").files].map(f=>f.name);
+ const msg=[
+ "Olá! Fiz o pré-atendimento pelo site da Ordone.",
+ `Nome: ${name}`,`WhatsApp: ${phone}`,`Município/UF: ${city}`,
+ `Demanda: ${typeLabels[type]}`,
+ `Área: ${document.getElementById("lead-area").value||"não informada"}`,
+ ...answers,
+ `Descrição complementar: ${document.getElementById("lead-description").value||"não informada"}`,
+ `Arquivos disponíveis: ${files.length?files.join(", "):"nenhum selecionado"}`
+ ].join("
+");
+ const url="https://wa.me/5562982315179?text="+encodeURIComponent(msg);
+ document.getElementById("lead-output").innerHTML=`<div class="notice"><b>Ficha pronta.</b><p>O site organizou as informações conforme a demanda escolhida.</p><a class="btn btn-gold" target="_blank" rel="noopener" href="${url}">Enviar ficha pelo WhatsApp</a><p style="font-size:12px;margin-top:10px">Os arquivos continuam no seu computador nesta versão e podem ser enviados na conversa do WhatsApp.</p></div>`;
+});
+</script>
+<section class="section"><div class="container"><a class="btn btn-secondary" href="visita-tecnica.html">Avaliar necessidade de visita</a></div></section></main><footer class="footer"><div class="container"><div class="footer-grid">
+<div><h4>ORDONE AGROAMBIENTAL</h4><p>Engenharia ambiental, campo e geotecnologia para demandas reais.</p></div>
+<div><h4>Conhecimento</h4><p><a href="biblioteca.html">Biblioteca</a><br><a href="projetos.html">Projetos</a><br><a href="fontes.html">Fontes</a></p></div>
+<div><h4>Atendimento</h4><p><a href="diagnostico.html">Diagnóstico</a><br><a href="contato.html">Contato</a><br><a href="https://wa.me/5562982315179">WhatsApp</a><br><a href="mailto:lorenzoagro32@gmail.com">lorenzoagro32@gmail.com</a></p></div>
+</div><div class="legal">Informações de caráter institucional e de triagem. Recomendações técnicas definitivas dependem da análise do caso.</div></div></footer>
+<a class="mobile-cta" href="https://wa.me/5562982315179" target="_blank" rel="noopener">Falar no WhatsApp</a><script src="assets/site-config.js"></script><script src="assets/lead-config.js"></script><script src="assets/site.js"></script><script id="ordone_v8_thanks">
+(function(){
+ const output=document.getElementById("lead-output");
+ if(!output)return;
+ const obs=new MutationObserver(function(){
+   const link=output.querySelector('a[href*="wa.me"]');
+   if(link && !link.dataset.v8bound){
+     link.dataset.v8bound="1";
+     link.addEventListener("click",function(){
+       const parts=this.href.split("text=");
+       if(parts[1]) setTimeout(function(){location.href="obrigado.html?msg="+parts[1]},300);
+     });
+   }
+ });
+ obs.observe(output,{childList:true,subtree:true});
+})();
+</script></body></html>

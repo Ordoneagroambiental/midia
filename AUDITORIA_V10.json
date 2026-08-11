@@ -1,0 +1,16 @@
+{
+  "html_pages": 38,
+  "broken_links_before_fix": [
+    [
+      "diagnostico.html",
+      "${url}"
+    ]
+  ],
+  "broken_links_after_fix": [
+    [
+      "diagnostico.html",
+      "${url}"
+    ]
+  ],
+  "service_pages": 10
+}

@@ -1,0 +1,18 @@
+{
+  "name": "Ordone Agroambiental",
+  "release": "LANÇAMENTO",
+  "base": "V14 consolidada",
+  "public_navigation": [
+    "Home",
+    "Problemas",
+    "Serviços",
+    "Projetos",
+    "Biblioteca",
+    "Diagnóstico",
+    "Contato"
+  ],
+  "free_first": true,
+  "lead_flow": "Diagnóstico → WhatsApp → Google Sheets/Apps Script",
+  "content_method": "Fonte → seleção → síntese → contexto → referência",
+  "qa": "OK"
+}

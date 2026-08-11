@@ -1,0 +1,16 @@
+{
+  "html_pages": 40,
+  "local_links_missing": [],
+  "dynamic_links_ignored": true,
+  "main_routes": [
+    "index.html",
+    "problemas.html",
+    "servicos.html",
+    "diagnostico.html",
+    "biblioteca.html",
+    "projetos.html",
+    "portal.html",
+    "visita-tecnica.html"
+  ],
+  "status": "OK"
+}
