@@ -1,27 +1,39 @@
-# ORDONE AGROAMBIENTAL — MAPA FINAL
+# Mapa do Site — V2.0 Integrado
 
-## Navegação pública
-1. Home
-2. Problemas
-3. Serviços
-4. Projetos
-5. Biblioteca
-6. Diagnóstico
-7. Contato
+## Navegação pública principal
+1. `index.html` — Início
+2. `sobre.html` — Quem somos
+3. `servicos.html` — Serviços
+4. `projetos.html` — Projetos / estudos de caso
+5. `pesquisa-aplicada.html` — Pesquisa aplicada
+6. `inteligencia-ambiental.html` — Inteligência ambiental
+7. `contato.html` — Contato
 
-## Conversão
-Problema/Serviço → conteúdo → diagnóstico → WhatsApp → lead → qualificação → proposta.
+## Entradas estratégicas
+- `produtor-rural.html` — soluções para propriedades rurais
+- `problemas.html` — entrada pelo problema
+- `diagnostico.html` — pré-atendimento / diagnóstico
+- `biblioteca.html` — conteúdo técnico
 
-## Conteúdo
-Biblioteca → seleção de fonte → síntese → contexto → referência.
+## Serviços especializados
+- Recuperação ambiental
+- Taludes e erosão
+- Solo
+- Geoprocessamento
+- Drones
+- Vegetação
+- Inventário
+- Monitoramento
+- Recursos hídricos
+- Licenciamento
 
-## Operação
-Google Sheets + Apps Script como CRM inicial gratuito.
-WhatsApp como canal direto.
-Portal como camada futura de atendimento ao cliente.
+## Inteligência ambiental
+- Fontes oficiais e mapas públicos
+- Atualidades via `dados/atualidades.json`
+- Atualização automatizada por `.github/workflows/atualizar-atualidades.yml`
 
-## Mídia
-Landing pages específicas por intenção podem ser usadas em campanhas sem mudar a arquitetura principal.
-
-## Princípio
-O site deve ajudar o visitante a entender o problema e chegar ao atendimento. Não deve prometer uma conclusão técnica automática quando os dados não sustentarem essa conclusão.
+## Operação e QA
+- `scripts/verificar_site.py`
+- `.github/workflows/verificar-site.yml`
+- `QA_V2_INTEGRADO.json`
+- `VERSAO_2_0.json`

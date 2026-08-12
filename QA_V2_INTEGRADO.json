@@ -1,0 +1,27 @@
+{
+  "status": "OK",
+  "versao": "2.0.1-integrado",
+  "data": "2026-08-11",
+  "html_paginas": 46,
+  "arquivos_total": 106,
+  "links_locais_quebrados": 0,
+  "ids_duplicados": 0,
+  "imagens_sem_alt": 0,
+  "dados_institucionais_ausentes_em_paginas_com_rodape": 0,
+  "js_sintaxe": "OK",
+  "python_scripts": "OK",
+  "json": "OK",
+  "public_url_expected": "https://ordoneagroambiental.github.io/midia/",
+  "public_url_live_validation": "validar após publicação no GitHub Pages",
+  "identificacao_institucional": {
+    "diretor_tecnico": "Ricardo Lourenço Ordone Enes",
+    "formacao": "Engenheiro Agrônomo",
+    "crea": "CREA 18776/D-DF",
+    "telefone_whatsapp": "+55 62 98231-5179",
+    "email": "lorenzoagro32@gmail.com",
+    "cnpj": "23.033.419/0001-45",
+    "endereco": "Rua Bernardo Caparucho Melo Franco, 577, sala 03, Bela Vista I, Paracatu/MG, CEP 38.600-508",
+    "cpf_publicado": false
+  },
+  "logo": "conceito em teste, substituível sem alterar estrutura"
+}

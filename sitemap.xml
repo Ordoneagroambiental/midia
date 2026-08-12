@@ -1,21 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url><loc>/index.html</loc></url>
-<url><loc>/problemas.html</loc></url>
-<url><loc>/servicos.html</loc></url>
-<url><loc>/como-usar.html</loc></url>
-<url><loc>/diagnostico.html</loc></url>
-<url><loc>/visita-tecnica.html</loc></url>
-<url><loc>/projetos.html</loc></url>
-<url><loc>/biblioteca.html</loc></url>
-<url><loc>/metodo-conteudo.html</loc></url>
-<url><loc>/captacao.html</loc></url>
-<url><loc>/pipeline.html</loc></url>
-<url><loc>/ia-atendimento.html</loc></url>
-<url><loc>/portal.html</loc></url>
-<url><loc>/duvidas.html</loc></url>
-<url><loc>/fontes.html</loc></url>
-<url><loc>/contato.html</loc></url>
-<url><loc>/privacidade.html</loc></url>
-<url><loc>/obrigado.html</loc></url>
-<url><loc>/midia-campanhas.html</loc></url><url><loc>/lancamento.html</loc></url><url><loc>/404.html</loc></url><url><loc>/divulgacao.html</loc></url></urlset>
+  <url><loc>https://ordoneagroambiental.github.io/midia/404.html</loc></url>
+  <url><loc>https://ordoneagroambiental.github.io/midia/biblioteca.html</loc></url>
+  <url><loc>https://ordoneagroambiental.github.io/midia/contato.html</loc></url>
+  <url><loc>https://ordoneagroambiental.github.io/midia/conteudo/paliçadas-erosao.html</loc></url>
+  <url><loc>https://ordoneagroambiental.github.io/midia/conteudo/plantio-manutencao.html</loc></url>
+  <url><loc>https://ordoneagroambiental.github.io/midia/conteudo/prada-kmz.html</loc></url>
+  <url><loc>https://ordoneagroambiental.github.io/midia/conteudo/solo-interpretacao.html</loc></url>
+  <url><loc>https://ordoneagroambiental.github.io/midia/diagnostico.html</loc></url>
+  <url><loc>https://ordoneagroambiental.github.io/midia/duvidas.html</loc></url>
+  <url><loc>https://ordoneagroambiental.github.io/midia/fontes.html</loc></url>
+  <url><loc>https://ordoneagroambiental.github.io/midia/</loc></url>
+  <url><loc>https://ordoneagroambiental.github.io/midia/inteligencia-ambiental.html</loc></url>
+  <url><loc>https://ordoneagroambiental.github.io/midia/metodo-conteudo.html</loc></url>
+  <url><loc>https://ordoneagroambiental.github.io/midia/obrigado.html</loc></url>
+  <url><loc>https://ordoneagroambiental.github.io/midia/pesquisa-aplicada.html</loc></url>
+  <url><loc>https://ordoneagroambiental.github.io/midia/portal.html</loc></url>
+  <url><loc>https://ordoneagroambiental.github.io/midia/preciso-analisar-solo.html</loc></url>
+  <url><loc>https://ordoneagroambiental.github.io/midia/preciso-mapa.html</loc></url>
+  <url><loc>https://ordoneagroambiental.github.io/midia/preciso-prad.html</loc></url>
+  <url><loc>https://ordoneagroambiental.github.io/midia/privacidade.html</loc></url>
+  <url><loc>https://ordoneagroambiental.github.io/midia/problemas.html</loc></url>
+  <url><loc>https://ordoneagroambiental.github.io/midia/produtor-rural.html</loc></url>
+  <url><loc>https://ordoneagroambiental.github.io/midia/projetos.html</loc></url>
+  <url><loc>https://ordoneagroambiental.github.io/midia/recebi-notificacao.html</loc></url>
+  <url><loc>https://ordoneagroambiental.github.io/midia/servicos.html</loc></url>
+  <url><loc>https://ordoneagroambiental.github.io/midia/servicos/drones.html</loc></url>
+  <url><loc>https://ordoneagroambiental.github.io/midia/servicos/geoprocessamento.html</loc></url>
+  <url><loc>https://ordoneagroambiental.github.io/midia/servicos/inventario.html</loc></url>
+  <url><loc>https://ordoneagroambiental.github.io/midia/servicos/licenciamento.html</loc></url>
+  <url><loc>https://ordoneagroambiental.github.io/midia/servicos/monitoramento.html</loc></url>
+  <url><loc>https://ordoneagroambiental.github.io/midia/servicos/recuperacao.html</loc></url>
+  <url><loc>https://ordoneagroambiental.github.io/midia/servicos/recursos-hidricos.html</loc></url>
+  <url><loc>https://ordoneagroambiental.github.io/midia/servicos/solo.html</loc></url>
+  <url><loc>https://ordoneagroambiental.github.io/midia/servicos/taludes.html</loc></url>
+  <url><loc>https://ordoneagroambiental.github.io/midia/servicos/vegetacao.html</loc></url>
+  <url><loc>https://ordoneagroambiental.github.io/midia/sobre.html</loc></url>
+  <url><loc>https://ordoneagroambiental.github.io/midia/visita-tecnica.html</loc></url>
+</urlset>

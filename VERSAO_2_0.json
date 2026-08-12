@@ -1,0 +1,28 @@
+{
+  "versao": "2.0-integrado",
+  "data": "2026-08-11",
+  "base_publicacao": "https://ordoneagroambiental.github.io/midia/",
+  "mudancas": [
+    "Home rural-first",
+    "logo conceito em teste",
+    "Pesquisa Aplicada",
+    "Central de Inteligência Ambiental",
+    "links oficiais e mapas",
+    "rotina automática de atualidades via GitHub Actions",
+    "QA automático de links locais",
+    "correção de canonical para GitHub Pages",
+    "nova seleção fotográfica do acervo"
+  ],
+  "observacao_logo": "Conceito visual em avaliação; substituição do arquivo assets/marca/logo-conceito-teste.webp não exige mudança estrutural.",
+  "revision": "2.0.1",
+  "revision_date": "2026-08-11",
+  "institutional_identity": {
+    "technical_director": "Ricardo Lourenço Ordone Enes",
+    "title": "Engenheiro Agrônomo",
+    "crea": "CREA 18776/D-DF",
+    "phone": "+55 62 98231-5179",
+    "email": "lorenzoagro32@gmail.com",
+    "cnpj": "23.033.419/0001-45",
+    "address": "Rua Bernardo Caparucho Melo Franco, 577, sala 03, Bela Vista I, Paracatu/MG, CEP 38.600-508"
+  }
+}
