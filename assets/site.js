@@ -123,3 +123,48 @@ document.querySelectorAll('a[href*="whatsapp"]').forEach(a=>{
       '<p style="font-size:12px;margin-top:10px">Arquivos não são armazenados automaticamente nesta etapa.</p></div>';
   });
 })();
+
+
+// V2.0 — navegação móvel e cartões de atualidades oficiais
+(function(){
+  const btn=document.querySelector('.nav-toggle');
+  const menu=document.querySelector('.menu');
+  if(btn && menu){
+    btn.addEventListener('click',()=>{
+      const open=menu.classList.toggle('is-open');
+      btn.setAttribute('aria-expanded', String(open));
+    });
+  }
+})();
+
+(function(){
+  const target=document.getElementById('latest-official-news');
+  if(!target) return;
+  const base=document.body.dataset.base || '';
+  fetch(base+'dados/atualidades.json',{cache:'no-store'})
+    .then(r=>{if(!r.ok) throw new Error('feed'); return r.json()})
+    .then(data=>{
+      const items=(data.items||[]).slice(0,6);
+      if(!items.length) return;
+      target.innerHTML=items.map(item=>`<article class="news-card">
+        <div class="meta">${escapeHtml(item.fonte||'Fonte oficial')} · ${escapeHtml(item.data||'')}</div>
+        <h3>${escapeHtml(item.titulo||'Atualização oficial')}</h3>
+        <a href="${safeUrl(item.url)}" target="_blank" rel="noopener noreferrer">Abrir na fonte oficial →</a>
+      </article>`).join('');
+      const stamp=document.getElementById('news-updated-at');
+      if(stamp && data.atualizado_em) stamp.textContent='Coleta do painel: '+data.atualizado_em;
+    }).catch(()=>{});
+  function escapeHtml(s){return String(s).replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));}
+  function safeUrl(u){try{const x=new URL(u); return ['http:','https:'].includes(x.protocol)?x.href:'#'}catch(e){return '#'}}
+})();
+
+(function(){
+  const buttons=[...document.querySelectorAll('[data-resource-filter]')];
+  const cards=[...document.querySelectorAll('[data-resource-type]')];
+  if(!buttons.length) return;
+  buttons.forEach(btn=>btn.addEventListener('click',()=>{
+    buttons.forEach(b=>b.classList.remove('active')); btn.classList.add('active');
+    const filter=btn.dataset.resourceFilter;
+    cards.forEach(c=>c.hidden=!(filter==='todos'||c.dataset.resourceType.includes(filter)));
+  }));
+})();
