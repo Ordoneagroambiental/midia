@@ -1,0 +1,5 @@
+Para atualizar o site atual no GitHub sem reenviar as pastas grandes:
+1. Na raiz do repositorio midia, use Adicionar arquivo > Carregar arquivos.
+2. Envie SOMENTE projetos.html desta pasta.
+3. Confirme a substituicao do projetos.html existente.
+4. Nao apague assets e nao envie novamente as imagens: os novos registros visuais estão incorporados no proprio projetos.html.
