@@ -233,3 +233,15 @@ body{background:#fff}
 .technical-credential strong{font-size:14px;color:#fff;line-height:1.25}
 .technical-credential small{font-size:11px;color:#dce9e2;line-height:1.45}
 @media(max-width:620px){.technical-credential{margin-top:16px;padding:10px 12px}.technical-credential strong{font-size:13px}.technical-credential small{font-size:10px}}
+
+
+/* V3.4 — HOME APROVADA: paisagem + drone + serviços na primeira dobra */
+.topbar-v32 .nav{min-height:82px;gap:18px}.topbar-v32 .menu{gap:16px}.topbar-v32 .menu a{font-size:12px;font-weight:750;color:#31473e}.topbar-v32 .menu a:hover{color:#0b4a38}
+.brand-v32{min-width:260px;max-width:350px;display:flex;align-items:center}.brand-logo-v32{height:64px}
+.hero-approved{min-height:690px}.hero-approved-media{background-position:center 46%}.hero-approved-shade{background:linear-gradient(90deg,rgba(6,36,27,.94) 0%,rgba(6,36,27,.82) 31%,rgba(6,36,27,.30) 63%,rgba(6,36,27,.07) 100%),linear-gradient(180deg,rgba(0,0,0,.03),rgba(0,0,0,.18))}
+.hero-approved-inner{padding-top:50px;padding-bottom:145px}.hero-approved-copy{max-width:680px}.hero-approved h1{font-size:clamp(42px,4.5vw,66px);line-height:1.00;max-width:680px}.hero-approved p{max-width:650px;font-size:17px}.hero-service-grid a{transition:.2s ease}.hero-service-grid b{font-size:12px}.hero-service-grid span{font-size:9.5px}
+.cases-v32 .btn-row{margin-top:24px}.director-v32 strong{display:block;margin-top:7px;color:#0b4a38;font-size:12px}.director-v32 img{object-fit:contain;background:#fff;border-radius:50%;padding:8px}
+.v34 .section{scroll-margin-top:90px}
+@media(max-width:1120px){.brand-v32{min-width:215px;max-width:260px}.topbar-v32 .menu{gap:11px}.hero-approved{min-height:790px}}
+@media(max-width:900px){.hero-approved{min-height:820px}.hero-approved-media{background-position:61% center}.hero-approved-inner{padding-bottom:260px}.brand-v32{min-width:205px}.brand-logo-v32{height:56px}}
+@media(max-width:620px){.topbar-v32 .nav{min-height:72px}.brand-v32{max-width:205px}.brand-logo-v32{height:48px}.hero-approved{min-height:880px}.hero-approved-media{background-position:68% center}.hero-approved-shade{background:linear-gradient(180deg,rgba(7,39,29,.54) 0%,rgba(7,39,29,.84) 39%,rgba(7,39,29,.98) 72%)}.hero-approved-inner{align-items:flex-end;padding-top:32px;padding-bottom:445px}.hero-approved h1{font-size:clamp(36px,10.5vw,48px);line-height:1.02}.hero-approved p{font-size:15px}.hero-proof{font-size:8.5px}.hero-service-grid a{min-height:92px}.hero-service-grid span{display:none}.director-v32{padding:20px}}
