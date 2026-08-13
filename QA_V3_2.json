@@ -1,0 +1,11 @@
+{
+  "status": "OK",
+  "versao": "3.2-home-visual-aprovada",
+  "html_paginas": 47,
+  "imagens_visual_v3_2": 17,
+  "links_locais_quebrados": 0,
+  "links_quebrados_amostra": [],
+  "home_visual": "previsao aprovada aplicada em HTML/CSS real",
+  "prompt_mestre_preservado": true,
+  "observacao_qa": "Ocorrências ${url} em templates JavaScript foram excluídas por não serem caminhos locais estáticos."
+}

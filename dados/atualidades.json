@@ -1,0 +1,29 @@
+{
+  "atualizado_em": "11/08/2026",
+  "items": [
+    {
+      "fonte": "MMA",
+      "data": "07/08/2026",
+      "titulo": "Dados do DETER indicam redução dos alertas de desmatamento na Amazônia e no Cerrado no intervalo de 2025–2026",
+      "url": "https://www.gov.br/mma/pt-br/noticias-defeso-eleitoral/ultimas-noticias"
+    },
+    {
+      "fonte": "MMA",
+      "data": "11/08/2026",
+      "titulo": "Acompanhe as últimas notícias do Ministério do Meio Ambiente e Mudança do Clima",
+      "url": "https://www.gov.br/mma/pt-br"
+    },
+    {
+      "fonte": "Embrapa",
+      "data": "2026",
+      "titulo": "Acesse as últimas notícias e pesquisas da Embrapa",
+      "url": "https://www.embrapa.br/noticias"
+    },
+    {
+      "fonte": "SEMAD Goiás",
+      "data": "2026",
+      "titulo": "Acesse serviços, licenciamento e comunicados ambientais de Goiás",
+      "url": "https://goias.gov.br/meioambiente/"
+    }
+  ]
+}

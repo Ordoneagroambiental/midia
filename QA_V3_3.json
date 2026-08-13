@@ -1,0 +1,25 @@
+{
+  "status": "OK",
+  "versao": "3.3",
+  "data": "2026-08-12",
+  "html_paginas": 47,
+  "crea_home_visivel": true,
+  "crea_rodape": true,
+  "dados_estruturados_responsavel_tecnico": true,
+  "prompt_mestre": "PROMPT_MESTRE_ORDONE_V3_3.md",
+  "tarefas_prompt_preservadas": [
+    "captação orgânica",
+    "radar diário de oportunidades",
+    "recuperação ambiental",
+    "irrigação e automação",
+    "licenciamento/regularização",
+    "projeto-execução-monitoramento",
+    "SEO",
+    "notícias e inteligência ambiental",
+    "Instagram/LinkedIn",
+    "backlinks/parcerias",
+    "curadoria visual e antes/depois"
+  ],
+  "links_locais_quebrados": 0,
+  "public_url_expected": "https://ordoneagroambiental.github.io/midia/"
+}

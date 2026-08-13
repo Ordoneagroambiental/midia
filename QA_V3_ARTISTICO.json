@@ -1,0 +1,22 @@
+{
+  "status": "OK",
+  "versao": "3.0-artístico-comercial",
+  "data": "2026-08-12",
+  "html_paginas": 47,
+  "links_e_assets_locais_quebrados": 0,
+  "imagens_sem_alt": 0,
+  "ids_duplicados": 0,
+  "novidades": [
+    "logo oficial aprovada",
+    "direção artística paisagem viva + engenharia aplicada",
+    "irrigação e automação rural",
+    "ciclo diagnóstico-projeto-execução-monitoramento",
+    "manifesto audiovisual original 24s",
+    "curadoria visual e regra antes/depois",
+    "prompt mestre comercial V3"
+  ],
+  "video": "assets/media/ordone-manifesto-24s.mp4",
+  "poster": "assets/media/ordone-manifesto-poster.webp",
+  "nova_pagina": "servicos/irrigacao-automacao.html",
+  "public_url_expected": "https://ordoneagroambiental.github.io/midia/"
+}
