@@ -1,0 +1,57 @@
+{
+  "versao": "3.7",
+  "atualizado_em": "Aguardando primeira execução automática",
+  "status": "aguardando_primeira_coleta",
+  "prioridade": "Goianésia e entorno → Goiás → Brasil",
+  "resumo": {
+    "total": 0,
+    "goianesia_regiao": 0,
+    "goias": 0,
+    "demandas_formais": 0,
+    "sinais_ambientais": 0
+  },
+  "items": [],
+  "fontes_monitoradas": [
+    {
+      "nome": "PNCP",
+      "url": "https://pncp.gov.br/",
+      "automatica": true
+    },
+    {
+      "nome": "Prefeitura de Goianésia",
+      "url": "https://goianesia.go.gov.br/",
+      "automatica": true
+    },
+    {
+      "nome": "Editais de Goianésia",
+      "url": "https://goianesia.go.gov.br/editais-e-publicacoes/",
+      "automatica": true
+    },
+    {
+      "nome": "SEMAD Goiás",
+      "url": "https://goias.gov.br/meioambiente/",
+      "automatica": true
+    },
+    {
+      "nome": "INPE Queimadas",
+      "url": "https://data.inpe.br/queimadas/dados-abertos/",
+      "automatica": false
+    },
+    {
+      "nome": "TerraBrasilis",
+      "url": "https://terrabrasilis.dpi.inpe.br/",
+      "automatica": false
+    },
+    {
+      "nome": "ANA / SNIRH",
+      "url": "https://www.snirh.gov.br/",
+      "automatica": false
+    },
+    {
+      "nome": "ANM Dados Abertos",
+      "url": "https://www.gov.br/anm/pt-br/acesso-a-informacao/dados-abertos",
+      "automatica": false
+    }
+  ],
+  "aviso": "Sinal público não é cliente confirmado. O radar organiza oportunidades a partir de fontes públicas; qualquer contato comercial depende de validação e aprovação humana."
+}
