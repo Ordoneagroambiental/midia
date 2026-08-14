@@ -1,0 +1,159 @@
+{
+  "versao": "3.7",
+  "centro_operacional": {
+    "municipio": "Goianésia",
+    "uf": "GO"
+  },
+  "prioridade_geografica": {
+    "prioridade_1": [
+      "Goianésia"
+    ],
+    "entorno_imediato": [
+      "Barro Alto",
+      "Jaraguá",
+      "Santa Isabel",
+      "Santa Rita do Novo Destino",
+      "Vila Propício",
+      "São Luiz do Norte"
+    ],
+    "regiao_ampliada": [
+      "Ceres",
+      "Rialma",
+      "Rianápolis",
+      "Uruana",
+      "Carmo do Rio Verde",
+      "Itapaci",
+      "Niquelândia"
+    ],
+    "estado": "GO",
+    "observacao": "Lista comercial configurável; não representa delimitação administrativa oficial de uma região."
+  },
+  "palavras_chave": [
+    "recuperação ambiental",
+    "recuperacao ambiental",
+    "área degradada",
+    "area degradada",
+    "prad",
+    "prada",
+    "revegetação",
+    "revegetacao",
+    "restauração florestal",
+    "restauracao florestal",
+    "reflorestamento",
+    "plantio compensatório",
+    "plantio compensatorio",
+    "mudas nativas",
+    "viveiro",
+    "nascente",
+    "app",
+    "erosão",
+    "erosao",
+    "assoreamento",
+    "sedimento",
+    "paliçada",
+    "palicada",
+    "bioengenharia",
+    "irrigação",
+    "irrigacao",
+    "gotejamento",
+    "aspersão",
+    "aspersao",
+    "fertirrigação",
+    "fertirrigacao",
+    "automação",
+    "automacao",
+    "bombeamento",
+    "reservatório",
+    "reservatorio",
+    "outorga",
+    "geoprocessamento",
+    "georreferenciamento",
+    "topografia",
+    "drone",
+    "aerolevantamento",
+    "mapeamento",
+    "licenciamento ambiental",
+    "regularização ambiental",
+    "regularizacao ambiental",
+    "condicionante ambiental",
+    "monitoramento ambiental",
+    "compensação ambiental",
+    "compensacao ambiental",
+    "inventário florestal",
+    "inventario florestal",
+    "supressão vegetal",
+    "supressao vegetal",
+    "conservação do solo",
+    "conservacao do solo",
+    "análise de solo",
+    "analise de solo",
+    "fertilidade do solo",
+    "recursos hídricos",
+    "recursos hidricos",
+    "drenagem ambiental"
+  ],
+  "termos_excluir": [
+    "processo seletivo",
+    "concurso público",
+    "concurso publico",
+    "vaga de emprego",
+    "admissional"
+  ],
+  "fontes_publicas": [
+    {
+      "nome": "PNCP",
+      "url": "https://pncp.gov.br/",
+      "automatica": true,
+      "uso": "Contratações públicas e editais com recebimento de propostas."
+    },
+    {
+      "nome": "Prefeitura de Goianésia",
+      "url": "https://goianesia.go.gov.br/",
+      "automatica": true,
+      "uso": "Notícias e publicações públicas locais."
+    },
+    {
+      "nome": "Editais de Goianésia",
+      "url": "https://goianesia.go.gov.br/editais-e-publicacoes/",
+      "automatica": true,
+      "uso": "Editais e publicações municipais."
+    },
+    {
+      "nome": "SEMAD Goiás",
+      "url": "https://goias.gov.br/meioambiente/",
+      "automatica": true,
+      "uso": "Notícias, serviços e sinais ambientais estaduais."
+    },
+    {
+      "nome": "INPE Queimadas",
+      "url": "https://data.inpe.br/queimadas/dados-abertos/",
+      "automatica": false,
+      "uso": "Focos, eventos de fogo e dados abertos."
+    },
+    {
+      "nome": "TerraBrasilis",
+      "url": "https://terrabrasilis.dpi.inpe.br/",
+      "automatica": false,
+      "uso": "Monitoramento de vegetação nativa, PRODES e DETER."
+    },
+    {
+      "nome": "ANA / SNIRH",
+      "url": "https://www.snirh.gov.br/",
+      "automatica": false,
+      "uso": "Água, hidrometeorologia e seca."
+    },
+    {
+      "nome": "ANM Dados Abertos",
+      "url": "https://www.gov.br/anm/pt-br/acesso-a-informacao/dados-abertos",
+      "automatica": false,
+      "uso": "Processos e geoinformação mineral."
+    }
+  ],
+  "regras": {
+    "sinal_nao_e_cliente": true,
+    "contato_automatico": false,
+    "publicar_dados_pessoais": false,
+    "exigir_fonte_publica": true,
+    "exigir_aprovacao_humana_para_contato": true
+  }
+}
