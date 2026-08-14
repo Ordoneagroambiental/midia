@@ -1,0 +1,45 @@
+name: Atualizar Radar Ordone
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '15 10 * * *'
+  push:
+    paths:
+      - 'scripts/atualizar_radar.py'
+      - 'dados/radar_config.json'
+      - '.github/workflows/atualizar-radar.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  radar:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - run: pip install requests beautifulsoup4
+
+      - name: Teste interno do radar
+        run: python scripts/atualizar_radar.py --self-test
+
+      - name: Coleta pública
+        run: python scripts/atualizar_radar.py
+
+      - name: Commit se houver mudança
+        run: |
+          git config user.name "ordone-radar"
+          git config user.email "actions@users.noreply.github.com"
+          git add dados/radar_oportunidades.json
+          if git diff --cached --quiet; then
+            echo "Sem mudanças no radar."
+          else
+            git commit -m "Atualiza Radar Ordone"
+            git push
+          fi
