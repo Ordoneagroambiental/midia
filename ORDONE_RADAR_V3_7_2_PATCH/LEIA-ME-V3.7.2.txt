@@ -1,0 +1,23 @@
+ORDONE AGROAMBIENTAL — RADAR V3.7.2
+
+Arquivos:
+1) scripts/atualizar_radar.py
+   - corrige consulta PNCP de propostas abertas
+   - reduz respostas 400/429
+   - elimina links genéricos como "Ver todos os serviços"
+   - aprofunda páginas candidatas antes de classificá-las
+
+2) assets/site.js
+   - filtra títulos genéricos também na exibição
+   - ordena Goianésia/região primeiro
+   - melhora status da coleta e cards
+
+3) assets/styles.css
+   - ativa o layout visual completo do Radar
+   - corrige campos grudados e melhora leitura dos cards
+
+IMPORTANTE:
+- Não envie a pasta PATCH inteira para a raiz.
+- Substitua cada arquivo dentro da pasta correspondente no GitHub.
+- Após atualizar atualizar_radar.py, o GitHub Actions executará o Radar.
+- Após atualizar assets/site.js e assets/styles.css, aguarde o GitHub Pages concluir e use Ctrl+F5.
