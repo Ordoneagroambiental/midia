@@ -168,3 +168,43 @@ document.querySelectorAll('a[href*="whatsapp"]').forEach(a=>{
     cards.forEach(c=>c.hidden=!(filter==='todos'||c.dataset.resourceType.includes(filter)));
   }));
 })();
+
+
+// V3.7 — Radar Ordone: leitura pública e sanitizada de oportunidades/sinais.
+(function(){
+  const target=document.getElementById('radar-opportunity-list');
+  if(!target) return;
+  const base=document.body.dataset.base || '';
+  let radarItems=[];
+  const esc=s=>String(s??'').replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));
+  const safe=u=>{try{const x=new URL(u,location.href);return ['http:','https:'].includes(x.protocol)?x.href:'#'}catch(e){return '#'}};
+  const brl=v=>{if(v===null||v===undefined||v==='') return ''; try{return new Intl.NumberFormat('pt-BR',{style:'currency',currency:'BRL',maximumFractionDigits:0}).format(Number(v))}catch(e){return ''}};
+  function localRegion(item){return ['Goianésia','Entorno imediato','Região ampliada'].includes(item.regiao_prioridade)}
+  function draw(filter='todos'){
+    const items=radarItems.filter(x=>filter==='todos'||(filter==='local'&&localRegion(x))||(filter==='formal'&&x.tipo==='DEMANDA FORMAL')||(filter==='alta'&&x.prioridade==='ALTA'));
+    if(!items.length){target.innerHTML='<article class="radar-empty"><h3>Nenhum registro neste filtro.</h3><p>Isso não significa ausência de demanda. O radar exibe apenas sinais que passaram pelos filtros públicos e técnicos da coleta.</p></article>';return;}
+    target.innerHTML=items.map(x=>`<article class="radar-card" data-priority="${esc(x.prioridade||'')}">
+      <div class="radar-card-top"><span class="radar-badge">${esc(x.tipo||'SINAL')}</span><span class="radar-score">${esc(x.prioridade||'')} · ${esc(x.score||0)}/100</span></div>
+      <h3>${esc(x.titulo||'Oportunidade pública')}</h3>
+      <div class="radar-meta"><span>${esc([x.municipio,x.uf].filter(Boolean).join(' / ')||'Local não informado')}</span><span>${esc(x.fonte||'Fonte pública')}</span></div>
+      ${x.organizacao?`<p class="radar-org"><b>Organização:</b> ${esc(x.organizacao)}</p>`:''}
+      <p><b>Como a Ordone pode atuar:</b> ${esc((x.servicos_ordone||[]).join(' · '))}</p>
+      <div class="radar-details">${x.prazo?`<span>Prazo: ${esc(x.prazo)}</span>`:''}${brl(x.valor_estimado)?`<span>Estimado: ${esc(brl(x.valor_estimado))}</span>`:''}${x.modalidade?`<span>${esc(x.modalidade)}</span>`:''}</div>
+      <p class="radar-action">${esc(x.proxima_acao||'Abrir a fonte e validar o contexto.')}</p>
+      <a class="card-link" href="${safe(x.url)}" target="_blank" rel="noopener noreferrer">Abrir fonte oficial →</a>
+    </article>`).join('');
+  }
+  fetch(base+'dados/radar_oportunidades.json',{cache:'no-store'})
+    .then(r=>{if(!r.ok) throw new Error('radar'); return r.json()})
+    .then(data=>{
+      radarItems=(data.items||[]).slice(0,30);
+      const r=data.resumo||{};
+      const boxes=document.querySelectorAll('#radar-summary article b');
+      [r.total,r.goianesia_regiao,r.demandas_formais,r.sinais_ambientais].forEach((v,i)=>{if(boxes[i]) boxes[i].textContent=(v??0)});
+      const stamp=document.getElementById('radar-updated-at'); if(stamp&&data.atualizado_em) stamp.textContent='Coleta: '+data.atualizado_em;
+      draw('todos');
+    }).catch(()=>{});
+  document.querySelectorAll('[data-radar-filter]').forEach(btn=>btn.addEventListener('click',()=>{
+    document.querySelectorAll('[data-radar-filter]').forEach(b=>b.classList.remove('active')); btn.classList.add('active'); draw(btn.dataset.radarFilter);
+  }));
+})();
