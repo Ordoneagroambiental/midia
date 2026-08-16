@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-"""Radar Ordone V3.7.2.
+"""Radar Ordone V3.7.3.
 
 Objetivo: localizar sinais e oportunidades em fontes públicas, com prioridade para
 Goianésia e região, sem realizar contato automático. O contato comercial permanece
 condicionado à validação e aprovação humana.
 
-Principais melhorias da V3.7.2:
+Principais melhorias acumuladas até a V3.7.3:
 - corrige os parâmetros oficiais do endpoint PNCP de propostas abertas;
 - restringe modalidades e páginas para reduzir respostas 429;
 - valida melhor páginas institucionais e elimina falsos positivos genéricos;
@@ -32,7 +32,7 @@ ROOT = Path(__file__).resolve().parents[1]
 CONFIG = ROOT / "dados" / "radar_config.json"
 OUT = ROOT / "dados" / "radar_oportunidades.json"
 UA = {
-    "User-Agent": "Mozilla/5.0 (compatible; OrdoneRadar/3.7.2; +https://ordoneagroambiental.github.io/midia/)",
+    "User-Agent": "Mozilla/5.0 (compatible; OrdoneRadar/3.7.3; +https://ordoneagroambiental.github.io/midia/)",
     "Accept": "application/json,text/html;q=0.9,*/*;q=0.8",
 }
 
@@ -54,6 +54,12 @@ GENERIC_ANCHORS = {
 GENERIC_PATH_PARTS = (
     "/servicos", "/sobre", "/contato", "/institucional", "/secretarias",
     "/transparencia", "/portal-da-transparencia",
+)
+NON_ENVIRONMENTAL_TERMS = (
+    "fibromialgia", "carteira de fibromialgia", "saude", "vacina", "hospital",
+    "medicamento", "paciente", "assistencia social", "educacao", "matricula",
+    "merenda", "transporte escolar", "cultura", "esporte", "turismo",
+    "certidao", "tributo", "iptu", "alvara", "nota fiscal", "contracheque",
 )
 FORMAL_TERMS = (
     "licit", "edital", "contrat", "dispensa", "pregao", "concorrencia",
@@ -137,6 +143,26 @@ def generic_url(url):
         return any(norm(x.strip("/")) in path for x in GENERIC_PATH_PARTS)
     except Exception:
         return False
+
+
+def clearly_non_environmental(text):
+    t = norm(text)
+    return any(term in t for term in NON_ENVIRONMENTAL_TERMS)
+
+
+def stale_archive_title(text):
+    """Rejeita páginas históricas agregadoras, como 'Editais até 2024'."""
+    t = norm(text)
+    years = [int(y) for y in re.findall(r"\b20\d{2}\b", t)]
+    return bool(years and any(x in t for x in ("ate ", "anteriores", "arquivo", "historico"))
+                and max(years) < datetime.now().year)
+
+
+def environmental_evidence(text, cfg):
+    """Exige evidência ambiental explícita no objeto local da publicação."""
+    hits, strong, explicit = meaningful_hits(text, cfg)
+    services = [x for x in services_from(text) if x != "Avaliação técnica inicial"]
+    return bool(services and (strong or explicit or hits)), hits
 
 
 def meaningful_hits(text, cfg):
@@ -443,8 +469,12 @@ def html_signals(cfg, diagnostics):
             if href.rstrip("/") == url.rstrip("/") or href.endswith("#"):
                 continue
 
-            parent_text = clean(a.parent.get_text(" ", strip=True) if a.parent else "", 900)
+            # O texto local é deliberadamente curto. Usar o corpo inteiro da página
+            # fazia termos ambientais do menu contaminarem links de saúde e serviços.
+            parent_text = clean(a.parent.get_text(" ", strip=True) if a.parent else "", 420)
             initial = f"{anchor} {parent_text}".strip()
+            if clearly_non_environmental(initial) or stale_archive_title(initial):
+                continue
             initial_hits, initial_strong, _ = meaningful_hits(initial, cfg)
             initial_formal = formal_language(initial)
             route = norm(urlparse(href).path)
@@ -461,9 +491,19 @@ def html_signals(cfg, diagnostics):
             if href not in deep_checked and len(deep_checked) < 24:
                 deep_checked.add(href)
                 page_title, page_body = fetch_page_context(href, diagnostics)
-            combined = " ".join(x for x in (anchor, parent_text, page_title, page_body) if x)
+            page_lead = clean(page_body, 1600)
+            local_object = " ".join(x for x in (anchor, parent_text, page_title, page_lead) if x)
+            if clearly_non_environmental(" ".join((anchor, page_title, page_lead))):
+                continue
+            if stale_archive_title(" ".join((anchor, page_title))):
+                continue
+            env_ok, local_hits = environmental_evidence(local_object, cfg)
+            if not env_ok:
+                continue
+
+            combined = local_object
             hits, strong, explicit = meaningful_hits(combined, cfg)
-            formal = formal_language(combined)
+            formal = formal_language(" ".join((anchor, parent_text, page_title, page_lead)))
 
             if formal:
                 if not hits or (not strong and len(explicit) < 1):
@@ -478,6 +518,8 @@ def html_signals(cfg, diagnostics):
             if is_generic_title(display_title):
                 display_title = clean(parent_text, 260)
             if is_generic_title(display_title):
+                continue
+            if clearly_non_environmental(display_title) or stale_archive_title(display_title):
                 continue
 
             k = (norm(display_title), href)
@@ -511,7 +553,7 @@ def html_signals(cfg, diagnostics):
                 "prazo": "",
                 "valor_estimado": None,
                 "modalidade": "",
-                "servicos_ordone": services_from(combined),
+                "servicos_ordone": [x for x in services_from(combined) if x != "Avaliação técnica inicial"],
                 "palavras_encontradas": hits[:10],
                 "score": score,
                 "prioridade": priority(score),
@@ -547,7 +589,7 @@ def build_output(cfg, items, diagnostics):
         + cfg["prioridade_geografica"].get("regiao_ampliada", [])
     ))
     return {
-        "versao": "3.7.2",
+        "versao": "3.7.3",
         "atualizado_em": datetime.now(timezone.utc).astimezone().strftime("%d/%m/%Y %H:%M"),
         "status": "coleta_concluida",
         "prioridade": "Goianésia e entorno → Goiás → Brasil",
@@ -581,8 +623,14 @@ def self_test(cfg):
     assert is_generic_title("Ver todos os serviços")
     assert is_generic_title("Saiba mais")
     assert not is_generic_title("Recuperação de área degradada em nascente")
+    assert clearly_non_environmental("Solicitar Carteira de Fibromialgia")
+    assert stale_archive_title("Editais e Publicações até 2024")
+    ok, _ = environmental_evidence("Contratação de recuperação de área degradada", cfg)
+    assert ok
+    bad, _ = environmental_evidence("Solicitar Carteira de Fibromialgia", cfg)
+    assert not bad
     assert "pncp.gov.br/app/editais/" in pncp_url_from_control("07954605000160-1-000176/2026")
-    print("SELF-TEST OK V3.7.2", s, r, len(h))
+    print("SELF-TEST OK V3.7.3", s, r, len(h))
 
 
 def main():
@@ -638,7 +686,7 @@ def main():
 
     data = build_output(cfg, items, diagnostics)
     OUT.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print("Radar V3.7.2 atualizado:", len(items), "itens; requisições:", diagnostics["requisicoes"])
+    print("Radar V3.7.3 atualizado:", len(items), "itens; requisições:", diagnostics["requisicoes"])
 
 
 if __name__ == "__main__":
