@@ -1,20 +1,20 @@
 {
-  "versao": "3.7.2",
-  "atualizado_em": "16/08/2026 16:36",
+  "versao": "3.7.3",
+  "atualizado_em": "16/08/2026 20:49",
   "status": "coleta_concluida",
   "prioridade": "Goianésia e entorno → Goiás → Brasil",
   "resumo": {
-    "total": 7,
-    "goianesia_regiao": 7,
-    "goias": 7,
-    "demandas_formais": 2,
-    "sinais_ambientais": 5
+    "total": 0,
+    "goianesia_regiao": 0,
+    "goias": 0,
+    "demandas_formais": 0,
+    "sinais_ambientais": 0
   },
   "diagnostico_coleta": {
     "requisicoes": 98,
     "pncp_proposta": 0,
     "pncp_publicacao": 0,
-    "html_sinais": 11,
+    "html_sinais": 0,
     "paginas_aprofundadas": 24,
     "erros": [
       "PNCP: HTTPError: 400 Client Error:  for url: https://pncp.gov.br/api/consulta/v1/contratacoes/proposta?dataFinal=20261114&codigoModalidadeContratacao=2&pagina=1&tamanhoPagina=100&uf=GO&codigoMunicipioIbge=5208608",
@@ -24,16 +24,17 @@
       "PNCP: HTTPError: 400 Client Error:  for url: https://pncp.gov.br/api/consulta/v1/contratacoes/proposta?dataFinal=20261114&codigoModalidadeContratacao=6&pagina=1&tamanhoPagina=100&uf=GO&codigoMunicipioIbge=5208608",
       "PNCP: HTTPError: 400 Client Error:  for url: https://pncp.gov.br/api/consulta/v1/contratacoes/proposta?dataFinal=20261114&codigoModalidadeContratacao=7&pagina=1&tamanhoPagina=100&uf=GO&codigoMunicipioIbge=5208608",
       "PNCP: HTTPError: 400 Client Error:  for url: https://pncp.gov.br/api/consulta/v1/contratacoes/proposta?dataFinal=20261114&codigoModalidadeContratacao=8&pagina=1&tamanhoPagina=100&uf=GO&codigoMunicipioIbge=5208608",
-      "PNCP: HTTPError: 400 Client Error:  for url: https://pncp.gov.br/api/consulta/v1/contratacoes/proposta?dataFinal=20261114&codigoModalidadeContratacao=9&pagina=1&tamanhoPagina=100&uf=GO&codigoMunicipioIbge=5208608",
-      "PNCP: HTTPError: 400 Client Error:  for url: https://pncp.gov.br/api/consulta/v1/contratacoes/proposta?dataFinal=20261114&codigoModalidadeContratacao=10&pagina=1&tamanhoPagina=100&uf=GO&codigoMunicipioIbge=5208608",
-      "PNCP: HTTPError: 400 Client Error:  for url: https://pncp.gov.br/api/consulta/v1/contratacoes/proposta?dataFinal=20261114&codigoModalidadeContratacao=11&pagina=1&tamanhoPagina=100&uf=GO&codigoMunicipioIbge=5208608",
+      "PNCP: HTTPError: 400 Client Error:  for url: https://pncp.gov.br/api/consulta/v1/contratacoes/proposta?dataFinal=20261114&codigoModalidadeContratacao=2&pagina=1&tamanhoPagina=100&uf=GO",
+      "PNCP: HTTPError: 400 Client Error:  for url: https://pncp.gov.br/api/consulta/v1/contratacoes/proposta?dataFinal=20261114&codigoModalidadeContratacao=3&pagina=1&tamanhoPagina=100&uf=GO",
+      "PNCP: HTTPError: 400 Client Error:  for url: https://pncp.gov.br/api/consulta/v1/contratacoes/proposta?dataFinal=20261114&codigoModalidadeContratacao=4&pagina=1&tamanhoPagina=100&uf=GO",
       "PNCP: HTTPError: 400 Client Error:  for url: https://pncp.gov.br/api/consulta/v1/contratacoes/proposta?dataFinal=20261114&codigoModalidadeContratacao=5&pagina=1&tamanhoPagina=100&uf=GO",
       "PNCP: HTTPError: 400 Client Error:  for url: https://pncp.gov.br/api/consulta/v1/contratacoes/proposta?dataFinal=20261114&codigoModalidadeContratacao=6&pagina=1&tamanhoPagina=100&uf=GO",
       "PNCP: HTTPError: 400 Client Error:  for url: https://pncp.gov.br/api/consulta/v1/contratacoes/proposta?dataFinal=20261114&codigoModalidadeContratacao=7&pagina=1&tamanhoPagina=100&uf=GO",
       "PNCP: HTTPError: 400 Client Error:  for url: https://pncp.gov.br/api/consulta/v1/contratacoes/proposta?dataFinal=20261114&codigoModalidadeContratacao=8&pagina=1&tamanhoPagina=100&uf=GO",
-      "PNCP: HTTPError: 400 Client Error:  for url: https://pncp.gov.br/api/consulta/v1/contratacoes/proposta?dataFinal=20261114&codigoModalidadeContratacao=9&pagina=1&tamanhoPagina=100&uf=GO",
-      "PNCP: HTTPError: 400 Client Error:  for url: https://pncp.gov.br/api/consulta/v1/contratacoes/proposta?dataFinal=20261114&codigoModalidadeContratacao=10&pagina=1&tamanhoPagina=100&uf=GO",
-      "PNCP: HTTPError: 400 Client Error:  for url: https://pncp.gov.br/api/consulta/v1/contratacoes/proposta?dataFinal=20261114&codigoModalidadeContratacao=11&pagina=1&tamanhoPagina=100&uf=GO",
+      "PNCP: HTTPError: 400 Client Error:  for url: https://pncp.gov.br/api/consulta/v1/contratacoes/proposta?dataFinal=20261114&codigoModalidadeContratacao=12&pagina=1&tamanhoPagina=100&uf=GO",
+      "PNCP: HTTPError: 400 Client Error:  for url: https://pncp.gov.br/api/consulta/v1/contratacoes/proposta?dataFinal=20261114&codigoModalidadeContratacao=4&pagina=1&tamanhoPagina=100",
+      "PNCP: HTTPError: 400 Client Error:  for url: https://pncp.gov.br/api/consulta/v1/contratacoes/proposta?dataFinal=20261114&codigoModalidadeContratacao=6&pagina=1&tamanhoPagina=100",
+      "PNCP: HTTPError: 400 Client Error:  for url: https://pncp.gov.br/api/consulta/v1/contratacoes/proposta?dataFinal=20261114&codigoModalidadeContratacao=8&pagina=1&tamanhoPagina=100",
       "PNCP: HTTPError: 400 Client Error:  for url: https://pncp.gov.br/api/consulta/v1/contratacoes/proposta?dataFinal=20261114&codigoModalidadeContratacao=9&pagina=1&tamanhoPagina=100",
       "PNCP: HTTPError: 400 Client Error:  for url: https://pncp.gov.br/api/consulta/v1/contratacoes/publicacao?dataFinal=20260816&codigoModalidadeContratacao=2&pagina=1&tamanhoPagina=100&uf=GO&codigoMunicipioIbge=5208608&dataInicial=20260726",
       "PNCP: HTTPError: 400 Client Error:  for url: https://pncp.gov.br/api/consulta/v1/contratacoes/publicacao?dataFinal=20260816&codigoModalidadeContratacao=3&pagina=1&tamanhoPagina=100&uf=GO&codigoMunicipioIbge=5208608&dataInicial=20260726",
@@ -43,13 +44,13 @@
       "PNCP: HTTPError: 400 Client Error:  for url: https://pncp.gov.br/api/consulta/v1/contratacoes/publicacao?dataFinal=20260816&codigoModalidadeContratacao=7&pagina=1&tamanhoPagina=100&uf=GO&codigoMunicipioIbge=5208608&dataInicial=20260726",
       "PNCP: HTTPError: 400 Client Error:  for url: https://pncp.gov.br/api/consulta/v1/contratacoes/publicacao?dataFinal=20260816&codigoModalidadeContratacao=8&pagina=1&tamanhoPagina=100&uf=GO&codigoMunicipioIbge=5208608&dataInicial=20260726",
       "PNCP: HTTPError: 400 Client Error:  for url: https://pncp.gov.br/api/consulta/v1/contratacoes/publicacao?dataFinal=20260816&codigoModalidadeContratacao=9&pagina=1&tamanhoPagina=100&uf=GO&codigoMunicipioIbge=5208608&dataInicial=20260726",
-      "PNCP: HTTPError: 400 Client Error:  for url: https://pncp.gov.br/api/consulta/v1/contratacoes/publicacao?dataFinal=20260816&codigoModalidadeContratacao=10&pagina=1&tamanhoPagina=100&uf=GO&codigoMunicipioIbge=5208608&dataInicial=20260726",
       "PNCP: HTTPError: 400 Client Error:  for url: https://pncp.gov.br/api/consulta/v1/contratacoes/publicacao?dataFinal=20260816&codigoModalidadeContratacao=3&pagina=1&tamanhoPagina=100&uf=GO&dataInicial=20260726",
       "PNCP: HTTPError: 400 Client Error:  for url: https://pncp.gov.br/api/consulta/v1/contratacoes/publicacao?dataFinal=20260816&codigoModalidadeContratacao=4&pagina=1&tamanhoPagina=100&uf=GO&dataInicial=20260726",
       "PNCP: HTTPError: 400 Client Error:  for url: https://pncp.gov.br/api/consulta/v1/contratacoes/publicacao?dataFinal=20260816&codigoModalidadeContratacao=5&pagina=1&tamanhoPagina=100&uf=GO&dataInicial=20260726",
       "PNCP: HTTPError: 400 Client Error:  for url: https://pncp.gov.br/api/consulta/v1/contratacoes/publicacao?dataFinal=20260816&codigoModalidadeContratacao=6&pagina=1&tamanhoPagina=100&uf=GO&dataInicial=20260726",
       "PNCP: HTTPError: 400 Client Error:  for url: https://pncp.gov.br/api/consulta/v1/contratacoes/publicacao?dataFinal=20260816&codigoModalidadeContratacao=7&pagina=1&tamanhoPagina=100&uf=GO&dataInicial=20260726",
       "PNCP: HTTPError: 400 Client Error:  for url: https://pncp.gov.br/api/consulta/v1/contratacoes/publicacao?dataFinal=20260816&codigoModalidadeContratacao=8&pagina=1&tamanhoPagina=100&uf=GO&dataInicial=20260726",
+      "PNCP: HTTPError: 400 Client Error:  for url: https://pncp.gov.br/api/consulta/v1/contratacoes/publicacao?dataFinal=20260816&codigoModalidadeContratacao=4&pagina=1&tamanhoPagina=100&dataInicial=20260726",
       "PNCP: HTTPError: 400 Client Error:  for url: https://pncp.gov.br/api/consulta/v1/contratacoes/publicacao?dataFinal=20260816&codigoModalidadeContratacao=6&pagina=1&tamanhoPagina=100&dataInicial=20260726",
       "PNCP: HTTPError: 400 Client Error:  for url: https://pncp.gov.br/api/consulta/v1/contratacoes/publicacao?dataFinal=20260816&codigoModalidadeContratacao=8&pagina=1&tamanhoPagina=100&dataInicial=20260726",
       "PNCP: HTTPError: 400 Client Error:  for url: https://pncp.gov.br/api/consulta/v1/contratacoes/publicacao?dataFinal=20260816&codigoModalidadeContratacao=9&pagina=1&tamanhoPagina=100&dataInicial=20260726"
@@ -71,15 +72,6 @@
       "PNCP respondeu 429 (limite temporário); uma repetição será tentada.",
       "PNCP manteve 429; consulta parcial preservada.",
       "PNCP respondeu 429 (limite temporário); uma repetição será tentada.",
-      "PNCP manteve 429; consulta parcial preservada.",
-      "PNCP respondeu 429 (limite temporário); uma repetição será tentada.",
-      "PNCP respondeu 429 (limite temporário); uma repetição será tentada.",
-      "PNCP manteve 429; consulta parcial preservada.",
-      "PNCP respondeu 429 (limite temporário); uma repetição será tentada.",
-      "PNCP manteve 429; consulta parcial preservada.",
-      "PNCP respondeu 429 (limite temporário); uma repetição será tentada.",
-      "PNCP manteve 429; consulta parcial preservada.",
-      "PNCP respondeu 429 (limite temporário); uma repetição será tentada.",
       "PNCP respondeu 429 (limite temporário); uma repetição será tentada.",
       "PNCP manteve 429; consulta parcial preservada.",
       "PNCP respondeu 429 (limite temporário); uma repetição será tentada.",
@@ -89,211 +81,18 @@
       "PNCP respondeu 429 (limite temporário); uma repetição será tentada.",
       "PNCP manteve 429; consulta parcial preservada.",
       "PNCP respondeu 429 (limite temporário); uma repetição será tentada.",
-      "PNCP manteve 429; consulta parcial preservada."
+      "PNCP respondeu 429 (limite temporário); uma repetição será tentada.",
+      "PNCP manteve 429; consulta parcial preservada.",
+      "PNCP respondeu 429 (limite temporário); uma repetição será tentada.",
+      "PNCP manteve 429; consulta parcial preservada.",
+      "PNCP respondeu 429 (limite temporário); uma repetição será tentada.",
+      "PNCP manteve 429; consulta parcial preservada.",
+      "PNCP respondeu 429 (limite temporário); uma repetição será tentada.",
+      "PNCP manteve 429; consulta parcial preservada.",
+      "PNCP respondeu 429 (limite temporário); uma repetição será tentada."
     ]
   },
-  "items": [
-    {
-      "id": "web-6392462921d6",
-      "tipo": "DEMANDA FORMAL",
-      "confirmacao": "CONFIRMADO",
-      "fonte": "Editais de Goianésia",
-      "titulo": "Editais e Publicações até 2024 - Prefeitura de Goianésia",
-      "municipio": "Goianésia",
-      "uf": "GO",
-      "regiao_prioridade": "Goianésia",
-      "organizacao": "Editais de Goianésia",
-      "data_publicacao": "",
-      "prazo": "",
-      "valor_estimado": null,
-      "modalidade": "",
-      "servicos_ordone": [
-        "Geotecnologia / drone"
-      ],
-      "palavras_encontradas": [
-        "geoprocessamento",
-        "grupo:ambiental",
-        "grupo:geotecnologia",
-        "serviços ambientais"
-      ],
-      "score": 72,
-      "prioridade": "MÉDIA",
-      "url": "https://goianesia.go.gov.br/editais-e-publicacoes2/",
-      "proxima_acao": "Abrir a publicação oficial e confirmar objeto, prazo e condições antes de qualquer abordagem."
-    },
-    {
-      "id": "web-504ca94182c0",
-      "tipo": "DEMANDA FORMAL",
-      "confirmacao": "CONFIRMADO",
-      "fonte": "Prefeitura de Goianésia",
-      "titulo": "Solicitar Carteira de Fibromialgia – Prefeitura de Goianésia",
-      "municipio": "Goianésia",
-      "uf": "GO",
-      "regiao_prioridade": "Goianésia",
-      "organizacao": "Prefeitura de Goianésia",
-      "data_publicacao": "",
-      "prazo": "",
-      "valor_estimado": null,
-      "modalidade": "",
-      "servicos_ordone": [
-        "Geotecnologia / drone"
-      ],
-      "palavras_encontradas": [
-        "geoprocessamento",
-        "grupo:ambiental",
-        "grupo:geotecnologia",
-        "serviços ambientais"
-      ],
-      "score": 72,
-      "prioridade": "MÉDIA",
-      "url": "https://goianesia.go.gov.br/servico/solicitar-carteira-de-fibromialgia/",
-      "proxima_acao": "Abrir a publicação oficial e confirmar objeto, prazo e condições antes de qualquer abordagem."
-    },
-    {
-      "id": "web-9a0053a8d120",
-      "tipo": "SINAL AMBIENTAL",
-      "confirmacao": "PROVÁVEL",
-      "fonte": "Prefeitura de Goianésia",
-      "titulo": "História da Cidade - Prefeitura de Goianésia",
-      "municipio": "Goianésia",
-      "uf": "GO",
-      "regiao_prioridade": "Goianésia",
-      "organizacao": "Prefeitura de Goianésia",
-      "data_publicacao": "",
-      "prazo": "",
-      "valor_estimado": null,
-      "modalidade": "",
-      "servicos_ordone": [
-        "Recuperação ambiental / PRAD",
-        "Geotecnologia / drone"
-      ],
-      "palavras_encontradas": [
-        "prad",
-        "geoprocessamento",
-        "grupo:ambiental",
-        "grupo:geotecnologia",
-        "serviços ambientais"
-      ],
-      "score": 59,
-      "prioridade": "ACOMPANHAR",
-      "url": "https://goianesia.go.gov.br/historia-da-cidade/",
-      "proxima_acao": "Validar o contexto e confirmar se o sinal representa demanda técnica real antes de classificar como oportunidade comercial."
-    },
-    {
-      "id": "web-4e108523d5ff",
-      "tipo": "SINAL AMBIENTAL",
-      "confirmacao": "PROVÁVEL",
-      "fonte": "Prefeitura de Goianésia",
-      "titulo": "Secretaria de Meio Ambiente - Prefeitura de Goianésia",
-      "municipio": "Goianésia",
-      "uf": "GO",
-      "regiao_prioridade": "Goianésia",
-      "organizacao": "Prefeitura de Goianésia",
-      "data_publicacao": "",
-      "prazo": "",
-      "valor_estimado": null,
-      "modalidade": "",
-      "servicos_ordone": [
-        "Geotecnologia / drone",
-        "Plantio, viveiros e compensação"
-      ],
-      "palavras_encontradas": [
-        "viveiro",
-        "geoprocessamento",
-        "grupo:ambiental",
-        "grupo:geotecnologia",
-        "serviços ambientais"
-      ],
-      "score": 59,
-      "prioridade": "ACOMPANHAR",
-      "url": "https://goianesia.go.gov.br/secretaria/secretaria-de-meio-ambiente/",
-      "proxima_acao": "Validar o contexto e confirmar se o sinal representa demanda técnica real antes de classificar como oportunidade comercial."
-    },
-    {
-      "id": "web-553ad3e9f163",
-      "tipo": "SINAL AMBIENTAL",
-      "confirmacao": "PROVÁVEL",
-      "fonte": "Prefeitura de Goianésia",
-      "titulo": "Geoprocessamento - Prefeitura de Goianésia",
-      "municipio": "Goianésia",
-      "uf": "GO",
-      "regiao_prioridade": "Goianésia",
-      "organizacao": "Prefeitura de Goianésia",
-      "data_publicacao": "",
-      "prazo": "",
-      "valor_estimado": null,
-      "modalidade": "",
-      "servicos_ordone": [
-        "Geotecnologia / drone"
-      ],
-      "palavras_encontradas": [
-        "geoprocessamento",
-        "grupo:ambiental",
-        "grupo:geotecnologia",
-        "serviços ambientais"
-      ],
-      "score": 49,
-      "prioridade": "ACOMPANHAR",
-      "url": "https://goianesia.go.gov.br/geoprocessamento/",
-      "proxima_acao": "Validar o contexto e confirmar se o sinal representa demanda técnica real antes de classificar como oportunidade comercial."
-    },
-    {
-      "id": "web-2a3701ba527a",
-      "tipo": "SINAL AMBIENTAL",
-      "confirmacao": "PROVÁVEL",
-      "fonte": "Prefeitura de Goianésia",
-      "titulo": "Governo e Secretarias - Prefeitura de Goianésia",
-      "municipio": "Goianésia",
-      "uf": "GO",
-      "regiao_prioridade": "Goianésia",
-      "organizacao": "Prefeitura de Goianésia",
-      "data_publicacao": "",
-      "prazo": "",
-      "valor_estimado": null,
-      "modalidade": "",
-      "servicos_ordone": [
-        "Geotecnologia / drone"
-      ],
-      "palavras_encontradas": [
-        "geoprocessamento",
-        "grupo:ambiental",
-        "grupo:geotecnologia",
-        "serviços ambientais"
-      ],
-      "score": 49,
-      "prioridade": "ACOMPANHAR",
-      "url": "https://goianesia.go.gov.br/estrutura",
-      "proxima_acao": "Validar o contexto e confirmar se o sinal representa demanda técnica real antes de classificar como oportunidade comercial."
-    },
-    {
-      "id": "web-42a7635ee706",
-      "tipo": "SINAL AMBIENTAL",
-      "confirmacao": "PROVÁVEL",
-      "fonte": "Prefeitura de Goianésia",
-      "titulo": "Notícias - Prefeitura de Goianésia",
-      "municipio": "Goianésia",
-      "uf": "GO",
-      "regiao_prioridade": "Goianésia",
-      "organizacao": "Prefeitura de Goianésia",
-      "data_publicacao": "",
-      "prazo": "",
-      "valor_estimado": null,
-      "modalidade": "",
-      "servicos_ordone": [
-        "Geotecnologia / drone"
-      ],
-      "palavras_encontradas": [
-        "geoprocessamento",
-        "grupo:ambiental",
-        "grupo:geotecnologia",
-        "serviços ambientais"
-      ],
-      "score": 49,
-      "prioridade": "ACOMPANHAR",
-      "url": "https://goianesia.go.gov.br/noticias",
-      "proxima_acao": "Validar o contexto e confirmar se o sinal representa demanda técnica real antes de classificar como oportunidade comercial."
-    }
-  ],
+  "items": [],
   "fontes_monitoradas": [
     {
       "nome": "PNCP",
