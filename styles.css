@@ -256,3 +256,26 @@ body{background:#fff}
 .radar-home-callout{display:flex;align-items:center;justify-content:space-between;gap:24px;background:#123d2f;color:#fff;border-radius:20px;padding:22px;margin:22px 0}.radar-home-callout h3{font-size:24px;margin:5px 0 7px}.radar-home-callout p{max-width:780px;color:#d8e7df;margin:0}.radar-home-callout .eyebrow{color:#e8c76a}
 @media(max-width:900px){.radar-priority-strip,.radar-summary{grid-template-columns:1fr 1fr}.radar-grid{grid-template-columns:1fr 1fr}.radar-toolbar,.radar-home-callout{align-items:flex-start;flex-direction:column}}
 @media(max-width:620px){.radar-priority-strip,.radar-summary,.radar-grid{grid-template-columns:1fr}.radar-card{min-height:0}}
+
+/* V3.7.2 — refinamento visual do Radar Ordone */
+.radar-card-head{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+.radar-tags{display:flex;gap:7px;flex-wrap:wrap;align-items:center}
+.radar-confirm{font-size:9px;letter-spacing:.08em;font-weight:850;color:#53655d;background:#f4f6f4;border:1px solid var(--line);padding:5px 8px;border-radius:999px}
+.radar-card h3{margin:14px 0 10px;font-size:20px;line-height:1.25;color:var(--ink)}
+.radar-meta{margin-bottom:12px}
+.radar-meta span{display:inline-flex;align-items:center;min-height:28px}
+.radar-location{font-weight:800;color:var(--forest)!important;background:#eef4f0!important}
+.radar-org{display:grid;gap:3px;margin:3px 0 12px!important;padding-bottom:10px;border-bottom:1px solid var(--line)}
+.radar-org b,.radar-service-block>b{font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--forest)}
+.radar-org span{color:var(--ink)}
+.radar-service-block{background:#f8faf8;border-radius:12px;padding:12px 13px;margin:2px 0 12px}
+.radar-service-block p{margin:5px 0 0!important;color:#42564d!important}
+.radar-details{margin:0 0 12px}
+.radar-details span{display:inline-flex;gap:4px;align-items:center}
+.radar-action{margin:0 0 16px!important;color:#5a655f!important}
+.radar-card[data-priority="ALTA"]{border-color:#d3b85f;box-shadow:0 10px 28px rgba(128,102,30,.12)}
+.radar-card[data-priority="MÉDIA"]{border-color:#b9cbbf}
+.radar-card .card-link{display:inline-flex;align-items:center;justify-content:center;width:max-content;min-height:38px;padding:0 13px;border-radius:10px;background:var(--forest);color:#fff;text-decoration:none}
+.radar-toolbar{padding:14px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.radar-toolbar #radar-updated-at{font-size:13px;margin-bottom:3px}
+@media(max-width:620px){.radar-card-head{flex-direction:column}.radar-score{align-self:flex-start}.radar-card h3{font-size:18px}}
