@@ -1,6 +1,6 @@
 {
   "versao": "1.0",
-  "atualizado_em": "2026-08-17T13:52:08.170345+00:00",
+  "atualizado_em": "2026-08-17T19:46:02.347397+00:00",
   "criterios": {
     "escopo": "Brasil e mundo",
     "frequencia": "a cada 6 horas",
@@ -40,7 +40,7 @@
     {
       "fonte": "Embrapa",
       "ok": true,
-      "itens": 1
+      "itens": 0
     },
     {
       "fonte": "SGB",
@@ -118,20 +118,6 @@
       "tipo": "Atualidade",
       "id": "3563b295718c",
       "pontuacao": 85
-    },
-    {
-      "id": "d18415922b3a",
-      "titulo": "Dia de Campo apresenta estratégias de recuperação de pastagens degradadas com foco na pecuária",
-      "resumo": "Conteúdo técnico identificado pela curadoria automática. Abra a fonte oficial para verificar método, escala e resultados.",
-      "aplicacao": "Avaliar a transferência da técnica para condições brasileiras antes de qualquer recomendação.",
-      "pais": "Brasil",
-      "categoria": "Mineração",
-      "fonte": "Embrapa",
-      "tipo_fonte": "Empresa pública de pesquisa",
-      "data": "",
-      "url": "https://www.embrapa.br/busca-de-noticias/-/noticia/146434615/dia-de-campo-apresenta-estrategias-de-recuperacao-de-pastagens-degradadas-com-foco-na-pecuaria",
-      "tipo": "Atualidade",
-      "pontuacao": 52
     }
   ]
 }
