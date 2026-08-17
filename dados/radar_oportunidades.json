@@ -1,25 +1,24 @@
 {
   "versao": "4.7",
-  "atualizado_em": "17/08/2026 03:43",
+  "atualizado_em": "17/08/2026 03:55",
   "status": "coleta_concluida",
   "prioridade": "Brasil inteiro → bônus de proximidade para Goiás e Goianésia",
   "resumo": {
-    "total": 3,
-    "brasil": 3,
+    "total": 1,
+    "brasil": 1,
     "goianesia_regiao": 0,
     "goias": 0,
-    "demandas_formais": 3,
+    "demandas_formais": 1,
     "sinais_ambientais": 0
   },
   "diagnostico_coleta": {
     "requisicoes": 37,
     "pncp_proposta": 0,
     "pncp_publicacao": 0,
-    "pncp_registros_examinados": 100,
+    "pncp_registros_examinados": 200,
     "html_sinais": 0,
     "paginas_aprofundadas": 24,
     "erros": [
-      "PNCP: ReadTimeout: HTTPSConnectionPool(host='pncp.gov.br', port=443): Read timed out. (read timeout=6)",
       "PNCP: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
     ],
     "avisos": [
@@ -28,94 +27,21 @@
   },
   "items": [
     {
-      "id": "47842836000105-1-000118/2026",
+      "id": "17955386000198-1-000074/2026",
       "tipo": "DEMANDA FORMAL",
-      "confirmacao": "CONFIRMADO",
+      "confirmacao": "PRÉ-SELECIONADO",
       "fonte": "PNCP",
-      "titulo": "CONTRATAÇÃO DE EMPRESA ESPECIALIZADA EM LOCAÇÃO DE COMPUTADORES DESKTOP, NOTEBOOKS, TABLETS, MONITORES, INCLUINDO FORNECIMENTO DE LICENÇAS DE FUNCIONAMENTO, SERVIÇOS DE SUPORTE TÉCNICO E MANUTENÇÃO, VISANDO ATENDER ÀS NECESSIDADES DAS SECRETARIAS DE SAÚDE, OBRAS, MEIO AMBIENTE, EDUCAÇÃO, DEPARTAMENTO DE COMPRAS E LICIT",
-      "municipio": "Fernandópolis",
-      "uf": "SP",
+      "titulo": "Contratação de empresa especializada na prestação de serviços de prestação de serviços de dedetização, desratização, e serviço de limpeza de caixas e reservatórios de água, a fim de atender as necessidades da Secretaria",
+      "municipio": "Cambuquira",
+      "uf": "MG",
       "regiao_prioridade": "Brasil",
-      "organizacao": "MUNICIPIO DE FERNANDOPOLIS",
-      "data_publicacao": "2026-07-06T15:30:48",
-      "prazo": "2026-08-17T08:29:00",
-      "valor_estimado": 3941299.08,
+      "organizacao": "MUNICIPIO DE CAMBUQUIRA",
+      "data_publicacao": "2026-03-31T15:26:13",
+      "prazo": "2026-08-18T08:59:00",
+      "valor_estimado": 103947.16,
       "modalidade": "Pregão - Eletrônico",
       "servicos_ordone": [
-        "Avaliação técnica inicial"
-      ],
-      "relacao_comercial": "Prestação ambiental para obra/construtora",
-      "status_leitura_edital": "LEITURA INCOMPLETA",
-      "documentos_analisados": [],
-      "requisitos_minimos": [],
-      "analise_elegibilidade": "LEITURA INCOMPLETA",
-      "pendencias_identificadas": [
-        "Abrir edital e anexos manualmente"
-      ],
-      "palavras_encontradas": [
-        "grupo:ambiental",
-        "serviços ambientais"
-      ],
-      "score": 55,
-      "prioridade": "ACOMPANHAR",
-      "url": "https://pncp.gov.br/app/editais/47842836000105/2026/118",
-      "numero_controle_pncp": "47842836000105-1-000118/2026",
-      "escopo_coleta": "Brasil",
-      "fase_pncp": "proposta",
-      "proxima_acao": "Abrir o edital/aviso oficial, validar escopo, habilitação, prazo, local de execução e viabilidade de proposta."
-    },
-    {
-      "id": "15417520000171-1-000013/2026",
-      "tipo": "DEMANDA FORMAL",
-      "confirmacao": "CONFIRMADO",
-      "fonte": "PNCP",
-      "titulo": "Contratação de solução de atendimento online (Saas), por meio de mensagens, compatível com a plataforma WhatsApp Business, com configuração inicial de atendimento e recursos de Inteligência Artificial Generativa e Processamento de Linguagem Natural (NLP), para comunicação em linguagem natural, com curadoria de conteúdo",
-      "municipio": "Campo Grande",
-      "uf": "MS",
-      "regiao_prioridade": "Brasil",
-      "organizacao": "CONSELHO REGIONAL DE ENGENHARIA E AGRONOMIA DE MATO GROSSO DO SUL",
-      "data_publicacao": "2026-06-24T07:04:20",
-      "prazo": "2026-08-17T09:30:00",
-      "valor_estimado": 250676.75,
-      "modalidade": "Pregão - Eletrônico",
-      "servicos_ordone": [
-        "Recursos hídricos e nascentes"
-      ],
-      "relacao_comercial": "Prestação ambiental para obra/construtora",
-      "status_leitura_edital": "LEITURA INCOMPLETA",
-      "documentos_analisados": [],
-      "requisitos_minimos": [],
-      "analise_elegibilidade": "LEITURA INCOMPLETA",
-      "pendencias_identificadas": [
-        "Abrir edital e anexos manualmente"
-      ],
-      "palavras_encontradas": [
-        "app"
-      ],
-      "score": 49,
-      "prioridade": "ACOMPANHAR",
-      "url": "https://pncp.gov.br/app/editais/15417520000171/2026/13",
-      "numero_controle_pncp": "15417520000171-1-000013/2026",
-      "escopo_coleta": "Brasil",
-      "fase_pncp": "proposta",
-      "proxima_acao": "Abrir o edital/aviso oficial, validar escopo, habilitação, prazo, local de execução e viabilidade de proposta."
-    },
-    {
-      "id": "24950495000188-1-000096/2026",
-      "tipo": "DEMANDA FORMAL",
-      "confirmacao": "CONFIRMADO",
-      "fonte": "PNCP",
-      "titulo": "[LICITANET] - REGISTRO DE PREÇOS PARA FUTURA E EVENTUAL CONTRATAÇÃO DE EMPRESA PARA PRESTAÇÃO DE SERVIÇOS COM CAMINHÃO CAÇAMBA BASCULANTE EQUIPADO COM MÁQUINA TRITURADORA E LOCAÇÃO DE CAMINHÃO COLETOR E COMPACTADOR DE RESÍDUOS SÓLIDOS, DESTINADOS À MANUTENÇÃO, CONSERVAÇÃO E LIMPEZA DAS ÁREAS PÚBLICAS DO MUNICÍPIO DE CA",
-      "municipio": "Campo Verde",
-      "uf": "MT",
-      "regiao_prioridade": "Brasil",
-      "organizacao": "MUNICIPIO DE CAMPO VERDE",
-      "data_publicacao": "2026-07-07T12:29:39",
-      "prazo": "2026-08-17T09:30:00",
-      "valor_estimado": 2166375.12,
-      "modalidade": "Pregão - Eletrônico",
-      "servicos_ordone": [
-        "Avaliação técnica inicial"
+        "Irrigação e automação"
       ],
       "relacao_comercial": "Contratação ambiental direta",
       "status_leitura_edital": "LEITURA INCOMPLETA",
@@ -126,12 +52,13 @@
         "Abrir edital e anexos manualmente"
       ],
       "palavras_encontradas": [
-        "manutenção de áreas verdes"
+        "reservatório",
+        "grupo:irrigacao"
       ],
-      "score": 49,
+      "score": 55,
       "prioridade": "ACOMPANHAR",
-      "url": "https://pncp.gov.br/app/editais/24950495000188/2026/96",
-      "numero_controle_pncp": "24950495000188-1-000096/2026",
+      "url": "https://pncp.gov.br/app/editais/17955386000198/2026/74",
+      "numero_controle_pncp": "17955386000198-1-000074/2026",
       "escopo_coleta": "Brasil",
       "fase_pncp": "proposta",
       "proxima_acao": "Abrir o edital/aviso oficial, validar escopo, habilitação, prazo, local de execução e viabilidade de proposta."
