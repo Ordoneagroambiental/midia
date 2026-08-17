@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Radar Ordone V3.7.3.
+"""Radar Ordone V4.2 — cobertura nacional e leitura de editais.
 
-Objetivo: localizar sinais e oportunidades em fontes públicas, com prioridade para
-Goianésia e região, sem realizar contato automático. O contato comercial permanece
+Objetivo: localizar sinais e oportunidades em fontes públicas em todo o Brasil,
+mantendo Goiás e Goianésia como bônus de proximidade, sem realizar contato automático. O contato comercial permanece
 condicionado à validação e aprovação humana.
 
 Principais melhorias acumuladas até a V3.7.3:
@@ -20,6 +20,7 @@ from datetime import datetime, timedelta, timezone
 from urllib.parse import urljoin, urlparse
 import argparse
 import hashlib
+import io
 import json
 import re
 import time
@@ -27,12 +28,14 @@ import unicodedata
 
 import requests
 from bs4 import BeautifulSoup
+from pypdf import PdfReader
 
 ROOT = Path(__file__).resolve().parents[1]
 CONFIG = ROOT / "dados" / "radar_config.json"
+PROFILE = ROOT / "dados" / "perfil_ordone.json"
 OUT = ROOT / "dados" / "radar_oportunidades.json"
 UA = {
-    "User-Agent": "Mozilla/5.0 (compatible; OrdoneRadar/3.7.3; +https://ordoneagroambiental.github.io/midia/)",
+    "User-Agent": "Mozilla/5.0 (compatible; OrdoneRadar/4.2; +https://ordoneagroambiental.github.io/midia/)",
     "Accept": "application/json,text/html;q=0.9,*/*;q=0.8",
 }
 
@@ -72,6 +75,15 @@ HIGH_SIGNAL_TERMS = (
     "geoprocessamento", "georreferenciamento", "drone", "aerolevantamento",
     "licenciamento ambiental", "condicionante ambiental", "plantio compensatorio",
     "mudas nativas", "viveiro", "nascente", "outorga",
+    "gestao ambiental de obras", "supervisao ambiental", "acompanhamento ambiental de obra",
+    "programa ambiental da construcao", "controle ambiental de obra",
+)
+
+CONSTRUCTION_MARKET_TERMS = (
+    "construtora", "construcao civil", "obra", "canteiro", "terraplenagem",
+    "loteamento", "incorporadora", "rodovia", "ferrovia", "linha de transmissao",
+    "usina solar", "saneamento", "adutora", "barragem", "mineracao", "infraestrutura",
+    "concessionaria", "pavimentacao", "duplicacao", "implantacao",
 )
 
 EXTRA_PATTERNS = {
@@ -165,6 +177,14 @@ def environmental_evidence(text, cfg):
     return bool(services and (strong or explicit or hits)), hits
 
 
+def market_relation(text):
+    """Classifica como a Ordone pode entrar comercialmente na demanda."""
+    t = norm(text)
+    if any(x in t for x in CONSTRUCTION_MARKET_TERMS):
+        return "Prestação ambiental para obra/construtora"
+    return "Contratação ambiental direta"
+
+
 def meaningful_hits(text, cfg):
     hits = keyword_hits(text, cfg)
     t = norm(text)
@@ -209,14 +229,15 @@ def geography_score(city, uf, cfg):
     uf = (uf or "").upper()
     geo = cfg["prioridade_geografica"]
     if c == norm("Goianésia"):
-        return 25, "Goianésia"
+        return 30, "Goianésia"
     if c in {norm(x) for x in geo.get("entorno_imediato", [])}:
-        return 20, "Entorno imediato"
+        return 26, "Entorno imediato"
     if c in {norm(x) for x in geo.get("regiao_ampliada", [])}:
-        return 15, "Região ampliada"
+        return 22, "Região ampliada"
     if uf == "GO":
-        return 10, "Goiás"
-    return 5, "Brasil"
+        return 18, "Goiás"
+    # O Brasil inteiro integra o escopo comercial; distância apenas ordena.
+    return 14, "Brasil"
 
 
 def keyword_hits(text, cfg):
@@ -271,6 +292,8 @@ def services_from(text):
     add("Plantio, viveiros e compensação", "plantio compensatorio", "mudas nativas", "viveiro", "compensacao ambiental", "inventario florestal", "arborizacao", "area verde")
     add("Recursos hídricos e nascentes", "nascente", "recursos hidricos", "app", "area de preservacao permanente")
     add("Monitoramento ambiental", "monitoramento ambiental")
+    add("Gestão e supervisão ambiental de obras", "gestao ambiental de obra", "supervisao ambiental", "acompanhamento ambiental de obra", "controle ambiental de obra", "programa ambiental da construcao")
+    add("PGRS e gestão de resíduos da obra", "pgrs", "residuo da construcao", "residuos da construcao", "gestao de residuos")
     return out or ["Avaliação técnica inicial"]
 
 
@@ -315,6 +338,90 @@ def pncp_url_from_control(control):
     return f"https://pncp.gov.br/app/editais/{cnpj}/{year}/{int(seq)}"
 
 
+def pncp_control_parts(control):
+    m = re.match(r"^([A-Za-z0-9]{14})-\d+-0*(\d+)/(\d{4})$", str(control or ""))
+    return m.groups() if m else None
+
+
+def extract_pdf_text(content, max_pages=35):
+    try:
+        reader = PdfReader(io.BytesIO(content))
+        return clean(" ".join((p.extract_text() or "") for p in reader.pages[:max_pages]), 120000)
+    except Exception:
+        return ""
+
+
+def pncp_document_text(control, diagnostics):
+    parts = pncp_control_parts(control)
+    if not parts:
+        return "", [], "LEITURA INCOMPLETA"
+    cnpj, seq, year = parts
+    base = f"https://pncp.gov.br/pncp-api/v1/orgaos/{cnpj}/compras/{year}/{int(seq)}/arquivos"
+    try:
+        r = requests.get(base, headers=UA, timeout=20)
+        diagnostics["requisicoes"] += 1
+        if not r.ok:
+            return "", [], "LEITURA INCOMPLETA"
+        docs = r.json() if "json" in r.headers.get("content-type", "") else []
+        if isinstance(docs, dict):
+            docs = docs.get("data") or docs.get("items") or []
+        texts, names = [], []
+        for i, doc in enumerate((docs or [])[:6]):
+            serial = doc.get("sequencialDocumento") or doc.get("sequencial") or i + 1
+            url = safe_url(doc.get("url") or doc.get("uri") or doc.get("link")) or f"{base}/{serial}"
+            name = clean(doc.get("titulo") or doc.get("nome") or doc.get("descricao") or f"Anexo {i+1}", 140)
+            try:
+                f = requests.get(url, headers=UA, timeout=25)
+                diagnostics["requisicoes"] += 1
+                if not f.ok or len(f.content) > 15_000_000:
+                    continue
+                is_pdf = "pdf" in f.headers.get("content-type", "").lower() or url.lower().endswith(".pdf")
+                body = extract_pdf_text(f.content) if is_pdf else clean(f.text, 30000)
+                if body:
+                    texts.append(body)
+                    names.append(name)
+                if len(texts) >= 3:
+                    break
+            except Exception:
+                continue
+        joined = clean(" ".join(texts), 180000)
+        return joined, names, ("ANALISADO" if len(joined) >= 500 else "LEITURA INCOMPLETA")
+    except Exception as exc:
+        diagnostics["avisos"].append(f"Anexos PNCP: {type(exc).__name__}: {str(exc)[:100]}")
+        return "", [], "LEITURA INCOMPLETA"
+
+
+REQUIREMENT_RULES = {
+    "Registro profissional": ("crea", "conselho profissional", "registro profissional"),
+    "ART / responsabilidade técnica": ("anotacao de responsabilidade tecnica", "responsavel tecnico"),
+    "Atestado de capacidade técnica": ("atestado de capacidade tecnica", "capacidade tecnico-operacional", "capacidade tecnico-profissional"),
+    "CAT / acervo técnico": ("certidao de acervo tecnico", "acervo tecnico"),
+    "Equipe técnica mínima": ("equipe tecnica", "engenheiro agronomo", "engenheiro florestal", "engenheiro ambiental", "engenheiro civil"),
+    "Visita técnica": ("visita tecnica", "vistoria tecnica"),
+    "Qualificação econômico-financeira": ("qualificacao economico-financeira", "balanco patrimonial", "patrimonio liquido"),
+    "Garantia": ("garantia de proposta", "garantia contratual"),
+    "Consórcio": ("participacao em consorcio",),
+    "Subcontratação": ("subcontratacao", "subcontratar"),
+    "ME/EPP": ("microempresa", "empresa de pequeno porte", "me/epp"),
+}
+
+
+def analyze_requirements(text, profile):
+    t = norm(text)
+    found = [label for label, terms in REQUIREMENT_RULES.items() if any(term in t for term in terms)]
+    pend = []
+    confirmed = set(norm(x) for x in profile.get("comprovacoes_confirmadas", []))
+    if "Atestado de capacidade técnica" in found and "atestado de capacidade tecnica" not in confirmed:
+        pend.append("Confirmar atestado compatível com o objeto")
+    if "CAT / acervo técnico" in found and "cat / acervo tecnico" not in confirmed:
+        pend.append("Confirmar CAT/acervo técnico")
+    if "Qualificação econômico-financeira" in found:
+        pend.append("Validar índices e documentos financeiros")
+    if not text:
+        return found, "LEITURA INCOMPLETA", ["Abrir edital e anexos manualmente"]
+    return found, ("VERIFICAR DOCUMENTOS" if pend else "ANÁLISE PRELIMINAR FAVORÁVEL"), pend
+
+
 def pncp_request(endpoint, params, diagnostics):
     try:
         r = requests.get(endpoint, params=params, headers=UA, timeout=18)
@@ -342,15 +449,18 @@ def pncp_collect(cfg, mode, diagnostics):
     base = f"https://pncp.gov.br/api/consulta/v1/contratacoes/{mode}"
     today = datetime.now().date()
     proposal_end = (today + timedelta(days=90)).strftime("%Y%m%d")
-    publication_ini = (today - timedelta(days=21)).strftime("%Y%m%d")
+    publication_ini = (today - timedelta(days=45)).strftime("%Y%m%d")
     publication_end = today.strftime("%Y%m%d")
 
+    # Brasil vem primeiro e recebe maior profundidade. Goiás e Goianésia servem
+    # para reforçar a proximidade, não para limitar a descoberta.
     scopes = [
+        ("Brasil", {}, MODALIDADES, 4 if mode == "proposta" else 2),
+        ("Goiás", {"uf": "GO"}, MODALIDADES, 2),
         ("Goianésia", {"uf": "GO", "codigoMunicipioIbge": "5208608"}, MODALIDADES, 1),
-        ("Goiás", {"uf": "GO"}, MODALIDADES, 1),
-        ("Brasil", {}, MODALIDADES_NACIONAIS, 1),
     ]
     out, seen = [], set()
+    profile = load_json(PROFILE, {})
 
     for scope_name, scope_params, modalidades, max_pages in scopes:
         for modalidade in modalidades:
@@ -398,6 +508,8 @@ def pncp_collect(cfg, mode, diagnostics):
                         continue
 
                     source = pncp_url_from_control(key) or safe_url(x.get("linkSistemaOrigem")) or "https://pncp.gov.br/app/editais"
+                    edital_text, docs_read, reading_status = pncp_document_text(key, diagnostics)
+                    requirements, eligibility, pending_docs = analyze_requirements(edital_text, profile)
                     out.append({
                         "id": key or f"pncp-{mode}-{scope_name}-{modalidade}-{len(out)+1}",
                         "tipo": kind,
@@ -413,6 +525,12 @@ def pncp_collect(cfg, mode, diagnostics):
                         "valor_estimado": money(x.get("valorTotalEstimado")),
                         "modalidade": clean(x.get("modalidadeNome"), 80),
                         "servicos_ordone": services_from(text),
+                        "relacao_comercial": market_relation(text),
+                        "status_leitura_edital": reading_status,
+                        "documentos_analisados": docs_read,
+                        "requisitos_minimos": requirements,
+                        "analise_elegibilidade": eligibility,
+                        "pendencias_identificadas": pending_docs,
                         "palavras_encontradas": hits[:10],
                         "score": score,
                         "prioridade": priority(score),
@@ -439,6 +557,12 @@ def pncp_collect(cfg, mode, diagnostics):
 
 def html_signals(cfg, diagnostics):
     sources = [
+        ("PNCP", "https://pncp.gov.br/app/editais", "", "BR"),
+        ("MMA", "https://www.gov.br/mma/pt-br/assuntos", "", "BR"),
+        ("Ibama", "https://www.gov.br/ibama/pt-br/assuntos/noticias", "", "BR"),
+        ("ICMBio", "https://www.gov.br/icmbio/pt-br/assuntos/noticias", "", "BR"),
+        ("BNDES Floresta Viva", "https://www.bndes.gov.br/wps/portal/site/home/desenvolvimento-sustentavel/parcerias/floresta-viva", "", "BR"),
+        ("Fundo Amazônia", "https://www.fundoamazonia.gov.br/pt/projetos/", "", "BR"),
         ("Prefeitura de Goianésia", "https://goianesia.go.gov.br/", "Goianésia", "GO"),
         ("Editais de Goianésia", "https://goianesia.go.gov.br/editais-e-publicacoes/", "Goianésia", "GO"),
         ("SEMAD Goiás", "https://goias.gov.br/meioambiente/", "", "GO"),
@@ -554,6 +678,7 @@ def html_signals(cfg, diagnostics):
                 "valor_estimado": None,
                 "modalidade": "",
                 "servicos_ordone": [x for x in services_from(combined) if x != "Avaliação técnica inicial"],
+                "relacao_comercial": market_relation(combined),
                 "palavras_encontradas": hits[:10],
                 "score": score,
                 "prioridade": priority(score),
@@ -589,12 +714,13 @@ def build_output(cfg, items, diagnostics):
         + cfg["prioridade_geografica"].get("regiao_ampliada", [])
     ))
     return {
-        "versao": "3.7.3",
+        "versao": "4.2",
         "atualizado_em": datetime.now(timezone.utc).astimezone().strftime("%d/%m/%Y %H:%M"),
         "status": "coleta_concluida",
-        "prioridade": "Goianésia e entorno → Goiás → Brasil",
+        "prioridade": "Brasil inteiro → bônus de proximidade para Goiás e Goianésia",
         "resumo": {
             "total": len(items),
+            "brasil": len(items),
             "goianesia_regiao": sum(norm(x.get("municipio")) in local for x in items),
             "goias": sum((x.get("uf") or "").upper() == "GO" for x in items),
             "demandas_formais": sum(x.get("tipo") == "DEMANDA FORMAL" for x in items),
@@ -630,7 +756,9 @@ def self_test(cfg):
     bad, _ = environmental_evidence("Solicitar Carteira de Fibromialgia", cfg)
     assert not bad
     assert "pncp.gov.br/app/editais/" in pncp_url_from_control("07954605000160-1-000176/2026")
-    print("SELF-TEST OK V3.7.3", s, r, len(h))
+    req, elig, pend = analyze_requirements("Exige CREA, responsável técnico e atestado de capacidade técnica", {})
+    assert "Registro profissional" in req and "Atestado de capacidade técnica" in req and pend
+    print("SELF-TEST OK V4.2", s, r, len(h))
 
 
 def main():
@@ -686,7 +814,7 @@ def main():
 
     data = build_output(cfg, items, diagnostics)
     OUT.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print("Radar V3.7.3 atualizado:", len(items), "itens; requisições:", diagnostics["requisicoes"])
+    print("Radar V4.2 atualizado:", len(items), "itens; requisições:", diagnostics["requisicoes"])
 
 
 if __name__ == "__main__":
