@@ -170,7 +170,7 @@ document.querySelectorAll('a[href*="whatsapp"]').forEach(a=>{
 })();
 
 
-// V3.7 — Radar Ordone: leitura pública e sanitizada de oportunidades/sinais.
+// V3.8 — Radar Ordone Nacional: Brasil inteiro com bônus de proximidade.
 (function(){
   const target=document.getElementById('radar-opportunity-list');
   if(!target) return;
@@ -179,17 +179,31 @@ document.querySelectorAll('a[href*="whatsapp"]').forEach(a=>{
   const esc=s=>String(s??'').replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));
   const safe=u=>{try{const x=new URL(u,location.href);return ['http:','https:'].includes(x.protocol)?x.href:'#'}catch(e){return '#'}};
   const brl=v=>{if(v===null||v===undefined||v==='') return ''; try{return new Intl.NumberFormat('pt-BR',{style:'currency',currency:'BRL',maximumFractionDigits:0}).format(Number(v))}catch(e){return ''}};
+  const norm=s=>String(s??'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/\s+/g,' ').trim();
+  const genericTitles=new Set(['ver todos os servicos','todos os servicos','servicos','saiba mais','leia mais','ver mais','acesse','acessar','clique aqui','inicio','home','sobre','sobre a cidade','noticias','mais noticias','contato']);
+  const generic=x=>genericTitles.has(norm(x?.titulo||''));
+  const regionWeight=x=>({"Goianésia":0,"Entorno imediato":1,"Região ampliada":2,"Goiás":3,"Brasil":4}[x?.regiao_prioridade]??5);
   function localRegion(item){return ['Goianésia','Entorno imediato','Região ampliada'].includes(item.regiao_prioridade)}
+  function inBrazil(item){return String(item.uf||'').toUpperCase()!=='EX'}
+  function inGoias(item){return String(item.uf||'').toUpperCase()==='GO'}
   function draw(filter='todos'){
-    const items=radarItems.filter(x=>filter==='todos'||(filter==='local'&&localRegion(x))||(filter==='formal'&&x.tipo==='DEMANDA FORMAL')||(filter==='alta'&&x.prioridade==='ALTA'));
-    if(!items.length){target.innerHTML='<article class="radar-empty"><h3>Nenhum registro neste filtro.</h3><p>Isso não significa ausência de demanda. O radar exibe apenas sinais que passaram pelos filtros públicos e técnicos da coleta.</p></article>';return;}
+    const items=radarItems.filter(x=>filter==='todos'||(filter==='brasil'&&inBrazil(x))||(filter==='goias'&&inGoias(x))||(filter==='formal'&&x.tipo==='DEMANDA FORMAL')||(filter==='alta'&&x.prioridade==='ALTA'));
+    if(!items.length){target.innerHTML='<article class="radar-empty"><h3>Nenhum registro neste filtro.</h3><p>A coleta foi concluída, mas nenhum sinal passou pelos critérios deste filtro. Isso não significa ausência de demanda no território.</p></article>';return;}
     target.innerHTML=items.map(x=>`<article class="radar-card" data-priority="${esc(x.prioridade||'')}">
-      <div class="radar-card-top"><span class="radar-badge">${esc(x.tipo||'SINAL')}</span><span class="radar-score">${esc(x.prioridade||'')} · ${esc(x.score||0)}/100</span></div>
+      <div class="radar-card-head">
+        <div class="radar-tags"><span class="radar-badge">${esc(x.tipo||'SINAL')}</span>${x.confirmacao?`<span class="radar-confirm">${esc(x.confirmacao)}</span>`:''}</div>
+        <span class="radar-score">${esc(x.prioridade||'')} · ${esc(x.score||0)}/100</span>
+      </div>
       <h3>${esc(x.titulo||'Oportunidade pública')}</h3>
-      <div class="radar-meta"><span>${esc([x.municipio,x.uf].filter(Boolean).join(' / ')||'Local não informado')}</span><span>${esc(x.fonte||'Fonte pública')}</span></div>
-      ${x.organizacao?`<p class="radar-org"><b>Organização:</b> ${esc(x.organizacao)}</p>`:''}
-      <p><b>Como a Ordone pode atuar:</b> ${esc((x.servicos_ordone||[]).join(' · '))}</p>
-      <div class="radar-details">${x.prazo?`<span>Prazo: ${esc(x.prazo)}</span>`:''}${brl(x.valor_estimado)?`<span>Estimado: ${esc(brl(x.valor_estimado))}</span>`:''}${x.modalidade?`<span>${esc(x.modalidade)}</span>`:''}</div>
+      ${x.relacao_comercial?`<div class="radar-market-fit">${esc(x.relacao_comercial)}</div>`:''}
+      <div class="radar-meta"><span class="radar-location">${esc([x.municipio,x.uf].filter(Boolean).join(' / ')||'Local não informado')}</span><span>${esc(x.fonte||'Fonte pública')}</span></div>
+      ${x.organizacao?`<p class="radar-org"><b>Organização</b><span>${esc(x.organizacao)}</span></p>`:''}
+      <div class="radar-service-block"><b>Como a Ordone pode atuar</b><p>${esc((x.servicos_ordone||[]).join(' · ')||'Avaliação técnica inicial')}</p></div>
+      ${x.status_leitura_edital?`<div class="radar-analysis"><b>Edital</b><span>${esc(x.status_leitura_edital)}</span></div>`:''}
+      ${(x.requisitos_minimos||[]).length?`<div class="radar-requirements"><b>Requisitos identificados</b><ul>${x.requisitos_minimos.map(v=>`<li>${esc(v)}</li>`).join('')}</ul></div>`:''}
+      ${x.analise_elegibilidade?`<div class="radar-eligibility"><b>Análise preliminar</b><span>${esc(x.analise_elegibilidade)}</span></div>`:''}
+      ${(x.pendencias_identificadas||[]).length?`<div class="radar-pending"><b>Verificar</b><ul>${x.pendencias_identificadas.map(v=>`<li>${esc(v)}</li>`).join('')}</ul></div>`:''}
+      <div class="radar-details">${x.prazo?`<span><b>Prazo</b> ${esc(x.prazo)}</span>`:''}${brl(x.valor_estimado)?`<span><b>Estimado</b> ${esc(brl(x.valor_estimado))}</span>`:''}${x.modalidade?`<span>${esc(x.modalidade)}</span>`:''}</div>
       <p class="radar-action">${esc(x.proxima_acao||'Abrir a fonte e validar o contexto.')}</p>
       <a class="card-link" href="${safe(x.url)}" target="_blank" rel="noopener noreferrer">Abrir fonte oficial →</a>
     </article>`).join('');
@@ -197,13 +211,25 @@ document.querySelectorAll('a[href*="whatsapp"]').forEach(a=>{
   fetch(base+'dados/radar_oportunidades.json',{cache:'no-store'})
     .then(r=>{if(!r.ok) throw new Error('radar'); return r.json()})
     .then(data=>{
-      radarItems=(data.items||[]).slice(0,30);
+      radarItems=(data.items||[]).filter(x=>!generic(x)).sort((a,b)=>(Number(b.score)||0)-(Number(a.score)||0)||regionWeight(a)-regionWeight(b)).slice(0,60);
       const r=data.resumo||{};
       const boxes=document.querySelectorAll('#radar-summary article b');
-      [r.total,r.goianesia_regiao,r.demandas_formais,r.sinais_ambientais].forEach((v,i)=>{if(boxes[i]) boxes[i].textContent=(v??0)});
-      const stamp=document.getElementById('radar-updated-at'); if(stamp&&data.atualizado_em) stamp.textContent='Coleta: '+data.atualizado_em;
+      const visible={
+        total:radarItems.length,
+        brasil:radarItems.filter(inBrazil).length,
+        formal:radarItems.filter(x=>x.tipo==='DEMANDA FORMAL').length,
+        sinais:radarItems.filter(x=>x.tipo==='SINAL AMBIENTAL'||x.tipo==='SINAL DE CONTRATAÇÃO').length
+      };
+      [visible.total,visible.brasil,visible.formal,visible.sinais].forEach((v,i)=>{if(boxes[i]) boxes[i].textContent=v});
+      const stamp=document.getElementById('radar-updated-at');
+      if(stamp){
+        if(data.status==='coleta_concluida') stamp.textContent='Última coleta concluída: '+(data.atualizado_em||'agora');
+        else stamp.textContent=data.atualizado_em?'Atualização: '+data.atualizado_em:'Radar aguardando coleta';
+      }
       draw('todos');
-    }).catch(()=>{});
+    }).catch(()=>{
+      const stamp=document.getElementById('radar-updated-at'); if(stamp) stamp.textContent='Não foi possível ler a última coleta do Radar.';
+    });
   document.querySelectorAll('[data-radar-filter]').forEach(btn=>btn.addEventListener('click',()=>{
     document.querySelectorAll('[data-radar-filter]').forEach(b=>b.classList.remove('active')); btn.classList.add('active'); draw(btn.dataset.radarFilter);
   }));

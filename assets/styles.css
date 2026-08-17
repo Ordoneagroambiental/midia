@@ -275,6 +275,10 @@ body{background:#fff}
 .radar-action{margin:0 0 16px!important;color:#5a655f!important}
 .radar-card[data-priority="ALTA"]{border-color:#d3b85f;box-shadow:0 10px 28px rgba(128,102,30,.12)}
 .radar-card[data-priority="MÉDIA"]{border-color:#b9cbbf}
+.radar-market-fit{display:inline-flex;align-self:flex-start;margin:0 0 10px;padding:6px 9px;border-radius:999px;background:#f4ead2;color:#6d5720;font-size:10px;font-weight:850;letter-spacing:.02em}
+.radar-analysis,.radar-eligibility{display:flex;justify-content:space-between;gap:10px;margin:8px 0;padding:9px 11px;border-radius:10px;background:#eef4f0;font-size:11px;color:var(--forest)}
+.radar-requirements,.radar-pending{margin:8px 0;padding:10px 12px;border:1px solid var(--line);border-radius:12px;font-size:11px;color:#52635b}
+.radar-requirements ul,.radar-pending ul{margin:6px 0 0;padding-left:18px}.radar-pending{background:#fff9e9;border-color:#eadcae}
 .radar-card .card-link{display:inline-flex;align-items:center;justify-content:center;width:max-content;min-height:38px;padding:0 13px;border-radius:10px;background:var(--forest);color:#fff;text-decoration:none}
 .radar-toolbar{padding:14px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .radar-toolbar #radar-updated-at{font-size:13px;margin-bottom:3px}
