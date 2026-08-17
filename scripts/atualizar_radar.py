@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Radar Ordone V4.6 — consulta PNCP validada, com paginação e ritmo seguros.
+"""Radar Ordone V4.7 — consulta PNCP nacional, validada e com tempo controlado.
 
 Objetivo: localizar sinais e oportunidades em fontes públicas em todo o Brasil,
 mantendo Goiás e Goianésia como bônus de proximidade, sem realizar contato automático. O contato comercial permanece
@@ -38,7 +38,7 @@ CONFIG = ROOT / "dados" / "radar_config.json"
 PROFILE = ROOT / "dados" / "perfil_ordone.json"
 OUT = ROOT / "dados" / "radar_oportunidades.json"
 UA = {
-    "User-Agent": "Mozilla/5.0 (compatible; OrdoneRadar/4.6; +https://ordoneagroambiental.github.io/midia/)",
+    "User-Agent": "Mozilla/5.0 (compatible; OrdoneRadar/4.7; +https://ordoneagroambiental.github.io/midia/)",
     "Accept": "application/json,text/html;q=0.9,*/*;q=0.8",
 }
 
@@ -47,7 +47,7 @@ UA = {
 # Modalidades relevantes para serviços, obras, projetos e contratação direta.
 # Tabela de domínio PNCP: códigos válidos 1..13. Leilões (1 e 13) são omitidos.
 MODALIDADES = (2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12)
-MODALIDADES_NACIONAIS = (4, 6, 8, 9)
+MODALIDADES_NACIONAIS = (4, 6, 8)
 
 # Termos adicionais usados apenas para reconhecimento. Eles não substituem a lista
 # configurável em dados/radar_config.json.
@@ -451,14 +451,14 @@ def analyze_requirements(text, profile):
 
 def pncp_request(endpoint, params, diagnostics):
     try:
-        r = requests.get(endpoint, params=params, headers=UA, timeout=18)
+        r = requests.get(endpoint, params=params, headers=UA, timeout=12)
         diagnostics["requisicoes"] += 1
         if r.status_code in (204, 404, 422):
             return {"data": [], "totalPaginas": 0}
         if r.status_code == 429:
             diagnostics["avisos"].append("PNCP respondeu 429 (limite temporário); uma repetição será tentada.")
             time.sleep(4)
-            r = requests.get(endpoint, params=params, headers=UA, timeout=18)
+            r = requests.get(endpoint, params=params, headers=UA, timeout=12)
             diagnostics["requisicoes"] += 1
             if r.status_code == 429:
                 diagnostics["avisos"].append("PNCP manteve 429; consulta parcial preservada.")
@@ -481,9 +481,9 @@ def pncp_collect(cfg, mode, diagnostics):
     # Brasil vem primeiro e recebe maior profundidade. Goiás e Goianésia servem
     # para reforçar a proximidade, não para limitar a descoberta.
     scopes = [
-        # No endpoint /proposta, dataFinal é uma data de encerramento específica,
-        # não o fim de um intervalo. Os 22 ciclos abaixo consultam hoje + 21 dias.
-        ("Brasil", {}, MODALIDADES_NACIONAIS, 22 if mode == "proposta" else 6),
+        # Consulta dez datas de encerramento nas modalidades mais produtivas.
+        # Mantém cobertura nacional sem exceder o tempo saudável do GitHub Actions.
+        ("Brasil", {}, MODALIDADES_NACIONAIS, 10 if mode == "proposta" else 3),
     ]
     out, seen = [], set()
     profile = load_json(PROFILE, {})
@@ -506,7 +506,7 @@ def pncp_collect(cfg, mode, diagnostics):
 
                 data = pncp_request(base, params, diagnostics)
                 # Evita rajadas que acionam o limite temporário HTTP 429.
-                time.sleep(0.45)
+                time.sleep(0.25)
                 rows = data.get("data") or []
                 if not rows:
                     if mode == "proposta":
@@ -753,7 +753,7 @@ def build_output(cfg, items, diagnostics):
         + cfg["prioridade_geografica"].get("regiao_ampliada", [])
     ))
     return {
-        "versao": "4.6",
+        "versao": "4.7",
         "atualizado_em": datetime.now(timezone.utc).astimezone().strftime("%d/%m/%Y %H:%M"),
         "status": "coleta_concluida",
         "prioridade": "Brasil inteiro → bônus de proximidade para Goiás e Goianésia",
@@ -801,7 +801,7 @@ def self_test(cfg):
     assert institutional_page("Escola de Meio Ambiente (Emago)")
     assert not html_formal_evidence("contratação ambiental direta", "https://exemplo.gov.br/assuntos")
     assert html_formal_evidence("Edital nº 12 objeto e prazo para propostas", "https://exemplo.gov.br/licitacoes/edital-12")
-    print("SELF-TEST OK V4.6", s, r, len(h))
+    print("SELF-TEST OK V4.7", s, r, len(h))
 
 
 def main():
@@ -858,7 +858,7 @@ def main():
 
     data = build_output(cfg, items, diagnostics)
     OUT.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print("Radar V4.6 atualizado:", len(items), "itens; registros PNCP examinados:", diagnostics["pncp_registros_examinados"], "requisições:", diagnostics["requisicoes"])
+    print("Radar V4.7 atualizado:", len(items), "itens; registros PNCP examinados:", diagnostics["pncp_registros_examinados"], "requisições:", diagnostics["requisicoes"])
 
 
 if __name__ == "__main__":
