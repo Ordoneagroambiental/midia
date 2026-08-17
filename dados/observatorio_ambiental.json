@@ -1,11 +1,137 @@
 {
   "versao": "1.0",
-  "atualizado_em": "2026-08-17T00:00:00Z",
+  "atualizado_em": "2026-08-17T13:52:08.170345+00:00",
   "criterios": {
     "escopo": "Brasil e mundo",
     "frequencia": "a cada 6 horas",
     "regra": "Somente fontes institucionais, científicas ou oficiais; validação humana antes de uso técnico."
   },
-  "status_fontes": [],
-  "itens": []
+  "status_fontes": [
+    {
+      "fonte": "UNEP",
+      "ok": true,
+      "itens": 0
+    },
+    {
+      "fonte": "EPA Estados Unidos",
+      "ok": true,
+      "itens": 0
+    },
+    {
+      "fonte": "USGS",
+      "ok": true,
+      "itens": 0
+    },
+    {
+      "fonte": "Chinese Academy of Sciences",
+      "ok": false,
+      "erro": "403 Client Error: Forbidden for url: https://english.cas.cn/newsroom/research_news/"
+    },
+    {
+      "fonte": "CAS Eco-Environment",
+      "ok": false,
+      "erro": "HTTPSConnectionPool(host='english.egi.cas.cn', port=443): Max retries exceeded with url: /ns/ (Caused by SSLError(SSLCer"
+    },
+    {
+      "fonte": "MMA",
+      "ok": true,
+      "itens": 0
+    },
+    {
+      "fonte": "Embrapa",
+      "ok": true,
+      "itens": 1
+    },
+    {
+      "fonte": "SGB",
+      "ok": false,
+      "erro": "404 Client Error:  for url: https://www.sgb.gov.br/sala-de-imprensa/noticias"
+    }
+  ],
+  "itens": [
+    {
+      "titulo": "Tecnologias para recuperação de áreas de mineração abandonadas",
+      "resumo": "A EPA mantém referências técnicas sobre caracterização, contaminação, remediação, modelagem de impactos e recuperação de áreas mineradas.",
+      "aplicacao": "Biblioteca-base para diagnóstico, PRAD, solo e água em passivos de mineração.",
+      "pais": "Estados Unidos",
+      "categoria": "Mineração",
+      "fonte": "EPA Estados Unidos",
+      "tipo_fonte": "Órgão público",
+      "data": "2026-08-01",
+      "url": "https://www.epa.gov/superfund/abandoned-mine-lands-technical-resources",
+      "tipo": "Referência técnica",
+      "id": "37b981fb66cf",
+      "pontuacao": 85
+    },
+    {
+      "titulo": "Restauração de manguezais com ciência e participação comunitária",
+      "resumo": "A UNEP reúne resultados recentes de restauração costeira, incluindo monitoramento de sobrevivência de mudas e gestão comunitária.",
+      "aplicacao": "Modelo para projetos costeiros com indicadores verificáveis, capacitação local e manutenção posterior.",
+      "pais": "Global",
+      "categoria": "Costa e oceanos",
+      "fonte": "UNEP",
+      "tipo_fonte": "Instituição multilateral",
+      "data": "2026-07-24",
+      "url": "https://www.unep.org/news-and-stories/story/mangroves-are-making-comeback-heres-whats-working",
+      "tipo": "Atualidade",
+      "id": "765bb0099788",
+      "pontuacao": 85
+    },
+    {
+      "titulo": "Recuperação ambiental nas bacias do Rio Doce e Paraopeba",
+      "resumo": "Programas públicos vinculam reparação, biodiversidade, segurança hídrica e saneamento em territórios impactados.",
+      "aplicacao": "Referência brasileira para integrar restauração ecológica, recursos hídricos, obras e acompanhamento territorial.",
+      "pais": "Brasil",
+      "categoria": "Rios e águas",
+      "fonte": "IGAM Minas Gerais",
+      "tipo_fonte": "Órgão público",
+      "data": "2026-06-25",
+      "url": "https://igam.mg.gov.br/w/reparacao-transforma-territorios-e-impulsiona-recuperacao-de-ecossistemas-em-minas-gerais",
+      "tipo": "Atualidade",
+      "id": "13c7b292a978",
+      "pontuacao": 85
+    },
+    {
+      "titulo": "Monitoramento do programa chinês de restauração de desertos Three-North",
+      "resumo": "Pesquisadores chineses avaliaram o progresso de áreas-chave do programa de cinturões florestais e controle de desertificação.",
+      "aplicacao": "Referência para combinar revegetação, controle e monitoramento de longo prazo em paisagens secas.",
+      "pais": "China",
+      "categoria": "Desertos e solos",
+      "fonte": "Chinese Academy of Sciences",
+      "tipo_fonte": "Instituto científico público",
+      "data": "2026-06-17",
+      "url": "https://english.iae.cas.cn/newsevents/news/202606/t20260617_1169163.html",
+      "tipo": "Atualidade",
+      "id": "daeaa259dcd4",
+      "pontuacao": 85
+    },
+    {
+      "titulo": "Sistema Florescer apoia restauração ecológica em Minas Gerais",
+      "resumo": "Ferramenta pública foi lançada para apoiar políticas de restauração, regularização e recuperação de áreas degradadas.",
+      "aplicacao": "Acompanhar oportunidades de planejamento territorial, restauração e produção de evidências técnicas no Brasil.",
+      "pais": "Brasil",
+      "categoria": "Tecnologia e monitoramento",
+      "fonte": "Sisema Minas Gerais",
+      "tipo_fonte": "Órgão público",
+      "data": "2026-05-29",
+      "url": "https://meioambiente.mg.gov.br/w/sisema-abre-semana-do-meio-ambiente-com-lancamento-do-sistema-florescer",
+      "tipo": "Atualidade",
+      "id": "3563b295718c",
+      "pontuacao": 85
+    },
+    {
+      "id": "d18415922b3a",
+      "titulo": "Dia de Campo apresenta estratégias de recuperação de pastagens degradadas com foco na pecuária",
+      "resumo": "Conteúdo técnico identificado pela curadoria automática. Abra a fonte oficial para verificar método, escala e resultados.",
+      "aplicacao": "Avaliar a transferência da técnica para condições brasileiras antes de qualquer recomendação.",
+      "pais": "Brasil",
+      "categoria": "Mineração",
+      "fonte": "Embrapa",
+      "tipo_fonte": "Empresa pública de pesquisa",
+      "data": "",
+      "url": "https://www.embrapa.br/busca-de-noticias/-/noticia/146434615/dia-de-campo-apresenta-estrategias-de-recuperacao-de-pastagens-degradadas-com-foco-na-pecuaria",
+      "tipo": "Atualidade",
+      "pontuacao": 52
+    }
+  ]
 }
