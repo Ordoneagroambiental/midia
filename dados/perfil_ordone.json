@@ -1,0 +1,21 @@
+{
+  "versao": "1.0",
+  "empresa": "Ordone Agroambiental Ltda.",
+  "responsavel_tecnico": "Ricardo Lourenço Ordone Enes",
+  "profissao": "Engenheiro Agrônomo",
+  "crea_informado": "18776/D-DF",
+  "comprovacoes_confirmadas": [
+    "Registro profissional",
+    "Responsável técnico"
+  ],
+  "itens_que_exigem_confirmacao_manual": [
+    "Atestados compatíveis com cada objeto",
+    "CAT e acervo técnico",
+    "Certidões vigentes",
+    "Índices econômico-financeiros",
+    "CNAEs compatíveis",
+    "Equipe complementar",
+    "Equipamentos exigidos"
+  ],
+  "regra": "O robô realiza somente análise preliminar. A habilitação depende da leitura humana integral do edital e dos documentos vigentes da empresa."
+}

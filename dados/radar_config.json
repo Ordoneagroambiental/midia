@@ -1,5 +1,6 @@
 {
-  "versao": "3.7",
+  "versao": "3.8",
+  "escopo_padrao": "Brasil inteiro",
   "centro_operacional": {
     "municipio": "Goianésia",
     "uf": "GO"
@@ -91,6 +92,15 @@
     "recursos hídricos",
     "recursos hidricos",
     "drenagem ambiental"
+    ,"gestão ambiental de obras"
+    ,"gestao ambiental de obras"
+    ,"supervisão ambiental"
+    ,"supervisao ambiental"
+    ,"acompanhamento ambiental de obra"
+    ,"controle ambiental de obra"
+    ,"PGRS"
+    ,"resíduos da construção"
+    ,"residuos da construcao"
   ],
   "termos_excluir": [
     "processo seletivo",
