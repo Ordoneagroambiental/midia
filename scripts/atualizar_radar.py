@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Radar Ordone V4.3 — cobertura nacional, leitura de editais e filtro institucional.
+"""Radar Ordone V4.4 — varredura nacional aprofundada e leitura de editais.
 
 Objetivo: localizar sinais e oportunidades em fontes públicas em todo o Brasil,
 mantendo Goiás e Goianésia como bônus de proximidade, sem realizar contato automático. O contato comercial permanece
@@ -38,7 +38,7 @@ CONFIG = ROOT / "dados" / "radar_config.json"
 PROFILE = ROOT / "dados" / "perfil_ordone.json"
 OUT = ROOT / "dados" / "radar_oportunidades.json"
 UA = {
-    "User-Agent": "Mozilla/5.0 (compatible; OrdoneRadar/4.3; +https://ordoneagroambiental.github.io/midia/)",
+    "User-Agent": "Mozilla/5.0 (compatible; OrdoneRadar/4.4; +https://ordoneagroambiental.github.io/midia/)",
     "Accept": "application/json,text/html;q=0.9,*/*;q=0.8",
 }
 
@@ -71,7 +71,7 @@ INSTITUTIONAL_PAGE_TERMS = (
     "perguntas frequentes", "escola de meio ambiente", "quem e quem",
     "estrutura organizacional", "competencias", "legislacao", "contato",
     "acesso a informacao", "servicos ao cidadao", "programas e projetos",
-    "pagamento por servicos ambientais (psa)", "glossario",
+    "pagamento por servicos ambientais (psa)", "consultas", "glossario",
 )
 FORMAL_TERMS = (
     "licit", "edital", "contrat", "dispensa", "pregao", "concorrencia",
@@ -482,8 +482,11 @@ def pncp_collect(cfg, mode, diagnostics):
     # Brasil vem primeiro e recebe maior profundidade. Goiás e Goianésia servem
     # para reforçar a proximidade, não para limitar a descoberta.
     scopes = [
-        ("Brasil", {}, MODALIDADES, 4 if mode == "proposta" else 2),
-        ("Goiás", {"uf": "GO"}, MODALIDADES, 2),
+        # A busca nacional é concentrada nas modalidades mais produtivas para
+        # serviços/obras e percorre mais páginas. Distribuir a mesma quantidade
+        # de requisições por 11 modalidades deixava a leitura superficial.
+        ("Brasil", {}, MODALIDADES_NACIONAIS, 12 if mode == "proposta" else 6),
+        ("Goiás", {"uf": "GO"}, MODALIDADES, 3),
         ("Goianésia", {"uf": "GO", "codigoMunicipioIbge": "5208608"}, MODALIDADES, 1),
     ]
     out, seen = [], set()
@@ -506,6 +509,7 @@ def pncp_collect(cfg, mode, diagnostics):
                 rows = data.get("data") or []
                 if not rows:
                     break
+                diagnostics["pncp_registros_examinados"] += len(rows)
 
                 for x in rows:
                     key = str(x.get("numeroControlePNCP") or "")
@@ -746,7 +750,7 @@ def build_output(cfg, items, diagnostics):
         + cfg["prioridade_geografica"].get("regiao_ampliada", [])
     ))
     return {
-        "versao": "4.3",
+        "versao": "4.4",
         "atualizado_em": datetime.now(timezone.utc).astimezone().strftime("%d/%m/%Y %H:%M"),
         "status": "coleta_concluida",
         "prioridade": "Brasil inteiro → bônus de proximidade para Goiás e Goianésia",
@@ -794,7 +798,7 @@ def self_test(cfg):
     assert institutional_page("Escola de Meio Ambiente (Emago)")
     assert not html_formal_evidence("contratação ambiental direta", "https://exemplo.gov.br/assuntos")
     assert html_formal_evidence("Edital nº 12 objeto e prazo para propostas", "https://exemplo.gov.br/licitacoes/edital-12")
-    print("SELF-TEST OK V4.3", s, r, len(h))
+    print("SELF-TEST OK V4.4", s, r, len(h))
 
 
 def main():
@@ -811,6 +815,7 @@ def main():
         "requisicoes": 0,
         "pncp_proposta": 0,
         "pncp_publicacao": 0,
+        "pncp_registros_examinados": 0,
         "html_sinais": 0,
         "paginas_aprofundadas": 0,
         "erros": [],
@@ -850,7 +855,7 @@ def main():
 
     data = build_output(cfg, items, diagnostics)
     OUT.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print("Radar V4.3 atualizado:", len(items), "itens; requisições:", diagnostics["requisicoes"])
+    print("Radar V4.4 atualizado:", len(items), "itens; registros PNCP examinados:", diagnostics["pncp_registros_examinados"], "requisições:", diagnostics["requisicoes"])
 
 
 if __name__ == "__main__":
