@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Radar Ordone V5.0 — consulta PNCP nacional com validação técnica contextual.
+"""Radar Ordone V6.0 — radar nacional cumulativo com validação técnica contextual.
 
 Objetivo: localizar sinais e oportunidades em fontes públicas em todo o Brasil,
 mantendo Goiás e Goianésia como bônus de proximidade, sem realizar contato automático. O contato comercial permanece
@@ -19,6 +19,7 @@ from pathlib import Path
 from datetime import datetime, timedelta, timezone
 from urllib.parse import urljoin, urlparse
 import argparse
+from difflib import SequenceMatcher
 import hashlib
 import io
 import json
@@ -47,7 +48,7 @@ UA = {
 # Modalidades relevantes para serviços, obras, projetos e contratação direta.
 # Tabela de domínio PNCP: códigos válidos 1..13. Leilões (1 e 13) são omitidos.
 MODALIDADES = (2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12)
-MODALIDADES_NACIONAIS = (6, 8)
+MODALIDADES_NACIONAIS = (4, 5, 6, 8)
 
 # Termos adicionais usados apenas para reconhecimento. Eles não substituem a lista
 # configurável em dados/radar_config.json.
@@ -483,13 +484,8 @@ def pncp_request(endpoint, params, diagnostics):
         if r.status_code in (204, 404, 422):
             return {"data": [], "totalPaginas": 0}
         if r.status_code == 429:
-            diagnostics["avisos"].append("PNCP respondeu 429 (limite temporário); uma repetição será tentada.")
-            time.sleep(1)
-            r = requests.get(endpoint, params=params, headers=UA, timeout=6)
-            diagnostics["requisicoes"] += 1
-            if r.status_code == 429:
-                diagnostics["avisos"].append("PNCP manteve 429; consulta parcial preservada.")
-                return {"data": [], "totalPaginas": 0}
+            diagnostics["avisos"].append("PNCP respondeu 429; consulta parcial preservada sem repetição.")
+            return {"data": [], "totalPaginas": 0}
         r.raise_for_status()
         return r.json()
     except Exception as exc:
@@ -502,26 +498,28 @@ def pncp_collect(cfg, mode, diagnostics):
     assert mode in ("proposta", "publicacao")
     base = f"https://pncp.gov.br/api/consulta/v1/contratacoes/{mode}"
     today = datetime.now().date()
-    publication_ini = (today - timedelta(days=14)).strftime("%Y%m%d")
+    publication_ini = (today - timedelta(days=30)).strftime("%Y%m%d")
     publication_end = today.strftime("%Y%m%d")
 
     # Brasil vem primeiro e recebe maior profundidade. Goiás e Goianésia servem
     # para reforçar a proximidade, não para limitar a descoberta.
     scopes = [
-        # Cinco datas de encerramento e duas modalidades nacionais prioritárias.
-        # A publicação recente usa somente a primeira página de cada modalidade.
-        ("Brasil", {}, MODALIDADES_NACIONAIS, 5 if mode == "proposta" else 1),
+        # Propostas: próximos 3 dias nas quatro modalidades mais produtivas.
+        # Publicações: até 3 páginas dos últimos 30 dias em todas as modalidades
+        # de serviços/obras, permitindo descobrir editais com prazo mais longo.
+        ("Brasil", {}, MODALIDADES_NACIONAIS if mode == "proposta" else MODALIDADES,
+         3 if mode == "proposta" else 3),
     ]
     out, seen = [], set()
     profile = load_json(PROFILE, {})
-    scan_deadline = time.monotonic() + 90
+    scan_deadline = time.monotonic() + (75 if mode == "proposta" else 120)
 
     for scope_name, scope_params, modalidades, max_pages in scopes:
         for modalidade in modalidades:
             for page in range(1, max_pages + 1):
                 if time.monotonic() >= scan_deadline:
                     diagnostics["avisos"].append(
-                        f"PNCP {mode}: limite de 90 segundos atingido; resultado parcial preservado."
+                        f"PNCP {mode}: limite de tempo atingido; resultado parcial preservado."
                     )
                     return out
                 query_page = 1 if mode == "proposta" else page
@@ -570,6 +568,12 @@ def pncp_collect(cfg, mode, diagnostics):
                         continue
 
                     deadline = str(x.get("dataEncerramentoProposta") or "")
+                    if deadline:
+                        try:
+                            if datetime.fromisoformat(deadline.replace("Z", "+00:00")).date() < today:
+                                continue
+                        except (TypeError, ValueError):
+                            pass
                     kind = "DEMANDA FORMAL" if mode == "proposta" else "SINAL DE CONTRATAÇÃO"
                     score, region, hits = score_item(city, uf, text, "DEMANDA FORMAL" if mode == "proposta" else "SINAL AMBIENTAL", cfg, deadline)
                     if mode == "publicacao" and score < 45:
@@ -680,7 +684,7 @@ def html_signals(cfg, diagnostics):
                 continue
 
             page_title, page_body = "", ""
-            if href not in deep_checked and len(deep_checked) < 24:
+            if href not in deep_checked and len(deep_checked) < 12:
                 deep_checked.add(href)
                 page_title, page_body = fetch_page_context(href, diagnostics)
             page_lead = clean(page_body, 1600)
@@ -775,9 +779,45 @@ def dedupe_sort(items):
         key = (norm(x.get("titulo")), norm(x.get("organizacao")), norm(x.get("municipio")))
         if key in seen:
             continue
+        duplicate = False
+        for kept in out:
+            same_context = (
+                norm(kept.get("organizacao")) == key[1]
+                and norm(kept.get("municipio")) == key[2]
+                and money(kept.get("valor_estimado")) == money(x.get("valor_estimado"))
+            )
+            if same_context and SequenceMatcher(None, norm(kept.get("titulo")), key[0]).ratio() >= 0.82:
+                duplicate = True
+                break
+        if duplicate:
+            continue
         seen.add(key)
         out.append(x)
-    return out[:60]
+    return out[:80]
+
+
+def merge_previous_valid(current, cfg):
+    """Preserva oportunidades vigentes e válidas encontradas em coletas anteriores."""
+    previous = load_json(OUT, {}).get("items", [])
+    today = datetime.now().date()
+    merged = list(current)
+    current_ids = {str(x.get("id") or "") for x in current}
+    for item in previous:
+        if str(item.get("id") or "") in current_ids:
+            continue
+        title = str(item.get("titulo") or "")
+        if not relevant_procurement_object(title, cfg):
+            continue
+        deadline = str(item.get("prazo") or "")
+        if deadline:
+            try:
+                if datetime.fromisoformat(deadline.replace("Z", "+00:00")).date() < today:
+                    continue
+            except Exception:
+                pass
+        item["origem_historica"] = True
+        merged.append(item)
+    return dedupe_sort(merged)
 
 
 def build_output(cfg, items, diagnostics):
@@ -787,7 +827,7 @@ def build_output(cfg, items, diagnostics):
         + cfg["prioridade_geografica"].get("regiao_ampliada", [])
     ))
     return {
-        "versao": "5.0",
+        "versao": "6.0",
         "atualizado_em": datetime.now(timezone.utc).astimezone().strftime("%d/%m/%Y %H:%M"),
         "status": "coleta_concluida",
         "prioridade": "Brasil inteiro → bônus de proximidade para Goiás e Goianésia",
@@ -843,7 +883,7 @@ def self_test(cfg):
     )
     assert not any(relevant_procurement_object(x, cfg) for x in false_objects)
     assert relevant_procurement_object("Execução de PRAD e revegetação de área degradada", cfg)
-    print("SELF-TEST OK V5.0", s, r, len(h), "falsos positivos bloqueados")
+    print("SELF-TEST OK V6.0", s, r, len(h), "falsos positivos bloqueados")
 
 
 def main():
@@ -893,14 +933,14 @@ def main():
     except Exception as exc:
         diagnostics["erros"].append(f"Falha geral HTML: {exc}"[:250])
 
-    items = dedupe_sort(items)
+    items = merge_previous_valid(dedupe_sort(items), cfg)
     if successes == 0:
         print("Todas as fontes falharam; preservando resultado anterior.")
         return
 
     data = build_output(cfg, items, diagnostics)
     OUT.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print("Radar V5.0 atualizado:", len(items), "itens; registros PNCP examinados:", diagnostics["pncp_registros_examinados"], "requisições:", diagnostics["requisicoes"])
+    print("Radar V6.0 atualizado:", len(items), "itens; registros PNCP examinados:", diagnostics["pncp_registros_examinados"], "requisições:", diagnostics["requisicoes"])
 
 
 if __name__ == "__main__":
