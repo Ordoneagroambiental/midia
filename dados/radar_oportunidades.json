@@ -1,40 +1,151 @@
 {
-  "versao": "5.0",
-  "atualizado_em": "17/08/2026 11:14",
+  "versao": "6.0",
+  "atualizado_em": "17/08/2026 12:35",
   "status": "coleta_concluida",
   "prioridade": "Brasil inteiro → bônus de proximidade para Goiás e Goianésia",
   "resumo": {
-    "total": 0,
-    "brasil": 0,
+    "total": 3,
+    "brasil": 3,
     "goianesia_regiao": 0,
     "goias": 0,
-    "demandas_formais": 0,
-    "sinais_ambientais": 0
+    "demandas_formais": 2,
+    "sinais_ambientais": 1
   },
   "diagnostico_coleta": {
-    "requisicoes": 33,
+    "requisicoes": 30,
     "pncp_proposta": 0,
     "pncp_publicacao": 0,
-    "pncp_registros_examinados": 0,
+    "pncp_registros_examinados": 201,
     "html_sinais": 0,
-    "paginas_aprofundadas": 24,
+    "paginas_aprofundadas": 12,
     "erros": [
-      "PNCP: ReadTimeout: HTTPSConnectionPool(host='pncp.gov.br', port=443): Read timed out. (read timeout=6)",
-      "PNCP: ReadTimeout: HTTPSConnectionPool(host='pncp.gov.br', port=443): Read timed out. (read timeout=6)",
-      "PNCP: ReadTimeout: HTTPSConnectionPool(host='pncp.gov.br', port=443): Read timed out. (read timeout=6)",
-      "PNCP: ReadTimeout: HTTPSConnectionPool(host='pncp.gov.br', port=443): Read timed out. (read timeout=6)",
-      "PNCP: ReadTimeout: HTTPSConnectionPool(host='pncp.gov.br', port=443): Read timed out. (read timeout=6)",
-      "PNCP: ReadTimeout: HTTPSConnectionPool(host='pncp.gov.br', port=443): Read timed out. (read timeout=6)",
-      "PNCP: ReadTimeout: HTTPSConnectionPool(host='pncp.gov.br', port=443): Read timed out. (read timeout=6)",
-      "PNCP: ReadTimeout: HTTPSConnectionPool(host='pncp.gov.br', port=443): Read timed out. (read timeout=6)",
-      "PNCP: ReadTimeout: HTTPSConnectionPool(host='pncp.gov.br', port=443): Read timed out. (read timeout=6)",
-      "PNCP: ReadTimeout: HTTPSConnectionPool(host='pncp.gov.br', port=443): Read timed out. (read timeout=6)",
-      "PNCP: ReadTimeout: HTTPSConnectionPool(host='pncp.gov.br', port=443): Read timed out. (read timeout=6)",
-      "PNCP: ReadTimeout: HTTPSConnectionPool(host='pncp.gov.br', port=443): Read timed out. (read timeout=6)"
+      "PNCP: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
     ],
-    "avisos": []
+    "avisos": [
+      "PNCP proposta: limite de tempo atingido; resultado parcial preservado.",
+      "PNCP publicacao: limite de tempo atingido; resultado parcial preservado."
+    ]
   },
-  "items": [],
+  "items": [
+    {
+      "id": "88488366000100-1-000235/2026",
+      "tipo": "DEMANDA FORMAL",
+      "confirmacao": "PRÉ-SELECIONADO",
+      "fonte": "PNCP",
+      "titulo": "Contratação de empresa ou consórcios de empresas de Engenharia Consultiva para prestação de serviços técnicos especializados de apoio operacional na execução de projetos e estudos, abrangendo micro e macro drenagem urbana, desassoreamento e recuperação de áreas degradadas do Município de Santa Maria-RS, conforme condiç",
+      "municipio": "Santa Maria",
+      "uf": "RS",
+      "regiao_prioridade": "Brasil",
+      "organizacao": "MUNICIPIO DE SANTA MARIA",
+      "data_publicacao": "2026-06-26T07:19:49",
+      "prazo": "2026-08-18T08:30:00",
+      "valor_estimado": 8568613.72,
+      "modalidade": "Concorrência - Eletrônica",
+      "servicos_ordone": [
+        "Solo e conservação",
+        "Bioengenharia e controle de sedimentos"
+      ],
+      "relacao_comercial": "Contratação ambiental direta",
+      "status_leitura_edital": "LEITURA INCOMPLETA",
+      "documentos_analisados": [],
+      "requisitos_minimos": [],
+      "analise_elegibilidade": "LEITURA INCOMPLETA",
+      "pendencias_identificadas": [
+        "Abrir edital e anexos manualmente"
+      ],
+      "palavras_encontradas": [
+        "assoreamento",
+        "grupo:ambiental",
+        "grupo:solo_agua",
+        "recuperação de áreas"
+      ],
+      "score": 71,
+      "prioridade": "MÉDIA",
+      "url": "https://pncp.gov.br/app/editais/88488366000100/2026/235",
+      "numero_controle_pncp": "88488366000100-1-000235/2026",
+      "escopo_coleta": "Brasil",
+      "fase_pncp": "proposta",
+      "proxima_acao": "Abrir o edital/aviso oficial, validar escopo, habilitação, prazo, local de execução e viabilidade de proposta."
+    },
+    {
+      "id": "81140303000101-1-000185/2026",
+      "tipo": "DEMANDA FORMAL",
+      "confirmacao": "PRÉ-SELECIONADO",
+      "fonte": "PNCP",
+      "titulo": "Contratação de empresa especializada para elaboração de estudos e projetos técnicos destinados ao licenciamento ambiental para desassoreamento do Rio Saí-Mirim, no Município de Itapoá/SC, conforme condições e exigências constantes no Edital e seus anexos.",
+      "municipio": "Itapoá",
+      "uf": "SC",
+      "regiao_prioridade": "Brasil",
+      "organizacao": "MUNICIPIO DE ITAPOA",
+      "data_publicacao": "2026-05-29T11:36:02",
+      "prazo": "2026-08-18T08:29:00",
+      "valor_estimado": 1710678.5,
+      "modalidade": "Concorrência - Eletrônica",
+      "servicos_ordone": [
+        "Solo e conservação",
+        "Bioengenharia e controle de sedimentos",
+        "Licenciamento e regularização"
+      ],
+      "relacao_comercial": "Contratação ambiental direta",
+      "status_leitura_edital": "LEITURA INCOMPLETA",
+      "documentos_analisados": [],
+      "requisitos_minimos": [],
+      "analise_elegibilidade": "LEITURA INCOMPLETA",
+      "pendencias_identificadas": [
+        "Abrir edital e anexos manualmente"
+      ],
+      "palavras_encontradas": [
+        "assoreamento",
+        "licenciamento ambiental",
+        "grupo:ambiental"
+      ],
+      "score": 65,
+      "prioridade": "MÉDIA",
+      "url": "https://pncp.gov.br/app/editais/81140303000101/2026/185",
+      "numero_controle_pncp": "81140303000101-1-000185/2026",
+      "escopo_coleta": "Brasil",
+      "fase_pncp": "proposta",
+      "proxima_acao": "Abrir o edital/aviso oficial, validar escopo, habilitação, prazo, local de execução e viabilidade de proposta."
+    },
+    {
+      "id": "34841267000123-1-000143/2026",
+      "tipo": "SINAL DE CONTRATAÇÃO",
+      "confirmacao": "PRÉ-SELECIONADO",
+      "fonte": "PNCP",
+      "titulo": "CONTRATAÇÃO DE EMPRESA PARA EXECUÇÃO DE SERVIÇOS/OBRAS DE PAVIMENTAÇÃO E DRENAGEM DAS RUAS DO BAIRRO JARDIM CAMPO NOVO, EM LAGARTO/SE.",
+      "municipio": "Aracaju",
+      "uf": "SE",
+      "regiao_prioridade": "Brasil",
+      "organizacao": "SECRETARIA DE ESTADO DO DESENVOLVIMENTO URBANO E SUSTENTABILIDADE",
+      "data_publicacao": "2026-07-20T09:28:55",
+      "prazo": "2026-08-26T10:00:00",
+      "valor_estimado": 25140397.83,
+      "modalidade": "Concorrência - Eletrônica",
+      "servicos_ordone": [
+        "Solo e conservação"
+      ],
+      "relacao_comercial": "Prestação ambiental para obra/construtora",
+      "status_leitura_edital": "LEITURA INCOMPLETA",
+      "documentos_analisados": [],
+      "requisitos_minimos": [],
+      "analise_elegibilidade": "LEITURA INCOMPLETA",
+      "pendencias_identificadas": [
+        "Abrir edital e anexos manualmente"
+      ],
+      "palavras_encontradas": [
+        "grupo:ambiental",
+        "grupo:solo_agua",
+        "serviços ambientais"
+      ],
+      "score": 46,
+      "prioridade": "ACOMPANHAR",
+      "url": "https://pncp.gov.br/app/editais/34841267000123/2026/143",
+      "numero_controle_pncp": "34841267000123-1-000143/2026",
+      "escopo_coleta": "Brasil",
+      "fase_pncp": "publicacao",
+      "proxima_acao": "Abrir a publicação oficial e verificar se há prazo de proposta, futura licitação, contratação direta ou oportunidade institucional."
+    }
+  ],
   "fontes_monitoradas": [
     {
       "nome": "PNCP",
