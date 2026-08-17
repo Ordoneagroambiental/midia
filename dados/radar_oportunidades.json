@@ -1,69 +1,29 @@
 {
-  "versao": "4.7",
-  "atualizado_em": "17/08/2026 03:55",
+  "versao": "5.0",
+  "atualizado_em": "17/08/2026 04:02",
   "status": "coleta_concluida",
   "prioridade": "Brasil inteiro → bônus de proximidade para Goiás e Goianésia",
   "resumo": {
-    "total": 1,
-    "brasil": 1,
+    "total": 0,
+    "brasil": 0,
     "goianesia_regiao": 0,
     "goias": 0,
-    "demandas_formais": 1,
+    "demandas_formais": 0,
     "sinais_ambientais": 0
   },
   "diagnostico_coleta": {
-    "requisicoes": 37,
+    "requisicoes": 44,
     "pncp_proposta": 0,
     "pncp_publicacao": 0,
-    "pncp_registros_examinados": 200,
+    "pncp_registros_examinados": 550,
     "html_sinais": 0,
     "paginas_aprofundadas": 24,
     "erros": [
-      "PNCP: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+      "PNCP: ReadTimeout: HTTPSConnectionPool(host='pncp.gov.br', port=443): Read timed out. (read timeout=6)"
     ],
-    "avisos": [
-      "PNCP proposta: limite de 90 segundos atingido; resultado parcial preservado."
-    ]
+    "avisos": []
   },
-  "items": [
-    {
-      "id": "17955386000198-1-000074/2026",
-      "tipo": "DEMANDA FORMAL",
-      "confirmacao": "PRÉ-SELECIONADO",
-      "fonte": "PNCP",
-      "titulo": "Contratação de empresa especializada na prestação de serviços de prestação de serviços de dedetização, desratização, e serviço de limpeza de caixas e reservatórios de água, a fim de atender as necessidades da Secretaria",
-      "municipio": "Cambuquira",
-      "uf": "MG",
-      "regiao_prioridade": "Brasil",
-      "organizacao": "MUNICIPIO DE CAMBUQUIRA",
-      "data_publicacao": "2026-03-31T15:26:13",
-      "prazo": "2026-08-18T08:59:00",
-      "valor_estimado": 103947.16,
-      "modalidade": "Pregão - Eletrônico",
-      "servicos_ordone": [
-        "Irrigação e automação"
-      ],
-      "relacao_comercial": "Contratação ambiental direta",
-      "status_leitura_edital": "LEITURA INCOMPLETA",
-      "documentos_analisados": [],
-      "requisitos_minimos": [],
-      "analise_elegibilidade": "LEITURA INCOMPLETA",
-      "pendencias_identificadas": [
-        "Abrir edital e anexos manualmente"
-      ],
-      "palavras_encontradas": [
-        "reservatório",
-        "grupo:irrigacao"
-      ],
-      "score": 55,
-      "prioridade": "ACOMPANHAR",
-      "url": "https://pncp.gov.br/app/editais/17955386000198/2026/74",
-      "numero_controle_pncp": "17955386000198-1-000074/2026",
-      "escopo_coleta": "Brasil",
-      "fase_pncp": "proposta",
-      "proxima_acao": "Abrir o edital/aviso oficial, validar escopo, habilitação, prazo, local de execução e viabilidade de proposta."
-    }
-  ],
+  "items": [],
   "fontes_monitoradas": [
     {
       "nome": "PNCP",
