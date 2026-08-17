@@ -234,3 +234,27 @@ document.querySelectorAll('a[href*="whatsapp"]').forEach(a=>{
     document.querySelectorAll('[data-radar-filter]').forEach(b=>b.classList.remove('active')); btn.classList.add('active'); draw(btn.dataset.radarFilter);
   }));
 })();
+
+
+/* Observatório Ambiental Mundial Ordone */
+(function(){
+  const list=document.querySelector("#observatorio-list");
+  if(!list) return;
+  let items=[];
+  const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+  const render=(filter="todos")=>{
+    const f=filter.toLocaleLowerCase("pt-BR");
+    const shown=items.filter(x=>f==="todos"||String(x.pais||"").toLocaleLowerCase("pt-BR")===f||String(x.categoria||"").toLocaleLowerCase("pt-BR")===f);
+    if(!shown.length){list.innerHTML='<article class="observatory-empty"><h3>Nenhum item neste filtro.</h3><p>A fonte pode não ter publicado conteúdo aderente nesta coleta. Selecione “Todos”.</p></article>';return;}
+    list.innerHTML=shown.map(x=>'<article class="observatory-card"><div class="observatory-meta"><span>'+esc(x.pais)+'</span><span>'+esc(x.categoria)+'</span><span>'+esc(x.tipo||"Atualidade")+'</span></div><h3>'+esc(x.titulo)+'</h3><p>'+esc(x.resumo)+'</p><div class="observatory-application"><b>Possível aplicação</b><span>'+esc(x.aplicacao)+'</span></div><div class="observatory-source"><span><b>'+esc(x.fonte)+'</b><small>'+esc(x.tipo_fonte)+(x.data?' · '+esc(x.data):'')+'</small></span><a href="'+esc(x.url)+'" target="_blank" rel="noopener noreferrer">Abrir fonte oficial →</a></div></article>').join("");
+  };
+  fetch("dados/observatorio_ambiental.json?ts="+Date.now(),{cache:"no-store"}).then(r=>{if(!r.ok) throw Error("HTTP "+r.status);return r.json()}).then(data=>{
+    items=Array.isArray(data.itens)?data.itens:[];
+    const stamp=document.querySelector("#observatorio-updated-at");
+    if(stamp&&data.atualizado_em){const d=new Date(data.atualizado_em);stamp.textContent="Última curadoria: "+d.toLocaleString("pt-BR");}
+    render();
+  }).catch(()=>{list.innerHTML='<article class="observatory-empty"><h3>Curadoria temporariamente indisponível.</h3><p>As fontes oficiais continuam acessíveis na seção seguinte.</p></article>';});
+  document.querySelectorAll("[data-observatorio-filter]").forEach(btn=>btn.addEventListener("click",()=>{
+    document.querySelectorAll("[data-observatorio-filter]").forEach(b=>b.classList.remove("active")); btn.classList.add("active"); render(btn.dataset.observatorioFilter);
+  }));
+})();
