@@ -1,0 +1,45 @@
+name: Atualizar Curiosidades do Produtor
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '40 */12 * * *'
+  push:
+    paths:
+      - 'scripts/atualizar_curiosidades.py'
+      - 'dados/curiosidades_produtor.json'
+      - '.github/workflows/atualizar-curiosidades.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: curiosidades-produtor
+  cancel-in-progress: true
+
+jobs:
+  atualizar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install requests
+      - name: Verificar fontes oficiais
+        run: python scripts/atualizar_curiosidades.py
+      - name: Publicar atualização
+        run: |
+          git config user.name "ordone-curiosidades"
+          git config user.email "actions@users.noreply.github.com"
+          git add dados/curiosidades_produtor.json
+          if git diff --cached --quiet; then
+            echo "Sem mudanças."
+          else
+            git commit -m "Atualiza quadro Você Sabia"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
