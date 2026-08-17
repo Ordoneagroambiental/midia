@@ -1,6 +1,6 @@
 {
   "versao": "1.0",
-  "atualizado_em": "2026-08-17T00:00:00Z",
+  "atualizado_em": "2026-08-17T15:14:05.755097+00:00",
   "regra": "Somente fonte oficial; abertura só é anunciada com edital e prazo vigentes.",
   "itens": [
     {
@@ -19,7 +19,9 @@
       "cuidado": "O pagamento não é automático e depende de edital, elegibilidade, documentação e adesão.",
       "fonte": "Semad Goiás",
       "url": "https://goias.gov.br/meioambiente/psa-cerrado-em-pe/",
-      "verificado_em": "2026-08-17"
+      "verificado_em": "2026-08-17",
+      "fonte_disponivel": true,
+      "http_status": 200
     },
     {
       "id": "psa-comunidades-tradicionais",
@@ -37,7 +39,9 @@
       "cuidado": "O valor total do programa não corresponde a pagamento individual garantido.",
       "fonte": "Semad Goiás",
       "url": "https://goias.gov.br/meioambiente/psa-comunidades-tradicionais/",
-      "verificado_em": "2026-08-17"
+      "verificado_em": "2026-08-17",
+      "fonte_disponivel": true,
+      "http_status": 200
     },
     {
       "id": "portal-ambiental-semad",
@@ -55,7 +59,9 @@
       "cuidado": "Confirme sempre o endereço oficial e não envie documentos por links recebidos de terceiros.",
       "fonte": "Semad Goiás",
       "url": "https://portal.meioambiente.go.gov.br/",
-      "verificado_em": "2026-08-17"
+      "verificado_em": "2026-08-17",
+      "fonte_disponivel": true,
+      "http_status": 200
     }
   ]
 }
