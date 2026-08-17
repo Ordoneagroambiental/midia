@@ -1,0 +1,61 @@
+{
+  "versao": "1.0",
+  "atualizado_em": "2026-08-17T00:00:00Z",
+  "regra": "Somente fonte oficial; abertura só é anunciada com edital e prazo vigentes.",
+  "itens": [
+    {
+      "id": "psa-cerrado-em-pe",
+      "destaque": true,
+      "chamada": "Você sabia?",
+      "titulo": "Goiás remunera a conservação voluntária de vegetação nativa",
+      "categoria": "Pagamento por Serviços Ambientais",
+      "resumo": "O PSA Cerrado em Pé remunera áreas de vegetação nativa que seriam legalmente passíveis de supressão. APP e Reserva Legal, por já serem protegidas por lei, não entram nesse pagamento.",
+      "publico": "Proprietários rurais elegíveis nos municípios priorizados pelo programa",
+      "territorio": "Goiás",
+      "valor": "R$ 498/ha/ano; R$ 664/ha/ano com compromisso de recuperar nascente degradada",
+      "status": "ACOMPANHAR",
+      "prazo": "Aguardar publicação do próximo edital ou ciclo",
+      "como_participar": "Consultar a página oficial e o Portal Ambiental da Semad antes de iniciar inscrição.",
+      "cuidado": "O pagamento não é automático e depende de edital, elegibilidade, documentação e adesão.",
+      "fonte": "Semad Goiás",
+      "url": "https://goias.gov.br/meioambiente/psa-cerrado-em-pe/",
+      "verificado_em": "2026-08-17"
+    },
+    {
+      "id": "psa-comunidades-tradicionais",
+      "destaque": false,
+      "chamada": "Você sabia?",
+      "titulo": "Goiás criou PSA para comunidades tradicionais",
+      "categoria": "Pagamento por Serviços Ambientais",
+      "resumo": "A Semad informa investimento de R$ 18 milhões em iniciativa destinada a comunidades indígenas e quilombolas que protegem o Cerrado.",
+      "publico": "Comunidades indígenas e quilombolas conforme regras oficiais",
+      "territorio": "Goiás",
+      "valor": "Programa com investimento público anunciado de R$ 18 milhões",
+      "status": "ACOMPANHAR",
+      "prazo": "Consultar chamadas e regras vigentes",
+      "como_participar": "Acompanhar a página oficial da Semad e os editais específicos.",
+      "cuidado": "O valor total do programa não corresponde a pagamento individual garantido.",
+      "fonte": "Semad Goiás",
+      "url": "https://goias.gov.br/meioambiente/psa-comunidades-tradicionais/",
+      "verificado_em": "2026-08-17"
+    },
+    {
+      "id": "portal-ambiental-semad",
+      "destaque": false,
+      "chamada": "Serviço útil",
+      "titulo": "O Portal Ambiental concentra serviços e adesões da Semad",
+      "categoria": "Regularização e serviços",
+      "resumo": "O portal estadual é o canal indicado em editais ambientais de Goiás para cadastros, adesões e acompanhamento de procedimentos.",
+      "publico": "Produtores, proprietários e responsáveis por processos ambientais",
+      "territorio": "Goiás",
+      "valor": "Serviço público digital",
+      "status": "PERMANENTE",
+      "prazo": "Sem prazo único; depende do serviço ou edital",
+      "como_participar": "Acessar o portal oficial e selecionar o serviço correspondente.",
+      "cuidado": "Confirme sempre o endereço oficial e não envie documentos por links recebidos de terceiros.",
+      "fonte": "Semad Goiás",
+      "url": "https://portal.meioambiente.go.gov.br/",
+      "verificado_em": "2026-08-17"
+    }
+  ]
+}
