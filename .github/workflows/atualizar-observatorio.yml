@@ -1,0 +1,43 @@
+name: Atualizar Observatório Ambiental Mundial
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '20 */6 * * *'
+  push:
+    paths:
+      - 'scripts/atualizar_observatorio.py'
+      - '.github/workflows/atualizar-observatorio.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: observatorio-ambiental
+  cancel-in-progress: true
+
+jobs:
+  observatorio:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install requests beautifulsoup4
+      - name: Teste interno
+        run: python scripts/atualizar_observatorio.py --self-test
+      - name: Coleta mundial
+        run: python scripts/atualizar_observatorio.py
+      - name: Publicar atualização
+        run: |
+          git config user.name "ordone-observatorio"
+          git config user.email "actions@users.noreply.github.com"
+          git add dados/observatorio_ambiental.json
+          if git diff --cached --quiet; then
+            echo "Sem mudanças no observatório."
+          else
+            git commit -m "Atualiza Observatório Ambiental Mundial"
+            git push
+          fi
