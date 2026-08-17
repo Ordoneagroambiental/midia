@@ -283,3 +283,19 @@ body{background:#fff}
 .radar-toolbar{padding:14px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .radar-toolbar #radar-updated-at{font-size:13px;margin-bottom:3px}
 @media(max-width:620px){.radar-card-head{flex-direction:column}.radar-score{align-self:flex-start}.radar-card h3{font-size:18px}}
+
+
+/* Observatório Ambiental Mundial */
+.observatory-updated{display:block;font-size:12px;font-weight:800;color:var(--forest);margin-top:12px}
+.observatory-highlight{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:24px 0}
+.observatory-highlight>div{background:var(--forest);color:#fff;border-radius:16px;padding:18px}
+.observatory-highlight strong,.observatory-highlight span{display:block}.observatory-highlight span{font-size:12px;color:#d6e5de;margin-top:4px}
+.observatory-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.observatory-card,.observatory-empty{background:#fff;border:1px solid var(--line);border-radius:20px;padding:24px;box-shadow:0 8px 28px rgba(11,59,46,.05)}
+.observatory-meta{display:flex;gap:7px;flex-wrap:wrap}.observatory-meta span{font-size:10px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:var(--forest);background:#edf5f1;border-radius:999px;padding:5px 8px}
+.observatory-card h3{font-size:21px;line-height:1.25;margin:15px 0 9px}.observatory-card>p{font-size:14px;color:var(--muted)}
+.observatory-application{background:#f5f8f6;border-left:3px solid var(--gold);padding:12px 14px;margin:16px 0}.observatory-application b,.observatory-application span{display:block}.observatory-application b{font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--forest)}.observatory-application span{font-size:13px;color:#526159;margin-top:4px}
+.observatory-source{border-top:1px solid var(--line);padding-top:14px;display:flex;align-items:flex-end;justify-content:space-between;gap:12px}.observatory-source span,.observatory-source small{display:block}.observatory-source small{color:var(--muted);font-size:10px}.observatory-source a{font-size:12px;font-weight:850;color:var(--forest)}
+.observatory-rule{margin-top:22px;padding:16px 18px;border-radius:14px;background:#eaf3ee;color:#3f584c;font-size:13px}
+@media(max-width:850px){.observatory-highlight{grid-template-columns:1fr 1fr}.observatory-grid{grid-template-columns:1fr}}
+@media(max-width:520px){.observatory-highlight{grid-template-columns:1fr}.observatory-source{align-items:flex-start;flex-direction:column}.observatory-card{padding:20px}}
