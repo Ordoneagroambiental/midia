@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Radar Ordone V4.8 — consulta PNCP nacional com limite rígido de tempo.
+"""Radar Ordone V4.9 — consulta PNCP nacional com validação técnica do objeto.
 
 Objetivo: localizar sinais e oportunidades em fontes públicas em todo o Brasil,
 mantendo Goiás e Goianésia como bônus de proximidade, sem realizar contato automático. O contato comercial permanece
@@ -66,6 +66,11 @@ NON_ENVIRONMENTAL_TERMS = (
     "medicamento", "paciente", "assistencia social", "educacao", "matricula",
     "merenda", "transporte escolar", "cultura", "esporte", "turismo",
     "certidao", "tributo", "iptu", "alvara", "nota fiscal", "contracheque",
+)
+UNRELATED_SECTOR_TERMS = (
+    "computador", "notebook", "tablet", "monitor", "licenca de software",
+    "software", "saas", "whatsapp", "inteligencia artificial", "telefonia",
+    "internet", "suporte tecnico", "processamento de linguagem natural",
 )
 INSTITUTIONAL_PAGE_TERMS = (
     "perguntas frequentes", "escola de meio ambiente", "quem e quem",
@@ -171,6 +176,20 @@ def clearly_non_environmental(text):
     return any(term in t for term in NON_ENVIRONMENTAL_TERMS)
 
 
+def relevant_procurement_object(text, cfg):
+    """Aceita somente objeto com um serviço técnico oferecido pela Ordone.
+
+    Menções laterais a secretarias, APP de informática, monitores ou palavras
+    ambientais soltas não transformam uma compra comum em oportunidade ambiental.
+    """
+    t = norm(text)
+    valid_services = [x for x in services_from(text) if x != "Avaliação técnica inicial"]
+    strong = [x for x in HIGH_SIGNAL_TERMS if x in t]
+    if any(x in t for x in UNRELATED_SECTOR_TERMS) and not strong:
+        return False
+    return bool(valid_services and (strong or environmental_evidence(text, cfg)[0]))
+
+
 def institutional_page(text):
     """Rejeita páginas permanentes/informativas que não representam demanda."""
     t = norm(text)
@@ -272,7 +291,11 @@ def keyword_hits(text, cfg):
 
     hits = []
     for kw in cfg.get("palavras_chave", []):
-        if norm(kw) in t:
+        normalized_kw = norm(kw)
+        # Evita que APP seja encontrado dentro de WhatsApp, por exemplo.
+        matched = (bool(re.search(rf"(?<!\w){re.escape(normalized_kw)}(?!\w)", t))
+                   if len(normalized_kw) <= 3 else normalized_kw in t)
+        if matched:
             hits.append(kw)
 
     for group, patterns in EXTRA_PATTERNS.items():
@@ -530,13 +553,14 @@ def pncp_collect(cfg, mode, diagnostics):
                     if not city and scope_name == "Goianésia":
                         city = "Goianésia"
 
+                    # A decisão de relevância usa apenas o objeto e seu complemento.
+                    # Nome do órgão/unidade não pode gerar falso positivo.
                     text = " ".join([
                         str(x.get("objetoCompra") or ""),
                         str(x.get("informacaoComplementar") or ""),
-                        str((x.get("orgaoEntidade") or {}).get("razaoSocial") or ""),
-                        str(unit.get("nomeUnidade") or ""),
-                        str(x.get("modalidadeNome") or ""),
                     ])
+                    if not relevant_procurement_object(text, cfg):
+                        continue
                     hits, strong, explicit = meaningful_hits(text, cfg)
                     if not hits or (not strong and len(explicit) < 1):
                         continue
@@ -553,7 +577,7 @@ def pncp_collect(cfg, mode, diagnostics):
                     out.append({
                         "id": key or f"pncp-{mode}-{scope_name}-{modalidade}-{len(out)+1}",
                         "tipo": kind,
-                        "confirmacao": "CONFIRMADO",
+                        "confirmacao": "CONFIRMADO" if docs_read and reading_status != "LEITURA INCOMPLETA" else "PRÉ-SELECIONADO",
                         "fonte": "PNCP",
                         "titulo": clean(x.get("objetoCompra"), 320),
                         "municipio": clean(city, 80),
@@ -807,7 +831,14 @@ def self_test(cfg):
     assert institutional_page("Escola de Meio Ambiente (Emago)")
     assert not html_formal_evidence("contratação ambiental direta", "https://exemplo.gov.br/assuntos")
     assert html_formal_evidence("Edital nº 12 objeto e prazo para propostas", "https://exemplo.gov.br/licitacoes/edital-12")
-    print("SELF-TEST OK V4.8", s, r, len(h))
+    false_objects = (
+        "Locação de computadores, notebooks, tablets e monitores para a Secretaria de Meio Ambiente",
+        "Solução SaaS de atendimento por WhatsApp com inteligência artificial",
+        "Locação de caminhão coletor e compactador de resíduos sólidos",
+    )
+    assert not any(relevant_procurement_object(x, cfg) for x in false_objects)
+    assert relevant_procurement_object("Execução de PRAD e revegetação de área degradada", cfg)
+    print("SELF-TEST OK V4.9", s, r, len(h), "falsos positivos bloqueados")
 
 
 def main():
@@ -864,7 +895,7 @@ def main():
 
     data = build_output(cfg, items, diagnostics)
     OUT.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print("Radar V4.8 atualizado:", len(items), "itens; registros PNCP examinados:", diagnostics["pncp_registros_examinados"], "requisições:", diagnostics["requisicoes"])
+    print("Radar V4.9 atualizado:", len(items), "itens; registros PNCP examinados:", diagnostics["pncp_registros_examinados"], "requisições:", diagnostics["requisicoes"])
 
 
 if __name__ == "__main__":
