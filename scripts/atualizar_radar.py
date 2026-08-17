@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Radar Ordone V4.9 — consulta PNCP nacional com validação técnica do objeto.
+"""Radar Ordone V5.0 — consulta PNCP nacional com validação técnica contextual.
 
 Objetivo: localizar sinais e oportunidades em fontes públicas em todo o Brasil,
 mantendo Goiás e Goianésia como bônus de proximidade, sem realizar contato automático. O contato comercial permanece
@@ -332,7 +332,11 @@ def services_from(text):
             out.append(label)
 
     add("Recuperação ambiental / PRAD", "recuperacao ambiental", "area degradada", "prad", "prada", "restauracao", "revegetacao", "reflorestamento", "hidrossemeadura")
-    add("Irrigação e automação", "irrigacao", "gotejamento", "aspersao", "microaspersao", "fertirrigacao", "automacao", "bombeamento", "reservatorio")
+    # Termos genéricos como reservatório, automação e bombeamento não bastam.
+    # Eles aparecem com frequência em limpeza predial, TI e saneamento.
+    irrigation_direct = ("irrigacao", "gotejamento", "aspersao", "microaspersao", "fertirrigacao")
+    if any(x in t for x in irrigation_direct):
+        add("Irrigação e automação", *irrigation_direct)
     add("Solo e conservação", "erosao", "assoreamento", "conservacao do solo", "analise de solo", "fertilidade do solo", "drenagem")
     add("Bioengenharia e controle de sedimentos", "palicada", "bioengenharia", "sedimento", "assoreamento")
     add("Geotecnologia / drone", "geoprocessamento", "georreferenciamento", "topografia", "drone", "aerolevantamento", "mapeamento", "sensoriamento remoto")
@@ -783,7 +787,7 @@ def build_output(cfg, items, diagnostics):
         + cfg["prioridade_geografica"].get("regiao_ampliada", [])
     ))
     return {
-        "versao": "4.7",
+        "versao": "5.0",
         "atualizado_em": datetime.now(timezone.utc).astimezone().strftime("%d/%m/%Y %H:%M"),
         "status": "coleta_concluida",
         "prioridade": "Brasil inteiro → bônus de proximidade para Goiás e Goianésia",
@@ -835,10 +839,11 @@ def self_test(cfg):
         "Locação de computadores, notebooks, tablets e monitores para a Secretaria de Meio Ambiente",
         "Solução SaaS de atendimento por WhatsApp com inteligência artificial",
         "Locação de caminhão coletor e compactador de resíduos sólidos",
+        "Dedetização, desratização e limpeza de caixas e reservatórios de água",
     )
     assert not any(relevant_procurement_object(x, cfg) for x in false_objects)
     assert relevant_procurement_object("Execução de PRAD e revegetação de área degradada", cfg)
-    print("SELF-TEST OK V4.9", s, r, len(h), "falsos positivos bloqueados")
+    print("SELF-TEST OK V5.0", s, r, len(h), "falsos positivos bloqueados")
 
 
 def main():
@@ -895,7 +900,7 @@ def main():
 
     data = build_output(cfg, items, diagnostics)
     OUT.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print("Radar V4.9 atualizado:", len(items), "itens; registros PNCP examinados:", diagnostics["pncp_registros_examinados"], "requisições:", diagnostics["requisicoes"])
+    print("Radar V5.0 atualizado:", len(items), "itens; registros PNCP examinados:", diagnostics["pncp_registros_examinados"], "requisições:", diagnostics["requisicoes"])
 
 
 if __name__ == "__main__":
