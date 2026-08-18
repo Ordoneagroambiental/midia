@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Radar Ordone V6.3 — radar nacional cumulativo com validação técnica contextual.
+"""Radar Ordone V6.4 — radar nacional cumulativo com validação técnica contextual.
 
 Objetivo: localizar sinais e oportunidades em fontes públicas em todo o Brasil,
 mantendo Goiás e Goianésia como bônus de proximidade, sem realizar contato automático. O contato comercial permanece
@@ -112,6 +112,7 @@ PURE_CIVIL_TERMS = (
     "drenagem pluvial", "drenagem urbana", "meio-fio", "terraplenagem",
     "reforma predial", "construcao de edificio", "construcao de escola",
     "construcao de unidade", "obra viaria", "infraestrutura urbana",
+    "muro de contencao",
 )
 CONSTRUCTION_ENV_INTERFACE_TERMS = (
     "gestao ambiental de obra", "gestao ambiental de obras",
@@ -211,6 +212,25 @@ def relevant_procurement_object(text, cfg):
     ambientais soltas não transformam uma compra comum em oportunidade ambiental.
     """
     t = norm(text)
+    # Palavras como "irrigação" em equipamento hospitalar não representam
+    # demanda ambiental. Contextos explicitamente alheios são sempre rejeitados.
+    if clearly_non_environmental(text):
+        return False
+
+    # A Ordone presta serviços técnicos; aquisições puras de materiais e
+    # equipamentos não são oportunidades comerciais compatíveis.
+    supply_object = any(x in t for x in (
+        "aquisicao de", "compra de", "fornecimento de materiais",
+        "fornecimento de equipamentos",
+    ))
+    service_execution = any(x in t for x in (
+        "prestacao de servico", "prestacao dos servicos", "servicos tecnicos",
+        "execucao de prad", "execucao de servicos ambientais",
+        "elaboracao de projeto", "levantamento", "aerolevantamento",
+    ))
+    if supply_object and not service_execution:
+        return False
+
     valid_services = [x for x in services_from(text) if x != "Avaliação técnica inicial"]
     strong = [x for x in HIGH_SIGNAL_TERMS if x in t]
     if any(x in t for x in UNRELATED_SECTOR_TERMS) and not strong:
@@ -1138,7 +1158,7 @@ def build_output(cfg, items, diagnostics):
         + cfg["prioridade_geografica"].get("regiao_ampliada", [])
     ))
     return {
-        "versao": "6.3",
+        "versao": "6.4",
         "atualizado_em": datetime.now(timezone.utc).astimezone().strftime("%d/%m/%Y %H:%M"),
         "status": (
             "coleta_concluida"
@@ -1199,11 +1219,14 @@ def self_test(cfg):
         "Locação de caminhão coletor e compactador de resíduos sólidos",
         "Dedetização, desratização e limpeza de caixas e reservatórios de água",
         "Execução de serviços e obras de pavimentação e drenagem no ambiente urbano",
+        "Aquisição de materiais para manutenção de sistemas de refrigeração e de máquinas de jardinagem",
+        "Aquisição de módulo de artroscopia para bomba de irrigação para hospital universitário",
+        "Execução de muro de contenção para conter desbarrancamento e avanço da erosão em rodovia",
     )
     assert not any(relevant_procurement_object(x, cfg) for x in false_objects)
     assert relevant_procurement_object("Execução de PRAD e revegetação de área degradada", cfg)
     assert relevant_procurement_object("Supervisão ambiental e controle de erosão em obra de pavimentação", cfg)
-    print("SELF-TEST OK V6.3", s, r, len(h), "falsos positivos bloqueados")
+    print("SELF-TEST OK V6.4", s, r, len(h), "falsos positivos bloqueados")
 
 
 def main():
@@ -1290,7 +1313,7 @@ def main():
 
     data = build_output(cfg, items, diagnostics)
     OUT.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print("Radar V6.3 atualizado:", len(items), "itens; registros PNCP examinados:", diagnostics["pncp_registros_examinados"], "requisições:", diagnostics["requisicoes"])
+    print("Radar V6.4 atualizado:", len(items), "itens; registros PNCP examinados:", diagnostics["pncp_registros_examinados"], "requisições:", diagnostics["requisicoes"])
 
 
 if __name__ == "__main__":
