@@ -1,18 +1,18 @@
 {
-  "versao": "6.3",
-  "atualizado_em": "18/08/2026 21:36",
+  "versao": "6.4",
+  "atualizado_em": "18/08/2026 21:47",
   "status": "coleta_concluida",
   "prioridade": "Brasil inteiro → bônus de proximidade para Goiás e Goianésia",
   "resumo": {
-    "total": 4,
-    "brasil": 4,
+    "total": 1,
+    "brasil": 1,
     "goianesia_regiao": 0,
     "goias": 0,
-    "demandas_formais": 4,
+    "demandas_formais": 1,
     "sinais_ambientais": 0
   },
   "diagnostico_coleta": {
-    "requisicoes": 38,
+    "requisicoes": 35,
     "pncp_proposta": 0,
     "pncp_publicacao": 0,
     "pncp_registros_examinados": 0,
@@ -21,7 +21,7 @@
     "compras_gov_respostas_validas": 5,
     "compras_gov_registros_examinados": 400,
     "compras_gov_falhas": 0,
-    "compras_gov_itens": 3,
+    "compras_gov_itens": 0,
     "html_sinais": 0,
     "paginas_aprofundadas": 12,
     "erros": [
@@ -77,117 +77,6 @@
       "fase_pncp": "proposta",
       "proxima_acao": "Abrir o edital/aviso oficial, validar escopo, habilitação, prazo, local de execução e viabilidade de proposta.",
       "origem_historica": true
-    },
-    {
-      "id": "75771477000170-1-000248/2026",
-      "tipo": "DEMANDA FORMAL",
-      "confirmacao": "PRÉ-SELECIONADO",
-      "fonte": "Compras.gov — Dados Abertos",
-      "titulo": "Execução de muro de contenção para conter o desbarrancamento e avanço da erosão na Av. Dez de Dezembro / Rodovia Carlos João Strass, Londrina-PR",
-      "municipio": "LONDRINA",
-      "uf": "PR",
-      "regiao_prioridade": "Brasil",
-      "organizacao": "MUNICIPIO DE LONDRINA",
-      "data_publicacao": "2026-07-06T17:36:45",
-      "prazo": "",
-      "valor_estimado": 707222.82,
-      "modalidade": "Concorrência - Eletrônica",
-      "servicos_ordone": [
-        "Solo e conservação"
-      ],
-      "relacao_comercial": "Prestação ambiental para obra/construtora",
-      "status_leitura_edital": "LEITURA INCOMPLETA",
-      "documentos_analisados": [],
-      "requisitos_minimos": [],
-      "analise_elegibilidade": "LEITURA INCOMPLETA",
-      "pendencias_identificadas": [
-        "Abrir edital e anexos manualmente"
-      ],
-      "palavras_encontradas": [
-        "erosão",
-        "grupo:solo_agua"
-      ],
-      "score": 45,
-      "prioridade": "ACOMPANHAR",
-      "url": "https://pncp.gov.br/app/editais/75771477000170/2026/248",
-      "numero_controle_pncp": "75771477000170-1-000248/2026",
-      "escopo_coleta": "Brasil",
-      "fase_pncp": "publicacao",
-      "proxima_acao": "Abrir a fonte oficial, confirmar prazo, escopo, habilitação e viabilidade antes de qualquer abordagem."
-    },
-    {
-      "id": "00394502000144-1-007307/2026",
-      "tipo": "DEMANDA FORMAL",
-      "confirmacao": "PRÉ-SELECIONADO",
-      "fonte": "Compras.gov — Dados Abertos",
-      "titulo": "Aquisição de materiais para manutenção de sistemas de refrigeração e de máquinas de jardinagem",
-      "municipio": "RIO DE JANEIRO",
-      "uf": "RJ",
-      "regiao_prioridade": "Brasil",
-      "organizacao": "COMANDO DA MARINHA",
-      "data_publicacao": "2026-07-06T07:00:42",
-      "prazo": "",
-      "valor_estimado": 716543.2,
-      "modalidade": "Pregão - Eletrônico",
-      "servicos_ordone": [
-        "Recuperação ambiental / PRAD"
-      ],
-      "relacao_comercial": "Prestação ambiental para obra/construtora",
-      "status_leitura_edital": "LEITURA INCOMPLETA",
-      "documentos_analisados": [],
-      "requisitos_minimos": [],
-      "analise_elegibilidade": "LEITURA INCOMPLETA",
-      "pendencias_identificadas": [
-        "Abrir edital e anexos manualmente"
-      ],
-      "palavras_encontradas": [
-        "prad",
-        "grupo:ambiental"
-      ],
-      "score": 45,
-      "prioridade": "ACOMPANHAR",
-      "url": "https://pncp.gov.br/app/editais/00394502000144/2026/7307",
-      "numero_controle_pncp": "00394502000144-1-007307/2026",
-      "escopo_coleta": "Brasil",
-      "fase_pncp": "publicacao",
-      "proxima_acao": "Abrir a fonte oficial, confirmar prazo, escopo, habilitação e viabilidade antes de qualquer abordagem."
-    },
-    {
-      "id": "15126437000305-1-002447/2026",
-      "tipo": "DEMANDA FORMAL",
-      "confirmacao": "PRÉ-SELECIONADO",
-      "fonte": "Compras.gov — Dados Abertos",
-      "titulo": "A aquisição de módulo de artroscopia para bomba de irrigação, por meio de inexigibilidade de licitação, a fim de atender as necessidades do Hospital Universitário São Carlos - HU-UFSCar, pertencente à Rede da Empresa Brasileira de Serviços Hospitalares (Rede Ebserh), conforme especificações e demais condições estabelecidas neste instrumento.",
-      "municipio": "SÃO CARLOS",
-      "uf": "SP",
-      "regiao_prioridade": "Brasil",
-      "organizacao": "EMPRESA BRASILEIRA DE SERVICOS HOSPITALARES - EBSERH",
-      "data_publicacao": "2026-07-06T12:34:49",
-      "prazo": "",
-      "valor_estimado": 23370.69,
-      "modalidade": "Inexigibilidade",
-      "servicos_ordone": [
-        "Irrigação e automação"
-      ],
-      "relacao_comercial": "Contratação ambiental direta",
-      "status_leitura_edital": "LEITURA INCOMPLETA",
-      "documentos_analisados": [],
-      "requisitos_minimos": [],
-      "analise_elegibilidade": "LEITURA INCOMPLETA",
-      "pendencias_identificadas": [
-        "Abrir edital e anexos manualmente"
-      ],
-      "palavras_encontradas": [
-        "irrigação",
-        "grupo:irrigacao"
-      ],
-      "score": 45,
-      "prioridade": "ACOMPANHAR",
-      "url": "https://pncp.gov.br/app/editais/15126437000305/2026/2447",
-      "numero_controle_pncp": "15126437000305-1-002447/2026",
-      "escopo_coleta": "Brasil",
-      "fase_pncp": "publicacao",
-      "proxima_acao": "Abrir a fonte oficial, confirmar prazo, escopo, habilitação e viabilidade antes de qualquer abordagem."
     }
   ],
   "fontes_monitoradas": [
