@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Radar Ordone V6.1 — radar nacional cumulativo com validação técnica contextual.
+"""Radar Ordone V6.2 — radar nacional cumulativo com validação técnica contextual.
 
 Objetivo: localizar sinais e oportunidades em fontes públicas em todo o Brasil,
 mantendo Goiás e Goianésia como bônus de proximidade, sem realizar contato automático. O contato comercial permanece
@@ -104,9 +104,33 @@ CONSTRUCTION_MARKET_TERMS = (
     "concessionaria", "pavimentacao", "duplicacao", "implantacao",
 )
 
+# Obras civis só interessam quando o próprio objeto informa uma interface
+# ambiental/geotecnológica que a Ordone realmente possa executar. A presença de
+# palavras genéricas como "ambiente urbano" ou "drenagem" não é suficiente.
+PURE_CIVIL_TERMS = (
+    "pavimentacao", "recapeamento", "asfaltamento", "asfalto", "calcamento",
+    "drenagem pluvial", "drenagem urbana", "meio-fio", "terraplenagem",
+    "reforma predial", "construcao de edificio", "construcao de escola",
+    "construcao de unidade", "obra viaria", "infraestrutura urbana",
+)
+CONSTRUCTION_ENV_INTERFACE_TERMS = (
+    "gestao ambiental de obra", "gestao ambiental de obras",
+    "supervisao ambiental", "acompanhamento ambiental de obra",
+    "controle ambiental de obra", "programa ambiental da construcao",
+    "licenciamento ambiental", "monitoramento ambiental",
+    "recuperacao ambiental", "area degradada", "prad", "prada",
+    "revegetacao", "reflorestamento", "hidrossemeadura",
+    "compensacao ambiental", "inventario florestal", "supressao vegetal",
+    "plantio compensatorio", "mudas nativas", "bioengenharia",
+    "controle de erosao", "controle de sedimentos", "pgrs",
+    "residuo da construcao", "residuos da construcao", "outorga",
+    "geoprocessamento", "georreferenciamento", "aerolevantamento",
+    "sensoriamento remoto", "drone", "mapeamento ambiental",
+)
+
 EXTRA_PATTERNS = {
     "ambiental": [
-        r"\bambient\w*", r"\bflorest\w*", r"\breveget\w*", r"\breflorest\w*",
+        r"\bambient(?:al|ais|almente)\b", r"\bflorest\w*", r"\breveget\w*", r"\breflorest\w*",
         r"\brestaura\w*", r"\brecupera\w*\s+(?:de\s+)?(?:area|areas|app|nascente)",
         r"\bprad\b", r"\bprada\b", r"\bcompensa\w*\s+ambient\w*",
         r"\blicenciamento\s+ambient\w*", r"\bcondicionante\w*\s+ambient\w*",
@@ -190,6 +214,11 @@ def relevant_procurement_object(text, cfg):
     valid_services = [x for x in services_from(text) if x != "Avaliação técnica inicial"]
     strong = [x for x in HIGH_SIGNAL_TERMS if x in t]
     if any(x in t for x in UNRELATED_SECTOR_TERMS) and not strong:
+        return False
+    if (
+        any(x in t for x in PURE_CIVIL_TERMS)
+        and not any(x in t for x in CONSTRUCTION_ENV_INTERFACE_TERMS)
+    ):
         return False
     return bool(valid_services and (strong or environmental_evidence(text, cfg)[0]))
 
@@ -308,14 +337,14 @@ def keyword_hits(text, cfg):
 
     # Combinações comerciais relevantes que aparecem frequentemente em objetos públicos.
     combos = [
-        ("serviços ambientais", ("servic", "ambient")),
-        ("engenharia ambiental", ("engenharia", "ambient")),
-        ("recuperação de áreas", ("recuper", "area")),
-        ("manutenção de áreas verdes", ("manutenc", "area", "verde")),
-        ("projeto de irrigação", ("projet", "irriga")),
+        ("serviços ambientais", r"\bservic\w*(?:\s+\w+){0,3}\s+ambient(?:al|ais)\b"),
+        ("engenharia ambiental", r"\bengenharia\s+ambient(?:al|ais)\b"),
+        ("recuperação de áreas", r"\brecuper\w*(?:\s+\w+){0,3}\s+areas?\b"),
+        ("manutenção de áreas verdes", r"\bmanutenc\w*(?:\s+\w+){0,3}\s+areas?\s+verdes?\b"),
+        ("projeto de irrigação", r"\bprojet\w*(?:\s+\w+){0,3}\s+irriga\w*\b"),
     ]
-    for label, parts in combos:
-        if all(p in t for p in parts):
+    for label, pattern in combos:
+        if re.search(pattern, t):
             hits.append(label)
 
     seen, out = set(), []
@@ -1077,7 +1106,7 @@ def build_output(cfg, items, diagnostics):
         + cfg["prioridade_geografica"].get("regiao_ampliada", [])
     ))
     return {
-        "versao": "6.1",
+        "versao": "6.2",
         "atualizado_em": datetime.now(timezone.utc).astimezone().strftime("%d/%m/%Y %H:%M"),
         "status": (
             "coleta_concluida"
@@ -1137,10 +1166,12 @@ def self_test(cfg):
         "Solução SaaS de atendimento por WhatsApp com inteligência artificial",
         "Locação de caminhão coletor e compactador de resíduos sólidos",
         "Dedetização, desratização e limpeza de caixas e reservatórios de água",
+        "Execução de serviços e obras de pavimentação e drenagem no ambiente urbano",
     )
     assert not any(relevant_procurement_object(x, cfg) for x in false_objects)
     assert relevant_procurement_object("Execução de PRAD e revegetação de área degradada", cfg)
-    print("SELF-TEST OK V6.0", s, r, len(h), "falsos positivos bloqueados")
+    assert relevant_procurement_object("Supervisão ambiental e controle de erosão em obra de pavimentação", cfg)
+    print("SELF-TEST OK V6.2", s, r, len(h), "falsos positivos bloqueados")
 
 
 def main():
