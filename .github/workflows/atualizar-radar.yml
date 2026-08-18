@@ -3,7 +3,8 @@ name: Atualizar Radar Ordone
 on:
   workflow_dispatch:
   schedule:
-    - cron: '15 10 * * *'
+    # Atualiza a cada 4 horas; horários em UTC.
+    - cron: '27 */4 * * *'
   push:
     paths:
       - 'scripts/atualizar_radar.py'
@@ -14,9 +15,14 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: radar-ordone-main
+  cancel-in-progress: true
+
 jobs:
   radar:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
 
     steps:
       - uses: actions/checkout@v4
@@ -25,7 +31,7 @@ jobs:
         with:
           python-version: '3.12'
 
-      - run: pip install requests beautifulsoup4 pypdf
+      - run: pip install --retries 5 --timeout 60 requests beautifulsoup4 pypdf
 
       - name: Teste interno do radar
         run: python scripts/atualizar_radar.py --self-test
