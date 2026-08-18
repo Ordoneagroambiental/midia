@@ -170,7 +170,7 @@ document.querySelectorAll('a[href*="whatsapp"]').forEach(a=>{
 })();
 
 
-// V3.8 — Radar Ordone Nacional: Brasil inteiro com bônus de proximidade.
+// V6.6 — Radar nacional com lista positiva do portfólio Ordone.
 (function(){
   const target=document.getElementById('radar-opportunity-list');
   if(!target) return;
@@ -209,7 +209,7 @@ document.querySelectorAll('a[href*="whatsapp"]').forEach(a=>{
     const items=radarItems.filter(x=>filter==='todos'||(filter==='brasil'&&inBrazil(x))||(filter==='goias'&&inGoias(x))||(filter==='formal'&&x.tipo==='DEMANDA FORMAL')||(filter==='alta'&&x.prioridade==='ALTA'));
     if(!items.length){
       const unavailable=radarStatus==='fonte_principal_indisponivel';
-      target.innerHTML='<article class="radar-empty"><h3>'+(unavailable?'Fonte oficial temporariamente indisponível.':'Nenhuma oportunidade válida neste filtro.')+'</h3><p>'+(unavailable?'O PNCP não respondeu nesta tentativa. O robô não exibirá registros antigos ou vencidos e tentará novamente automaticamente.':'A fonte foi consultada, mas nenhum edital vigente e compatível passou pela validação técnica.')+'</p></article>';
+      target.innerHTML='<article class="radar-empty"><h3>'+(unavailable?'Fonte oficial temporariamente indisponível.':'Nenhuma oportunidade válida neste filtro.')+'</h3><p>'+(unavailable?'O PNCP não respondeu nesta tentativa. O robô não exibirá registros antigos ou vencidos e tentará novamente automaticamente.':'A fonte foi consultada, mas nenhum edital vigente com serviço direto do portfólio Ordone passou pelo filtro rigoroso.')+'</p></article>';
       return;
     }
     target.innerHTML=items.map(x=>`<article class="radar-card" data-priority="${esc(x.prioridade||'')}">
