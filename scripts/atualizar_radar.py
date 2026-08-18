@@ -240,6 +240,14 @@ def relevant_procurement_object(text, cfg):
     if sum(term in t for term in compound_urban_terms) >= 2:
         return False
 
+    # Mapeamentos R3/R4 são estudos geológico-geotécnicos especializados,
+    # não simples serviços de drone/geoprocessamento ambiental.
+    if (
+        "setorizacao de areas de risco" in t
+        or ("areas de risco" in t and "r3" in t and "r4" in t)
+    ):
+        return False
+
     valid_services = [x for x in services_from(text) if x != "Avaliação técnica inicial"]
     strong = [x for x in HIGH_SIGNAL_TERMS if x in t]
     if any(x in t for x in UNRELATED_SECTOR_TERMS) and not strong:
@@ -286,6 +294,12 @@ def environmental_evidence(text, cfg):
 def market_relation(text):
     """Classifica como a Ordone pode entrar comercialmente na demanda."""
     t = norm(text)
+    partnership_terms = (
+        "estudo de viabilidade tecnica, ambiental e economica", "evtae",
+        "falesias", "projeto hidraulico", "substituicao de travessias", "pontes",
+    )
+    if any(x in t for x in partnership_terms):
+        return "Parceria técnica / consórcio a avaliar"
     if any(x in t for x in CONSTRUCTION_MARKET_TERMS):
         return "Prestação ambiental para obra/construtora"
     return "Contratação ambiental direta"
@@ -1279,6 +1293,7 @@ def self_test(cfg):
         "Aquisição de módulo de artroscopia para bomba de irrigação para hospital universitário",
         "Execução de muro de contenção para conter desbarrancamento e avanço da erosão em rodovia",
         "Revisão do Plano Diretor com cadastro técnico multifinalitário, recadastramento imobiliário e aerolevantamento",
+        "Mapeamento e setorização de áreas de risco R3 e R4 para municípios",
     )
     assert not any(relevant_procurement_object(x, cfg) for x in false_objects)
     assert relevant_procurement_object("Execução de PRAD e revegetação de área degradada", cfg)
