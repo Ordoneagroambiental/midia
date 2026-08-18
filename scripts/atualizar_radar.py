@@ -42,7 +42,7 @@ OUT = ROOT / "dados" / "radar_oportunidades.json"
 BR_TZ = ZoneInfo("America/Sao_Paulo")
 
 UA = {
-    "User-Agent": "Mozilla/5.0 (compatible; OrdoneRadar/4.7; +https://ordoneagroambiental.github.io/midia/)",
+    "User-Agent": "Mozilla/5.0 (compatible; OrdoneRadar/6.5; +https://ordoneagroambiental.github.io/midia/)",
     "Accept": "application/json,text/html;q=0.9,*/*;q=0.8",
 }
 
