@@ -1,18 +1,18 @@
 {
   "versao": "6.5",
-  "atualizado_em": "18/08/2026 19:37 (horário de Brasília)",
+  "atualizado_em": "18/08/2026 19:45 (horário de Brasília)",
   "status": "coleta_contingencial",
   "prioridade": "Brasil inteiro → bônus de proximidade para Goiás e Goianésia",
   "resumo": {
-    "total": 3,
-    "brasil": 3,
+    "total": 2,
+    "brasil": 2,
     "goianesia_regiao": 0,
     "goias": 0,
-    "demandas_formais": 3,
+    "demandas_formais": 2,
     "sinais_ambientais": 0
   },
   "diagnostico_coleta": {
-    "requisicoes": 33,
+    "requisicoes": 34,
     "pncp_proposta": 0,
     "pncp_publicacao": 0,
     "pncp_registros_examinados": 0,
@@ -22,13 +22,12 @@
     "compras_gov_registros_examinados": 3135,
     "compras_gov_paginas_examinadas": 9,
     "compras_gov_falhas": 0,
-    "compras_gov_itens": 3,
+    "compras_gov_itens": 2,
     "html_sinais": 0,
     "paginas_aprofundadas": 12,
     "erros": [
       "PNCP indisponível após 2 tentativas: ReadTimeout: HTTPSConnectionPool(host='pncp.gov.br', port=443): Read timed out. (read timeout=12)",
-      "PNCP indisponível após 2 tentativas: ReadTimeout: HTTPSConnectionPool(host='pncp.gov.br', port=443): Read timed out. (read timeout=12)",
-      "PNCP: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+      "PNCP indisponível após 2 tentativas: ReadTimeout: HTTPSConnectionPool(host='pncp.gov.br', port=443): Read timed out. (read timeout=12)"
     ],
     "avisos": [
       "PNCP: circuito temporariamente interrompido após duas falhas; acionando a contingência oficial.",
@@ -55,7 +54,7 @@
       "servicos_ordone": [
         "Solo e conservação"
       ],
-      "relacao_comercial": "Contratação ambiental direta",
+      "relacao_comercial": "Parceria técnica / consórcio a avaliar",
       "status_leitura_edital": "LEITURA INCOMPLETA",
       "documentos_analisados": [],
       "requisitos_minimos": [],
@@ -94,7 +93,7 @@
       "servicos_ordone": [
         "Solo e conservação"
       ],
-      "relacao_comercial": "Contratação ambiental direta",
+      "relacao_comercial": "Parceria técnica / consórcio a avaliar",
       "status_leitura_edital": "LEITURA INCOMPLETA",
       "documentos_analisados": [],
       "requisitos_minimos": [],
@@ -110,44 +109,6 @@
       "prioridade": "ACOMPANHAR",
       "url": "https://pncp.gov.br/app/editais/42498733000148/2026/1394",
       "numero_controle_pncp": "42498733000148-1-001394/2026",
-      "escopo_coleta": "Brasil",
-      "fase_pncp": "contingencia_compras_gov",
-      "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
-    },
-    {
-      "id": "00000368000150-1-000049/2026",
-      "tipo": "DEMANDA FORMAL",
-      "confirmacao": "PRÉ-SELECIONADO",
-      "fonte": "Compras.gov — Dados Abertos",
-      "titulo": "Serviço técnico especializado de natureza predominantemente intelectual, consistente na elaboração de mapeamento e setorização de áreas de risco R3 e R4 para 13 municípios Paulistas.",
-      "municipio": "SÃO PAULO",
-      "uf": "SP",
-      "regiao_prioridade": "Brasil",
-      "organizacao": "CASA MILITAR DO GABINETE DO GOVERNADOR",
-      "data_publicacao": "2026-07-15T12:13:24",
-      "prazo": "2026-08-20T09:00:00",
-      "valor_estimado": 302600.0,
-      "modalidade": "Concorrência - Eletrônica",
-      "situacao_compra": "Divulgada no PNCP",
-      "servicos_ordone": [
-        "Geotecnologia / drone"
-      ],
-      "relacao_comercial": "Contratação ambiental direta",
-      "status_leitura_edital": "LEITURA INCOMPLETA",
-      "documentos_analisados": [],
-      "requisitos_minimos": [],
-      "analise_elegibilidade": "LEITURA INCOMPLETA",
-      "pendencias_identificadas": [
-        "Abrir edital e anexos oficiais antes de decidir pela participação"
-      ],
-      "palavras_encontradas": [
-        "mapeamento",
-        "grupo:geotecnologia"
-      ],
-      "score": 55,
-      "prioridade": "ACOMPANHAR",
-      "url": "https://pncp.gov.br/app/editais/00000368000150/2026/49",
-      "numero_controle_pncp": "00000368000150-1-000049/2026",
       "escopo_coleta": "Brasil",
       "fase_pncp": "contingencia_compras_gov",
       "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
