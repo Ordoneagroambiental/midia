@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Radar Ordone V6.2 — radar nacional cumulativo com validação técnica contextual.
+"""Radar Ordone V6.3 — radar nacional cumulativo com validação técnica contextual.
 
 Objetivo: localizar sinais e oportunidades em fontes públicas em todo o Brasil,
 mantendo Goiás e Goianésia como bônus de proximidade, sem realizar contato automático. O contato comercial permanece
@@ -444,38 +444,70 @@ def pncp_document_text(control, diagnostics):
         return "", [], "LEITURA INCOMPLETA"
     cnpj, seq, year = parts
     base = f"https://pncp.gov.br/pncp-api/v1/orgaos/{cnpj}/compras/{year}/{int(seq)}/arquivos"
+    docs = []
     try:
         r = requests.get(base, headers=UA, timeout=20)
         diagnostics["requisicoes"] += 1
-        if not r.ok:
-            return "", [], "LEITURA INCOMPLETA"
-        docs = r.json() if "json" in r.headers.get("content-type", "") else []
-        if isinstance(docs, dict):
-            docs = docs.get("data") or docs.get("items") or []
-        texts, names = [], []
-        for i, doc in enumerate((docs or [])[:6]):
-            serial = doc.get("sequencialDocumento") or doc.get("sequencial") or i + 1
-            url = safe_url(doc.get("url") or doc.get("uri") or doc.get("link")) or f"{base}/{serial}"
-            name = clean(doc.get("titulo") or doc.get("nome") or doc.get("descricao") or f"Anexo {i+1}", 140)
-            try:
-                f = requests.get(url, headers=UA, timeout=25)
-                diagnostics["requisicoes"] += 1
-                if not f.ok or len(f.content) > 15_000_000:
-                    continue
-                is_pdf = "pdf" in f.headers.get("content-type", "").lower() or url.lower().endswith(".pdf")
-                body = extract_pdf_text(f.content) if is_pdf else clean(f.text, 30000)
-                if body:
-                    texts.append(body)
-                    names.append(name)
-                if len(texts) >= 3:
-                    break
-            except Exception:
-                continue
-        joined = clean(" ".join(texts), 180000)
-        return joined, names, ("ANALISADO" if len(joined) >= 500 else "LEITURA INCOMPLETA")
+        if r.ok and "json" in r.headers.get("content-type", ""):
+            docs = r.json()
+            if isinstance(docs, dict):
+                docs = docs.get("data") or docs.get("items") or []
     except Exception as exc:
-        diagnostics["avisos"].append(f"Anexos PNCP: {type(exc).__name__}: {str(exc)[:100]}")
-        return "", [], "LEITURA INCOMPLETA"
+        diagnostics["avisos"].append(f"Lista de anexos PNCP: {type(exc).__name__}: {str(exc)[:100]}")
+
+    # O catálogo de anexos do PNCP por vezes redireciona para uma API auxiliar
+    # indisponível, embora os arquivos numerados continuem acessíveis. Nesse
+    # caso, tenta uma faixa curta de sequenciais oficiais, sem usar buscadores.
+    candidates = list((docs or [])[:6])
+    direct_fallback = not candidates
+    if direct_fallback:
+        candidates = [
+            {"sequencialDocumento": serial, "titulo": f"Anexo PNCP {serial}"}
+            for serial in range(1, 11)
+        ]
+
+    texts, names = [], []
+    for i, doc in enumerate(candidates):
+        serial = doc.get("sequencialDocumento") or doc.get("sequencial") or i + 1
+        url = safe_url(doc.get("url") or doc.get("uri") or doc.get("link")) or f"{base}/{serial}"
+        name = clean(doc.get("titulo") or doc.get("nome") or doc.get("descricao") or f"Anexo {i+1}", 140)
+        try:
+            f = requests.get(url, headers=UA, timeout=18)
+            diagnostics["requisicoes"] += 1
+            if not f.ok or not f.content or len(f.content) > 15_000_000:
+                continue
+            content_type = f.headers.get("content-type", "").lower()
+            is_pdf = (
+                "pdf" in content_type
+                or url.lower().endswith(".pdf")
+                or f.content[:5] == b"%PDF-"
+            )
+            text_type = any(x in content_type for x in ("text/", "json", "xml"))
+            if not is_pdf and not text_type:
+                continue
+            error_text = norm(f.content[:2000].decode("utf-8", "ignore"))
+            if any(marker in error_text for marker in (
+                "whitelabel error",
+                "internal server error",
+                "bad gateway",
+                "pagina nao encontrada",
+                "not found",
+                "access denied",
+            )):
+                continue
+            body = extract_pdf_text(f.content) if is_pdf else clean(f.text, 30000)
+            if body:
+                texts.append(body)
+                names.append(name)
+            if len(texts) >= 3:
+                break
+        except Exception:
+            continue
+
+    if direct_fallback and texts:
+        diagnostics["avisos"].append("Anexos PNCP lidos pela rota numerada de contingência.")
+    joined = clean(" ".join(texts), 180000)
+    return joined, names, ("ANALISADO" if len(joined) >= 500 else "LEITURA INCOMPLETA")
 
 
 REQUIREMENT_RULES = {
@@ -1106,7 +1138,7 @@ def build_output(cfg, items, diagnostics):
         + cfg["prioridade_geografica"].get("regiao_ampliada", [])
     ))
     return {
-        "versao": "6.2",
+        "versao": "6.3",
         "atualizado_em": datetime.now(timezone.utc).astimezone().strftime("%d/%m/%Y %H:%M"),
         "status": (
             "coleta_concluida"
@@ -1171,7 +1203,7 @@ def self_test(cfg):
     assert not any(relevant_procurement_object(x, cfg) for x in false_objects)
     assert relevant_procurement_object("Execução de PRAD e revegetação de área degradada", cfg)
     assert relevant_procurement_object("Supervisão ambiental e controle de erosão em obra de pavimentação", cfg)
-    print("SELF-TEST OK V6.2", s, r, len(h), "falsos positivos bloqueados")
+    print("SELF-TEST OK V6.3", s, r, len(h), "falsos positivos bloqueados")
 
 
 def main():
@@ -1258,7 +1290,7 @@ def main():
 
     data = build_output(cfg, items, diagnostics)
     OUT.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print("Radar V6.1 atualizado:", len(items), "itens; registros PNCP examinados:", diagnostics["pncp_registros_examinados"], "requisições:", diagnostics["requisicoes"])
+    print("Radar V6.3 atualizado:", len(items), "itens; registros PNCP examinados:", diagnostics["pncp_registros_examinados"], "requisições:", diagnostics["requisicoes"])
 
 
 if __name__ == "__main__":
