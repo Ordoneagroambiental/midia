@@ -1,58 +1,134 @@
 {
-  "versao": "6.4",
-  "atualizado_em": "18/08/2026 21:47",
-  "status": "coleta_concluida",
+  "versao": "6.5",
+  "atualizado_em": "18/08/2026 19:37 (horário de Brasília)",
+  "status": "coleta_contingencial",
   "prioridade": "Brasil inteiro → bônus de proximidade para Goiás e Goianésia",
   "resumo": {
-    "total": 1,
-    "brasil": 1,
+    "total": 3,
+    "brasil": 3,
     "goianesia_regiao": 0,
     "goias": 0,
-    "demandas_formais": 1,
+    "demandas_formais": 3,
     "sinais_ambientais": 0
   },
   "diagnostico_coleta": {
-    "requisicoes": 35,
+    "requisicoes": 33,
     "pncp_proposta": 0,
     "pncp_publicacao": 0,
     "pncp_registros_examinados": 0,
     "pncp_respostas_validas": 0,
-    "pncp_falhas": 5,
-    "compras_gov_respostas_validas": 5,
-    "compras_gov_registros_examinados": 400,
+    "pncp_falhas": 2,
+    "compras_gov_respostas_validas": 9,
+    "compras_gov_registros_examinados": 3135,
+    "compras_gov_paginas_examinadas": 9,
     "compras_gov_falhas": 0,
-    "compras_gov_itens": 0,
+    "compras_gov_itens": 3,
     "html_sinais": 0,
     "paginas_aprofundadas": 12,
     "erros": [
-      "PNCP indisponível após 2 tentativas: ReadTimeout: HTTPSConnectionPool(host='pncp.gov.br', port=443): Read timed out. (read timeout=25)",
-      "PNCP indisponível após 2 tentativas: ReadTimeout: HTTPSConnectionPool(host='pncp.gov.br', port=443): Read timed out. (read timeout=25)",
-      "PNCP indisponível após 2 tentativas: ReadTimeout: HTTPSConnectionPool(host='pncp.gov.br', port=443): Read timed out. (read timeout=25)",
-      "PNCP indisponível após 2 tentativas: ReadTimeout: HTTPSConnectionPool(host='pncp.gov.br', port=443): Read timed out. (read timeout=25)",
-      "PNCP indisponível após 2 tentativas: ReadTimeout: HTTPSConnectionPool(host='pncp.gov.br', port=443): Read timed out. (read timeout=25)",
+      "PNCP indisponível após 2 tentativas: ReadTimeout: HTTPSConnectionPool(host='pncp.gov.br', port=443): Read timed out. (read timeout=12)",
+      "PNCP indisponível após 2 tentativas: ReadTimeout: HTTPSConnectionPool(host='pncp.gov.br', port=443): Read timed out. (read timeout=12)",
       "PNCP: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
     ],
     "avisos": [
-      "PNCP proposta: limite de tempo atingido; resultado parcial preservado.",
-      "PNCP publicacao: limite de tempo atingido; resultado parcial preservado.",
+      "PNCP: circuito temporariamente interrompido após duas falhas; acionando a contingência oficial.",
+      "PNCP publicação não repetida porque a fonte já falhou; contingência antecipada.",
       "PNCP indisponível; coleta nacional concluída pela contingência oficial do Compras.gov."
     ]
   },
   "items": [
     {
-      "id": "76974823000180-1-000056/2026",
+      "id": "07954480000179-1-018879/2026",
       "tipo": "DEMANDA FORMAL",
       "confirmacao": "PRÉ-SELECIONADO",
-      "fonte": "PNCP",
-      "titulo": "Contratação de empresa especializada para elaboração da revisão do Plano Diretor Municipal aerolevantamento/aerofotogrametria, mapeamento móvel terrestre em 360º dos imóveis no perímetro urbano, o suporte técnico administrativo para o recadastramento Imobiliário Urbano e a atualização do Cadastro Técnico Multifinalitár",
-      "municipio": "Santa Isabel do Ivaí",
-      "uf": "PR",
+      "fonte": "Compras.gov — Dados Abertos",
+      "titulo": "Prestação dos serviços técnicos especializados para elaboração de Estudo de Viabilidade Técnica, Ambiental e Econômica – EVTAE, voltado ao controle da erosão e ao manejo adequado das águas pluviais em áreas de falésias costeiras no município de Aracati/CE, com ênfase na localidade de Canoa Quebrada, nas condições estabelecidas neste edital e seus anexos.",
+      "municipio": "FORTALEZA",
+      "uf": "CE",
       "regiao_prioridade": "Brasil",
-      "organizacao": "MUNICIPIO DE SANTA ISABEL DO IVAI",
-      "data_publicacao": "2026-06-29T10:17:06",
-      "prazo": "2026-08-19T08:55:00",
-      "valor_estimado": 532909.0,
+      "organizacao": "ESTADO DO CEARA",
+      "data_publicacao": "2026-07-01T12:01:57",
+      "prazo": "2026-09-02T09:30:00",
+      "valor_estimado": 659976.47,
       "modalidade": "Concorrência - Eletrônica",
+      "situacao_compra": "Divulgada no PNCP",
+      "servicos_ordone": [
+        "Solo e conservação"
+      ],
+      "relacao_comercial": "Contratação ambiental direta",
+      "status_leitura_edital": "LEITURA INCOMPLETA",
+      "documentos_analisados": [],
+      "requisitos_minimos": [],
+      "analise_elegibilidade": "LEITURA INCOMPLETA",
+      "pendencias_identificadas": [
+        "Abrir edital e anexos oficiais antes de decidir pela participação"
+      ],
+      "palavras_encontradas": [
+        "erosão",
+        "grupo:ambiental",
+        "grupo:solo_agua"
+      ],
+      "score": 61,
+      "prioridade": "MÉDIA",
+      "url": "https://pncp.gov.br/app/editais/07954480000179/2026/18879",
+      "numero_controle_pncp": "07954480000179-1-018879/2026",
+      "escopo_coleta": "Brasil",
+      "fase_pncp": "contingencia_compras_gov",
+      "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
+    },
+    {
+      "id": "42498733000148-1-001394/2026",
+      "tipo": "DEMANDA FORMAL",
+      "confirmacao": "PRÉ-SELECIONADO",
+      "fonte": "Compras.gov — Dados Abertos",
+      "titulo": "PROJETO HIDRÁULICO PARA CONTROLE DE EROSÃO, SUBSTITUIÇÃO DE TRAVESSIAS (PONTES) E REFORÇO DE CALHA DE TRECHOS DO RIO GRANDE, INCLUINDO SUBSTITUIÇÃO DE TRAVESSIAS (PONTES) DO RIO TINDIBA – JACAREPAGUÁ – R.A. XVI – A.P. 4.0",
+      "municipio": "RIO DE JANEIRO",
+      "uf": "RJ",
+      "regiao_prioridade": "Brasil",
+      "organizacao": "MUNICIPIO DE RIO DE JANEIRO",
+      "data_publicacao": "2026-07-02T12:42:55",
+      "prazo": "2026-08-24T10:25:00",
+      "valor_estimado": 915983.14,
+      "modalidade": "Concorrência - Eletrônica",
+      "situacao_compra": "Divulgada no PNCP",
+      "servicos_ordone": [
+        "Solo e conservação"
+      ],
+      "relacao_comercial": "Contratação ambiental direta",
+      "status_leitura_edital": "LEITURA INCOMPLETA",
+      "documentos_analisados": [],
+      "requisitos_minimos": [],
+      "analise_elegibilidade": "LEITURA INCOMPLETA",
+      "pendencias_identificadas": [
+        "Abrir edital e anexos oficiais antes de decidir pela participação"
+      ],
+      "palavras_encontradas": [
+        "erosão",
+        "grupo:solo_agua"
+      ],
+      "score": 55,
+      "prioridade": "ACOMPANHAR",
+      "url": "https://pncp.gov.br/app/editais/42498733000148/2026/1394",
+      "numero_controle_pncp": "42498733000148-1-001394/2026",
+      "escopo_coleta": "Brasil",
+      "fase_pncp": "contingencia_compras_gov",
+      "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
+    },
+    {
+      "id": "00000368000150-1-000049/2026",
+      "tipo": "DEMANDA FORMAL",
+      "confirmacao": "PRÉ-SELECIONADO",
+      "fonte": "Compras.gov — Dados Abertos",
+      "titulo": "Serviço técnico especializado de natureza predominantemente intelectual, consistente na elaboração de mapeamento e setorização de áreas de risco R3 e R4 para 13 municípios Paulistas.",
+      "municipio": "SÃO PAULO",
+      "uf": "SP",
+      "regiao_prioridade": "Brasil",
+      "organizacao": "CASA MILITAR DO GABINETE DO GOVERNADOR",
+      "data_publicacao": "2026-07-15T12:13:24",
+      "prazo": "2026-08-20T09:00:00",
+      "valor_estimado": 302600.0,
+      "modalidade": "Concorrência - Eletrônica",
+      "situacao_compra": "Divulgada no PNCP",
       "servicos_ordone": [
         "Geotecnologia / drone"
       ],
@@ -62,21 +138,19 @@
       "requisitos_minimos": [],
       "analise_elegibilidade": "LEITURA INCOMPLETA",
       "pendencias_identificadas": [
-        "Abrir edital e anexos manualmente"
+        "Abrir edital e anexos oficiais antes de decidir pela participação"
       ],
       "palavras_encontradas": [
-        "aerolevantamento",
         "mapeamento",
         "grupo:geotecnologia"
       ],
-      "score": 65,
-      "prioridade": "MÉDIA",
-      "url": "https://pncp.gov.br/app/editais/76974823000180/2026/56",
-      "numero_controle_pncp": "76974823000180-1-000056/2026",
+      "score": 55,
+      "prioridade": "ACOMPANHAR",
+      "url": "https://pncp.gov.br/app/editais/00000368000150/2026/49",
+      "numero_controle_pncp": "00000368000150-1-000049/2026",
       "escopo_coleta": "Brasil",
-      "fase_pncp": "proposta",
-      "proxima_acao": "Abrir o edital/aviso oficial, validar escopo, habilitação, prazo, local de execução e viabilidade de proposta.",
-      "origem_historica": true
+      "fase_pncp": "contingencia_compras_gov",
+      "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
     }
   ],
   "fontes_monitoradas": [
