@@ -181,6 +181,19 @@ document.querySelectorAll('a[href*="whatsapp"]').forEach(a=>{
   const safe=u=>{try{const x=new URL(u,location.href);return ['http:','https:'].includes(x.protocol)?x.href:'#'}catch(e){return '#'}};
   const brl=v=>{if(v===null||v===undefined||v==='') return ''; try{return new Intl.NumberFormat('pt-BR',{style:'currency',currency:'BRL',maximumFractionDigits:0}).format(Number(v))}catch(e){return ''}};
   const norm=s=>String(s??'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/\s+/g,' ').trim();
+  const deadlineDate=value=>{
+    let raw=String(value??'').trim();
+    if(!raw) return null;
+    if(/^\d{4}-\d{2}-\d{2}$/.test(raw)) raw+='T23:59:59-03:00';
+    else if(/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}(:\d{2})?$/.test(raw)) raw+='-03:00';
+    const parsed=new Date(raw);
+    return Number.isNaN(parsed.getTime())?null:parsed;
+  };
+  const deadlineOpen=x=>{const d=deadlineDate(x?.prazo);return !d||d.getTime()>Date.now()};
+  const deadlineLabel=value=>{
+    const d=deadlineDate(value);
+    return d?d.toLocaleString('pt-BR',{timeZone:'America/Sao_Paulo',day:'2-digit',month:'2-digit',year:'numeric',hour:'2-digit',minute:'2-digit'}):String(value??'');
+  };
   const genericTitles=new Set(['ver todos os servicos','todos os servicos','servicos','saiba mais','leia mais','ver mais','acesse','acessar','clique aqui','inicio','home','sobre','sobre a cidade','noticias','mais noticias','contato']);
   const generic=x=>genericTitles.has(norm(x?.titulo||''));
   const regionWeight=x=>({"Goianésia":0,"Entorno imediato":1,"Região ampliada":2,"Goiás":3,"Brasil":4}[x?.regiao_prioridade]??5);
@@ -196,7 +209,7 @@ document.querySelectorAll('a[href*="whatsapp"]').forEach(a=>{
     }
     target.innerHTML=items.map(x=>`<article class="radar-card" data-priority="${esc(x.prioridade||'')}">
       <div class="radar-card-head">
-        <div class="radar-tags"><span class="radar-badge">${esc(x.tipo||'SINAL')}</span>${x.confirmacao?`<span class="radar-confirm">${esc(x.confirmacao)}</span>`:''}</div>
+        <div class="radar-tags"><span class="radar-badge">${esc(x.tipo||'SINAL')}</span>${x.confirmacao?`<span class="radar-confirm">${esc(x.confirmacao)}</span>`:''}${x.origem_historica?`<span class="radar-confirm">VIGENTE · COLETA ANTERIOR</span>`:''}</div>
         <span class="radar-score">${esc(x.prioridade||'')} · ${esc(x.score||0)}/100</span>
       </div>
       <h3>${esc(x.titulo||'Oportunidade pública')}</h3>
@@ -208,7 +221,7 @@ document.querySelectorAll('a[href*="whatsapp"]').forEach(a=>{
       ${(x.requisitos_minimos||[]).length?`<div class="radar-requirements"><b>Requisitos identificados</b><ul>${x.requisitos_minimos.map(v=>`<li>${esc(v)}</li>`).join('')}</ul></div>`:''}
       ${x.analise_elegibilidade?`<div class="radar-eligibility"><b>Análise preliminar</b><span>${esc(x.analise_elegibilidade)}</span></div>`:''}
       ${(x.pendencias_identificadas||[]).length?`<div class="radar-pending"><b>Verificar</b><ul>${x.pendencias_identificadas.map(v=>`<li>${esc(v)}</li>`).join('')}</ul></div>`:''}
-      <div class="radar-details">${x.prazo?`<span><b>Prazo</b> ${esc(x.prazo)}</span>`:''}${brl(x.valor_estimado)?`<span><b>Estimado</b> ${esc(brl(x.valor_estimado))}</span>`:''}${x.modalidade?`<span>${esc(x.modalidade)}</span>`:''}</div>
+      <div class="radar-details">${x.prazo?`<span><b>Prazo</b> ${esc(deadlineLabel(x.prazo))}</span>`:''}${brl(x.valor_estimado)?`<span><b>Estimado</b> ${esc(brl(x.valor_estimado))}</span>`:''}${x.modalidade?`<span>${esc(x.modalidade)}</span>`:''}</div>
       <p class="radar-action">${esc(x.proxima_acao||'Abrir a fonte e validar o contexto.')}</p>
       <a class="card-link" href="${safe(x.url)}" target="_blank" rel="noopener noreferrer">Abrir fonte oficial →</a>
     </article>`).join('');
@@ -217,7 +230,7 @@ document.querySelectorAll('a[href*="whatsapp"]').forEach(a=>{
     .then(r=>{if(!r.ok) throw new Error('radar'); return r.json()})
     .then(data=>{
       radarStatus=data.status||'aguardando';
-      radarItems=(data.items||[]).filter(x=>!generic(x)).sort((a,b)=>(Number(b.score)||0)-(Number(a.score)||0)||regionWeight(a)-regionWeight(b)).slice(0,60);
+      radarItems=(data.items||[]).filter(x=>!generic(x)&&deadlineOpen(x)).sort((a,b)=>(Number(b.score)||0)-(Number(a.score)||0)||regionWeight(a)-regionWeight(b)).slice(0,60);
       const r=data.resumo||{};
       const boxes=document.querySelectorAll('#radar-summary article b');
       const visible={
@@ -229,8 +242,11 @@ document.querySelectorAll('a[href*="whatsapp"]').forEach(a=>{
       [visible.total,visible.brasil,visible.formal,visible.sinais].forEach((v,i)=>{if(boxes[i]) boxes[i].textContent=v});
       const stamp=document.getElementById('radar-updated-at');
       if(stamp){
-        if(data.status==='coleta_concluida') stamp.textContent='Última coleta válida: '+(data.atualizado_em||'agora');
-        else if(data.status==='fonte_principal_indisponivel') stamp.textContent='PNCP temporariamente indisponível na tentativa de '+(data.atualizado_em||'agora')+'. Nova tentativa será automática.';
+        const diag=data.diagnostico_coleta||{};
+        const contingencia=Number(diag.pncp_respostas_validas||0)===0&&Number(diag.compras_gov_respostas_validas||0)>0;
+        if(data.status==='coleta_concluida'&&contingencia) stamp.textContent='Última coleta oficial: '+(data.atualizado_em||'agora')+' · contingência Compras.gov; nova tentativa do PNCP será automática.';
+        else if(data.status==='coleta_concluida') stamp.textContent='Última coleta válida: '+(data.atualizado_em||'agora');
+        else if(data.status==='fonte_principal_indisponivel') stamp.textContent='Fontes oficiais temporariamente indisponíveis na tentativa de '+(data.atualizado_em||'agora')+'. Nova tentativa será automática.';
         else stamp.textContent=data.atualizado_em?'Atualização: '+data.atualizado_em:'Radar aguardando coleta';
       }
       draw('todos');
