@@ -176,6 +176,7 @@ document.querySelectorAll('a[href*="whatsapp"]').forEach(a=>{
   if(!target) return;
   const base=document.body.dataset.base || '';
   let radarItems=[];
+  let radarStatus='aguardando';
   const esc=s=>String(s??'').replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));
   const safe=u=>{try{const x=new URL(u,location.href);return ['http:','https:'].includes(x.protocol)?x.href:'#'}catch(e){return '#'}};
   const brl=v=>{if(v===null||v===undefined||v==='') return ''; try{return new Intl.NumberFormat('pt-BR',{style:'currency',currency:'BRL',maximumFractionDigits:0}).format(Number(v))}catch(e){return ''}};
@@ -188,7 +189,11 @@ document.querySelectorAll('a[href*="whatsapp"]').forEach(a=>{
   function inGoias(item){return String(item.uf||'').toUpperCase()==='GO'}
   function draw(filter='todos'){
     const items=radarItems.filter(x=>filter==='todos'||(filter==='brasil'&&inBrazil(x))||(filter==='goias'&&inGoias(x))||(filter==='formal'&&x.tipo==='DEMANDA FORMAL')||(filter==='alta'&&x.prioridade==='ALTA'));
-    if(!items.length){target.innerHTML='<article class="radar-empty"><h3>Nenhum registro neste filtro.</h3><p>A coleta foi concluída, mas nenhum sinal passou pelos critérios deste filtro. Isso não significa ausência de demanda no território.</p></article>';return;}
+    if(!items.length){
+      const unavailable=radarStatus==='fonte_principal_indisponivel';
+      target.innerHTML='<article class="radar-empty"><h3>'+(unavailable?'Fonte oficial temporariamente indisponível.':'Nenhuma oportunidade válida neste filtro.')+'</h3><p>'+(unavailable?'O PNCP não respondeu nesta tentativa. O robô não exibirá registros antigos ou vencidos e tentará novamente automaticamente.':'A fonte foi consultada, mas nenhum edital vigente e compatível passou pela validação técnica.')+'</p></article>';
+      return;
+    }
     target.innerHTML=items.map(x=>`<article class="radar-card" data-priority="${esc(x.prioridade||'')}">
       <div class="radar-card-head">
         <div class="radar-tags"><span class="radar-badge">${esc(x.tipo||'SINAL')}</span>${x.confirmacao?`<span class="radar-confirm">${esc(x.confirmacao)}</span>`:''}</div>
@@ -211,6 +216,7 @@ document.querySelectorAll('a[href*="whatsapp"]').forEach(a=>{
   fetch(base+'dados/radar_oportunidades.json',{cache:'no-store'})
     .then(r=>{if(!r.ok) throw new Error('radar'); return r.json()})
     .then(data=>{
+      radarStatus=data.status||'aguardando';
       radarItems=(data.items||[]).filter(x=>!generic(x)).sort((a,b)=>(Number(b.score)||0)-(Number(a.score)||0)||regionWeight(a)-regionWeight(b)).slice(0,60);
       const r=data.resumo||{};
       const boxes=document.querySelectorAll('#radar-summary article b');
@@ -223,7 +229,8 @@ document.querySelectorAll('a[href*="whatsapp"]').forEach(a=>{
       [visible.total,visible.brasil,visible.formal,visible.sinais].forEach((v,i)=>{if(boxes[i]) boxes[i].textContent=v});
       const stamp=document.getElementById('radar-updated-at');
       if(stamp){
-        if(data.status==='coleta_concluida') stamp.textContent='Última coleta concluída: '+(data.atualizado_em||'agora');
+        if(data.status==='coleta_concluida') stamp.textContent='Última coleta válida: '+(data.atualizado_em||'agora');
+        else if(data.status==='fonte_principal_indisponivel') stamp.textContent='PNCP temporariamente indisponível na tentativa de '+(data.atualizado_em||'agora')+'. Nova tentativa será automática.';
         else stamp.textContent=data.atualizado_em?'Atualização: '+data.atualizado_em:'Radar aguardando coleta';
       }
       draw('todos');
