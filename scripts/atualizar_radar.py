@@ -17,6 +17,7 @@ from __future__ import annotations
 
 from pathlib import Path
 from datetime import datetime, timedelta, timezone
+from zoneinfo import ZoneInfo
 from urllib.parse import urljoin, urlparse
 import argparse
 from difflib import SequenceMatcher
@@ -38,6 +39,8 @@ ROOT = Path(__file__).resolve().parents[1]
 CONFIG = ROOT / "dados" / "radar_config.json"
 PROFILE = ROOT / "dados" / "perfil_ordone.json"
 OUT = ROOT / "dados" / "radar_oportunidades.json"
+BR_TZ = ZoneInfo("America/Sao_Paulo")
+
 UA = {
     "User-Agent": "Mozilla/5.0 (compatible; OrdoneRadar/4.7; +https://ordoneagroambiental.github.io/midia/)",
     "Accept": "application/json,text/html;q=0.9,*/*;q=0.8",
@@ -477,20 +480,47 @@ def analyze_requirements(text, profile):
     return found, ("VERIFICAR DOCUMENTOS" if pend else "ANÁLISE PRELIMINAR FAVORÁVEL"), pend
 
 
-def pncp_request(endpoint, params, diagnostics):
+def deadline_expired(value):
+    """Retorna True quando o prazo já terminou, inclusive no próprio dia."""
+    if not value:
+        return False
     try:
-        r = requests.get(endpoint, params=params, headers=UA, timeout=6)
-        diagnostics["requisicoes"] += 1
-        if r.status_code in (204, 404, 422):
-            return {"data": [], "totalPaginas": 0}
-        if r.status_code == 429:
-            diagnostics["avisos"].append("PNCP respondeu 429; consulta parcial preservada sem repetição.")
-            return {"data": [], "totalPaginas": 0}
-        r.raise_for_status()
-        return r.json()
-    except Exception as exc:
-        diagnostics["erros"].append(f"PNCP: {type(exc).__name__}: {exc}"[:250])
-        return {"data": [], "totalPaginas": 0}
+        parsed = datetime.fromisoformat(str(value).replace("Z", "+00:00"))
+        if parsed.tzinfo is None:
+            parsed = parsed.replace(tzinfo=BR_TZ)
+        return parsed.astimezone(BR_TZ) <= datetime.now(BR_TZ)
+    except (TypeError, ValueError):
+        return False
+
+
+def pncp_request(endpoint, params, diagnostics):
+    """Consulta o PNCP com repetição controlada e diagnóstico real."""
+    last_error = None
+    for attempt in range(1, 3):
+        try:
+            diagnostics["requisicoes"] += 1
+            r = requests.get(endpoint, params=params, headers=UA, timeout=(10, 25))
+            if r.status_code == 429:
+                last_error = "HTTP 429"
+                if attempt < 2:
+                    time.sleep(4)
+                    continue
+                diagnostics["avisos"].append("PNCP respondeu 429 após nova tentativa.")
+                break
+            if r.status_code in (204, 404, 422):
+                diagnostics["pncp_respostas_validas"] += 1
+                return {"data": [], "totalPaginas": 0}
+            r.raise_for_status()
+            payload = r.json()
+            diagnostics["pncp_respostas_validas"] += 1
+            return payload
+        except Exception as exc:
+            last_error = f"{type(exc).__name__}: {exc}"
+            if attempt < 2:
+                time.sleep(2)
+    diagnostics["pncp_falhas"] += 1
+    diagnostics["erros"].append(f"PNCP indisponível após 2 tentativas: {last_error}"[:250])
+    return {"data": [], "totalPaginas": 0}
 
 
 def pncp_collect(cfg, mode, diagnostics):
@@ -568,12 +598,8 @@ def pncp_collect(cfg, mode, diagnostics):
                         continue
 
                     deadline = str(x.get("dataEncerramentoProposta") or "")
-                    if deadline:
-                        try:
-                            if datetime.fromisoformat(deadline.replace("Z", "+00:00")).date() < today:
-                                continue
-                        except (TypeError, ValueError):
-                            pass
+                    if deadline_expired(deadline):
+                        continue
                     kind = "DEMANDA FORMAL" if mode == "proposta" else "SINAL DE CONTRATAÇÃO"
                     score, region, hits = score_item(city, uf, text, "DEMANDA FORMAL" if mode == "proposta" else "SINAL AMBIENTAL", cfg, deadline)
                     if mode == "publicacao" and score < 45:
@@ -776,6 +802,8 @@ def html_signals(cfg, diagnostics):
 def dedupe_sort(items):
     seen, out = set(), []
     for x in sorted(items, key=lambda z: (-int(z.get("score", 0)), z.get("municipio", ""), z.get("titulo", ""))):
+        if deadline_expired(x.get("prazo")):
+            continue
         key = (norm(x.get("titulo")), norm(x.get("organizacao")), norm(x.get("municipio")))
         if key in seen:
             continue
@@ -808,13 +836,11 @@ def merge_previous_valid(current, cfg):
         title = str(item.get("titulo") or "")
         if not relevant_procurement_object(title, cfg):
             continue
+        # Somente demandas formais com prazo futuro sobrevivem a uma coleta.
+        # Sinais sem prazo precisam ser redescobertos, nunca reciclados.
         deadline = str(item.get("prazo") or "")
-        if deadline:
-            try:
-                if datetime.fromisoformat(deadline.replace("Z", "+00:00")).date() < today:
-                    continue
-            except Exception:
-                pass
+        if item.get("tipo") != "DEMANDA FORMAL" or not deadline or deadline_expired(deadline):
+            continue
         item["origem_historica"] = True
         merged.append(item)
     return dedupe_sort(merged)
@@ -829,7 +855,11 @@ def build_output(cfg, items, diagnostics):
     return {
         "versao": "6.0",
         "atualizado_em": datetime.now(timezone.utc).astimezone().strftime("%d/%m/%Y %H:%M"),
-        "status": "coleta_concluida",
+        "status": (
+            "coleta_concluida"
+            if diagnostics.get("pncp_respostas_validas", 0) > 0
+            else "fonte_principal_indisponivel"
+        ),
         "prioridade": "Brasil inteiro → bônus de proximidade para Goiás e Goianésia",
         "resumo": {
             "total": len(items),
@@ -901,6 +931,8 @@ def main():
         "pncp_proposta": 0,
         "pncp_publicacao": 0,
         "pncp_registros_examinados": 0,
+        "pncp_respostas_validas": 0,
+        "pncp_falhas": 0,
         "html_sinais": 0,
         "paginas_aprofundadas": 0,
         "erros": [],
@@ -934,9 +966,12 @@ def main():
         diagnostics["erros"].append(f"Falha geral HTML: {exc}"[:250])
 
     items = merge_previous_valid(dedupe_sort(items), cfg)
+    if diagnostics["pncp_respostas_validas"] == 0:
+        diagnostics["avisos"].append(
+            "A fonte principal PNCP não respondeu. Nenhum resultado foi declarado como coleta completa."
+        )
     if successes == 0:
-        print("Todas as fontes falharam; preservando resultado anterior.")
-        return
+        print("Todas as fontes falharam; registrando indisponibilidade sem publicar falsos resultados.")
 
     data = build_output(cfg, items, diagnostics)
     OUT.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
