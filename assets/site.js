@@ -189,7 +189,12 @@ document.querySelectorAll('a[href*="whatsapp"]').forEach(a=>{
     const parsed=new Date(raw);
     return Number.isNaN(parsed.getTime())?null:parsed;
   };
-  const deadlineOpen=x=>{const d=deadlineDate(x?.prazo);return !d||d.getTime()>Date.now()};
+  const deadlineOpen=x=>{
+    const d=deadlineDate(x?.prazo);
+    return x?.tipo==='DEMANDA FORMAL'
+      ? Boolean(d&&d.getTime()>Date.now())
+      : (!d||d.getTime()>Date.now());
+  };
   const deadlineLabel=value=>{
     const d=deadlineDate(value);
     return d?d.toLocaleString('pt-BR',{timeZone:'America/Sao_Paulo',day:'2-digit',month:'2-digit',year:'numeric',hour:'2-digit',minute:'2-digit'}):String(value??'');
@@ -244,7 +249,7 @@ document.querySelectorAll('a[href*="whatsapp"]').forEach(a=>{
       if(stamp){
         const diag=data.diagnostico_coleta||{};
         const contingencia=Number(diag.pncp_respostas_validas||0)===0&&Number(diag.compras_gov_respostas_validas||0)>0;
-        if(data.status==='coleta_concluida'&&contingencia) stamp.textContent='Última coleta oficial: '+(data.atualizado_em||'agora')+' · contingência Compras.gov; nova tentativa do PNCP será automática.';
+        if(data.status==='coleta_contingencial'||(data.status==='coleta_concluida'&&contingencia)) stamp.textContent='Última coleta oficial: '+(data.atualizado_em||'agora')+' · contingência Compras.gov; nova tentativa do PNCP será automática.';
         else if(data.status==='coleta_concluida') stamp.textContent='Última coleta válida: '+(data.atualizado_em||'agora');
         else if(data.status==='fonte_principal_indisponivel') stamp.textContent='Fontes oficiais temporariamente indisponíveis na tentativa de '+(data.atualizado_em||'agora')+'. Nova tentativa será automática.';
         else stamp.textContent=data.atualizado_em?'Atualização: '+data.atualizado_em:'Radar aguardando coleta';
