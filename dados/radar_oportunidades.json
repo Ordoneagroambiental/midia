@@ -1,6 +1,6 @@
 {
   "versao": "6.6",
-  "atualizado_em": "18/08/2026 19:45 (horário de Brasília)",
+  "atualizado_em": "18/08/2026 20:18 (horário de Brasília)",
   "status": "coleta_contingencial",
   "prioridade": "Brasil inteiro → bônus de proximidade para Goiás e Goianésia",
   "resumo": {
@@ -12,7 +12,7 @@
     "sinais_ambientais": 0
   },
   "diagnostico_coleta": {
-    "requisicoes": 34,
+    "requisicoes": 33,
     "pncp_proposta": 0,
     "pncp_publicacao": 0,
     "pncp_registros_examinados": 0,
@@ -22,18 +22,18 @@
     "compras_gov_registros_examinados": 3135,
     "compras_gov_paginas_examinadas": 9,
     "compras_gov_falhas": 0,
-    "compras_gov_itens": 2,
+    "compras_gov_itens": 0,
     "html_sinais": 0,
     "paginas_aprofundadas": 12,
     "erros": [
       "PNCP indisponível após 2 tentativas: ReadTimeout: HTTPSConnectionPool(host='pncp.gov.br', port=443): Read timed out. (read timeout=12)",
-      "PNCP indisponível após 2 tentativas: ReadTimeout: HTTPSConnectionPool(host='pncp.gov.br', port=443): Read timed out. (read timeout=12)"
+      "PNCP indisponível após 2 tentativas: ReadTimeout: HTTPSConnectionPool(host='pncp.gov.br', port=443): Read timed out. (read timeout=12)",
+      "PNCP: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
     ],
     "avisos": [
       "PNCP: circuito temporariamente interrompido após duas falhas; acionando a contingência oficial.",
       "PNCP publicação não repetida porque a fonte já falhou; contingência antecipada.",
-      "PNCP indisponível; coleta nacional concluída pela contingência oficial do Compras.gov.",
-      "Filtro V6.6 reaplicado: 2 falsos positivos de parceria/engenharia civil removidos do painel."
+      "PNCP indisponível; coleta nacional concluída pela contingência oficial do Compras.gov."
     ]
   },
   "items": [],
@@ -79,6 +79,5 @@
       "automatica": false
     }
   ],
-  "aviso": "Sinal público não é cliente confirmado. O radar organiza oportunidades a partir de fontes públicas; qualquer contato comercial depende de validação e aprovação humana.",
-  "criterio_filtro": "Somente serviços diretamente executáveis pela Ordone; parcerias, consórcios e componentes ambientais laterais não são publicados."
+  "aviso": "Sinal público não é cliente confirmado. O radar organiza oportunidades a partir de fontes públicas; qualquer contato comercial depende de validação e aprovação humana."
 }
