@@ -583,11 +583,11 @@ def pncp_request(endpoint, params, diagnostics):
     for attempt in range(1, 3):
         try:
             diagnostics["requisicoes"] += 1
-            r = requests.get(endpoint, params=params, headers=UA, timeout=(10, 25))
+            r = requests.get(endpoint, params=params, headers=UA, timeout=(6, 12))
             if r.status_code == 429:
                 last_error = "HTTP 429"
                 if attempt < 2:
-                    time.sleep(4)
+                    time.sleep(2)
                     continue
                 diagnostics["avisos"].append("PNCP respondeu 429 após nova tentativa.")
                 break
@@ -601,7 +601,7 @@ def pncp_request(endpoint, params, diagnostics):
         except Exception as exc:
             last_error = f"{type(exc).__name__}: {exc}"
             if attempt < 2:
-                time.sleep(2)
+                time.sleep(1)
     diagnostics["pncp_falhas"] += 1
     diagnostics["erros"].append(f"PNCP indisponível após 2 tentativas: {last_error}"[:250])
     return {"data": [], "totalPaginas": 0}
@@ -626,11 +626,20 @@ def pncp_collect(cfg, mode, diagnostics):
     ]
     out, seen = [], set()
     profile = load_json(PROFILE, {})
-    scan_deadline = time.monotonic() + (75 if mode == "proposta" else 120)
+    scan_deadline = time.monotonic() + (45 if mode == "proposta" else 60)
 
     for scope_name, scope_params, modalidades, max_pages in scopes:
         for modalidade in modalidades:
             for page in range(1, max_pages + 1):
+                if (
+                    diagnostics["pncp_respostas_validas"] == 0
+                    and diagnostics["pncp_falhas"] >= 2
+                ):
+                    diagnostics["avisos"].append(
+                        "PNCP: circuito temporariamente interrompido após duas falhas; "
+                        "acionando a contingência oficial."
+                    )
+                    return out
                 if time.monotonic() >= scan_deadline:
                     diagnostics["avisos"].append(
                         f"PNCP {mode}: limite de tempo atingido; resultado parcial preservado."
@@ -1307,13 +1316,21 @@ def main():
     except Exception as exc:
         diagnostics["erros"].append(f"Falha geral PNCP proposta: {exc}"[:250])
 
-    try:
-        p2 = pncp_collect(cfg, "publicacao", diagnostics)
-        items += p2
-        successes += 1
-        print("PNCP publicações:", len(p2))
-    except Exception as exc:
-        diagnostics["erros"].append(f"Falha geral PNCP publicação: {exc}"[:250])
+    if (
+        diagnostics["pncp_respostas_validas"] > 0
+        or diagnostics["pncp_falhas"] < 2
+    ):
+        try:
+            p2 = pncp_collect(cfg, "publicacao", diagnostics)
+            items += p2
+            successes += 1
+            print("PNCP publicações:", len(p2))
+        except Exception as exc:
+            diagnostics["erros"].append(f"Falha geral PNCP publicação: {exc}"[:250])
+    else:
+        diagnostics["avisos"].append(
+            "PNCP publicação não repetida porque a fonte já falhou; contingência antecipada."
+        )
 
     # Se a API pública do PNCP estiver indisponível, usa automaticamente a
     # API oficial de Dados Abertos do Compras.gov, sem declarar coleta completa
