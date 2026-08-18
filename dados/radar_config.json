@@ -1,5 +1,5 @@
 {
-  "versao": "3.8",
+  "versao": "4.0",
   "escopo_padrao": "Brasil inteiro",
   "centro_operacional": {
     "municipio": "Goianésia",
@@ -91,16 +91,16 @@
     "fertilidade do solo",
     "recursos hídricos",
     "recursos hidricos",
-    "drenagem ambiental"
-    ,"gestão ambiental de obras"
-    ,"gestao ambiental de obras"
-    ,"supervisão ambiental"
-    ,"supervisao ambiental"
-    ,"acompanhamento ambiental de obra"
-    ,"controle ambiental de obra"
-    ,"PGRS"
-    ,"resíduos da construção"
-    ,"residuos da construcao"
+    "drenagem ambiental",
+    "gestão ambiental de obras",
+    "gestao ambiental de obras",
+    "supervisão ambiental",
+    "supervisao ambiental",
+    "acompanhamento ambiental de obra",
+    "controle ambiental de obra",
+    "PGRS",
+    "resíduos da construção",
+    "residuos da construcao"
   ],
   "termos_excluir": [
     "processo seletivo",
@@ -164,6 +164,340 @@
     "contato_automatico": false,
     "publicar_dados_pessoais": false,
     "exigir_fonte_publica": true,
-    "exigir_aprovacao_humana_para_contato": true
+    "exigir_aprovacao_humana_para_contato": true,
+    "somente_aderencia_direta": true,
+    "parcerias_e_consorcios_no_painel": false,
+    "termo_generico_nao_aprova": true
+  },
+  "filtro_portfolio": {
+    "versao": "1.0",
+    "modo": "lista_positiva",
+    "regra": "O painel publica somente serviço executável diretamente pela Ordone. Termo ambiental genérico, parceria ou componente lateral não basta.",
+    "publicacao": {
+      "servico_direto": "painel_principal",
+      "duvida": "nao_publicar",
+      "parceria_consorcio": "nao_publicar"
+    },
+    "servicos_diretos": [
+      {
+        "id": "recuperacao_restauracao",
+        "rotulo": "Recuperação ambiental / PRAD",
+        "frases_fortes": [
+          "PRAD",
+          "PRADA",
+          "plano de recuperação de área degradada",
+          "recuperação de área degradada",
+          "recuperação de áreas degradadas",
+          "recuperação ambiental",
+          "reabilitação de área degradada",
+          "restauração ecológica",
+          "restauração florestal",
+          "revegetação",
+          "reflorestamento",
+          "recomposição vegetal",
+          "recomposição florestal",
+          "recuperação de APP",
+          "recuperação de reserva legal",
+          "recuperação de mata ciliar"
+        ]
+      },
+      {
+        "id": "bioengenharia_hidrossemeadura",
+        "rotulo": "Hidrossemeadura e bioengenharia vegetal",
+        "frases_fortes": [
+          "hidrossemeadura",
+          "bioengenharia de solos",
+          "bioengenharia de taludes",
+          "estabilização vegetal de talude",
+          "revegetação de talude",
+          "biomanta com revegetação",
+          "paliçada",
+          "proteção superficial do solo por técnicas vegetativas"
+        ]
+      },
+      {
+        "id": "vegetacao_florestal",
+        "rotulo": "Inventário, vegetação e compensação florestal",
+        "frases_fortes": [
+          "inventário florestal",
+          "censo florestal",
+          "levantamento fitossociológico",
+          "levantamento florístico",
+          "levantamento dendrométrico",
+          "diagnóstico da cobertura vegetal",
+          "monitoramento da vegetação",
+          "supressão vegetal",
+          "plano de supressão vegetal",
+          "compensação florestal",
+          "compensação ambiental",
+          "plantio compensatório",
+          "resgate de flora"
+        ]
+      },
+      {
+        "id": "licenciamento_regularizacao",
+        "rotulo": "Licenciamento e regularização ambiental",
+        "frases_fortes": [
+          "licenciamento ambiental",
+          "regularização ambiental",
+          "plano de controle ambiental",
+          "PCA ambiental",
+          "MCE ambiental",
+          "condicionante ambiental",
+          "acompanhamento de condicionantes ambientais",
+          "relatório técnico ambiental",
+          "auditoria de conformidade ambiental",
+          "PCA",
+          "MCE"
+        ]
+      },
+      {
+        "id": "supervisao_monitoramento",
+        "rotulo": "Gestão, supervisão e monitoramento ambiental",
+        "frases_fortes": [
+          "supervisão ambiental",
+          "fiscalização ambiental de obras",
+          "gestão ambiental de obra",
+          "gestão ambiental de obras",
+          "gestão ambiental de empreendimento",
+          "acompanhamento ambiental de obra",
+          "monitoramento ambiental",
+          "controle ambiental de obra",
+          "programa ambiental da construção",
+          "relatório de acompanhamento ambiental"
+        ]
+      },
+      {
+        "id": "regularizacao_rural",
+        "rotulo": "Regularização ambiental rural / CAR",
+        "frases_fortes": [
+          "cadastro ambiental rural",
+          "retificação de CAR",
+          "regularização de CAR",
+          "programa de regularização ambiental",
+          "adequação ambiental de imóvel rural",
+          "pagamento por serviços ambientais",
+          "PSA Cerrado em Pé",
+          "CAR",
+          "PRA",
+          "PSA"
+        ]
+      },
+      {
+        "id": "residuos_planos",
+        "rotulo": "PGRS e planos de resíduos",
+        "frases_fortes": [
+          "PGRS",
+          "plano de gerenciamento de resíduos sólidos",
+          "plano de gestão de resíduos da construção",
+          "gerenciamento ambiental de resíduos"
+        ]
+      },
+      {
+        "id": "solos_agronomia",
+        "rotulo": "Solos e conservação agronômica",
+        "frases_fortes": [
+          "análise agronômica de solo",
+          "interpretação de análise de solo",
+          "laudo agronômico",
+          "fertilidade do solo",
+          "manejo e conservação do solo",
+          "conservação de solos",
+          "recuperação de solo degradado"
+        ]
+      },
+      {
+        "id": "recursos_hidricos",
+        "rotulo": "Nascentes, APP e outorga",
+        "frases_fortes": [
+          "diagnóstico de nascente",
+          "recuperação de nascente",
+          "revitalização de nascente",
+          "proteção de nascente",
+          "delimitação de área de preservação permanente",
+          "regularização de captação de água",
+          "outorga de uso de recursos hídricos",
+          "outorga de uso de água"
+        ]
+      },
+      {
+        "id": "viveiros_mudas_sementes",
+        "rotulo": "Viveiros, mudas e sementes nativas",
+        "frases_fortes": [
+          "viveiro florestal",
+          "viveiro de mudas nativas",
+          "implantação de viveiro",
+          "gestão de viveiro",
+          "operação de viveiro",
+          "produção de mudas nativas",
+          "responsabilidade técnica de viveiro",
+          "coleta de sementes florestais",
+          "beneficiamento de sementes nativas"
+        ]
+      },
+      {
+        "id": "geoprocessamento_contextual",
+        "rotulo": "Geoprocessamento ambiental aplicado",
+        "frases_fortes": [
+          "geoprocessamento ambiental",
+          "mapeamento ambiental",
+          "mapa temático ambiental",
+          "sensoriamento remoto ambiental",
+          "delimitação de APP por geoprocessamento",
+          "georreferenciamento de área degradada"
+        ]
+      },
+      {
+        "id": "drone_agricola",
+        "rotulo": "Aplicação agrícola por drone",
+        "frases_fortes": [
+          "aplicação aeroagrícola por drone",
+          "aplicação agrícola por drone",
+          "pulverização por drone",
+          "semeadura por drone",
+          "aplicação aérea por drone",
+          "drone agrícola"
+        ]
+      },
+      {
+        "id": "irrigacao_agronomica",
+        "rotulo": "Irrigação agronômica e de restauração",
+        "frases_fortes": [
+          "irrigação para revegetação",
+          "irrigação de mudas",
+          "irrigação de viveiro",
+          "irrigação agrícola",
+          "projeto agronômico de irrigação",
+          "manejo de irrigação"
+        ]
+      }
+    ],
+    "setores_alheios": [
+      "hospital",
+      "equipamento médico",
+      "medicamento",
+      "informática",
+      "software",
+      "telefonia",
+      "mobiliário",
+      "merenda",
+      "material escolar",
+      "transporte escolar",
+      "limpeza predial",
+      "dedetização",
+      "controle de pragas urbanas"
+    ],
+    "aquisicoes_puras": [
+      "aquisição de materiais",
+      "aquisição de equipamentos",
+      "compra de materiais",
+      "compra de equipamentos",
+      "fornecimento de materiais",
+      "fornecimento de equipamentos",
+      "locação de veículos",
+      "locação de máquinas"
+    ],
+    "objetos_incompativeis": [
+      "construção de ponte",
+      "recuperação de ponte",
+      "reforço de ponte",
+      "ponte de concreto",
+      "ponte metálica",
+      "pontilhão",
+      "viaduto",
+      "passarela estrutural",
+      "substituição de travessias",
+      "reforço estrutural",
+      "recuperação estrutural",
+      "estrutura de concreto",
+      "estrutura metálica",
+      "construção de canal",
+      "canalização",
+      "revestimento de canal",
+      "reforço de calha",
+      "calha de rio",
+      "macrodrenagem",
+      "microdrenagem",
+      "drenagem urbana",
+      "drenagem pluvial",
+      "galeria pluvial",
+      "bueiro",
+      "adutora",
+      "emissário",
+      "rede de água",
+      "rede de esgoto",
+      "estação elevatória",
+      "projeto hidráulico",
+      "dimensionamento hidráulico",
+      "modelagem hidráulica",
+      "obra fluvial",
+      "estudo geotécnico",
+      "investigação geotécnica",
+      "sondagem",
+      "estabilidade geotécnica",
+      "muro de arrimo",
+      "muro de contenção",
+      "gabião",
+      "enrocamento",
+      "solo grampeado",
+      "cortina atirantada",
+      "contenção estrutural",
+      "pavimentação",
+      "recapeamento",
+      "asfaltamento",
+      "terraplenagem",
+      "duplicação rodoviária",
+      "construção de estrada",
+      "urbanização",
+      "construção civil",
+      "infraestrutura urbana",
+      "plano diretor",
+      "cadastro técnico multifinalitário",
+      "recadastramento imobiliário",
+      "mobilidade urbana",
+      "aerolevantamento",
+      "aerofotogrametria",
+      "LiDAR",
+      "perfilamento a laser",
+      "topografia",
+      "geodésia",
+      "batimetria",
+      "levantamento planialtimétrico",
+      "setorização de áreas de risco",
+      "áreas de risco R3 e R4",
+      "carta geotécnica",
+      "EVTAE",
+      "estudo de viabilidade técnica, ambiental e econômica",
+      "falésias costeiras",
+      "estabilização de falésias",
+      "coleta urbana de resíduos",
+      "transporte de resíduos",
+      "limpeza urbana",
+      "varrição",
+      "operação de ETE",
+      "operação de ETA"
+    ],
+    "termos_ambiguos_que_nunca_bastam_sozinhos": [
+      "ambiental",
+      "meio ambiente",
+      "erosão",
+      "assoreamento",
+      "sedimento",
+      "drenagem",
+      "canal",
+      "água",
+      "irrigação",
+      "mapeamento",
+      "topografia",
+      "levantamento",
+      "monitoramento",
+      "vegetação",
+      "plantio",
+      "resíduos",
+      "APP",
+      "drone",
+      "geoprocessamento",
+      "aerolevantamento"
+    ]
   }
 }
