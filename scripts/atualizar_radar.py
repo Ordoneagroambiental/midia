@@ -231,6 +231,15 @@ def relevant_procurement_object(text, cfg):
     if supply_object and not service_execution:
         return False
 
+    # Licitações amplas de Plano Diretor/cadastro urbano não são oportunidade
+    # direta da Ordone quando aerolevantamento ou SIG são apenas uma fração do lote.
+    compound_urban_terms = (
+        "plano diretor", "cadastro tecnico multifinalitario",
+        "recadastramento imobiliario", "mapeamento movel terrestre",
+    )
+    if sum(term in t for term in compound_urban_terms) >= 2:
+        return False
+
     valid_services = [x for x in services_from(text) if x != "Avaliação técnica inicial"]
     strong = [x for x in HIGH_SIGNAL_TERMS if x in t]
     if any(x in t for x in UNRELATED_SECTOR_TERMS) and not strong:
@@ -1269,6 +1278,7 @@ def self_test(cfg):
         "Aquisição de materiais para manutenção de sistemas de refrigeração e de máquinas de jardinagem",
         "Aquisição de módulo de artroscopia para bomba de irrigação para hospital universitário",
         "Execução de muro de contenção para conter desbarrancamento e avanço da erosão em rodovia",
+        "Revisão do Plano Diretor com cadastro técnico multifinalitário, recadastramento imobiliário e aerolevantamento",
     )
     assert not any(relevant_procurement_object(x, cfg) for x in false_objects)
     assert relevant_procurement_object("Execução de PRAD e revegetação de área degradada", cfg)
