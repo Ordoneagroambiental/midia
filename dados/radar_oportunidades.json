@@ -1,22 +1,22 @@
 {
-  "versao": "6.1",
-  "atualizado_em": "18/08/2026 21:11",
+  "versao": "6.2",
+  "atualizado_em": "18/08/2026 21:25",
   "status": "coleta_concluida",
   "prioridade": "Brasil inteiro → bônus de proximidade para Goiás e Goianésia",
   "resumo": {
-    "total": 2,
-    "brasil": 2,
+    "total": 1,
+    "brasil": 1,
     "goianesia_regiao": 0,
     "goias": 0,
     "demandas_formais": 1,
-    "sinais_ambientais": 1
+    "sinais_ambientais": 0
   },
   "diagnostico_coleta": {
-    "requisicoes": 28,
+    "requisicoes": 45,
     "pncp_proposta": 0,
     "pncp_publicacao": 0,
-    "pncp_registros_examinados": 157,
-    "pncp_respostas_validas": 6,
+    "pncp_registros_examinados": 1007,
+    "pncp_respostas_validas": 23,
     "pncp_falhas": 0,
     "compras_gov_respostas_validas": 0,
     "compras_gov_registros_examinados": 0,
@@ -24,9 +24,7 @@
     "compras_gov_itens": 0,
     "html_sinais": 0,
     "paginas_aprofundadas": 12,
-    "erros": [
-      "PNCP: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
-    ],
+    "erros": [],
     "avisos": [
       "PNCP proposta: limite de tempo atingido; resultado parcial preservado.",
       "PNCP publicacao: limite de tempo atingido; resultado parcial preservado."
@@ -70,44 +68,6 @@
       "escopo_coleta": "Brasil",
       "fase_pncp": "proposta",
       "proxima_acao": "Abrir o edital/aviso oficial, validar escopo, habilitação, prazo, local de execução e viabilidade de proposta."
-    },
-    {
-      "id": "34841267000123-1-000143/2026",
-      "tipo": "SINAL DE CONTRATAÇÃO",
-      "confirmacao": "PRÉ-SELECIONADO",
-      "fonte": "PNCP",
-      "titulo": "CONTRATAÇÃO DE EMPRESA PARA EXECUÇÃO DE SERVIÇOS/OBRAS DE PAVIMENTAÇÃO E DRENAGEM DAS RUAS DO BAIRRO JARDIM CAMPO NOVO, EM LAGARTO/SE.",
-      "municipio": "Aracaju",
-      "uf": "SE",
-      "regiao_prioridade": "Brasil",
-      "organizacao": "SECRETARIA DE ESTADO DO DESENVOLVIMENTO URBANO E SUSTENTABILIDADE",
-      "data_publicacao": "2026-07-20T09:28:55",
-      "prazo": "2026-08-26T10:00:00",
-      "valor_estimado": 25140397.83,
-      "modalidade": "Concorrência - Eletrônica",
-      "servicos_ordone": [
-        "Solo e conservação"
-      ],
-      "relacao_comercial": "Prestação ambiental para obra/construtora",
-      "status_leitura_edital": "LEITURA INCOMPLETA",
-      "documentos_analisados": [],
-      "requisitos_minimos": [],
-      "analise_elegibilidade": "LEITURA INCOMPLETA",
-      "pendencias_identificadas": [
-        "Abrir edital e anexos manualmente"
-      ],
-      "palavras_encontradas": [
-        "grupo:ambiental",
-        "grupo:solo_agua",
-        "serviços ambientais"
-      ],
-      "score": 46,
-      "prioridade": "ACOMPANHAR",
-      "url": "https://pncp.gov.br/app/editais/34841267000123/2026/143",
-      "numero_controle_pncp": "34841267000123-1-000143/2026",
-      "escopo_coleta": "Brasil",
-      "fase_pncp": "publicacao",
-      "proxima_acao": "Abrir a publicação oficial e verificar se há prazo de proposta, futura licitação, contratação direta ou oportunidade institucional."
     }
   ],
   "fontes_monitoradas": [
