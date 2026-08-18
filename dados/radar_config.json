@@ -1,5 +1,5 @@
 {
-  "versao": "4.0",
+  "versao": "4.1",
   "escopo_padrao": "Brasil inteiro",
   "centro_operacional": {
     "municipio": "Goianésia",
@@ -170,7 +170,7 @@
     "termo_generico_nao_aprova": true
   },
   "filtro_portfolio": {
-    "versao": "1.0",
+    "versao": "1.1",
     "modo": "lista_positiva",
     "regra": "O painel publica somente serviço executável diretamente pela Ordone. Termo ambiental genérico, parceria ou componente lateral não basta.",
     "publicacao": {
@@ -498,6 +498,7 @@
       "drone",
       "geoprocessamento",
       "aerolevantamento"
-    ]
+    ],
+    "ultima_revisao": "2026-08-18"
   }
 }
