@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Radar Ordone V6.0 — radar nacional cumulativo com validação técnica contextual.
+"""Radar Ordone V6.1 — radar nacional cumulativo com validação técnica contextual.
 
 Objetivo: localizar sinais e oportunidades em fontes públicas em todo o Brasil,
 mantendo Goiás e Goianésia como bônus de proximidade, sem realizar contato automático. O contato comercial permanece
@@ -653,6 +653,230 @@ def pncp_collect(cfg, mode, diagnostics):
     diagnostics[f"pncp_{mode}"] = len(out)
     return out
 
+
+COMPRAS_GOV_ENDPOINT = (
+    "https://dadosabertos.compras.gov.br/modulo-contratacoes/"
+    "1_consultarContratacoes_PNCP_14133"
+)
+# Códigos do catálogo oficial do Compras.gov: concorrência, pregão,
+# dispensa, inexigibilidade e credenciamento.
+COMPRAS_GOV_MODALIDADES = (3, 5, 6, 7, 12)
+
+
+def compras_gov_rows(payload):
+    """Normaliza os envelopes já usados pela API oficial de Dados Abertos."""
+    if isinstance(payload, list):
+        return payload
+    if not isinstance(payload, dict):
+        return []
+    for key in ("resultado", "resultados", "data", "items", "contratacoes"):
+        rows = payload.get(key)
+        if isinstance(rows, list):
+            return rows
+        if isinstance(rows, dict):
+            for nested in ("resultado", "resultados", "data", "items"):
+                if isinstance(rows.get(nested), list):
+                    return rows[nested]
+    return []
+
+
+def compras_gov_collect(cfg, diagnostics):
+    """Fonte oficial de contingência quando a consulta pública do PNCP falha.
+
+    A API de Dados Abertos do Compras.gov publica contratações da Lei 14.133
+    com objeto, órgão, localidade, datas e número de controle PNCP. O filtro
+    técnico permanece idêntico ao da fonte principal para bloquear compras
+    genéricas e falsos positivos.
+    """
+    today = datetime.now(BR_TZ).date()
+    start = today - timedelta(days=45)
+    profile = load_json(PROFILE, {})
+    out, seen = [], set()
+    diagnostics.setdefault("compras_gov_respostas_validas", 0)
+    diagnostics.setdefault("compras_gov_registros_examinados", 0)
+    diagnostics.setdefault("compras_gov_falhas", 0)
+    diagnostics.setdefault("compras_gov_itens", 0)
+
+    for modalidade in COMPRAS_GOV_MODALIDADES:
+        params = {
+            "dataPublicacaoPncpInicial": start.isoformat(),
+            "dataPublicacaoPncpFinal": today.isoformat(),
+            "codigoModalidade": modalidade,
+            "pagina": 1,
+            "tamanhoPagina": 100,
+        }
+        try:
+            diagnostics["requisicoes"] += 1
+            response = requests.get(
+                COMPRAS_GOV_ENDPOINT,
+                params=params,
+                headers=UA,
+                timeout=(10, 35),
+            )
+            if response.status_code in (400, 404, 422):
+                # Alguns códigos não possuem registros em determinados períodos.
+                diagnostics["avisos"].append(
+                    f"Compras.gov modalidade {modalidade}: HTTP {response.status_code}."
+                )
+                continue
+            response.raise_for_status()
+            payload = response.json()
+            diagnostics["compras_gov_respostas_validas"] += 1
+            rows = compras_gov_rows(payload)
+            diagnostics["compras_gov_registros_examinados"] += len(rows)
+        except Exception as exc:
+            diagnostics["compras_gov_falhas"] += 1
+            diagnostics["erros"].append(
+                f"Compras.gov modalidade {modalidade}: "
+                f"{type(exc).__name__}: {str(exc)[:140]}"
+            )
+            continue
+
+        for row in rows:
+            control = clean(
+                row.get("numeroControlePNCP")
+                or row.get("numeroControlePncp")
+                or row.get("numero_controle_pncp"),
+                80,
+            )
+            identifier = control or clean(
+                row.get("idCompra") or row.get("id") or row.get("numeroCompra"), 100
+            )
+            if identifier and identifier in seen:
+                continue
+
+            title = clean(
+                row.get("objetoCompra")
+                or row.get("objeto")
+                or row.get("descricaoObjeto"),
+                1200,
+            )
+            complement = clean(
+                row.get("informacaoComplementar")
+                or row.get("informacao_complementar")
+                or row.get("descricao"),
+                1200,
+            )
+            text = f"{title} {complement}".strip()
+            if not title or not relevant_procurement_object(text, cfg):
+                continue
+            hits, strong, explicit = meaningful_hits(text, cfg)
+            if not hits or (not strong and not explicit):
+                continue
+
+            deadline = clean(
+                row.get("dataEncerramentoProposta")
+                or row.get("dataEncerramento")
+                or row.get("dataFimProposta"),
+                40,
+            )
+            if deadline and deadline_expired(deadline):
+                continue
+
+            city = clean(
+                row.get("unidadeOrgaoMunicipioNome")
+                or row.get("municipioNome")
+                or row.get("municipio")
+                or (row.get("unidadeOrgao") or {}).get("municipioNome"),
+                80,
+            )
+            uf = clean(
+                row.get("unidadeOrgaoUfSigla")
+                or row.get("ufSigla")
+                or row.get("uf")
+                or (row.get("unidadeOrgao") or {}).get("ufSigla"),
+                2,
+            ).upper()
+            organization = clean(
+                row.get("orgaoEntidadeRazaoSocial")
+                or row.get("razaoSocial")
+                or row.get("nomeOrgao")
+                or (row.get("orgaoEntidade") or {}).get("razaoSocial"),
+                180,
+            )
+            score, region, hits = score_item(
+                city, uf, text, "DEMANDA FORMAL", cfg, deadline
+            )
+            if score < 45:
+                continue
+
+            source = (
+                pncp_url_from_control(control)
+                or safe_url(row.get("linkSistemaOrigem"))
+                or safe_url(row.get("url"))
+                or "https://www.gov.br/compras/pt-br/acesso-a-informacao/"
+                   "consulta-detalhada"
+            )
+            edital_text, docs_read, reading_status = (
+                pncp_document_text(control, diagnostics)
+                if control
+                else ("", [], "LEITURA INCOMPLETA")
+            )
+            requirements, eligibility, pending_docs = analyze_requirements(
+                edital_text, profile
+            )
+            out.append({
+                "id": identifier or (
+                    "compras-gov-"
+                    + hashlib.sha1(
+                        f"{title}|{organization}|{city}".encode("utf-8")
+                    ).hexdigest()[:16]
+                ),
+                "tipo": "DEMANDA FORMAL",
+                "confirmacao": (
+                    "CONFIRMADO"
+                    if docs_read and reading_status != "LEITURA INCOMPLETA"
+                    else "PRÉ-SELECIONADO"
+                ),
+                "fonte": "Compras.gov — Dados Abertos",
+                "titulo": title,
+                "municipio": city,
+                "uf": uf,
+                "regiao_prioridade": region,
+                "organizacao": organization,
+                "data_publicacao": clean(
+                    row.get("dataPublicacaoPncp")
+                    or row.get("dataPublicacao")
+                    or row.get("data_publicacao"),
+                    40,
+                ),
+                "prazo": deadline,
+                "valor_estimado": money(
+                    row.get("valorTotalEstimado")
+                    or row.get("valorEstimado")
+                    or row.get("valor_total_estimado")
+                ),
+                "modalidade": clean(
+                    row.get("modalidadeNome")
+                    or row.get("nomeModalidade")
+                    or row.get("modalidade"),
+                    80,
+                ),
+                "servicos_ordone": services_from(text),
+                "relacao_comercial": market_relation(text),
+                "status_leitura_edital": reading_status,
+                "documentos_analisados": docs_read,
+                "requisitos_minimos": requirements,
+                "analise_elegibilidade": eligibility,
+                "pendencias_identificadas": pending_docs,
+                "palavras_encontradas": hits[:10],
+                "score": score,
+                "prioridade": priority(score),
+                "url": source,
+                "numero_controle_pncp": control,
+                "escopo_coleta": "Brasil",
+                "fase_pncp": "publicacao",
+                "proxima_acao": (
+                    "Abrir a fonte oficial, confirmar prazo, escopo, habilitação "
+                    "e viabilidade antes de qualquer abordagem."
+                ),
+            })
+            if identifier:
+                seen.add(identifier)
+
+    diagnostics["compras_gov_itens"] = len(out)
+    return out
+
 def html_signals(cfg, diagnostics):
     sources = [
         ("PNCP", "https://pncp.gov.br/app/editais", "", "BR"),
@@ -853,11 +1077,14 @@ def build_output(cfg, items, diagnostics):
         + cfg["prioridade_geografica"].get("regiao_ampliada", [])
     ))
     return {
-        "versao": "6.0",
+        "versao": "6.1",
         "atualizado_em": datetime.now(timezone.utc).astimezone().strftime("%d/%m/%Y %H:%M"),
         "status": (
             "coleta_concluida"
-            if diagnostics.get("pncp_respostas_validas", 0) > 0
+            if (
+                diagnostics.get("pncp_respostas_validas", 0) > 0
+                or diagnostics.get("compras_gov_respostas_validas", 0) > 0
+            )
             else "fonte_principal_indisponivel"
         ),
         "prioridade": "Brasil inteiro → bônus de proximidade para Goiás e Goianésia",
@@ -933,6 +1160,10 @@ def main():
         "pncp_registros_examinados": 0,
         "pncp_respostas_validas": 0,
         "pncp_falhas": 0,
+        "compras_gov_respostas_validas": 0,
+        "compras_gov_registros_examinados": 0,
+        "compras_gov_falhas": 0,
+        "compras_gov_itens": 0,
         "html_sinais": 0,
         "paginas_aprofundadas": 0,
         "erros": [],
@@ -957,6 +1188,20 @@ def main():
     except Exception as exc:
         diagnostics["erros"].append(f"Falha geral PNCP publicação: {exc}"[:250])
 
+    # Se a API pública do PNCP estiver indisponível, usa automaticamente a
+    # API oficial de Dados Abertos do Compras.gov, sem declarar coleta completa
+    # antes de ao menos uma fonte nacional responder.
+    if diagnostics["pncp_respostas_validas"] == 0:
+        try:
+            compras = compras_gov_collect(cfg, diagnostics)
+            items += compras
+            successes += 1
+            print("Compras.gov (contingência):", len(compras))
+        except Exception as exc:
+            diagnostics["erros"].append(
+                f"Falha geral Compras.gov: {type(exc).__name__}: {str(exc)[:160]}"
+            )
+
     try:
         h = html_signals(cfg, diagnostics)
         items += h
@@ -966,16 +1211,23 @@ def main():
         diagnostics["erros"].append(f"Falha geral HTML: {exc}"[:250])
 
     items = merge_previous_valid(dedupe_sort(items), cfg)
-    if diagnostics["pncp_respostas_validas"] == 0:
+    if (
+        diagnostics["pncp_respostas_validas"] == 0
+        and diagnostics["compras_gov_respostas_validas"] == 0
+    ):
         diagnostics["avisos"].append(
-            "A fonte principal PNCP não respondeu. Nenhum resultado foi declarado como coleta completa."
+            "PNCP e Compras.gov não responderam. Nenhum resultado foi declarado como coleta completa."
+        )
+    elif diagnostics["pncp_respostas_validas"] == 0:
+        diagnostics["avisos"].append(
+            "PNCP indisponível; coleta nacional concluída pela contingência oficial do Compras.gov."
         )
     if successes == 0:
         print("Todas as fontes falharam; registrando indisponibilidade sem publicar falsos resultados.")
 
     data = build_output(cfg, items, diagnostics)
     OUT.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print("Radar V6.0 atualizado:", len(items), "itens; registros PNCP examinados:", diagnostics["pncp_registros_examinados"], "requisições:", diagnostics["requisicoes"])
+    print("Radar V6.1 atualizado:", len(items), "itens; registros PNCP examinados:", diagnostics["pncp_registros_examinados"], "requisições:", diagnostics["requisicoes"])
 
 
 if __name__ == "__main__":
