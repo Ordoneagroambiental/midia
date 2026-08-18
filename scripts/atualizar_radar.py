@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Radar Ordone V6.5 — radar nacional cumulativo com validação técnica contextual.
+"""Radar Ordone V6.6 — radar nacional cumulativo com validação técnica contextual.
 
 Objetivo: localizar sinais e oportunidades em fontes públicas em todo o Brasil,
 mantendo Goiás e Goianésia como bônus de proximidade, sem realizar contato automático. O contato comercial permanece
@@ -42,7 +42,7 @@ OUT = ROOT / "dados" / "radar_oportunidades.json"
 BR_TZ = ZoneInfo("America/Sao_Paulo")
 
 UA = {
-    "User-Agent": "Mozilla/5.0 (compatible; OrdoneRadar/6.5; +https://ordoneagroambiental.github.io/midia/)",
+    "User-Agent": "Mozilla/5.0 (compatible; OrdoneRadar/6.6; +https://ordoneagroambiental.github.io/midia/)",
     "Accept": "application/json,text/html;q=0.9,*/*;q=0.8",
 }
 
@@ -205,59 +205,99 @@ def clearly_non_environmental(text):
     return any(term in t for term in NON_ENVIRONMENTAL_TERMS)
 
 
-def relevant_procurement_object(text, cfg):
-    """Aceita somente objeto com um serviço técnico oferecido pela Ordone.
+def _term_position(normalized_text, phrase):
+    """Posição de um termo normalizado, com limite de palavra para siglas curtas."""
+    p = norm(phrase)
+    if not p:
+        return -1
+    if len(p) <= 4 and " " not in p:
+        match = re.search(rf"(?<!\w){re.escape(p)}(?!\w)", normalized_text)
+        return match.start() if match else -1
+    return normalized_text.find(p)
 
-    Menções laterais a secretarias, APP de informática, monitores ou palavras
-    ambientais soltas não transformam uma compra comum em oportunidade ambiental.
+
+def portfolio_match(text, cfg):
+    """Valida aderência direta ao portfólio; na dúvida, rejeita o objeto.
+
+    A lista positiva vem da configuração. Termos genéricos como ambiental,
+    erosão, drenagem, mapeamento ou drone nunca aprovam um objeto sozinhos.
+    Quando há obra incompatível, o serviço ambiental precisa aparecer antes
+    dela no núcleo do objeto, sinalizando uma contratação ambiental autônoma.
     """
     t = norm(text)
-    # Palavras como "irrigação" em equipamento hospitalar não representam
-    # demanda ambiental. Contextos explicitamente alheios são sempre rejeitados.
+    spec = cfg.get("filtro_portfolio") or {}
+    if spec.get("modo") != "lista_positiva" or not t:
+        return False, [], "Filtro de portfólio ausente ou objeto vazio"
+
+    sector_hits = [
+        term for term in spec.get("setores_alheios", [])
+        if _term_position(t, term) >= 0
+    ]
+    if sector_hits:
+        return False, [], f"Setor alheio ao portfólio: {sector_hits[0]}"
+
+    matched = []
+    for service in spec.get("servicos_diretos", []):
+        found = [
+            phrase for phrase in service.get("frases_fortes", [])
+            if _term_position(t, phrase) >= 0
+        ]
+        if found:
+            matched.append((
+                service.get("id") or norm(service.get("rotulo")),
+                service.get("rotulo") or found[0],
+                min(_term_position(t, phrase) for phrase in found),
+                found,
+            ))
+
+    if not matched:
+        return False, [], "Nenhum serviço direto do portfólio no objeto"
+
+    first_direct = min(item[2] for item in matched)
+    blockers = (
+        list(spec.get("aquisicoes_puras", []))
+        + list(spec.get("objetos_incompativeis", []))
+    )
+    blocker_hits = [
+        (term, _term_position(t, term))
+        for term in blockers
+        if _term_position(t, term) >= 0
+    ]
+    if blocker_hits:
+        first_blocker = min(pos for _, pos in blocker_hits)
+        if first_blocker < first_direct:
+            term = min(blocker_hits, key=lambda item: item[1])[0]
+            return False, [], f"Objeto principal incompatível: {term}"
+
+    labels, seen = [], set()
+    for _, label, _, _ in matched:
+        key = norm(label)
+        if key not in seen:
+            seen.add(key)
+            labels.append(label)
+    return True, labels, "Serviço direto identificado no objeto: " + ", ".join(labels)
+
+
+def relevant_procurement_object(text, cfg):
+    """Publica somente objeto com serviço executável diretamente pela Ordone."""
+    t = norm(text)
     if clearly_non_environmental(text):
         return False
 
-    # A Ordone presta serviços técnicos; aquisições puras de materiais e
-    # equipamentos não são oportunidades comerciais compatíveis.
     supply_object = any(x in t for x in (
         "aquisicao de", "compra de", "fornecimento de materiais",
         "fornecimento de equipamentos",
     ))
     service_execution = any(x in t for x in (
         "prestacao de servico", "prestacao dos servicos", "servicos tecnicos",
-        "execucao de prad", "execucao de servicos ambientais",
-        "elaboracao de projeto", "levantamento", "aerolevantamento",
+        "execucao de", "elaboracao de", "implantacao de", "manutencao de",
+        "operacao de", "supervisao ambiental", "monitoramento ambiental",
     ))
     if supply_object and not service_execution:
         return False
 
-    # Licitações amplas de Plano Diretor/cadastro urbano não são oportunidade
-    # direta da Ordone quando aerolevantamento ou SIG são apenas uma fração do lote.
-    compound_urban_terms = (
-        "plano diretor", "cadastro tecnico multifinalitario",
-        "recadastramento imobiliario", "mapeamento movel terrestre",
-    )
-    if sum(term in t for term in compound_urban_terms) >= 2:
-        return False
-
-    # Mapeamentos R3/R4 são estudos geológico-geotécnicos especializados,
-    # não simples serviços de drone/geoprocessamento ambiental.
-    if (
-        "setorizacao de areas de risco" in t
-        or ("areas de risco" in t and "r3" in t and "r4" in t)
-    ):
-        return False
-
-    valid_services = [x for x in services_from(text) if x != "Avaliação técnica inicial"]
-    strong = [x for x in HIGH_SIGNAL_TERMS if x in t]
-    if any(x in t for x in UNRELATED_SECTOR_TERMS) and not strong:
-        return False
-    if (
-        any(x in t for x in PURE_CIVIL_TERMS)
-        and not any(x in t for x in CONSTRUCTION_ENV_INTERFACE_TERMS)
-    ):
-        return False
-    return bool(valid_services and (strong or environmental_evidence(text, cfg)[0]))
+    ok, _, _ = portfolio_match(text, cfg)
+    return ok
 
 
 def institutional_page(text):
@@ -285,24 +325,14 @@ def stale_archive_title(text):
 
 
 def environmental_evidence(text, cfg):
-    """Exige evidência ambiental explícita no objeto local da publicação."""
-    hits, strong, explicit = meaningful_hits(text, cfg)
-    services = [x for x in services_from(text) if x != "Avaliação técnica inicial"]
-    return bool(services and (strong or explicit or hits)), hits
+    """Exige um serviço direto da lista positiva no objeto local."""
+    ok, _, _ = portfolio_match(text, cfg)
+    return ok, keyword_hits(text, cfg) if ok else []
 
 
 def market_relation(text):
-    """Classifica como a Ordone pode entrar comercialmente na demanda."""
-    t = norm(text)
-    partnership_terms = (
-        "estudo de viabilidade tecnica, ambiental e economica", "evtae",
-        "falesias", "projeto hidraulico", "substituicao de travessias", "pontes",
-    )
-    if any(x in t for x in partnership_terms):
-        return "Parceria técnica / consórcio a avaliar"
-    if any(x in t for x in CONSTRUCTION_MARKET_TERMS):
-        return "Prestação ambiental para obra/construtora"
-    return "Contratação ambiental direta"
+    """O painel público V6.6 mostra somente contratações diretamente aderentes."""
+    return "Contratação direta aderente ao portfólio"
 
 
 def meaningful_hits(text, cfg):
@@ -399,30 +429,10 @@ def keyword_hits(text, cfg):
     return out
 
 
-def services_from(text):
-    t = norm(text)
-    out = []
-
-    def add(label, *terms):
-        if any(norm(x) in t for x in terms) and label not in out:
-            out.append(label)
-
-    add("Recuperação ambiental / PRAD", "recuperacao ambiental", "area degradada", "prad", "prada", "restauracao", "revegetacao", "reflorestamento", "hidrossemeadura")
-    # Termos genéricos como reservatório, automação e bombeamento não bastam.
-    # Eles aparecem com frequência em limpeza predial, TI e saneamento.
-    irrigation_direct = ("irrigacao", "gotejamento", "aspersao", "microaspersao", "fertirrigacao")
-    if any(x in t for x in irrigation_direct):
-        add("Irrigação e automação", *irrigation_direct)
-    add("Solo e conservação", "erosao", "assoreamento", "conservacao do solo", "analise de solo", "fertilidade do solo", "drenagem")
-    add("Bioengenharia e controle de sedimentos", "palicada", "bioengenharia", "sedimento", "assoreamento")
-    add("Geotecnologia / drone", "geoprocessamento", "georreferenciamento", "topografia", "drone", "aerolevantamento", "mapeamento", "sensoriamento remoto")
-    add("Licenciamento e regularização", "licenciamento ambiental", "regularizacao ambiental", "condicionante ambiental", "outorga", "supressao vegetal")
-    add("Plantio, viveiros e compensação", "plantio compensatorio", "mudas nativas", "viveiro", "compensacao ambiental", "inventario florestal", "arborizacao", "area verde")
-    add("Recursos hídricos e nascentes", "nascente", "recursos hidricos", "app", "area de preservacao permanente")
-    add("Monitoramento ambiental", "monitoramento ambiental")
-    add("Gestão e supervisão ambiental de obras", "gestao ambiental de obra", "supervisao ambiental", "acompanhamento ambiental de obra", "controle ambiental de obra", "programa ambiental da construcao")
-    add("PGRS e gestão de resíduos da obra", "pgrs", "residuo da construcao", "residuos da construcao", "gestao de residuos")
-    return out or ["Avaliação técnica inicial"]
+def services_from(text, cfg):
+    """Retorna apenas categorias comprovadas pela lista positiva do portfólio."""
+    ok, labels, _ = portfolio_match(text, cfg)
+    return labels if ok and labels else ["Avaliação técnica inicial"]
 
 
 def priority(score):
@@ -738,7 +748,9 @@ def pncp_collect(cfg, mode, diagnostics):
                         "prazo": clean(deadline, 40),
                         "valor_estimado": money(x.get("valorTotalEstimado")),
                         "modalidade": clean(x.get("modalidadeNome"), 80),
-                        "servicos_ordone": services_from(text),
+                        "servicos_ordone": services_from(text, cfg),
+                        "tipo_aderencia": "ADERENTE_DIRETO",
+                        "motivo_aceitacao": "Objeto contém serviço direto do portfólio Ordone.",
                         "relacao_comercial": market_relation(text),
                         "status_leitura_edital": reading_status,
                         "documentos_analisados": docs_read,
@@ -980,7 +992,9 @@ def compras_gov_collect(cfg, diagnostics):
                     80,
                 ),
                 "situacao_compra": clean(row.get("situacaoCompraNomePncp"), 100),
-                "servicos_ordone": services_from(text),
+                "servicos_ordone": services_from(text, cfg),
+                        "tipo_aderencia": "ADERENTE_DIRETO",
+                        "motivo_aceitacao": "Objeto contém serviço direto do portfólio Ordone.",
                 "relacao_comercial": market_relation(text),
                 "status_leitura_edital": "LEITURA INCOMPLETA",
                 "documentos_analisados": [],
@@ -1088,7 +1102,10 @@ def html_signals(cfg, diagnostics):
                 deep_checked.add(href)
                 page_title, page_body = fetch_page_context(href, diagnostics)
             page_lead = clean(page_body, 1600)
-            local_object = " ".join(x for x in (anchor, parent_text, page_title, page_lead) if x)
+            object_core = " ".join(x for x in (anchor, parent_text, page_title) if x)
+            if not relevant_procurement_object(object_core, cfg):
+                continue
+            local_object = " ".join(x for x in (object_core, page_lead) if x)
             if clearly_non_environmental(" ".join((anchor, page_title, page_lead))):
                 continue
             if institutional_page(" ".join((anchor, page_title))):
@@ -1151,7 +1168,9 @@ def html_signals(cfg, diagnostics):
                 "prazo": "",
                 "valor_estimado": None,
                 "modalidade": "",
-                "servicos_ordone": [x for x in services_from(combined) if x != "Avaliação técnica inicial"],
+                "servicos_ordone": [x for x in services_from(combined, cfg) if x != "Avaliação técnica inicial"],
+                "tipo_aderencia": "ADERENTE_DIRETO",
+                "motivo_aceitacao": "Objeto contém serviço direto do portfólio Ordone.",
                 "relacao_comercial": (
                     market_relation(combined) if kind == "DEMANDA FORMAL"
                     else "Possível aderência ambiental — validar"
@@ -1227,7 +1246,7 @@ def build_output(cfg, items, diagnostics):
         + cfg["prioridade_geografica"].get("regiao_ampliada", [])
     ))
     return {
-        "versao": "6.5",
+        "versao": "6.6",
         "atualizado_em": datetime.now(BR_TZ).strftime("%d/%m/%Y %H:%M (horário de Brasília)"),
         "status": (
             "coleta_concluida"
@@ -1294,13 +1313,30 @@ def self_test(cfg):
         "Execução de muro de contenção para conter desbarrancamento e avanço da erosão em rodovia",
         "Revisão do Plano Diretor com cadastro técnico multifinalitário, recadastramento imobiliário e aerolevantamento",
         "Mapeamento e setorização de áreas de risco R3 e R4 para municípios",
+        "Prestação dos serviços técnicos especializados para elaboração de Estudo de Viabilidade Técnica, Ambiental e Econômica – EVTAE, voltado ao controle da erosão e ao manejo adequado das águas pluviais em áreas de falésias costeiras",
+        "PROJETO HIDRÁULICO PARA CONTROLE DE EROSÃO, SUBSTITUIÇÃO DE TRAVESSIAS (PONTES) E REFORÇO DE CALHA DE TRECHOS DO RIO GRANDE",
+        "Construção de ponte de concreto com compensação ambiental",
+        "Construção de canal para contenção de enchentes",
+        "Contenção de talude com gabião e solo grampeado",
+        "Aerolevantamento e aerofotogrametria com LiDAR",
+        "Controle de erosão e manejo de águas pluviais",
     )
     assert not any(relevant_procurement_object(x, cfg) for x in false_objects)
-    assert relevant_procurement_object("Execução de PRAD e revegetação de área degradada", cfg)
-    assert relevant_procurement_object("Supervisão ambiental e controle de erosão em obra de pavimentação", cfg)
+    true_objects = (
+        "Execução de PRAD e revegetação de área degradada",
+        "Supervisão ambiental de obra de duplicação rodoviária",
+        "Execução de PRAD e revegetação nas margens de canal",
+        "Controle de erosão com bioengenharia de solos e hidrossemeadura",
+        "Licenciamento ambiental e inventário florestal para implantação de ponte",
+        "Elaboração de PGRS para canteiro de obras",
+        "Recuperação de nascente e recomposição de APP",
+        "Aplicação aeroagrícola por drone em projeto de restauração",
+    )
+    assert all(relevant_procurement_object(x, cfg) for x in true_objects)
+    assert all(services_from(x, cfg) != ["Avaliação técnica inicial"] for x in true_objects)
     assert deadline_expired("2020-01-01T12:00:00")
     assert not deadline_expired((datetime.now(BR_TZ) + timedelta(days=1)).isoformat())
-    print("SELF-TEST OK V6.5", s, r, len(h), "falsos positivos bloqueados")
+    print("SELF-TEST OK V6.6", s, r, len(h), len(false_objects), "falsos positivos bloqueados")
 
 
 def main():
@@ -1396,7 +1432,7 @@ def main():
 
     data = build_output(cfg, items, diagnostics)
     OUT.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print("Radar V6.5 atualizado:", len(items), "itens; registros PNCP examinados:", diagnostics["pncp_registros_examinados"], "requisições:", diagnostics["requisicoes"])
+    print("Radar V6.6 atualizado:", len(items), "itens; registros PNCP examinados:", diagnostics["pncp_registros_examinados"], "requisições:", diagnostics["requisicoes"])
 
 
 if __name__ == "__main__":
