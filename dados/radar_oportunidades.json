@@ -1,14 +1,14 @@
 {
-  "versao": "6.5",
+  "versao": "6.6",
   "atualizado_em": "18/08/2026 19:45 (horário de Brasília)",
   "status": "coleta_contingencial",
   "prioridade": "Brasil inteiro → bônus de proximidade para Goiás e Goianésia",
   "resumo": {
-    "total": 2,
-    "brasil": 2,
+    "total": 0,
+    "brasil": 0,
     "goianesia_regiao": 0,
     "goias": 0,
-    "demandas_formais": 2,
+    "demandas_formais": 0,
     "sinais_ambientais": 0
   },
   "diagnostico_coleta": {
@@ -32,88 +32,11 @@
     "avisos": [
       "PNCP: circuito temporariamente interrompido após duas falhas; acionando a contingência oficial.",
       "PNCP publicação não repetida porque a fonte já falhou; contingência antecipada.",
-      "PNCP indisponível; coleta nacional concluída pela contingência oficial do Compras.gov."
+      "PNCP indisponível; coleta nacional concluída pela contingência oficial do Compras.gov.",
+      "Filtro V6.6 reaplicado: 2 falsos positivos de parceria/engenharia civil removidos do painel."
     ]
   },
-  "items": [
-    {
-      "id": "07954480000179-1-018879/2026",
-      "tipo": "DEMANDA FORMAL",
-      "confirmacao": "PRÉ-SELECIONADO",
-      "fonte": "Compras.gov — Dados Abertos",
-      "titulo": "Prestação dos serviços técnicos especializados para elaboração de Estudo de Viabilidade Técnica, Ambiental e Econômica – EVTAE, voltado ao controle da erosão e ao manejo adequado das águas pluviais em áreas de falésias costeiras no município de Aracati/CE, com ênfase na localidade de Canoa Quebrada, nas condições estabelecidas neste edital e seus anexos.",
-      "municipio": "FORTALEZA",
-      "uf": "CE",
-      "regiao_prioridade": "Brasil",
-      "organizacao": "ESTADO DO CEARA",
-      "data_publicacao": "2026-07-01T12:01:57",
-      "prazo": "2026-09-02T09:30:00",
-      "valor_estimado": 659976.47,
-      "modalidade": "Concorrência - Eletrônica",
-      "situacao_compra": "Divulgada no PNCP",
-      "servicos_ordone": [
-        "Solo e conservação"
-      ],
-      "relacao_comercial": "Parceria técnica / consórcio a avaliar",
-      "status_leitura_edital": "LEITURA INCOMPLETA",
-      "documentos_analisados": [],
-      "requisitos_minimos": [],
-      "analise_elegibilidade": "LEITURA INCOMPLETA",
-      "pendencias_identificadas": [
-        "Abrir edital e anexos oficiais antes de decidir pela participação"
-      ],
-      "palavras_encontradas": [
-        "erosão",
-        "grupo:ambiental",
-        "grupo:solo_agua"
-      ],
-      "score": 61,
-      "prioridade": "MÉDIA",
-      "url": "https://pncp.gov.br/app/editais/07954480000179/2026/18879",
-      "numero_controle_pncp": "07954480000179-1-018879/2026",
-      "escopo_coleta": "Brasil",
-      "fase_pncp": "contingencia_compras_gov",
-      "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
-    },
-    {
-      "id": "42498733000148-1-001394/2026",
-      "tipo": "DEMANDA FORMAL",
-      "confirmacao": "PRÉ-SELECIONADO",
-      "fonte": "Compras.gov — Dados Abertos",
-      "titulo": "PROJETO HIDRÁULICO PARA CONTROLE DE EROSÃO, SUBSTITUIÇÃO DE TRAVESSIAS (PONTES) E REFORÇO DE CALHA DE TRECHOS DO RIO GRANDE, INCLUINDO SUBSTITUIÇÃO DE TRAVESSIAS (PONTES) DO RIO TINDIBA – JACAREPAGUÁ – R.A. XVI – A.P. 4.0",
-      "municipio": "RIO DE JANEIRO",
-      "uf": "RJ",
-      "regiao_prioridade": "Brasil",
-      "organizacao": "MUNICIPIO DE RIO DE JANEIRO",
-      "data_publicacao": "2026-07-02T12:42:55",
-      "prazo": "2026-08-24T10:25:00",
-      "valor_estimado": 915983.14,
-      "modalidade": "Concorrência - Eletrônica",
-      "situacao_compra": "Divulgada no PNCP",
-      "servicos_ordone": [
-        "Solo e conservação"
-      ],
-      "relacao_comercial": "Parceria técnica / consórcio a avaliar",
-      "status_leitura_edital": "LEITURA INCOMPLETA",
-      "documentos_analisados": [],
-      "requisitos_minimos": [],
-      "analise_elegibilidade": "LEITURA INCOMPLETA",
-      "pendencias_identificadas": [
-        "Abrir edital e anexos oficiais antes de decidir pela participação"
-      ],
-      "palavras_encontradas": [
-        "erosão",
-        "grupo:solo_agua"
-      ],
-      "score": 55,
-      "prioridade": "ACOMPANHAR",
-      "url": "https://pncp.gov.br/app/editais/42498733000148/2026/1394",
-      "numero_controle_pncp": "42498733000148-1-001394/2026",
-      "escopo_coleta": "Brasil",
-      "fase_pncp": "contingencia_compras_gov",
-      "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
-    }
-  ],
+  "items": [],
   "fontes_monitoradas": [
     {
       "nome": "PNCP",
@@ -156,5 +79,6 @@
       "automatica": false
     }
   ],
-  "aviso": "Sinal público não é cliente confirmado. O radar organiza oportunidades a partir de fontes públicas; qualquer contato comercial depende de validação e aprovação humana."
+  "aviso": "Sinal público não é cliente confirmado. O radar organiza oportunidades a partir de fontes públicas; qualquer contato comercial depende de validação e aprovação humana.",
+  "criterio_filtro": "Somente serviços diretamente executáveis pela Ordone; parcerias, consórcios e componentes ambientais laterais não são publicados."
 }
