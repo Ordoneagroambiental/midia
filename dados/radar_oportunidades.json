@@ -1,60 +1,115 @@
 {
-  "versao": "6.0",
-  "atualizado_em": "18/08/2026 17:40",
-  "status": "fonte_principal_indisponivel",
+  "versao": "6.1",
+  "atualizado_em": "18/08/2026 21:11",
+  "status": "coleta_concluida",
   "prioridade": "Brasil inteiro → bônus de proximidade para Goiás e Goianésia",
   "resumo": {
-    "total": 0,
-    "brasil": 0,
+    "total": 2,
+    "brasil": 2,
     "goianesia_regiao": 0,
     "goias": 0,
-    "demandas_formais": 0,
-    "sinais_ambientais": 0
+    "demandas_formais": 1,
+    "sinais_ambientais": 1
   },
   "diagnostico_coleta": {
-    "requisicoes": 14,
+    "requisicoes": 28,
     "pncp_proposta": 0,
     "pncp_publicacao": 0,
-    "pncp_registros_examinados": 0,
+    "pncp_registros_examinados": 157,
+    "pncp_respostas_validas": 6,
+    "pncp_falhas": 0,
+    "compras_gov_respostas_validas": 0,
+    "compras_gov_registros_examinados": 0,
+    "compras_gov_falhas": 0,
+    "compras_gov_itens": 0,
     "html_sinais": 0,
     "paginas_aprofundadas": 12,
     "erros": [
-      "PNCP: ConnectTimeout: HTTPSConnectionPool(host='pncp.gov.br', port=443): Max retries exceeded with url: /api/consulta/v1/contratacoes/proposta?dataFinal=20260818&codigoModalidadeContratacao=4&pagina=1&tamanhoPagina=50 (Caused by ConnectTimeoutError(<",
-      "PNCP: ConnectTimeout: HTTPSConnectionPool(host='pncp.gov.br', port=443): Max retries exceeded with url: /api/consulta/v1/contratacoes/proposta?dataFinal=20260819&codigoModalidadeContratacao=4&pagina=1&tamanhoPagina=50 (Caused by ConnectTimeoutError(<",
-      "PNCP: ConnectTimeout: HTTPSConnectionPool(host='pncp.gov.br', port=443): Max retries exceeded with url: /api/consulta/v1/contratacoes/proposta?dataFinal=20260820&codigoModalidadeContratacao=4&pagina=1&tamanhoPagina=50 (Caused by ConnectTimeoutError(<",
-      "PNCP: ConnectTimeout: HTTPSConnectionPool(host='pncp.gov.br', port=443): Max retries exceeded with url: /api/consulta/v1/contratacoes/proposta?dataFinal=20260818&codigoModalidadeContratacao=5&pagina=1&tamanhoPagina=50 (Caused by ConnectTimeoutError(<",
-      "PNCP: ConnectTimeout: HTTPSConnectionPool(host='pncp.gov.br', port=443): Max retries exceeded with url: /api/consulta/v1/contratacoes/proposta?dataFinal=20260819&codigoModalidadeContratacao=5&pagina=1&tamanhoPagina=50 (Caused by ConnectTimeoutError(<",
-      "PNCP: ConnectTimeout: HTTPSConnectionPool(host='pncp.gov.br', port=443): Max retries exceeded with url: /api/consulta/v1/contratacoes/proposta?dataFinal=20260820&codigoModalidadeContratacao=5&pagina=1&tamanhoPagina=50 (Caused by ConnectTimeoutError(<",
-      "PNCP: ConnectTimeout: HTTPSConnectionPool(host='pncp.gov.br', port=443): Max retries exceeded with url: /api/consulta/v1/contratacoes/proposta?dataFinal=20260818&codigoModalidadeContratacao=6&pagina=1&tamanhoPagina=50 (Caused by ConnectTimeoutError(<",
-      "PNCP: ConnectTimeout: HTTPSConnectionPool(host='pncp.gov.br', port=443): Max retries exceeded with url: /api/consulta/v1/contratacoes/proposta?dataFinal=20260819&codigoModalidadeContratacao=6&pagina=1&tamanhoPagina=50 (Caused by ConnectTimeoutError(<",
-      "PNCP: ConnectTimeout: HTTPSConnectionPool(host='pncp.gov.br', port=443): Max retries exceeded with url: /api/consulta/v1/contratacoes/proposta?dataFinal=20260820&codigoModalidadeContratacao=6&pagina=1&tamanhoPagina=50 (Caused by ConnectTimeoutError(<",
-      "PNCP: ConnectTimeout: HTTPSConnectionPool(host='pncp.gov.br', port=443): Max retries exceeded with url: /api/consulta/v1/contratacoes/proposta?dataFinal=20260818&codigoModalidadeContratacao=8&pagina=1&tamanhoPagina=50 (Caused by ConnectTimeoutError(<",
-      "PNCP: ConnectTimeout: HTTPSConnectionPool(host='pncp.gov.br', port=443): Max retries exceeded with url: /api/consulta/v1/contratacoes/proposta?dataFinal=20260819&codigoModalidadeContratacao=8&pagina=1&tamanhoPagina=50 (Caused by ConnectTimeoutError(<",
-      "PNCP: ConnectTimeout: HTTPSConnectionPool(host='pncp.gov.br', port=443): Max retries exceeded with url: /api/consulta/v1/contratacoes/proposta?dataFinal=20260820&codigoModalidadeContratacao=8&pagina=1&tamanhoPagina=50 (Caused by ConnectTimeoutError(<",
-      "PNCP: ConnectTimeout: HTTPSConnectionPool(host='pncp.gov.br', port=443): Max retries exceeded with url: /api/consulta/v1/contratacoes/publicacao?dataFinal=20260818&codigoModalidadeContratacao=2&pagina=1&tamanhoPagina=50&dataInicial=20260719 (Caused b",
-      "PNCP: ConnectTimeout: HTTPSConnectionPool(host='pncp.gov.br', port=443): Max retries exceeded with url: /api/consulta/v1/contratacoes/publicacao?dataFinal=20260818&codigoModalidadeContratacao=3&pagina=1&tamanhoPagina=50&dataInicial=20260719 (Caused b",
-      "PNCP: ConnectTimeout: HTTPSConnectionPool(host='pncp.gov.br', port=443): Max retries exceeded with url: /api/consulta/v1/contratacoes/publicacao?dataFinal=20260818&codigoModalidadeContratacao=4&pagina=1&tamanhoPagina=50&dataInicial=20260719 (Caused b",
-      "PNCP: ConnectTimeout: HTTPSConnectionPool(host='pncp.gov.br', port=443): Max retries exceeded with url: /api/consulta/v1/contratacoes/publicacao?dataFinal=20260818&codigoModalidadeContratacao=5&pagina=1&tamanhoPagina=50&dataInicial=20260719 (Caused b",
-      "PNCP: ConnectTimeout: HTTPSConnectionPool(host='pncp.gov.br', port=443): Max retries exceeded with url: /api/consulta/v1/contratacoes/publicacao?dataFinal=20260818&codigoModalidadeContratacao=6&pagina=1&tamanhoPagina=50&dataInicial=20260719 (Caused b",
-      "PNCP: ConnectTimeout: HTTPSConnectionPool(host='pncp.gov.br', port=443): Max retries exceeded with url: /api/consulta/v1/contratacoes/publicacao?dataFinal=20260818&codigoModalidadeContratacao=7&pagina=1&tamanhoPagina=50&dataInicial=20260719 (Caused b",
-      "PNCP: ConnectTimeout: HTTPSConnectionPool(host='pncp.gov.br', port=443): Max retries exceeded with url: /api/consulta/v1/contratacoes/publicacao?dataFinal=20260818&codigoModalidadeContratacao=8&pagina=1&tamanhoPagina=50&dataInicial=20260719 (Caused b",
-      "PNCP: ConnectTimeout: HTTPSConnectionPool(host='pncp.gov.br', port=443): Max retries exceeded with url: /api/consulta/v1/contratacoes/publicacao?dataFinal=20260818&codigoModalidadeContratacao=9&pagina=1&tamanhoPagina=50&dataInicial=20260719 (Caused b",
-      "PNCP: ConnectTimeout: HTTPSConnectionPool(host='pncp.gov.br', port=443): Max retries exceeded with url: /api/consulta/v1/contratacoes/publicacao?dataFinal=20260818&codigoModalidadeContratacao=10&pagina=1&tamanhoPagina=50&dataInicial=20260719 (Caused ",
-      "PNCP: ConnectTimeout: HTTPSConnectionPool(host='pncp.gov.br', port=443): Max retries exceeded with url: /api/consulta/v1/contratacoes/publicacao?dataFinal=20260818&codigoModalidadeContratacao=11&pagina=1&tamanhoPagina=50&dataInicial=20260719 (Caused ",
-      "PNCP: ConnectTimeout: HTTPSConnectionPool(host='pncp.gov.br', port=443): Max retries exceeded with url: /api/consulta/v1/contratacoes/publicacao?dataFinal=20260818&codigoModalidadeContratacao=12&pagina=1&tamanhoPagina=50&dataInicial=20260719 (Caused ",
-      "PNCP: ConnectTimeout: HTTPSConnectionPool(host='pncp.gov.br', port=443): Max retries exceeded with url: /app/editais (Caused by ConnectTimeoutError(<HTTPSConnection(host='pncp.gov.br', port=443) at 0x7fc99538e7b0>, 'Connection to pncp.gov.br timed ou",
-      "MMA: ConnectionError: HTTPSConnectionPool(host='www.gov.br', port=443): Max retries exceeded with url: /mma/pt-br/assuntos (Caused by NewConnectionError(\"HTTPSConnection(host='www.gov.br', port=443): Failed to establish a new connection: [Errno 101] ",
-      "Ibama: ConnectionError: HTTPSConnectionPool(host='www.gov.br', port=443): Max retries exceeded with url: /ibama/pt-br/assuntos/noticias (Caused by NewConnectionError(\"HTTPSConnection(host='www.gov.br', port=443): Failed to establish a new connection:",
-      "ICMBio: ConnectionError: HTTPSConnectionPool(host='www.gov.br', port=443): Max retries exceeded with url: /icmbio/pt-br/assuntos/noticias (Caused by NewConnectionError(\"HTTPSConnection(host='www.gov.br', port=443): Failed to establish a new connectio",
-      "BNDES Floresta Viva: ConnectionError: HTTPSConnectionPool(host='www.bndes.gov.br', port=443): Max retries exceeded with url: /wps/portal/site/home/desenvolvimento-sustentavel/parcerias/floresta-viva (Caused by NewConnectionError(\"HTTPSConnection(host",
-      "Fundo Amazônia: ConnectionError: HTTPSConnectionPool(host='www.fundoamazonia.gov.br', port=443): Max retries exceeded with url: /pt/projetos/ (Caused by NewConnectionError(\"HTTPSConnection(host='www.fundoamazonia.gov.br', port=443): Failed to establi",
-      "SEMAD Goiás: ConnectTimeout: HTTPSConnectionPool(host='goias.gov.br', port=443): Max retries exceeded with url: /meioambiente/ (Caused by ConnectTimeoutError(<HTTPSConnection(host='goias.gov.br', port=443) at 0x7fc99538c2c0>, 'Connection to goias.gov"
+      "PNCP: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
     ],
     "avisos": [
-      "Resultados vencidos e sinais sem prazo foram removidos durante a correção definitiva."
+      "PNCP proposta: limite de tempo atingido; resultado parcial preservado.",
+      "PNCP publicacao: limite de tempo atingido; resultado parcial preservado."
     ]
   },
-  "items": [],
+  "items": [
+    {
+      "id": "76974823000180-1-000056/2026",
+      "tipo": "DEMANDA FORMAL",
+      "confirmacao": "PRÉ-SELECIONADO",
+      "fonte": "PNCP",
+      "titulo": "Contratação de empresa especializada para elaboração da revisão do Plano Diretor Municipal aerolevantamento/aerofotogrametria, mapeamento móvel terrestre em 360º dos imóveis no perímetro urbano, o suporte técnico administrativo para o recadastramento Imobiliário Urbano e a atualização do Cadastro Técnico Multifinalitár",
+      "municipio": "Santa Isabel do Ivaí",
+      "uf": "PR",
+      "regiao_prioridade": "Brasil",
+      "organizacao": "MUNICIPIO DE SANTA ISABEL DO IVAI",
+      "data_publicacao": "2026-06-29T10:17:06",
+      "prazo": "2026-08-19T08:55:00",
+      "valor_estimado": 532909.0,
+      "modalidade": "Concorrência - Eletrônica",
+      "servicos_ordone": [
+        "Geotecnologia / drone"
+      ],
+      "relacao_comercial": "Contratação ambiental direta",
+      "status_leitura_edital": "LEITURA INCOMPLETA",
+      "documentos_analisados": [],
+      "requisitos_minimos": [],
+      "analise_elegibilidade": "LEITURA INCOMPLETA",
+      "pendencias_identificadas": [
+        "Abrir edital e anexos manualmente"
+      ],
+      "palavras_encontradas": [
+        "aerolevantamento",
+        "mapeamento",
+        "grupo:geotecnologia"
+      ],
+      "score": 65,
+      "prioridade": "MÉDIA",
+      "url": "https://pncp.gov.br/app/editais/76974823000180/2026/56",
+      "numero_controle_pncp": "76974823000180-1-000056/2026",
+      "escopo_coleta": "Brasil",
+      "fase_pncp": "proposta",
+      "proxima_acao": "Abrir o edital/aviso oficial, validar escopo, habilitação, prazo, local de execução e viabilidade de proposta."
+    },
+    {
+      "id": "34841267000123-1-000143/2026",
+      "tipo": "SINAL DE CONTRATAÇÃO",
+      "confirmacao": "PRÉ-SELECIONADO",
+      "fonte": "PNCP",
+      "titulo": "CONTRATAÇÃO DE EMPRESA PARA EXECUÇÃO DE SERVIÇOS/OBRAS DE PAVIMENTAÇÃO E DRENAGEM DAS RUAS DO BAIRRO JARDIM CAMPO NOVO, EM LAGARTO/SE.",
+      "municipio": "Aracaju",
+      "uf": "SE",
+      "regiao_prioridade": "Brasil",
+      "organizacao": "SECRETARIA DE ESTADO DO DESENVOLVIMENTO URBANO E SUSTENTABILIDADE",
+      "data_publicacao": "2026-07-20T09:28:55",
+      "prazo": "2026-08-26T10:00:00",
+      "valor_estimado": 25140397.83,
+      "modalidade": "Concorrência - Eletrônica",
+      "servicos_ordone": [
+        "Solo e conservação"
+      ],
+      "relacao_comercial": "Prestação ambiental para obra/construtora",
+      "status_leitura_edital": "LEITURA INCOMPLETA",
+      "documentos_analisados": [],
+      "requisitos_minimos": [],
+      "analise_elegibilidade": "LEITURA INCOMPLETA",
+      "pendencias_identificadas": [
+        "Abrir edital e anexos manualmente"
+      ],
+      "palavras_encontradas": [
+        "grupo:ambiental",
+        "grupo:solo_agua",
+        "serviços ambientais"
+      ],
+      "score": 46,
+      "prioridade": "ACOMPANHAR",
+      "url": "https://pncp.gov.br/app/editais/34841267000123/2026/143",
+      "numero_controle_pncp": "34841267000123-1-000143/2026",
+      "escopo_coleta": "Brasil",
+      "fase_pncp": "publicacao",
+      "proxima_acao": "Abrir a publicação oficial e verificar se há prazo de proposta, futura licitação, contratação direta ou oportunidade institucional."
+    }
+  ],
   "fontes_monitoradas": [
     {
       "nome": "PNCP",
