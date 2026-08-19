@@ -316,6 +316,17 @@ def html_formal_evidence(text, url):
     return procedure and concrete and routed
 
 
+def html_signal_route(url):
+    """Aceita sinais precoces apenas em publicações específicas, nunca em páginas de menu."""
+    route = norm(urlparse(url).path).rstrip("/")
+    if not route:
+        return False
+    if "/noticias/" in route and not route.endswith("/noticias"):
+        return True
+    specific = ("chamada-publica", "chamadas-publicas", "oportunidade", "selecao-publica")
+    return any(f"/{part}/" in f"{route}/" for part in specific)
+
+
 def stale_archive_title(text):
     """Rejeita páginas históricas agregadoras, como 'Editais até 2024'."""
     t = norm(text)
@@ -1164,7 +1175,16 @@ def html_signals(cfg, diagnostics):
                     continue
                 kind = "DEMANDA FORMAL"
             else:
-                if not strong and len(explicit) < 2:
+                # Um sinal precoce precisa ser uma publicação específica. O corpo
+                # aprofundado ajuda a ler a matéria, mas não pode transformar menu,
+                # página temática ou área institucional em oportunidade.
+                signal_core = " ".join(x for x in (anchor, page_title) if x)
+                signal_hits, signal_strong, signal_explicit = meaningful_hits(signal_core, cfg)
+                if not html_signal_route(href):
+                    continue
+                if not relevant_procurement_object(signal_core, cfg):
+                    continue
+                if not signal_hits or (not signal_strong and len(signal_explicit) < 1):
                     continue
                 kind = "SINAL AMBIENTAL"
 
@@ -1342,6 +1362,9 @@ def self_test(cfg):
     assert institutional_page("Escola de Meio Ambiente (Emago)")
     assert not html_formal_evidence("contratação ambiental direta", "https://exemplo.gov.br/assuntos")
     assert html_formal_evidence("Edital nº 12 objeto e prazo para propostas", "https://exemplo.gov.br/licitacoes/edital-12")
+    assert html_signal_route("https://exemplo.gov.br/assuntos/noticias/novo-programa-ambiental")
+    assert not html_signal_route("https://exemplo.gov.br/assuntos/noticias")
+    assert not html_signal_route("https://exemplo.gov.br/assuntos/inventario-florestal")
     false_objects = (
         "Locação de computadores, notebooks, tablets e monitores para a Secretaria de Meio Ambiente",
         "Solução SaaS de atendimento por WhatsApp com inteligência artificial",
