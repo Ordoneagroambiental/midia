@@ -170,7 +170,7 @@ document.querySelectorAll('a[href*="whatsapp"]').forEach(a=>{
 })();
 
 
-// V6.6 — Radar nacional com lista positiva do portfólio Ordone.
+// V6.7 — Radar agressivo com lista positiva do portfólio Ordone.
 (function(){
   const target=document.getElementById('radar-opportunity-list');
   if(!target) return;
@@ -249,7 +249,7 @@ document.querySelectorAll('a[href*="whatsapp"]').forEach(a=>{
       if(stamp){
         const diag=data.diagnostico_coleta||{};
         const contingencia=Number(diag.pncp_respostas_validas||0)===0&&Number(diag.compras_gov_respostas_validas||0)>0;
-        if(data.status==='coleta_contingencial'||(data.status==='coleta_concluida'&&contingencia)) stamp.textContent='Última coleta oficial: '+(data.atualizado_em||'agora')+' · contingência Compras.gov; nova tentativa do PNCP será automática.';
+        if(data.status==='coleta_contingencial'||(data.status==='coleta_concluida'&&contingencia)) stamp.textContent='Última coleta oficial: '+(data.atualizado_em||'agora')+' · contingência Compras.gov em modo agressivo; nova tentativa do PNCP será automática.';
         else if(data.status==='coleta_concluida') stamp.textContent='Última coleta válida: '+(data.atualizado_em||'agora');
         else if(data.status==='fonte_principal_indisponivel') stamp.textContent='Fontes oficiais temporariamente indisponíveis na tentativa de '+(data.atualizado_em||'agora')+'. Nova tentativa será automática.';
         else stamp.textContent=data.atualizado_em?'Atualização: '+data.atualizado_em:'Radar aguardando coleta';
