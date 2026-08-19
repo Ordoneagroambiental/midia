@@ -3,8 +3,8 @@ name: Atualizar Radar Ordone
 on:
   workflow_dispatch:
   schedule:
-    # Atualiza a cada 4 horas; horários em UTC.
-    - cron: '27 */4 * * *'
+    # Atualiza a cada 2 horas; horários em UTC.
+    - cron: '27 */2 * * *'
   push:
     paths:
       - 'scripts/atualizar_radar.py'
