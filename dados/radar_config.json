@@ -1,5 +1,5 @@
 {
-  "versao": "4.1",
+  "versao": "4.2",
   "escopo_padrao": "Brasil inteiro",
   "centro_operacional": {
     "municipio": "Goianésia",
@@ -100,7 +100,22 @@
     "controle ambiental de obra",
     "PGRS",
     "resíduos da construção",
-    "residuos da construcao"
+    "residuos da construcao",
+    "estudos ambientais",
+    "RCA",
+    "RAS",
+    "PGRCC",
+    "assistência técnica agronômica",
+    "consultoria agronômica",
+    "arborização urbana",
+    "educação ambiental",
+    "trilha interpretativa",
+    "pagamento por serviços ambientais",
+    "recuperação de área minerada",
+    "recuperação de passivo ambiental",
+    "produção de mudas florestais",
+    "sementes florestais",
+    "gestão de condicionantes ambientais"
   ],
   "termos_excluir": [
     "processo seletivo",
@@ -157,6 +172,42 @@
       "url": "https://www.gov.br/anm/pt-br/acesso-a-informacao/dados-abertos",
       "automatica": false,
       "uso": "Processos e geoinformação mineral."
+    },
+    {
+      "nome": "SEMAD Goiás — Licitações",
+      "url": "https://goias.gov.br/meioambiente/licitacoes-e-contratos/",
+      "automatica": true,
+      "uso": "Licitações, consultorias e credenciamentos ambientais em Goiás."
+    },
+    {
+      "nome": "Ibama — Licitações",
+      "url": "https://www.gov.br/ibama/pt-br/acesso-a-informacao/licitacoes-e-contratos",
+      "automatica": true,
+      "uso": "Licitações e credenciamentos ambientais federais."
+    },
+    {
+      "nome": "ICMBio — Licitações",
+      "url": "https://www.gov.br/icmbio/pt-br/acesso-a-informacao/licitacoes-e-contratos",
+      "automatica": true,
+      "uso": "Licitações, chamamentos e projetos de conservação."
+    },
+    {
+      "nome": "DNIT — Licitações",
+      "url": "https://www.gov.br/dnit/pt-br/assuntos/licitacoes",
+      "automatica": true,
+      "uso": "Supervisão, gestão ambiental, PRAD e revegetação em infraestrutura."
+    },
+    {
+      "nome": "Serviço Florestal Brasileiro — Licitações",
+      "url": "https://www.gov.br/florestal/pt-br/acesso-a-informacao/licitacoes-e-contratos",
+      "automatica": true,
+      "uso": "Restauração, florestas, viveiros, sementes e consultorias."
+    },
+    {
+      "nome": "ANA — Licitações",
+      "url": "https://www.gov.br/ana/pt-br/acesso-a-informacao/licitacoes/licitacoes-2/licitacoes",
+      "automatica": true,
+      "uso": "Recursos hídricos, nascentes, outorgas e estudos ambientais."
     }
   ],
   "regras": {
@@ -167,10 +218,12 @@
     "exigir_aprovacao_humana_para_contato": true,
     "somente_aderencia_direta": true,
     "parcerias_e_consorcios_no_painel": false,
-    "termo_generico_nao_aprova": true
+    "termo_generico_nao_aprova": true,
+    "frequencia_horas": 2,
+    "profundidade_compras_gov": "até 10 páginas planejadas por modalidade, 120 dias"
   },
   "filtro_portfolio": {
-    "versao": "1.1",
+    "versao": "1.2",
     "modo": "lista_positiva",
     "regra": "O painel publica somente serviço executável diretamente pela Ordone. Termo ambiental genérico, parceria ou componente lateral não basta.",
     "publicacao": {
@@ -198,7 +251,19 @@
           "recomposição florestal",
           "recuperação de APP",
           "recuperação de reserva legal",
-          "recuperação de mata ciliar"
+          "recuperação de mata ciliar",
+          "recuperação de área minerada",
+          "recuperação de áreas mineradas",
+          "recuperação de passivo ambiental",
+          "restauração de área degradada",
+          "restauração de áreas degradadas",
+          "implantação de PRAD",
+          "execução de PRAD",
+          "recomposição de APP",
+          "recomposição de reserva legal",
+          "recomposição de mata ciliar",
+          "restauração de mata ciliar",
+          "revitalização ambiental"
         ]
       },
       {
@@ -212,7 +277,17 @@
           "revegetação de talude",
           "biomanta com revegetação",
           "paliçada",
-          "proteção superficial do solo por técnicas vegetativas"
+          "proteção superficial do solo por técnicas vegetativas",
+          "semeadura hidráulica",
+          "mulching hidráulico",
+          "biomanta antierosiva",
+          "biomanta vegetal",
+          "proteção vegetal de talude",
+          "controle de erosão com revegetação",
+          "controle de erosão com hidrossemeadura",
+          "controle erosivo por técnicas vegetativas",
+          "implantação de cobertura vegetal",
+          "gramagem de talude"
         ]
       },
       {
@@ -231,7 +306,18 @@
           "compensação florestal",
           "compensação ambiental",
           "plantio compensatório",
-          "resgate de flora"
+          "resgate de flora",
+          "inventário arbóreo",
+          "censo arbóreo",
+          "laudo de cobertura vegetal",
+          "plano de resgate de flora",
+          "programa de resgate de flora",
+          "monitoramento florestal",
+          "manejo da vegetação",
+          "autorização de supressão vegetal",
+          "projeto de compensação ambiental",
+          "projeto de compensação florestal",
+          "execução de plantio compensatório"
         ]
       },
       {
@@ -248,7 +334,19 @@
           "relatório técnico ambiental",
           "auditoria de conformidade ambiental",
           "PCA",
-          "MCE"
+          "MCE",
+          "estudo ambiental",
+          "estudos ambientais",
+          "relatório de controle ambiental",
+          "elaboração de RCA",
+          "relatório ambiental simplificado",
+          "elaboração de RAS",
+          "estudo ambiental simplificado",
+          "diagnóstico ambiental",
+          "consultoria para licenciamento ambiental",
+          "assessoria para licenciamento ambiental",
+          "renovação de licença ambiental",
+          "gestão de licenças ambientais"
         ]
       },
       {
@@ -264,7 +362,17 @@
           "monitoramento ambiental",
           "controle ambiental de obra",
           "programa ambiental da construção",
-          "relatório de acompanhamento ambiental"
+          "relatório de acompanhamento ambiental",
+          "consultoria e gestão ambiental",
+          "apoio à fiscalização ambiental",
+          "fiscalização e gestão ambiental",
+          "coordenação ambiental",
+          "assessoria ambiental",
+          "monitoramento de programas ambientais",
+          "execução de programas ambientais",
+          "gestão de condicionantes ambientais",
+          "supervisão de programas ambientais",
+          "gestão ambiental das obras"
         ]
       },
       {
@@ -280,7 +388,15 @@
           "PSA Cerrado em Pé",
           "CAR",
           "PRA",
-          "PSA"
+          "PSA",
+          "inscrição no CAR",
+          "cadastro no CAR",
+          "retificação do cadastro ambiental rural",
+          "regularização ambiental de imóvel rural",
+          "regularização de imóvel rural",
+          "assistência técnica para PSA",
+          "consultoria para pagamento por serviços ambientais",
+          "programa de regularização ambiental rural"
         ]
       },
       {
@@ -290,7 +406,12 @@
           "PGRS",
           "plano de gerenciamento de resíduos sólidos",
           "plano de gestão de resíduos da construção",
-          "gerenciamento ambiental de resíduos"
+          "gerenciamento ambiental de resíduos",
+          "PGRCC",
+          "plano de gerenciamento de resíduos da construção civil",
+          "plano de gerenciamento de resíduos",
+          "plano de gestão de resíduos",
+          "gestão ambiental de resíduos"
         ]
       },
       {
@@ -303,7 +424,12 @@
           "fertilidade do solo",
           "manejo e conservação do solo",
           "conservação de solos",
-          "recuperação de solo degradado"
+          "recuperação de solo degradado",
+          "conservação do solo e água",
+          "recuperação de solo",
+          "diagnóstico de solo",
+          "projeto de conservação do solo",
+          "controle de erosão em área agrícola"
         ]
       },
       {
@@ -317,7 +443,11 @@
           "delimitação de área de preservação permanente",
           "regularização de captação de água",
           "outorga de uso de recursos hídricos",
-          "outorga de uso de água"
+          "outorga de uso de água",
+          "outorga de direito de uso",
+          "regularização de poço",
+          "cadastro de uso de recursos hídricos",
+          "regularização de uso de água"
         ]
       },
       {
@@ -332,7 +462,15 @@
           "produção de mudas nativas",
           "responsabilidade técnica de viveiro",
           "coleta de sementes florestais",
-          "beneficiamento de sementes nativas"
+          "beneficiamento de sementes nativas",
+          "produção de mudas florestais",
+          "manutenção de viveiro florestal",
+          "operação de viveiro florestal",
+          "produção de sementes florestais",
+          "beneficiamento de sementes florestais",
+          "armazenamento de sementes florestais",
+          "rede de sementes",
+          "coleta de sementes nativas"
         ]
       },
       {
@@ -344,7 +482,14 @@
           "mapa temático ambiental",
           "sensoriamento remoto ambiental",
           "delimitação de APP por geoprocessamento",
-          "georreferenciamento de área degradada"
+          "georreferenciamento de área degradada",
+          "geoprocessamento para CAR",
+          "geoprocessamento para PRAD",
+          "mapeamento de uso e cobertura do solo",
+          "análise de uso e cobertura do solo",
+          "delimitação de APP",
+          "cadastro georreferenciado de imóveis rurais",
+          "monitoramento de áreas degradadas"
         ]
       },
       {
@@ -356,7 +501,12 @@
           "pulverização por drone",
           "semeadura por drone",
           "aplicação aérea por drone",
-          "drone agrícola"
+          "drone agrícola",
+          "aplicação de defensivos por drone",
+          "aplicação de insumos por drone",
+          "aplicação de agroquímicos por drone",
+          "pulverização aeroagrícola",
+          "aeronave remotamente pilotada para aplicação agrícola"
         ]
       },
       {
@@ -368,7 +518,53 @@
           "irrigação de viveiro",
           "irrigação agrícola",
           "projeto agronômico de irrigação",
-          "manejo de irrigação"
+          "manejo de irrigação",
+          "manejo de sistema de irrigação",
+          "irrigação de viveiro florestal",
+          "projeto de irrigação agrícola",
+          "assistência técnica em irrigação"
+        ]
+      },
+      {
+        "id": "assistencia_tecnica_agronomica",
+        "rotulo": "Assistência técnica e RT agronômica",
+        "frases_fortes": [
+          "assistência técnica agronômica",
+          "consultoria agronômica",
+          "responsabilidade técnica agronômica",
+          "responsabilidade técnica ambiental",
+          "serviço de engenheiro agrônomo",
+          "serviços de engenheiro agrônomo",
+          "assistência técnica rural",
+          "elaboração de projeto agronômico"
+        ]
+      },
+      {
+        "id": "arborizacao_ecologica",
+        "rotulo": "Arborização e paisagismo ecológico",
+        "frases_fortes": [
+          "plano de arborização urbana",
+          "projeto de arborização urbana",
+          "implantação de arborização urbana",
+          "inventário da arborização urbana",
+          "manejo da arborização urbana",
+          "plantio de árvores nativas",
+          "paisagismo ecológico",
+          "arborização com espécies nativas"
+        ]
+      },
+      {
+        "id": "educacao_ambiental",
+        "rotulo": "Educação e estruturas ambientais",
+        "frases_fortes": [
+          "programa de educação ambiental",
+          "projeto de educação ambiental",
+          "execução de educação ambiental",
+          "trilha interpretativa",
+          "centro de educação ambiental",
+          "viveiro educativo",
+          "borboletário educativo",
+          "jardim de polinizadores"
         ]
       }
     ],
@@ -499,6 +695,8 @@
       "geoprocessamento",
       "aerolevantamento"
     ],
-    "ultima_revisao": "2026-08-18"
+    "ultima_revisao": "2026-08-18",
+    "modo_operacional": "agressivo",
+    "regra_agressiva": "Ampliar fontes, páginas e sinônimos sem aceitar serviço civil incompatível ou termo ambiental isolado."
   }
 }
