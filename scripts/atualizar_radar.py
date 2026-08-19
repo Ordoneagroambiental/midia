@@ -1383,6 +1383,7 @@ def self_test(cfg):
         "Contenção de talude com gabião e solo grampeado",
         "Aerolevantamento e aerofotogrametria com LiDAR",
         "Controle de erosão e manejo de águas pluviais",
+        "Elaboração de estudos ambientais, salvamento arqueológico e projetos básico e executivo de engenharia visando a implantação e pavimentação da Rodovia BR-070/GO",
     )
     assert not any(relevant_procurement_object(x, cfg) for x in false_objects)
     true_objects = (
