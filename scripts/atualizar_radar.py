@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Radar Ordone V6.6 — radar nacional cumulativo com validação técnica contextual.
+"""Radar Ordone V6.7 — radar nacional cumulativo com validação técnica contextual.
 
 Objetivo: localizar sinais e oportunidades em fontes públicas em todo o Brasil,
 mantendo Goiás e Goianésia como bônus de proximidade, sem realizar contato automático. O contato comercial permanece
@@ -42,7 +42,7 @@ OUT = ROOT / "dados" / "radar_oportunidades.json"
 BR_TZ = ZoneInfo("America/Sao_Paulo")
 
 UA = {
-    "User-Agent": "Mozilla/5.0 (compatible; OrdoneRadar/6.6; +https://ordoneagroambiental.github.io/midia/)",
+    "User-Agent": "Mozilla/5.0 (compatible; OrdoneRadar/6.7; +https://ordoneagroambiental.github.io/midia/)",
     "Accept": "application/json,text/html;q=0.9,*/*;q=0.8",
 }
 
@@ -67,7 +67,7 @@ GENERIC_PATH_PARTS = (
 )
 NON_ENVIRONMENTAL_TERMS = (
     "fibromialgia", "carteira de fibromialgia", "saude", "vacina", "hospital",
-    "medicamento", "paciente", "assistencia social", "educacao", "matricula",
+    "medicamento", "paciente", "assistencia social", "matricula",
     "merenda", "transporte escolar", "cultura", "esporte", "turismo",
     "certidao", "tributo", "iptu", "alvara", "nota fiscal", "contracheque",
 )
@@ -331,7 +331,7 @@ def environmental_evidence(text, cfg):
 
 
 def market_relation(text):
-    """O painel público V6.6 mostra somente contratações diretamente aderentes."""
+    """O painel público V6.7 mostra somente contratações diretamente aderentes."""
     return "Contratação direta aderente ao portfólio"
 
 
@@ -403,6 +403,13 @@ def keyword_hits(text, cfg):
                    if len(normalized_kw) <= 3 else normalized_kw in t)
         if matched:
             hits.append(kw)
+
+    # A lista positiva é o critério de entrada. Seus rótulos também contam
+    # como evidência explícita, mesmo quando a expressão nova ainda não consta
+    # na lista histórica de palavras-chave.
+    portfolio_ok, portfolio_labels, _ = portfolio_match(text, cfg)
+    if portfolio_ok:
+        hits.extend(f"portfólio:{label}" for label in portfolio_labels)
 
     for group, patterns in EXTRA_PATTERNS.items():
         if any(re.search(p, t, flags=re.I) for p in patterns):
@@ -808,22 +815,39 @@ def compras_gov_rows(payload):
     return []
 
 
+def aggressive_page_plan(total_pages):
+    """Cobre páginas novas e amostras antigas sem varrer a API inteira."""
+    try:
+        total = max(1, int(total_pages or 1))
+    except (TypeError, ValueError):
+        total = 1
+    pages = {1, total}
+    # Seis páginas mais recentes concentram editais novos.
+    for offset in range(0, 6):
+        pages.add(max(1, total - offset))
+    # Amostras distribuídas capturam certames antigos ainda abertos.
+    for fraction in (0.25, 0.50, 0.75):
+        pages.add(max(1, min(total, round(total * fraction))))
+    return sorted(pages)
+
+
 def compras_gov_collect(cfg, diagnostics):
     """Contingência oficial, paginada e limitada, para indisponibilidade do PNCP.
 
-    A API do Compras.gov é ordenada por publicação. Para obter cobertura útil
-    sem alongar a execução, o robô lê até 500 registros da primeira e da última
-    página de cada modalidade nos últimos 60 dias.
+    A API do Compras.gov é ordenada por publicação. No modo agressivo, o robô
+    lê até 500 registros por página, cobrindo as seis páginas mais recentes,
+    a primeira e amostras distribuídas dos últimos 120 dias.
     """
     today = datetime.now(BR_TZ).date()
-    start_date = today - timedelta(days=60)
+    start_date = today - timedelta(days=120)
     out, seen = [], set()
     session = requests.Session()
-    scan_deadline = time.monotonic() + 120
+    scan_deadline = time.monotonic() + 300
 
     diagnostics.setdefault("compras_gov_respostas_validas", 0)
     diagnostics.setdefault("compras_gov_registros_examinados", 0)
     diagnostics.setdefault("compras_gov_paginas_examinadas", 0)
+    diagnostics.setdefault("compras_gov_paginas_planejadas", 0)
     diagnostics.setdefault("compras_gov_falhas", 0)
     diagnostics.setdefault("compras_gov_itens", 0)
 
@@ -1021,23 +1045,30 @@ def compras_gov_collect(cfg, diagnostics):
     for modalidade in COMPRAS_GOV_MODALIDADES:
         if time.monotonic() >= scan_deadline:
             diagnostics["avisos"].append(
-                "Compras.gov: limite de 120 segundos atingido; resultado parcial preservado."
+                "Compras.gov: limite de 300 segundos atingido; resultado parcial preservado."
             )
             break
 
         first_rows, total_pages = fetch_page(modalidade, 1)
         process_rows(first_rows)
+        pages = aggressive_page_plan(total_pages)
+        diagnostics["compras_gov_paginas_planejadas"] += len(pages)
 
-        # A API retorna os registros em ordem crescente de publicação.
-        # A última página concentra as publicações mais recentes.
-        if (
-            total_pages > 1
-            and time.monotonic() < scan_deadline
-        ):
-            last_rows, _ = fetch_page(modalidade, total_pages)
-            process_rows(last_rows)
+        for page in pages:
+            if page == 1:
+                continue
+            if time.monotonic() >= scan_deadline:
+                diagnostics["avisos"].append(
+                    "Compras.gov: limite agressivo de 300 segundos atingido; "
+                    "resultado parcial preservado."
+                )
+                break
+            rows, _ = fetch_page(modalidade, page)
+            process_rows(rows)
+            time.sleep(0.10)
 
-        time.sleep(0.15)
+        if time.monotonic() >= scan_deadline:
+            break
 
     diagnostics["compras_gov_itens"] = len(out)
     return out
@@ -1052,6 +1083,12 @@ def html_signals(cfg, diagnostics):
         ("Prefeitura de Goianésia", "https://goianesia.go.gov.br/", "Goianésia", "GO"),
         ("Editais de Goianésia", "https://goianesia.go.gov.br/editais-e-publicacoes/", "Goianésia", "GO"),
         ("SEMAD Goiás", "https://goias.gov.br/meioambiente/", "", "GO"),
+        ("SEMAD Goiás — Licitações", "https://goias.gov.br/meioambiente/licitacoes-e-contratos/", "", "GO"),
+        ("Ibama — Licitações", "https://www.gov.br/ibama/pt-br/acesso-a-informacao/licitacoes-e-contratos", "", "BR"),
+        ("ICMBio — Licitações", "https://www.gov.br/icmbio/pt-br/acesso-a-informacao/licitacoes-e-contratos", "", "BR"),
+        ("DNIT — Licitações", "https://www.gov.br/dnit/pt-br/assuntos/licitacoes", "", "BR"),
+        ("Serviço Florestal Brasileiro — Licitações", "https://www.gov.br/florestal/pt-br/acesso-a-informacao/licitacoes-e-contratos", "", "BR"),
+        ("ANA — Licitações", "https://www.gov.br/ana/pt-br/acesso-a-informacao/licitacoes/licitacoes-2/licitacoes", "", "BR"),
     ]
     out, seen = [], set()
     local_names = (
@@ -1098,14 +1135,16 @@ def html_signals(cfg, diagnostics):
                 continue
 
             page_title, page_body = "", ""
-            if href not in deep_checked and len(deep_checked) < 12:
+            if href not in deep_checked and len(deep_checked) < 30:
                 deep_checked.add(href)
                 page_title, page_body = fetch_page_context(href, diagnostics)
             page_lead = clean(page_body, 1600)
             object_core = " ".join(x for x in (anchor, parent_text, page_title) if x)
-            if not relevant_procurement_object(object_core, cfg):
-                continue
             local_object = " ".join(x for x in (object_core, page_lead) if x)
+            # A página aprofundada pode trazer o objeto completo, mesmo quando
+            # o link se chama apenas "Edital" ou "Concorrência".
+            if not relevant_procurement_object(local_object, cfg):
+                continue
             if clearly_non_environmental(" ".join((anchor, page_title, page_lead))):
                 continue
             if institutional_page(" ".join((anchor, page_title))):
@@ -1185,7 +1224,7 @@ def html_signals(cfg, diagnostics):
                     "Validar o contexto e confirmar se o sinal representa demanda técnica real antes de classificar como oportunidade comercial."
                 ),
             })
-            if len(out) >= 24:
+            if len(out) >= 40:
                 break
 
     diagnostics["html_sinais"] = len(out)
@@ -1246,7 +1285,7 @@ def build_output(cfg, items, diagnostics):
         + cfg["prioridade_geografica"].get("regiao_ampliada", [])
     ))
     return {
-        "versao": "6.6",
+        "versao": "6.7",
         "atualizado_em": datetime.now(BR_TZ).strftime("%d/%m/%Y %H:%M (horário de Brasília)"),
         "status": (
             "coleta_concluida"
@@ -1258,6 +1297,7 @@ def build_output(cfg, items, diagnostics):
             )
         ),
         "prioridade": "Brasil inteiro → bônus de proximidade para Goiás e Goianésia",
+        "modo_busca": "AGRESSIVO — maior frequência, profundidade e fontes; aderência direta preservada",
         "resumo": {
             "total": len(items),
             "brasil": len(items),
@@ -1331,12 +1371,19 @@ def self_test(cfg):
         "Elaboração de PGRS para canteiro de obras",
         "Recuperação de nascente e recomposição de APP",
         "Aplicação aeroagrícola por drone em projeto de restauração",
+        "Prestação de estudos ambientais para licenciamento ambiental",
+        "Assistência técnica agronômica para produtores rurais",
+        "Implantação de arborização urbana com espécies nativas",
+        "Execução de programa de educação ambiental e trilha interpretativa",
+        "Consultoria para pagamento por serviços ambientais e regularização de CAR",
     )
     assert all(relevant_procurement_object(x, cfg) for x in true_objects)
     assert all(services_from(x, cfg) != ["Avaliação técnica inicial"] for x in true_objects)
+    plan = aggressive_page_plan(50)
+    assert 1 in plan and 50 in plan and 49 in plan and 25 in plan and len(plan) <= 10
     assert deadline_expired("2020-01-01T12:00:00")
     assert not deadline_expired((datetime.now(BR_TZ) + timedelta(days=1)).isoformat())
-    print("SELF-TEST OK V6.6", s, r, len(h), len(false_objects), "falsos positivos bloqueados")
+    print("SELF-TEST OK V6.7", s, r, len(h), len(false_objects), "falsos positivos bloqueados")
 
 
 def main():
@@ -1359,6 +1406,7 @@ def main():
         "compras_gov_respostas_validas": 0,
         "compras_gov_registros_examinados": 0,
         "compras_gov_paginas_examinadas": 0,
+        "compras_gov_paginas_planejadas": 0,
         "compras_gov_falhas": 0,
         "compras_gov_itens": 0,
         "html_sinais": 0,
@@ -1393,19 +1441,17 @@ def main():
             "PNCP publicação não repetida porque a fonte já falhou; contingência antecipada."
         )
 
-    # Se a API pública do PNCP estiver indisponível, usa automaticamente a
-    # API oficial de Dados Abertos do Compras.gov, sem declarar coleta completa
-    # antes de ao menos uma fonte nacional responder.
-    if diagnostics["pncp_respostas_validas"] == 0:
-        try:
-            compras = compras_gov_collect(cfg, diagnostics)
-            items += compras
-            successes += 1
-            print("Compras.gov (contingência):", len(compras))
-        except Exception as exc:
-            diagnostics["erros"].append(
-                f"Falha geral Compras.gov: {type(exc).__name__}: {str(exc)[:160]}"
-            )
+    # O modo agressivo consulta também o Compras.gov em toda execução.
+    # Assim, uma resposta parcial do PNCP não reduz a cobertura nacional.
+    try:
+        compras = compras_gov_collect(cfg, diagnostics)
+        items += compras
+        successes += 1
+        print("Compras.gov (cobertura agressiva):", len(compras))
+    except Exception as exc:
+        diagnostics["erros"].append(
+            f"Falha geral Compras.gov: {type(exc).__name__}: {str(exc)[:160]}"
+        )
 
     try:
         h = html_signals(cfg, diagnostics)
@@ -1432,7 +1478,7 @@ def main():
 
     data = build_output(cfg, items, diagnostics)
     OUT.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print("Radar V6.6 atualizado:", len(items), "itens; registros PNCP examinados:", diagnostics["pncp_registros_examinados"], "requisições:", diagnostics["requisicoes"])
+    print("Radar V6.7 atualizado:", len(items), "itens; registros PNCP examinados:", diagnostics["pncp_registros_examinados"], "requisições:", diagnostics["requisicoes"])
 
 
 if __name__ == "__main__":
