@@ -1,7 +1,7 @@
 {
   "versao": "6.7",
-  "atualizado_em": "19/08/2026 20:38 (horário de Brasília)",
-  "status": "coleta_contingencial",
+  "atualizado_em": "20/08/2026 03:00 (horário de Brasília)",
+  "status": "coleta_concluida",
   "prioridade": "Brasil inteiro → bônus de proximidade para Goiás e Goianésia",
   "modo_busca": "AGRESSIVO — maior frequência, profundidade e fontes; aderência direta preservada",
   "resumo": {
@@ -13,14 +13,14 @@
     "sinais_ambientais": 0
   },
   "diagnostico_coleta": {
-    "requisicoes": 85,
+    "requisicoes": 110,
     "pncp_proposta": 0,
     "pncp_publicacao": 0,
-    "pncp_registros_examinados": 0,
-    "pncp_respostas_validas": 0,
-    "pncp_falhas": 2,
+    "pncp_registros_examinados": 723,
+    "pncp_respostas_validas": 18,
+    "pncp_falhas": 6,
     "compras_gov_respostas_validas": 37,
-    "compras_gov_registros_examinados": 17246,
+    "compras_gov_registros_examinados": 17235,
     "compras_gov_paginas_examinadas": 37,
     "compras_gov_paginas_planejadas": 37,
     "compras_gov_falhas": 0,
@@ -28,14 +28,23 @@
     "html_sinais": 0,
     "paginas_aprofundadas": 30,
     "erros": [
-      "PNCP indisponível após 2 tentativas: ReadTimeout: HTTPSConnectionPool(host='pncp.gov.br', port=443): Read timed out. (read timeout=12)",
-      "PNCP indisponível após 2 tentativas: ReadTimeout: HTTPSConnectionPool(host='pncp.gov.br', port=443): Read timed out. (read timeout=12)",
-      "PNCP: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+      "PNCP indisponível após 2 tentativas: HTTP 429",
+      "PNCP indisponível após 2 tentativas: HTTP 429",
+      "PNCP indisponível após 2 tentativas: HTTP 429",
+      "PNCP indisponível após 2 tentativas: HTTP 429",
+      "PNCP indisponível após 2 tentativas: HTTP 429",
+      "PNCP indisponível após 2 tentativas: HTTP 429",
+      "Prefeitura de Goianésia: ConnectTimeout: HTTPSConnectionPool(host='goianesia.go.gov.br', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='goianesia.go.gov.br', port=443) at 0x7f254b1d6ff0>, 'Connection",
+      "Editais de Goianésia: ConnectTimeout: HTTPSConnectionPool(host='goianesia.go.gov.br', port=443): Max retries exceeded with url: /editais-e-publicacoes/ (Caused by ConnectTimeoutError(<HTTPSConnection(host='goianesia.go.gov.br', port=443) at 0x7f254b1"
     ],
     "avisos": [
-      "PNCP: circuito temporariamente interrompido após duas falhas; acionando a contingência oficial.",
-      "PNCP publicação não repetida porque a fonte já falhou; contingência antecipada.",
-      "PNCP indisponível; coleta nacional concluída pela contingência oficial do Compras.gov."
+      "PNCP respondeu 429 após nova tentativa.",
+      "PNCP respondeu 429 após nova tentativa.",
+      "PNCP respondeu 429 após nova tentativa.",
+      "PNCP respondeu 429 após nova tentativa.",
+      "PNCP respondeu 429 após nova tentativa.",
+      "PNCP respondeu 429 após nova tentativa.",
+      "PNCP publicacao: limite de tempo atingido; resultado parcial preservado."
     ]
   },
   "items": [
@@ -71,7 +80,7 @@
         "portfólio:Gestão, supervisão e monitoramento ambiental",
         "grupo:ambiental"
       ],
-      "score": 50,
+      "score": 55,
       "prioridade": "ACOMPANHAR",
       "url": "https://pncp.gov.br/app/editais/88830609000139/2026/367",
       "numero_controle_pncp": "88830609000139-1-000367/2026",
