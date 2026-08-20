@@ -1,24 +1,24 @@
 {
   "versao": "6.7",
-  "atualizado_em": "20/08/2026 15:00 (horário de Brasília)",
+  "atualizado_em": "20/08/2026 16:58 (horário de Brasília)",
   "status": "coleta_concluida",
   "prioridade": "Brasil inteiro → bônus de proximidade para Goiás e Goianésia",
   "modo_busca": "AGRESSIVO — maior frequência, profundidade e fontes; aderência direta preservada",
   "resumo": {
-    "total": 1,
-    "brasil": 1,
+    "total": 2,
+    "brasil": 2,
     "goianesia_regiao": 0,
     "goias": 0,
-    "demandas_formais": 1,
+    "demandas_formais": 2,
     "sinais_ambientais": 0
   },
   "diagnostico_coleta": {
-    "requisicoes": 116,
+    "requisicoes": 103,
     "pncp_proposta": 0,
     "pncp_publicacao": 0,
-    "pncp_registros_examinados": 937,
-    "pncp_respostas_validas": 24,
-    "pncp_falhas": 5,
+    "pncp_registros_examinados": 735,
+    "pncp_respostas_validas": 20,
+    "pncp_falhas": 0,
     "compras_gov_respostas_validas": 37,
     "compras_gov_registros_examinados": 17235,
     "compras_gov_paginas_examinadas": 37,
@@ -27,19 +27,9 @@
     "compras_gov_itens": 1,
     "html_sinais": 0,
     "paginas_aprofundadas": 30,
-    "erros": [
-      "PNCP indisponível após 2 tentativas: HTTP 429",
-      "PNCP indisponível após 2 tentativas: HTTP 429",
-      "PNCP indisponível após 2 tentativas: HTTP 429",
-      "PNCP indisponível após 2 tentativas: HTTP 429",
-      "PNCP indisponível após 2 tentativas: HTTP 429"
-    ],
+    "erros": [],
     "avisos": [
-      "PNCP respondeu 429 após nova tentativa.",
-      "PNCP respondeu 429 após nova tentativa.",
-      "PNCP respondeu 429 após nova tentativa.",
-      "PNCP respondeu 429 após nova tentativa.",
-      "PNCP respondeu 429 após nova tentativa.",
+      "PNCP proposta: limite de tempo atingido; resultado parcial preservado.",
       "PNCP publicacao: limite de tempo atingido; resultado parcial preservado."
     ]
   },
@@ -83,6 +73,44 @@
       "escopo_coleta": "Brasil",
       "fase_pncp": "contingencia_compras_gov",
       "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
+    },
+    {
+      "id": "13751821000101-1-000016/2026",
+      "tipo": "DEMANDA FORMAL",
+      "confirmacao": "PRÉ-SELECIONADO",
+      "fonte": "PNCP",
+      "titulo": "Contratação de empresa de engenharia para a Construção de Unidade de Beneficiamento de Mandioca (Unidade de Processamento de Farinha - 1 ou 2 Fornos) no Município de Maiquinique - BA, incluindo o fornecimento e instalação de equipamentos, em regime de execução por empreitada por preço global, em conformidade com o Conv",
+      "municipio": "Maiquinique",
+      "uf": "BA",
+      "regiao_prioridade": "Brasil",
+      "organizacao": "MUNICIPIO DE MAIQUINIQUE",
+      "data_publicacao": "2026-07-23T16:54:16",
+      "prazo": "2026-08-21T10:15:00",
+      "valor_estimado": 506905.1,
+      "modalidade": "Concorrência - Eletrônica",
+      "servicos_ordone": [
+        "Regularização ambiental rural / CAR"
+      ],
+      "tipo_aderencia": "ADERENTE_DIRETO",
+      "motivo_aceitacao": "Objeto contém serviço direto do portfólio Ordone.",
+      "relacao_comercial": "Contratação direta aderente ao portfólio",
+      "status_leitura_edital": "LEITURA INCOMPLETA",
+      "documentos_analisados": [],
+      "requisitos_minimos": [],
+      "analise_elegibilidade": "LEITURA INCOMPLETA",
+      "pendencias_identificadas": [
+        "Abrir edital e anexos manualmente"
+      ],
+      "palavras_encontradas": [
+        "portfólio:Regularização ambiental rural / CAR"
+      ],
+      "score": 49,
+      "prioridade": "ACOMPANHAR",
+      "url": "https://pncp.gov.br/app/editais/13751821000101/2026/16",
+      "numero_controle_pncp": "13751821000101-1-000016/2026",
+      "escopo_coleta": "Brasil",
+      "fase_pncp": "proposta",
+      "proxima_acao": "Abrir o edital/aviso oficial, validar escopo, habilitação, prazo, local de execução e viabilidade de proposta."
     }
   ],
   "fontes_monitoradas": [
