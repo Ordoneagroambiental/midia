@@ -1,6 +1,6 @@
 {
   "versao": "6.7",
-  "atualizado_em": "20/08/2026 20:46 (horário de Brasília)",
+  "atualizado_em": "21/08/2026 03:03 (horário de Brasília)",
   "status": "coleta_contingencial",
   "prioridade": "Brasil inteiro → bônus de proximidade para Goiás e Goianésia",
   "modo_busca": "AGRESSIVO — maior frequência, profundidade e fontes; aderência direta preservada",
@@ -20,7 +20,7 @@
     "pncp_respostas_validas": 0,
     "pncp_falhas": 2,
     "compras_gov_respostas_validas": 37,
-    "compras_gov_registros_examinados": 17235,
+    "compras_gov_registros_examinados": 17006,
     "compras_gov_paginas_examinadas": 37,
     "compras_gov_paginas_planejadas": 37,
     "compras_gov_falhas": 0,
