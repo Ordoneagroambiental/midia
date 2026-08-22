@@ -1,6 +1,6 @@
 {
   "versao": "1.0",
-  "atualizado_em": "2026-08-22T07:50:40.654961+00:00",
+  "atualizado_em": "2026-08-22T13:48:08.597597+00:00",
   "criterios": {
     "escopo": "Brasil e mundo",
     "frequencia": "a cada 6 horas",
@@ -39,8 +39,8 @@
     },
     {
       "fonte": "Embrapa",
-      "ok": true,
-      "itens": 0
+      "ok": false,
+      "erro": "HTTPSConnectionPool(host='www.embrapa.br', port=443): Max retries exceeded with url: /noticias (Caused by ConnectTimeout"
     },
     {
       "fonte": "SGB",
