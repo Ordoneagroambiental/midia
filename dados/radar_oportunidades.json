@@ -1,7 +1,7 @@
 {
   "versao": "6.7",
-  "atualizado_em": "22/08/2026 20:04 (horário de Brasília)",
-  "status": "coleta_concluida",
+  "atualizado_em": "23/08/2026 02:55 (horário de Brasília)",
+  "status": "coleta_contingencial",
   "prioridade": "Brasil inteiro → bônus de proximidade para Goiás e Goianésia",
   "modo_busca": "AGRESSIVO — maior frequência, profundidade e fontes; aderência direta preservada",
   "resumo": {
@@ -13,14 +13,14 @@
     "sinais_ambientais": 0
   },
   "diagnostico_coleta": {
-    "requisicoes": 91,
+    "requisicoes": 85,
     "pncp_proposta": 0,
     "pncp_publicacao": 0,
     "pncp_registros_examinados": 0,
-    "pncp_respostas_validas": 1,
-    "pncp_falhas": 4,
+    "pncp_respostas_validas": 0,
+    "pncp_falhas": 2,
     "compras_gov_respostas_validas": 37,
-    "compras_gov_registros_examinados": 17301,
+    "compras_gov_registros_examinados": 17403,
     "compras_gov_paginas_examinadas": 37,
     "compras_gov_paginas_planejadas": 37,
     "compras_gov_falhas": 0,
@@ -30,13 +30,12 @@
     "erros": [
       "PNCP indisponível após 2 tentativas: ReadTimeout: HTTPSConnectionPool(host='pncp.gov.br', port=443): Read timed out. (read timeout=12)",
       "PNCP indisponível após 2 tentativas: ReadTimeout: HTTPSConnectionPool(host='pncp.gov.br', port=443): Read timed out. (read timeout=12)",
-      "PNCP indisponível após 2 tentativas: ReadTimeout: HTTPSConnectionPool(host='pncp.gov.br', port=443): Read timed out. (read timeout=12)",
-      "PNCP indisponível após 2 tentativas: ReadTimeout: HTTPSConnectionPool(host='pncp.gov.br', port=443): Read timed out. (read timeout=12)",
       "PNCP: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
     ],
     "avisos": [
-      "PNCP proposta: limite de tempo atingido; resultado parcial preservado.",
-      "PNCP publicacao: limite de tempo atingido; resultado parcial preservado."
+      "PNCP: circuito temporariamente interrompido após duas falhas; acionando a contingência oficial.",
+      "PNCP publicação não repetida porque a fonte já falhou; contingência antecipada.",
+      "PNCP indisponível; coleta nacional concluída pela contingência oficial do Compras.gov."
     ]
   },
   "items": [
