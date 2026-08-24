@@ -1,6 +1,6 @@
 {
   "versao": "6.7",
-  "atualizado_em": "23/08/2026 20:04 (horário de Brasília)",
+  "atualizado_em": "24/08/2026 03:10 (horário de Brasília)",
   "status": "coleta_concluida",
   "prioridade": "Brasil inteiro → bônus de proximidade para Goiás e Goianésia",
   "modo_busca": "AGRESSIVO — maior frequência, profundidade e fontes; aderência direta preservada",
@@ -13,14 +13,14 @@
     "sinais_ambientais": 0
   },
   "diagnostico_coleta": {
-    "requisicoes": 93,
+    "requisicoes": 92,
     "pncp_proposta": 0,
     "pncp_publicacao": 0,
-    "pncp_registros_examinados": 150,
-    "pncp_respostas_validas": 3,
+    "pncp_registros_examinados": 50,
+    "pncp_respostas_validas": 1,
     "pncp_falhas": 4,
     "compras_gov_respostas_validas": 37,
-    "compras_gov_registros_examinados": 17403,
+    "compras_gov_registros_examinados": 17370,
     "compras_gov_paginas_examinadas": 37,
     "compras_gov_paginas_planejadas": 37,
     "compras_gov_falhas": 0,
