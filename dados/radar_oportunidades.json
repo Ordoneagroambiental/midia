@@ -1,6 +1,6 @@
 {
   "versao": "6.7",
-  "atualizado_em": "25/08/2026 14:57 (horário de Brasília)",
+  "atualizado_em": "25/08/2026 17:00 (horário de Brasília)",
   "status": "coleta_concluida",
   "prioridade": "Brasil inteiro → bônus de proximidade para Goiás e Goianésia",
   "modo_busca": "AGRESSIVO — maior frequência, profundidade e fontes; aderência direta preservada",
@@ -13,17 +13,17 @@
     "sinais_ambientais": 0
   },
   "diagnostico_coleta": {
-    "requisicoes": 115,
+    "requisicoes": 113,
     "pncp_proposta": 1,
     "pncp_publicacao": 0,
-    "pncp_registros_examinados": 977,
-    "pncp_respostas_validas": 25,
+    "pncp_registros_examinados": 807,
+    "pncp_respostas_validas": 22,
     "pncp_falhas": 4,
-    "compras_gov_respostas_validas": 37,
-    "compras_gov_registros_examinados": 17356,
-    "compras_gov_paginas_examinadas": 37,
+    "compras_gov_respostas_validas": 36,
+    "compras_gov_registros_examinados": 16856,
+    "compras_gov_paginas_examinadas": 36,
     "compras_gov_paginas_planejadas": 37,
-    "compras_gov_falhas": 0,
+    "compras_gov_falhas": 1,
     "compras_gov_itens": 1,
     "html_sinais": 0,
     "paginas_aprofundadas": 30,
@@ -31,15 +31,15 @@
       "PNCP indisponível após 2 tentativas: HTTP 429",
       "PNCP indisponível após 2 tentativas: HTTP 429",
       "PNCP indisponível após 2 tentativas: HTTP 429",
-      "PNCP indisponível após 2 tentativas: HTTP 429",
-      "PNCP: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+      "PNCP indisponível após 2 tentativas: HTTP 429"
     ],
     "avisos": [
       "PNCP respondeu 429 após nova tentativa.",
       "PNCP respondeu 429 após nova tentativa.",
       "PNCP respondeu 429 após nova tentativa.",
       "PNCP respondeu 429 após nova tentativa.",
-      "PNCP publicacao: limite de tempo atingido; resultado parcial preservado."
+      "PNCP publicacao: limite de tempo atingido; resultado parcial preservado.",
+      "Compras.gov modalidade 3, página 2: HTTP 400."
     ]
   },
   "items": [
