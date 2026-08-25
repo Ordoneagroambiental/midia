@@ -1,6 +1,6 @@
 {
   "versao": "1.0",
-  "atualizado_em": "2026-08-24T19:49:21.167878+00:00",
+  "atualizado_em": "2026-08-25T03:28:06.669955+00:00",
   "criterios": {
     "escopo": "Brasil e mundo",
     "frequencia": "a cada 6 horas",
@@ -40,7 +40,7 @@
     {
       "fonte": "Embrapa",
       "ok": true,
-      "itens": 1
+      "itens": 0
     },
     {
       "fonte": "SGB",
@@ -118,20 +118,6 @@
       "tipo": "Atualidade",
       "id": "3563b295718c",
       "pontuacao": 85
-    },
-    {
-      "id": "0292ba5ccdb1",
-      "titulo": "Soluções do Semiárido para restauração de áreas degradadas são apresentadas na COP17",
-      "resumo": "Conteúdo técnico identificado pela curadoria automática. Abra a fonte oficial para verificar método, escala e resultados.",
-      "aplicacao": "Avaliar a transferência da técnica para condições brasileiras antes de qualquer recomendação.",
-      "pais": "Brasil",
-      "categoria": "Florestas e biodiversidade",
-      "fonte": "Embrapa",
-      "tipo_fonte": "Empresa pública de pesquisa",
-      "data": "",
-      "url": "https://www.embrapa.br/busca-de-noticias/-/noticia/146734741/solucoes-do-semiarido-para-restauracao-de-areas-degradadas-sao-apresentadas-na-cop17",
-      "tipo": "Atualidade",
-      "pontuacao": 56
     }
   ]
 }
