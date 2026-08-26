@@ -1,6 +1,6 @@
 {
   "versao": "6.7",
-  "atualizado_em": "26/08/2026 05:28 (horário de Brasília)",
+  "atualizado_em": "26/08/2026 07:22 (horário de Brasília)",
   "status": "coleta_concluida",
   "prioridade": "Brasil inteiro → bônus de proximidade para Goiás e Goianésia",
   "modo_busca": "AGRESSIVO — maior frequência, profundidade e fontes; aderência direta preservada",
@@ -16,9 +16,9 @@
     "requisicoes": 111,
     "pncp_proposta": 0,
     "pncp_publicacao": 0,
-    "pncp_registros_examinados": 909,
-    "pncp_respostas_validas": 22,
-    "pncp_falhas": 3,
+    "pncp_registros_examinados": 859,
+    "pncp_respostas_validas": 21,
+    "pncp_falhas": 4,
     "compras_gov_respostas_validas": 37,
     "compras_gov_registros_examinados": 17114,
     "compras_gov_paginas_examinadas": 37,
@@ -30,9 +30,12 @@
     "erros": [
       "PNCP indisponível após 2 tentativas: HTTP 429",
       "PNCP indisponível após 2 tentativas: HTTP 429",
-      "PNCP indisponível após 2 tentativas: HTTP 429"
+      "PNCP indisponível após 2 tentativas: HTTP 429",
+      "PNCP indisponível após 2 tentativas: HTTP 429",
+      "PNCP: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
     ],
     "avisos": [
+      "PNCP respondeu 429 após nova tentativa.",
       "PNCP respondeu 429 após nova tentativa.",
       "PNCP respondeu 429 após nova tentativa.",
       "PNCP respondeu 429 após nova tentativa.",
