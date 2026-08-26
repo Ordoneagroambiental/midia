@@ -1,6 +1,6 @@
 {
   "versao": "1.0",
-  "atualizado_em": "2026-08-26T08:25:09.083073+00:00",
+  "atualizado_em": "2026-08-26T14:31:34.884854+00:00",
   "criterios": {
     "escopo": "Brasil e mundo",
     "frequencia": "a cada 6 horas",
@@ -10,7 +10,7 @@
     {
       "fonte": "UNEP",
       "ok": true,
-      "itens": 0
+      "itens": 1
     },
     {
       "fonte": "EPA Estados Unidos",
@@ -40,7 +40,7 @@
     {
       "fonte": "Embrapa",
       "ok": true,
-      "itens": 0
+      "itens": 1
     },
     {
       "fonte": "SGB",
@@ -118,6 +118,34 @@
       "tipo": "Atualidade",
       "id": "3563b295718c",
       "pontuacao": 85
+    },
+    {
+      "id": "394b624ecc49",
+      "titulo": "Greening lands, feeding people: UN Awards Three Restoration Flagships at UNCCD COP17",
+      "resumo": "Conteúdo técnico identificado pela curadoria automática. Abra a fonte oficial para verificar método, escala e resultados.",
+      "aplicacao": "Avaliar a transferência da técnica para condições brasileiras antes de qualquer recomendação.",
+      "pais": "Global",
+      "categoria": "Florestas e biodiversidade",
+      "fonte": "UNEP",
+      "tipo_fonte": "Instituição multilateral",
+      "data": "",
+      "url": "https://www.unep.org/news-and-stories/press-release/greening-lands-feeding-people-un-awards-three-restoration-flagships",
+      "tipo": "Atualidade",
+      "pontuacao": 56
+    },
+    {
+      "id": "8b331a5e0d51",
+      "titulo": "ONU reconhece iniciativa apoiada pela Embrapa como referência mundial em restauração",
+      "resumo": "Conteúdo técnico identificado pela curadoria automática. Abra a fonte oficial para verificar método, escala e resultados.",
+      "aplicacao": "Avaliar a transferência da técnica para condições brasileiras antes de qualquer recomendação.",
+      "pais": "Brasil",
+      "categoria": "Florestas e biodiversidade",
+      "fonte": "Embrapa",
+      "tipo_fonte": "Empresa pública de pesquisa",
+      "data": "",
+      "url": "https://www.embrapa.br/busca-de-noticias/-/noticia/146810139/onu-reconhece-iniciativa-apoiada-pela-embrapa-como-referencia-mundial-em-restauracao",
+      "tipo": "Atualidade",
+      "pontuacao": 56
     }
   ]
 }
