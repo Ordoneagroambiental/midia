@@ -1,26 +1,26 @@
 {
   "versao": "6.7",
-  "atualizado_em": "26/08/2026 08:59 (horário de Brasília)",
-  "status": "coleta_concluida",
+  "atualizado_em": "28/08/2026 19:36 (horário de Brasília)",
+  "status": "coleta_contingencial",
   "prioridade": "Brasil inteiro → bônus de proximidade para Goiás e Goianésia",
   "modo_busca": "AGRESSIVO — maior frequência, profundidade e fontes; aderência direta preservada",
   "resumo": {
-    "total": 2,
-    "brasil": 2,
+    "total": 1,
+    "brasil": 1,
     "goianesia_regiao": 0,
     "goias": 0,
-    "demandas_formais": 2,
+    "demandas_formais": 1,
     "sinais_ambientais": 0
   },
   "diagnostico_coleta": {
-    "requisicoes": 114,
-    "pncp_proposta": 1,
+    "requisicoes": 85,
+    "pncp_proposta": 0,
     "pncp_publicacao": 0,
-    "pncp_registros_examinados": 953,
-    "pncp_respostas_validas": 23,
-    "pncp_falhas": 4,
+    "pncp_registros_examinados": 0,
+    "pncp_respostas_validas": 0,
+    "pncp_falhas": 2,
     "compras_gov_respostas_validas": 37,
-    "compras_gov_registros_examinados": 17114,
+    "compras_gov_registros_examinados": 16915,
     "compras_gov_paginas_examinadas": 37,
     "compras_gov_paginas_planejadas": 37,
     "compras_gov_falhas": 0,
@@ -28,60 +28,17 @@
     "html_sinais": 0,
     "paginas_aprofundadas": 30,
     "erros": [
-      "PNCP indisponível após 2 tentativas: HTTP 429",
-      "PNCP indisponível após 2 tentativas: HTTP 429",
-      "PNCP indisponível após 2 tentativas: HTTP 429",
-      "PNCP indisponível após 2 tentativas: HTTP 429"
+      "PNCP indisponível após 2 tentativas: ReadTimeout: HTTPSConnectionPool(host='pncp.gov.br', port=443): Read timed out. (read timeout=12)",
+      "PNCP indisponível após 2 tentativas: ReadTimeout: HTTPSConnectionPool(host='pncp.gov.br', port=443): Read timed out. (read timeout=12)",
+      "PNCP: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
     ],
     "avisos": [
-      "PNCP respondeu 429 após nova tentativa.",
-      "PNCP respondeu 429 após nova tentativa.",
-      "PNCP respondeu 429 após nova tentativa.",
-      "PNCP respondeu 429 após nova tentativa.",
-      "PNCP publicacao: limite de tempo atingido; resultado parcial preservado."
+      "PNCP: circuito temporariamente interrompido após duas falhas; acionando a contingência oficial.",
+      "PNCP publicação não repetida porque a fonte já falhou; contingência antecipada.",
+      "PNCP indisponível; coleta nacional concluída pela contingência oficial do Compras.gov."
     ]
   },
   "items": [
-    {
-      "id": "16819831000120-1-000087/2026",
-      "tipo": "DEMANDA FORMAL",
-      "confirmacao": "PRÉ-SELECIONADO",
-      "fonte": "PNCP",
-      "titulo": "- CONTRATAÇÃO DE EMPRESA ESPECIALIZADA PARA A PRESTAÇÃO DE SERVIÇOS TÉCNICOS DE ENGENHARIA CONSULTIVA, ABRANGENDO A ELABORAÇÃO DE ESTUDO DE CONCEPÇÃO, ESTUDOS AMBIENTAIS, LEVANTAMENTOS TÉCNICOS, PROJETO BÁSICO, PROJETO EXECUTIVO E SERVIÇOS DE APOIO TÉCNICO, INCLUINDO O CADASTRO TÉCNICO DO SISTEMA EXISTENTE, PARA O SIST",
-      "municipio": "Nova Era",
-      "uf": "MG",
-      "regiao_prioridade": "Brasil",
-      "organizacao": "MUNICIPIO DE NOVA ERA",
-      "data_publicacao": "2026-07-17T09:25:40",
-      "prazo": "2026-08-26T13:30:00",
-      "valor_estimado": 543843.08,
-      "modalidade": "Concorrência - Eletrônica",
-      "servicos_ordone": [
-        "Licenciamento e regularização ambiental"
-      ],
-      "tipo_aderencia": "ADERENTE_DIRETO",
-      "motivo_aceitacao": "Objeto contém serviço direto do portfólio Ordone.",
-      "relacao_comercial": "Contratação direta aderente ao portfólio",
-      "status_leitura_edital": "LEITURA INCOMPLETA",
-      "documentos_analisados": [],
-      "requisitos_minimos": [],
-      "analise_elegibilidade": "LEITURA INCOMPLETA",
-      "pendencias_identificadas": [
-        "Abrir edital e anexos manualmente"
-      ],
-      "palavras_encontradas": [
-        "estudos ambientais",
-        "portfólio:Licenciamento e regularização ambiental",
-        "grupo:ambiental"
-      ],
-      "score": 65,
-      "prioridade": "MÉDIA",
-      "url": "https://pncp.gov.br/app/editais/16819831000120/2026/87",
-      "numero_controle_pncp": "16819831000120-1-000087/2026",
-      "escopo_coleta": "Brasil",
-      "fase_pncp": "proposta",
-      "proxima_acao": "Abrir o edital/aviso oficial, validar escopo, habilitação, prazo, local de execução e viabilidade de proposta."
-    },
     {
       "id": "88830609000139-1-000367/2026",
       "tipo": "DEMANDA FORMAL",
