@@ -170,13 +170,17 @@ document.querySelectorAll('a[href*="whatsapp"]').forEach(a=>{
 })();
 
 
-// V6.7 — Radar agressivo com lista positiva do portfólio Ordone.
+// V6.8 — Radar agressivo com atualização automática da tela.
 (function(){
   const target=document.getElementById('radar-opportunity-list');
   if(!target) return;
   const base=document.body.dataset.base || '';
   let radarItems=[];
   let radarStatus='aguardando';
+  let activeFilter=document.querySelector('[data-radar-filter].active')?.dataset.radarFilter||'todos';
+  let refreshInFlight=false;
+  let lastSuccessfulStamp='';
+  const RADAR_REFRESH_MS=5*60*1000;
   const esc=s=>String(s??'').replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));
   const safe=u=>{try{const x=new URL(u,location.href);return ['http:','https:'].includes(x.protocol)?x.href:'#'}catch(e){return '#'}};
   const brl=v=>{if(v===null||v===undefined||v==='') return ''; try{return new Intl.NumberFormat('pt-BR',{style:'currency',currency:'BRL',maximumFractionDigits:0}).format(Number(v))}catch(e){return ''}};
@@ -231,12 +235,10 @@ document.querySelectorAll('a[href*="whatsapp"]').forEach(a=>{
       <a class="card-link" href="${safe(x.url)}" target="_blank" rel="noopener noreferrer">Abrir fonte oficial →</a>
     </article>`).join('');
   }
-  fetch(base+'dados/radar_oportunidades.json',{cache:'no-store'})
-    .then(r=>{if(!r.ok) throw new Error('radar'); return r.json()})
-    .then(data=>{
+  function applyRadarData(data){
+      if(!data||!Array.isArray(data.items)) throw new Error('radar-payload');
       radarStatus=data.status||'aguardando';
       radarItems=(data.items||[]).filter(x=>!generic(x)&&deadlineOpen(x)).sort((a,b)=>(Number(b.score)||0)-(Number(a.score)||0)||regionWeight(a)-regionWeight(b)).slice(0,60);
-      const r=data.resumo||{};
       const boxes=document.querySelectorAll('#radar-summary article b');
       const visible={
         total:radarItems.length,
@@ -253,14 +255,42 @@ document.querySelectorAll('a[href*="whatsapp"]').forEach(a=>{
         else if(data.status==='coleta_concluida') stamp.textContent='Última coleta válida: '+(data.atualizado_em||'agora');
         else if(data.status==='fonte_principal_indisponivel') stamp.textContent='Fontes oficiais temporariamente indisponíveis na tentativa de '+(data.atualizado_em||'agora')+'. Nova tentativa será automática.';
         else stamp.textContent=data.atualizado_em?'Atualização: '+data.atualizado_em:'Radar aguardando coleta';
+        lastSuccessfulStamp=stamp.textContent;
       }
-      draw('todos');
-    }).catch(()=>{
-      const stamp=document.getElementById('radar-updated-at'); if(stamp) stamp.textContent='Não foi possível ler a última coleta do Radar.';
-    });
+      draw(activeFilter);
+  }
+  async function loadRadar(){
+    if(refreshInFlight) return;
+    refreshInFlight=true;
+    try{
+      const response=await fetch(base+'dados/radar_oportunidades.json?ts='+Date.now(),{cache:'no-store'});
+      if(!response.ok) throw new Error('radar-http-'+response.status);
+      applyRadarData(await response.json());
+    }catch(error){
+      const stamp=document.getElementById('radar-updated-at');
+      if(stamp){
+        stamp.textContent=lastSuccessfulStamp
+          ? lastSuccessfulStamp+' · falha ao verificar novos dados; nova tentativa automática.'
+          : 'Não foi possível ler a última coleta do Radar.';
+      }
+    }finally{
+      refreshInFlight=false;
+    }
+  }
   document.querySelectorAll('[data-radar-filter]').forEach(btn=>btn.addEventListener('click',()=>{
-    document.querySelectorAll('[data-radar-filter]').forEach(b=>b.classList.remove('active')); btn.classList.add('active'); draw(btn.dataset.radarFilter);
+    document.querySelectorAll('[data-radar-filter]').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    activeFilter=btn.dataset.radarFilter;
+    draw(activeFilter);
   }));
+  loadRadar();
+  setInterval(()=>{
+    if(document.visibilityState==='visible') loadRadar();
+  },RADAR_REFRESH_MS);
+  document.addEventListener('visibilitychange',()=>{
+    if(document.visibilityState==='visible') loadRadar();
+  });
+  window.addEventListener('online',loadRadar);
 })();
 
 
