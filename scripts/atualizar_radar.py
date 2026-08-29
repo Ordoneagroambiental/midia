@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Radar Ordone V6.7 — radar nacional cumulativo com validação técnica contextual.
+"""Radar Ordone V6.8 — radar nacional cumulativo com validação técnica contextual.
 
 Objetivo: localizar sinais e oportunidades em fontes públicas em todo o Brasil,
 mantendo Goiás e Goianésia como bônus de proximidade, sem realizar contato automático. O contato comercial permanece
@@ -42,9 +42,13 @@ OUT = ROOT / "dados" / "radar_oportunidades.json"
 BR_TZ = ZoneInfo("America/Sao_Paulo")
 
 UA = {
-    "User-Agent": "Mozilla/5.0 (compatible; OrdoneRadar/6.7; +https://ordoneagroambiental.github.io/midia/)",
+    "User-Agent": "Mozilla/5.0 (compatible; OrdoneRadar/6.8; +https://ordoneagroambiental.github.io/midia/)",
     "Accept": "application/json,text/html;q=0.9,*/*;q=0.8",
 }
+
+PNCP_MAX_ATTEMPTS = 3
+PNCP_REQUEST_INTERVAL = 0.75
+PNCP_RETRY_CAP = 8.0
 
 # As modalidades são consultadas em blocos curtos para evitar centenas de requisições.
 # O PNCP exige codigoModalidadeContratacao nesses endpoints de consulta.
@@ -342,7 +346,7 @@ def environmental_evidence(text, cfg):
 
 
 def market_relation(text):
-    """O painel público V6.7 mostra somente contratações diretamente aderentes."""
+    """O painel público V6.8 mostra somente contratações diretamente aderentes."""
     return "Contratação direta aderente ao portfólio"
 
 
@@ -519,6 +523,11 @@ def pncp_document_text(control, diagnostics):
     try:
         r = requests.get(base, headers=UA, timeout=20)
         diagnostics["requisicoes"] += 1
+        if r.status_code == 429:
+            diagnostics["avisos"].append(
+                "Catálogo de anexos PNCP limitado por HTTP 429; leitura adiada para evitar novas rajadas."
+            )
+            return "", [], "LEITURA INCOMPLETA"
         if r.ok and "json" in r.headers.get("content-type", ""):
             docs = r.json()
             if isinstance(docs, dict):
@@ -529,12 +538,12 @@ def pncp_document_text(control, diagnostics):
     # O catálogo de anexos do PNCP por vezes redireciona para uma API auxiliar
     # indisponível, embora os arquivos numerados continuem acessíveis. Nesse
     # caso, tenta uma faixa curta de sequenciais oficiais, sem usar buscadores.
-    candidates = list((docs or [])[:6])
+    candidates = list((docs or [])[:4])
     direct_fallback = not candidates
     if direct_fallback:
         candidates = [
             {"sequencialDocumento": serial, "titulo": f"Anexo PNCP {serial}"}
-            for serial in range(1, 11)
+            for serial in range(1, 5)
         ]
 
     texts, names = [], []
@@ -543,8 +552,14 @@ def pncp_document_text(control, diagnostics):
         url = safe_url(doc.get("url") or doc.get("uri") or doc.get("link")) or f"{base}/{serial}"
         name = clean(doc.get("titulo") or doc.get("nome") or doc.get("descricao") or f"Anexo {i+1}", 140)
         try:
+            time.sleep(PNCP_REQUEST_INTERVAL)
             f = requests.get(url, headers=UA, timeout=18)
             diagnostics["requisicoes"] += 1
+            if f.status_code == 429:
+                diagnostics["avisos"].append(
+                    "Download de anexos PNCP interrompido por HTTP 429; leitura parcial preservada."
+                )
+                break
             if not f.ok or not f.content or len(f.content) > 15_000_000:
                 continue
             content_type = f.headers.get("content-type", "").lower()
@@ -628,20 +643,38 @@ def deadline_expired(value):
         return False
 
 
+def pncp_retry_delay(attempt, retry_after=""):
+    """Calcula espera progressiva e respeita Retry-After numérico, com limite seguro."""
+    try:
+        requested = float(str(retry_after).strip()) if str(retry_after).strip() else 0.0
+    except (TypeError, ValueError):
+        requested = 0.0
+    progressive = 3.0 * (2 ** max(0, attempt - 1))
+    return max(0.5, min(requested or progressive, PNCP_RETRY_CAP))
+
+
 def pncp_request(endpoint, params, diagnostics):
-    """Consulta o PNCP com repetição controlada e diagnóstico real."""
+    """Consulta o PNCP com backoff progressivo e diagnóstico real."""
     last_error = None
-    for attempt in range(1, 3):
+    for attempt in range(1, PNCP_MAX_ATTEMPTS + 1):
         try:
             diagnostics["requisicoes"] += 1
             r = requests.get(endpoint, params=params, headers=UA, timeout=(6, 12))
             if r.status_code == 429:
                 last_error = "HTTP 429"
-                if attempt < 2:
-                    time.sleep(2)
+                if attempt < PNCP_MAX_ATTEMPTS:
+                    diagnostics["pncp_retentativas_429"] += 1
+                    time.sleep(pncp_retry_delay(attempt, r.headers.get("Retry-After", "")))
                     continue
-                diagnostics["avisos"].append("PNCP respondeu 429 após nova tentativa.")
+                diagnostics["avisos"].append(
+                    f"PNCP respondeu 429 após {PNCP_MAX_ATTEMPTS} tentativas; contingência preservada."
+                )
                 break
+            if r.status_code in (408, 500, 502, 503, 504):
+                last_error = f"HTTP {r.status_code}"
+                if attempt < PNCP_MAX_ATTEMPTS:
+                    time.sleep(pncp_retry_delay(attempt))
+                    continue
             if r.status_code in (204, 404):
                 diagnostics["pncp_respostas_validas"] += 1
                 return {"data": [], "totalPaginas": 0}
@@ -651,10 +684,12 @@ def pncp_request(endpoint, params, diagnostics):
             return payload
         except Exception as exc:
             last_error = f"{type(exc).__name__}: {exc}"
-            if attempt < 2:
-                time.sleep(1)
+            if attempt < PNCP_MAX_ATTEMPTS:
+                time.sleep(min(1.5 * attempt, 4.0))
     diagnostics["pncp_falhas"] += 1
-    diagnostics["erros"].append(f"PNCP indisponível após 2 tentativas: {last_error}"[:250])
+    diagnostics["erros"].append(
+        f"PNCP indisponível após {PNCP_MAX_ATTEMPTS} tentativas: {last_error}"[:250]
+    )
     return {"data": [], "totalPaginas": 0}
 
 
@@ -711,7 +746,7 @@ def pncp_collect(cfg, mode, diagnostics):
 
                 data = pncp_request(base, params, diagnostics)
                 # Evita rajadas que acionam o limite temporário HTTP 429.
-                time.sleep(0.15)
+                time.sleep(PNCP_REQUEST_INTERVAL)
                 rows = data.get("data") or []
                 if not rows:
                     if mode == "proposta":
@@ -794,7 +829,7 @@ def pncp_collect(cfg, mode, diagnostics):
                 total = int(data.get("totalPaginas") or 1)
                 if mode == "publicacao" and page >= total:
                     break
-            time.sleep(0.15)
+            time.sleep(0.30)
 
     diagnostics[f"pncp_{mode}"] = len(out)
     return out
@@ -1305,7 +1340,7 @@ def build_output(cfg, items, diagnostics):
         + cfg["prioridade_geografica"].get("regiao_ampliada", [])
     ))
     return {
-        "versao": "6.7",
+        "versao": "6.8",
         "atualizado_em": datetime.now(BR_TZ).strftime("%d/%m/%Y %H:%M (horário de Brasília)"),
         "status": (
             "coleta_concluida"
@@ -1407,7 +1442,10 @@ def self_test(cfg):
     assert 1 in plan and 50 in plan and 49 in plan and 25 in plan and len(plan) <= 10
     assert deadline_expired("2020-01-01T12:00:00")
     assert not deadline_expired((datetime.now(BR_TZ) + timedelta(days=1)).isoformat())
-    print("SELF-TEST OK V6.7", s, r, len(h), len(false_objects), "falsos positivos bloqueados")
+    assert pncp_retry_delay(1) == 3.0
+    assert pncp_retry_delay(2) == 6.0
+    assert pncp_retry_delay(3, "30") == PNCP_RETRY_CAP
+    print("SELF-TEST OK V6.8", s, r, len(h), len(false_objects), "falsos positivos bloqueados")
 
 
 def main():
@@ -1427,6 +1465,7 @@ def main():
         "pncp_registros_examinados": 0,
         "pncp_respostas_validas": 0,
         "pncp_falhas": 0,
+        "pncp_retentativas_429": 0,
         "compras_gov_respostas_validas": 0,
         "compras_gov_registros_examinados": 0,
         "compras_gov_paginas_examinadas": 0,
@@ -1502,7 +1541,7 @@ def main():
 
     data = build_output(cfg, items, diagnostics)
     OUT.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print("Radar V6.7 atualizado:", len(items), "itens; registros PNCP examinados:", diagnostics["pncp_registros_examinados"], "requisições:", diagnostics["requisicoes"])
+    print("Radar V6.8 atualizado:", len(items), "itens; registros PNCP examinados:", diagnostics["pncp_registros_examinados"], "requisições:", diagnostics["requisicoes"])
 
 
 if __name__ == "__main__":
