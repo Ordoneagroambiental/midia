@@ -1,6 +1,6 @@
 {
   "versao": "6.7",
-  "atualizado_em": "29/08/2026 13:37 (horário de Brasília)",
+  "atualizado_em": "29/08/2026 15:37 (horário de Brasília)",
   "status": "coleta_concluida",
   "prioridade": "Brasil inteiro → bônus de proximidade para Goiás e Goianésia",
   "modo_busca": "AGRESSIVO — maior frequência, profundidade e fontes; aderência direta preservada",
@@ -13,12 +13,12 @@
     "sinais_ambientais": 0
   },
   "diagnostico_coleta": {
-    "requisicoes": 114,
+    "requisicoes": 111,
     "pncp_proposta": 0,
     "pncp_publicacao": 0,
-    "pncp_registros_examinados": 834,
-    "pncp_respostas_validas": 24,
-    "pncp_falhas": 5,
+    "pncp_registros_examinados": 584,
+    "pncp_respostas_validas": 18,
+    "pncp_falhas": 6,
     "compras_gov_respostas_validas": 37,
     "compras_gov_registros_examinados": 16977,
     "compras_gov_paginas_examinadas": 37,
@@ -33,10 +33,11 @@
       "PNCP indisponível após 2 tentativas: HTTP 429",
       "PNCP indisponível após 2 tentativas: HTTP 429",
       "PNCP indisponível após 2 tentativas: HTTP 429",
-      "Prefeitura de Goianésia: ConnectTimeout: HTTPSConnectionPool(host='goianesia.go.gov.br', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='goianesia.go.gov.br', port=443) at 0x7f125dc638f0>, 'Connection",
-      "Editais de Goianésia: ConnectTimeout: HTTPSConnectionPool(host='goianesia.go.gov.br', port=443): Max retries exceeded with url: /editais-e-publicacoes/ (Caused by ConnectTimeoutError(<HTTPSConnection(host='goianesia.go.gov.br', port=443) at 0x7f125de"
+      "PNCP indisponível após 2 tentativas: HTTP 429",
+      "PNCP: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
     ],
     "avisos": [
+      "PNCP respondeu 429 após nova tentativa.",
       "PNCP respondeu 429 após nova tentativa.",
       "PNCP respondeu 429 após nova tentativa.",
       "PNCP respondeu 429 após nova tentativa.",
