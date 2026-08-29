@@ -1,6 +1,6 @@
 {
   "versao": "6.7",
-  "atualizado_em": "28/08/2026 21:37 (horário de Brasília)",
+  "atualizado_em": "28/08/2026 23:37 (horário de Brasília)",
   "status": "coleta_concluida",
   "prioridade": "Brasil inteiro → bônus de proximidade para Goiás e Goianésia",
   "modo_busca": "AGRESSIVO — maior frequência, profundidade e fontes; aderência direta preservada",
@@ -13,12 +13,12 @@
     "sinais_ambientais": 0
   },
   "diagnostico_coleta": {
-    "requisicoes": 109,
+    "requisicoes": 111,
     "pncp_proposta": 1,
     "pncp_publicacao": 0,
-    "pncp_registros_examinados": 790,
+    "pncp_registros_examinados": 787,
     "pncp_respostas_validas": 26,
-    "pncp_falhas": 0,
+    "pncp_falhas": 1,
     "compras_gov_respostas_validas": 37,
     "compras_gov_registros_examinados": 16915,
     "compras_gov_paginas_examinadas": 37,
@@ -27,7 +27,10 @@
     "compras_gov_itens": 1,
     "html_sinais": 0,
     "paginas_aprofundadas": 30,
-    "erros": [],
+    "erros": [
+      "PNCP indisponível após 2 tentativas: ReadTimeout: HTTPSConnectionPool(host='pncp.gov.br', port=443): Read timed out. (read timeout=12)",
+      "PNCP: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+    ],
     "avisos": [
       "PNCP publicacao: limite de tempo atingido; resultado parcial preservado."
     ]
