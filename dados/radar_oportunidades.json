@@ -1,6 +1,6 @@
 {
   "versao": "6.8",
-  "atualizado_em": "30/08/2026 15:38 (horário de Brasília)",
+  "atualizado_em": "30/08/2026 17:38 (horário de Brasília)",
   "status": "coleta_concluida",
   "prioridade": "Brasil inteiro → bônus de proximidade para Goiás e Goianésia",
   "modo_busca": "AGRESSIVO — maior frequência, profundidade e fontes; aderência direta preservada",
@@ -13,13 +13,13 @@
     "sinais_ambientais": 0
   },
   "diagnostico_coleta": {
-    "requisicoes": 107,
+    "requisicoes": 112,
     "pncp_proposta": 1,
     "pncp_publicacao": 0,
-    "pncp_registros_examinados": 925,
+    "pncp_registros_examinados": 968,
     "pncp_respostas_validas": 25,
-    "pncp_falhas": 0,
-    "pncp_retentativas_429": 0,
+    "pncp_falhas": 1,
+    "pncp_retentativas_429": 4,
     "compras_gov_respostas_validas": 37,
     "compras_gov_registros_examinados": 16968,
     "compras_gov_paginas_examinadas": 37,
@@ -29,9 +29,11 @@
     "html_sinais": 0,
     "paginas_aprofundadas": 30,
     "erros": [
+      "PNCP indisponível após 3 tentativas: HTTP 429",
       "PNCP: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
     ],
     "avisos": [
+      "PNCP respondeu 429 após 3 tentativas; contingência preservada.",
       "PNCP publicacao: limite de tempo atingido; resultado parcial preservado."
     ]
   },
