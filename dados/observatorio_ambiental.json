@@ -1,6 +1,6 @@
 {
   "versao": "1.0",
-  "atualizado_em": "2026-08-31T12:27:03.183471+00:00",
+  "atualizado_em": "2026-08-31T18:27:07.376763+00:00",
   "criterios": {
     "escopo": "Brasil e mundo",
     "frequencia": "a cada 6 horas",
@@ -19,8 +19,8 @@
     },
     {
       "fonte": "USGS",
-      "ok": true,
-      "itens": 0
+      "ok": false,
+      "erro": "HTTPSConnectionPool(host='www.usgs.gov', port=443): Max retries exceeded with url: /news (Caused by SSLError(SSLCertVeri"
     },
     {
       "fonte": "Chinese Academy of Sciences",
