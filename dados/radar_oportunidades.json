@@ -1,6 +1,6 @@
 {
   "versao": "6.8",
-  "atualizado_em": "30/08/2026 21:38 (horário de Brasília)",
+  "atualizado_em": "30/08/2026 23:39 (horário de Brasília)",
   "status": "coleta_concluida",
   "prioridade": "Brasil inteiro → bônus de proximidade para Goiás e Goianésia",
   "modo_busca": "AGRESSIVO — maior frequência, profundidade e fontes; aderência direta preservada",
@@ -13,11 +13,11 @@
     "sinais_ambientais": 0
   },
   "diagnostico_coleta": {
-    "requisicoes": 109,
+    "requisicoes": 103,
     "pncp_proposta": 1,
     "pncp_publicacao": 0,
-    "pncp_registros_examinados": 1022,
-    "pncp_respostas_validas": 27,
+    "pncp_registros_examinados": 772,
+    "pncp_respostas_validas": 22,
     "pncp_falhas": 0,
     "pncp_retentativas_429": 0,
     "compras_gov_respostas_validas": 37,
@@ -29,7 +29,8 @@
     "html_sinais": 0,
     "paginas_aprofundadas": 30,
     "erros": [
-      "PNCP: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+      "Prefeitura de Goianésia: ConnectTimeout: HTTPSConnectionPool(host='goianesia.go.gov.br', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='goianesia.go.gov.br', port=443) at 0x7efdf7dccce0>, 'Connection",
+      "Editais de Goianésia: ConnectTimeout: HTTPSConnectionPool(host='goianesia.go.gov.br', port=443): Max retries exceeded with url: /editais-e-publicacoes/ (Caused by ConnectTimeoutError(<HTTPSConnection(host='goianesia.go.gov.br', port=443) at 0x7efdf80"
     ],
     "avisos": [
       "PNCP publicacao: limite de tempo atingido; resultado parcial preservado."
