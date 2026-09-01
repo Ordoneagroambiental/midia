@@ -1,7 +1,7 @@
 {
   "versao": "6.8",
-  "atualizado_em": "31/08/2026 19:37 (horário de Brasília)",
-  "status": "coleta_contingencial",
+  "atualizado_em": "31/08/2026 21:49 (horário de Brasília)",
+  "status": "coleta_concluida",
   "prioridade": "Brasil inteiro → bônus de proximidade para Goiás e Goianésia",
   "modo_busca": "AGRESSIVO — maior frequência, profundidade e fontes; aderência direta preservada",
   "resumo": {
@@ -13,12 +13,12 @@
     "sinais_ambientais": 0
   },
   "diagnostico_coleta": {
-    "requisicoes": 86,
+    "requisicoes": 94,
     "pncp_proposta": 0,
     "pncp_publicacao": 0,
-    "pncp_registros_examinados": 0,
-    "pncp_respostas_validas": 0,
-    "pncp_falhas": 2,
+    "pncp_registros_examinados": 103,
+    "pncp_respostas_validas": 4,
+    "pncp_falhas": 3,
     "pncp_retentativas_429": 0,
     "compras_gov_respostas_validas": 37,
     "compras_gov_registros_examinados": 16942,
@@ -31,13 +31,13 @@
     "erros": [
       "PNCP indisponível após 3 tentativas: ReadTimeout: HTTPSConnectionPool(host='pncp.gov.br', port=443): Read timed out. (read timeout=12)",
       "PNCP indisponível após 3 tentativas: ReadTimeout: HTTPSConnectionPool(host='pncp.gov.br', port=443): Read timed out. (read timeout=12)",
-      "PNCP: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",
-      "ANA — Licitações: ReadTimeout: HTTPSConnectionPool(host='www.gov.br', port=443): Read timed out. (read timeout=18)"
+      "PNCP indisponível após 3 tentativas: ReadTimeout: HTTPSConnectionPool(host='pncp.gov.br', port=443): Read timed out. (read timeout=12)",
+      "SEMAD Goiás: ReadTimeout: HTTPSConnectionPool(host='goias.gov.br', port=443): Read timed out. (read timeout=18)",
+      "SEMAD Goiás — Licitações: ReadTimeout: HTTPSConnectionPool(host='goias.gov.br', port=443): Read timed out. (read timeout=18)"
     ],
     "avisos": [
-      "PNCP: circuito temporariamente interrompido após duas falhas; acionando a contingência oficial.",
-      "PNCP publicação não repetida porque a fonte já falhou; contingência antecipada.",
-      "PNCP indisponível; coleta nacional concluída pela contingência oficial do Compras.gov."
+      "PNCP proposta: limite de tempo atingido; resultado parcial preservado.",
+      "PNCP publicacao: limite de tempo atingido; resultado parcial preservado."
     ]
   },
   "items": [
