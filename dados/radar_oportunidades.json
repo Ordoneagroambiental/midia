@@ -1,6 +1,6 @@
 {
   "versao": "6.8",
-  "atualizado_em": "02/09/2026 07:48 (horário de Brasília)",
+  "atualizado_em": "02/09/2026 09:44 (horário de Brasília)",
   "status": "coleta_contingencial",
   "prioridade": "Brasil inteiro → bônus de proximidade para Goiás e Goianésia",
   "modo_busca": "AGRESSIVO — maior frequência, profundidade e fontes; aderência direta preservada",
@@ -13,45 +13,25 @@
     "sinais_ambientais": 0
   },
   "diagnostico_coleta": {
-    "requisicoes": 51,
+    "requisicoes": 87,
     "pncp_proposta": 0,
     "pncp_publicacao": 0,
     "pncp_registros_examinados": 0,
     "pncp_respostas_validas": 0,
     "pncp_falhas": 2,
     "pncp_retentativas_429": 0,
-    "compras_gov_respostas_validas": 1,
-    "compras_gov_registros_examinados": 500,
-    "compras_gov_paginas_examinadas": 1,
-    "compras_gov_paginas_planejadas": 11,
-    "compras_gov_falhas": 10,
-    "compras_gov_itens": 0,
+    "compras_gov_respostas_validas": 37,
+    "compras_gov_registros_examinados": 16662,
+    "compras_gov_paginas_examinadas": 37,
+    "compras_gov_paginas_planejadas": 37,
+    "compras_gov_falhas": 0,
+    "compras_gov_itens": 1,
     "html_sinais": 0,
     "paginas_aprofundadas": 30,
     "erros": [
-      "PNCP indisponível após 3 tentativas: ConnectTimeout: HTTPSConnectionPool(host='pncp.gov.br', port=443): Max retries exceeded with url: /api/consulta/v1/contratacoes/proposta?dataFinal=20260902&codigoModalidadeContratacao=4&pagina=1&tamanhoPagina=50 (",
-      "PNCP indisponível após 3 tentativas: ConnectTimeout: HTTPSConnectionPool(host='pncp.gov.br', port=443): Max retries exceeded with url: /api/consulta/v1/contratacoes/proposta?dataFinal=20260903&codigoModalidadeContratacao=4&pagina=1&tamanhoPagina=50 (",
-      "Compras.gov modalidade 3, página 1: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)",
-      "Compras.gov modalidade 5, página 12: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)",
-      "Compras.gov modalidade 5, página 24: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)",
-      "Compras.gov modalidade 5, página 37: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)",
-      "Compras.gov modalidade 5, página 44: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)",
-      "Compras.gov modalidade 5, página 45: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)",
-      "Compras.gov modalidade 5, página 46: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)",
-      "Compras.gov modalidade 5, página 47: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)",
-      "Compras.gov modalidade 5, página 48: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)",
-      "Compras.gov modalidade 5, página 49: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)",
-      "PNCP: ConnectTimeout: HTTPSConnectionPool(host='pncp.gov.br', port=443): Max retries exceeded with url: /app/editais (Caused by ConnectTimeoutError(<HTTPSConnection(host='pncp.gov.br', port=443) at 0x7f1e045cfad0>, 'Connection to pncp.gov.br timed ou",
-      "MMA: ConnectionError: HTTPSConnectionPool(host='www.gov.br', port=443): Max retries exceeded with url: /mma/pt-br/assuntos (Caused by NewConnectionError(\"HTTPSConnection(host='www.gov.br', port=443): Failed to establish a new connection: [Errno 101] ",
-      "Ibama: ConnectionError: HTTPSConnectionPool(host='www.gov.br', port=443): Max retries exceeded with url: /ibama/pt-br/assuntos/noticias (Caused by NewConnectionError(\"HTTPSConnection(host='www.gov.br', port=443): Failed to establish a new connection:",
-      "ICMBio: ConnectionError: HTTPSConnectionPool(host='www.gov.br', port=443): Max retries exceeded with url: /icmbio/pt-br/assuntos/noticias (Caused by NewConnectionError(\"HTTPSConnection(host='www.gov.br', port=443): Failed to establish a new connectio",
-      "SEMAD Goiás: ConnectTimeout: HTTPSConnectionPool(host='goias.gov.br', port=443): Max retries exceeded with url: /meioambiente/ (Caused by ConnectTimeoutError(<HTTPSConnection(host='goias.gov.br', port=443) at 0x7f1e03e31070>, 'Connection to goias.gov",
-      "SEMAD Goiás — Licitações: ConnectTimeout: HTTPSConnectionPool(host='goias.gov.br', port=443): Max retries exceeded with url: /meioambiente/licitacoes-e-contratos/ (Caused by ConnectTimeoutError(<HTTPSConnection(host='goias.gov.br', port=443) at 0x7f1",
-      "Ibama — Licitações: ConnectionError: HTTPSConnectionPool(host='www.gov.br', port=443): Max retries exceeded with url: /ibama/pt-br/acesso-a-informacao/licitacoes-e-contratos (Caused by NewConnectionError(\"HTTPSConnection(host='www.gov.br', port=443):",
-      "ICMBio — Licitações: ConnectionError: HTTPSConnectionPool(host='www.gov.br', port=443): Max retries exceeded with url: /icmbio/pt-br/acesso-a-informacao/licitacoes-e-contratos (Caused by NewConnectionError(\"HTTPSConnection(host='www.gov.br', port=443",
-      "DNIT — Licitações: ConnectionError: HTTPSConnectionPool(host='www.gov.br', port=443): Max retries exceeded with url: /dnit/pt-br/assuntos/licitacoes (Caused by NewConnectionError(\"HTTPSConnection(host='www.gov.br', port=443): Failed to establish a ne",
-      "Serviço Florestal Brasileiro — Licitações: ConnectionError: HTTPSConnectionPool(host='www.gov.br', port=443): Max retries exceeded with url: /florestal/pt-br/acesso-a-informacao/licitacoes-e-contratos (Caused by NewConnectionError(\"HTTPSConnection(ho",
-      "ANA — Licitações: ConnectionError: HTTPSConnectionPool(host='www.gov.br', port=443): Max retries exceeded with url: /ana/pt-br/acesso-a-informacao/licitacoes/licitacoes-2/licitacoes (Caused by NewConnectionError(\"HTTPSConnection(host='www.gov.br', po"
+      "PNCP indisponível após 3 tentativas: ReadTimeout: HTTPSConnectionPool(host='pncp.gov.br', port=443): Read timed out. (read timeout=12)",
+      "PNCP indisponível após 3 tentativas: ReadTimeout: HTTPSConnectionPool(host='pncp.gov.br', port=443): Read timed out. (read timeout=12)",
+      "PNCP: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
     ],
     "avisos": [
       "PNCP: circuito temporariamente interrompido após duas falhas; acionando a contingência oficial.",
@@ -98,8 +78,7 @@
       "numero_controle_pncp": "88830609000139-1-000367/2026",
       "escopo_coleta": "Brasil",
       "fase_pncp": "contingencia_compras_gov",
-      "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem.",
-      "origem_historica": true
+      "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
     }
   ],
   "fontes_monitoradas": [
