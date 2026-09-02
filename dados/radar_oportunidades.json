@@ -1,24 +1,24 @@
 {
   "versao": "6.8",
-  "atualizado_em": "02/09/2026 03:45 (horário de Brasília)",
-  "status": "coleta_contingencial",
+  "atualizado_em": "02/09/2026 05:42 (horário de Brasília)",
+  "status": "coleta_concluida",
   "prioridade": "Brasil inteiro → bônus de proximidade para Goiás e Goianésia",
   "modo_busca": "AGRESSIVO — maior frequência, profundidade e fontes; aderência direta preservada",
   "resumo": {
-    "total": 1,
-    "brasil": 1,
+    "total": 2,
+    "brasil": 2,
     "goianesia_regiao": 0,
     "goias": 0,
-    "demandas_formais": 1,
+    "demandas_formais": 2,
     "sinais_ambientais": 0
   },
   "diagnostico_coleta": {
-    "requisicoes": 88,
+    "requisicoes": 106,
     "pncp_proposta": 0,
     "pncp_publicacao": 0,
-    "pncp_registros_examinados": 0,
-    "pncp_respostas_validas": 0,
-    "pncp_falhas": 2,
+    "pncp_registros_examinados": 1030,
+    "pncp_respostas_validas": 24,
+    "pncp_falhas": 0,
     "pncp_retentativas_429": 0,
     "compras_gov_respostas_validas": 37,
     "compras_gov_registros_examinados": 16662,
@@ -29,16 +29,53 @@
     "html_sinais": 0,
     "paginas_aprofundadas": 30,
     "erros": [
-      "PNCP indisponível após 3 tentativas: ReadTimeout: HTTPSConnectionPool(host='pncp.gov.br', port=443): Read timed out. (read timeout=12)",
-      "PNCP indisponível após 3 tentativas: ReadTimeout: HTTPSConnectionPool(host='pncp.gov.br', port=443): Read timed out. (read timeout=12)"
+      "PNCP: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
     ],
     "avisos": [
-      "PNCP: circuito temporariamente interrompido após duas falhas; acionando a contingência oficial.",
-      "PNCP publicação não repetida porque a fonte já falhou; contingência antecipada.",
-      "PNCP indisponível; coleta nacional concluída pela contingência oficial do Compras.gov."
+      "PNCP proposta: limite de tempo atingido; resultado parcial preservado.",
+      "PNCP publicacao: limite de tempo atingido; resultado parcial preservado."
     ]
   },
   "items": [
+    {
+      "id": "63025530000104-1-003171/2026",
+      "tipo": "DEMANDA FORMAL",
+      "confirmacao": "PRÉ-SELECIONADO",
+      "fonte": "PNCP",
+      "titulo": "Prestação de serviço por empresa especializada para o fornecimento, infraestrutura, instalação, configuração e integração de 04 (quatro) radares de micro-ondas e 01 (um) nobreak de linha industrial/ automação para atendimento do sistema de barreiras (cancelas PPA existentes) nas portarias P1 e P3 da FSP.",
+      "municipio": "São Paulo",
+      "uf": "SP",
+      "regiao_prioridade": "Brasil",
+      "organizacao": "UNIVERSIDADE DE SAO PAULO",
+      "data_publicacao": "2026-08-21T15:16:57",
+      "prazo": "2026-09-02T08:00:00",
+      "valor_estimado": 15050.65,
+      "modalidade": "Dispensa",
+      "servicos_ordone": [
+        "Licenciamento e regularização ambiental"
+      ],
+      "tipo_aderencia": "ADERENTE_DIRETO",
+      "motivo_aceitacao": "Objeto contém serviço direto do portfólio Ordone.",
+      "relacao_comercial": "Contratação direta aderente ao portfólio",
+      "status_leitura_edital": "LEITURA INCOMPLETA",
+      "documentos_analisados": [],
+      "requisitos_minimos": [],
+      "analise_elegibilidade": "LEITURA INCOMPLETA",
+      "pendencias_identificadas": [
+        "Abrir edital e anexos manualmente"
+      ],
+      "palavras_encontradas": [
+        "automação",
+        "portfólio:Licenciamento e regularização ambiental"
+      ],
+      "score": 59,
+      "prioridade": "ACOMPANHAR",
+      "url": "https://pncp.gov.br/app/editais/63025530000104/2026/3171",
+      "numero_controle_pncp": "63025530000104-1-003171/2026",
+      "escopo_coleta": "Brasil",
+      "fase_pncp": "proposta",
+      "proxima_acao": "Abrir o edital/aviso oficial, validar escopo, habilitação, prazo, local de execução e viabilidade de proposta."
+    },
     {
       "id": "88830609000139-1-000367/2026",
       "tipo": "DEMANDA FORMAL",
