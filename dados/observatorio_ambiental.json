@@ -1,6 +1,6 @@
 {
   "versao": "1.0",
-  "atualizado_em": "2026-09-02T18:34:38.222799+00:00",
+  "atualizado_em": "2026-09-03T00:41:07.990620+00:00",
   "criterios": {
     "escopo": "Brasil e mundo",
     "frequencia": "a cada 6 horas",
@@ -34,8 +34,8 @@
     },
     {
       "fonte": "MMA",
-      "ok": true,
-      "itens": 0
+      "ok": false,
+      "erro": "HTTPSConnectionPool(host='www.gov.br', port=443): Max retries exceeded with url: /mma/pt-br/assuntos/noticias (Caused by"
     },
     {
       "fonte": "Embrapa",
