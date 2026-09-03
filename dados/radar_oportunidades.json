@@ -1,6 +1,6 @@
 {
   "versao": "6.8",
-  "atualizado_em": "03/09/2026 17:40 (horário de Brasília)",
+  "atualizado_em": "03/09/2026 19:41 (horário de Brasília)",
   "status": "coleta_contingencial",
   "prioridade": "Brasil inteiro → bônus de proximidade para Goiás e Goianésia",
   "modo_busca": "AGRESSIVO — maior frequência, profundidade e fontes; aderência direta preservada",
@@ -13,24 +13,31 @@
     "sinais_ambientais": 0
   },
   "diagnostico_coleta": {
-    "requisicoes": 88,
+    "requisicoes": 82,
     "pncp_proposta": 0,
     "pncp_publicacao": 0,
     "pncp_registros_examinados": 0,
     "pncp_respostas_validas": 0,
     "pncp_falhas": 2,
     "pncp_retentativas_429": 0,
-    "compras_gov_respostas_validas": 37,
-    "compras_gov_registros_examinados": 16284,
-    "compras_gov_paginas_examinadas": 37,
-    "compras_gov_paginas_planejadas": 37,
-    "compras_gov_falhas": 0,
-    "compras_gov_itens": 1,
+    "compras_gov_respostas_validas": 26,
+    "compras_gov_registros_examinados": 11283,
+    "compras_gov_paginas_examinadas": 26,
+    "compras_gov_paginas_planejadas": 32,
+    "compras_gov_falhas": 6,
+    "compras_gov_itens": 0,
     "html_sinais": 0,
     "paginas_aprofundadas": 30,
     "erros": [
       "PNCP indisponível após 3 tentativas: ReadTimeout: HTTPSConnectionPool(host='pncp.gov.br', port=443): Read timed out. (read timeout=12)",
-      "PNCP indisponível após 3 tentativas: ReadTimeout: HTTPSConnectionPool(host='pncp.gov.br', port=443): Read timed out. (read timeout=12)"
+      "PNCP indisponível após 3 tentativas: ReadTimeout: HTTPSConnectionPool(host='pncp.gov.br', port=443): Read timed out. (read timeout=12)",
+      "Compras.gov modalidade 3, página 1: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)",
+      "Compras.gov modalidade 5, página 12: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)",
+      "Compras.gov modalidade 5, página 24: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)",
+      "Compras.gov modalidade 5, página 36: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)",
+      "Compras.gov modalidade 5, página 43: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)",
+      "Compras.gov modalidade 5, página 44: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)",
+      "PNCP: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
     ],
     "avisos": [
       "PNCP: circuito temporariamente interrompido após duas falhas; acionando a contingência oficial.",
@@ -159,7 +166,8 @@
       "numero_controle_pncp": "88830609000139-1-000367/2026",
       "escopo_coleta": "Brasil",
       "fase_pncp": "contingencia_compras_gov",
-      "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
+      "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem.",
+      "origem_historica": true
     }
   ],
   "fontes_monitoradas": [
