@@ -1,6 +1,6 @@
 {
   "versao": "1.0",
-  "atualizado_em": "2026-09-03T18:35:11.950798+00:00",
+  "atualizado_em": "2026-09-04T00:38:32.498140+00:00",
   "criterios": {
     "escopo": "Brasil e mundo",
     "frequencia": "a cada 6 horas",
@@ -14,13 +14,13 @@
     },
     {
       "fonte": "EPA Estados Unidos",
-      "ok": false,
-      "erro": "405 Client Error: Not Allowed for url: https://www.epa.gov/newsreleases/search"
+      "ok": true,
+      "itens": 0
     },
     {
       "fonte": "USGS",
-      "ok": false,
-      "erro": "HTTPSConnectionPool(host='www.usgs.gov', port=443): Max retries exceeded with url: /news (Caused by SSLError(SSLCertVeri"
+      "ok": true,
+      "itens": 0
     },
     {
       "fonte": "Chinese Academy of Sciences",
@@ -34,8 +34,8 @@
     },
     {
       "fonte": "MMA",
-      "ok": true,
-      "itens": 0
+      "ok": false,
+      "erro": "HTTPSConnectionPool(host='www.gov.br', port=443): Max retries exceeded with url: /mma/pt-br/assuntos/noticias (Caused by"
     },
     {
       "fonte": "Embrapa",
