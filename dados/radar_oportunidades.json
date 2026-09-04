@@ -1,6 +1,6 @@
 {
   "versao": "6.8",
-  "atualizado_em": "04/09/2026 11:43 (horário de Brasília)",
+  "atualizado_em": "04/09/2026 13:42 (horário de Brasília)",
   "status": "coleta_concluida",
   "prioridade": "Brasil inteiro → bônus de proximidade para Goiás e Goianésia",
   "modo_busca": "AGRESSIVO — maior frequência, profundidade e fontes; aderência direta preservada",
@@ -13,13 +13,13 @@
     "sinais_ambientais": 1
   },
   "diagnostico_coleta": {
-    "requisicoes": 100,
+    "requisicoes": 101,
     "pncp_proposta": 0,
     "pncp_publicacao": 0,
-    "pncp_registros_examinados": 556,
-    "pncp_respostas_validas": 17,
-    "pncp_falhas": 0,
-    "pncp_retentativas_429": 0,
+    "pncp_registros_examinados": 458,
+    "pncp_respostas_validas": 16,
+    "pncp_falhas": 1,
+    "pncp_retentativas_429": 4,
     "compras_gov_respostas_validas": 36,
     "compras_gov_registros_examinados": 16433,
     "compras_gov_paginas_examinadas": 36,
@@ -29,9 +29,11 @@
     "html_sinais": 0,
     "paginas_aprofundadas": 30,
     "erros": [
+      "PNCP indisponível após 3 tentativas: HTTP 429",
       "PNCP: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
     ],
     "avisos": [
+      "PNCP respondeu 429 após 3 tentativas; contingência preservada.",
       "Lista de anexos PNCP: ReadTimeout: HTTPSConnectionPool(host='pncp.gov.br', port=443): Read timed out. (read timeout=20)",
       "PNCP publicacao: limite de tempo atingido; resultado parcial preservado."
     ]
