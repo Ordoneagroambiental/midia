@@ -1,4 +1,5 @@
-
+(()=>{
+'use strict';
 function wa(message){
   const phone="5562982315179";
   window.open("https://wa.me/"+phone+"?text="+encodeURIComponent(message),"_blank");
@@ -315,4 +316,6 @@ document.querySelectorAll('a[href*="whatsapp"]').forEach(a=>{
   document.querySelectorAll("[data-observatorio-filter]").forEach(btn=>btn.addEventListener("click",()=>{
     document.querySelectorAll("[data-observatorio-filter]").forEach(b=>b.classList.remove("active")); btn.classList.add("active"); render(btn.dataset.observatorioFilter);
   }));
+})();
+
 })();
