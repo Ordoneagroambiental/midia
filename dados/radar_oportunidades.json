@@ -1,7 +1,7 @@
 {
   "versao": "6.8",
-  "atualizado_em": "05/09/2026 15:46 (horário de Brasília)",
-  "status": "coleta_contingencial",
+  "atualizado_em": "05/09/2026 17:39 (horário de Brasília)",
+  "status": "coleta_concluida",
   "prioridade": "Brasil inteiro → bônus de proximidade para Goiás e Goianésia",
   "modo_busca": "AGRESSIVO — maior frequência, profundidade e fontes; aderência direta preservada",
   "resumo": {
@@ -13,13 +13,13 @@
     "sinais_ambientais": 0
   },
   "diagnostico_coleta": {
-    "requisicoes": 79,
+    "requisicoes": 115,
     "pncp_proposta": 0,
     "pncp_publicacao": 0,
-    "pncp_registros_examinados": 0,
-    "pncp_respostas_validas": 0,
-    "pncp_falhas": 2,
-    "pncp_retentativas_429": 0,
+    "pncp_registros_examinados": 789,
+    "pncp_respostas_validas": 27,
+    "pncp_falhas": 1,
+    "pncp_retentativas_429": 4,
     "compras_gov_respostas_validas": 39,
     "compras_gov_registros_examinados": 17845,
     "compras_gov_paginas_examinadas": 39,
@@ -29,24 +29,12 @@
     "html_sinais": 0,
     "paginas_aprofundadas": 30,
     "erros": [
-      "PNCP indisponível após 3 tentativas: ConnectTimeout: HTTPSConnectionPool(host='pncp.gov.br', port=443): Max retries exceeded with url: /api/consulta/v1/contratacoes/proposta?dataFinal=20260905&codigoModalidadeContratacao=4&pagina=1&tamanhoPagina=50 (",
-      "PNCP indisponível após 3 tentativas: ConnectTimeout: HTTPSConnectionPool(host='pncp.gov.br', port=443): Max retries exceeded with url: /api/consulta/v1/contratacoes/proposta?dataFinal=20260906&codigoModalidadeContratacao=4&pagina=1&tamanhoPagina=50 (",
-      "PNCP: ConnectTimeout: HTTPSConnectionPool(host='pncp.gov.br', port=443): Max retries exceeded with url: /app/editais (Caused by ConnectTimeoutError(<HTTPSConnection(host='pncp.gov.br', port=443) at 0x7feda1b088c0>, 'Connection to pncp.gov.br timed ou",
-      "MMA: ConnectionError: HTTPSConnectionPool(host='www.gov.br', port=443): Max retries exceeded with url: /mma/pt-br/assuntos (Caused by NewConnectionError(\"HTTPSConnection(host='www.gov.br', port=443): Failed to establish a new connection: [Errno 101] ",
-      "Ibama: ConnectionError: HTTPSConnectionPool(host='www.gov.br', port=443): Max retries exceeded with url: /ibama/pt-br/assuntos/noticias (Caused by NewConnectionError(\"HTTPSConnection(host='www.gov.br', port=443): Failed to establish a new connection:",
-      "ICMBio: ConnectionError: HTTPSConnectionPool(host='www.gov.br', port=443): Max retries exceeded with url: /icmbio/pt-br/assuntos/noticias (Caused by NewConnectionError(\"HTTPSConnection(host='www.gov.br', port=443): Failed to establish a new connectio",
-      "SEMAD Goiás: ConnectTimeout: HTTPSConnectionPool(host='goias.gov.br', port=443): Max retries exceeded with url: /meioambiente/ (Caused by ConnectTimeoutError(<HTTPSConnection(host='goias.gov.br', port=443) at 0x7feda17ffda0>, 'Connection to goias.gov",
-      "SEMAD Goiás — Licitações: ConnectTimeout: HTTPSConnectionPool(host='goias.gov.br', port=443): Max retries exceeded with url: /meioambiente/licitacoes-e-contratos/ (Caused by ConnectTimeoutError(<HTTPSConnection(host='goias.gov.br', port=443) at 0x7fe",
-      "Ibama — Licitações: ConnectionError: HTTPSConnectionPool(host='www.gov.br', port=443): Max retries exceeded with url: /ibama/pt-br/acesso-a-informacao/licitacoes-e-contratos (Caused by NewConnectionError(\"HTTPSConnection(host='www.gov.br', port=443):",
-      "ICMBio — Licitações: ConnectionError: HTTPSConnectionPool(host='www.gov.br', port=443): Max retries exceeded with url: /icmbio/pt-br/acesso-a-informacao/licitacoes-e-contratos (Caused by NewConnectionError(\"HTTPSConnection(host='www.gov.br', port=443",
-      "DNIT — Licitações: ConnectionError: HTTPSConnectionPool(host='www.gov.br', port=443): Max retries exceeded with url: /dnit/pt-br/assuntos/licitacoes (Caused by NewConnectionError(\"HTTPSConnection(host='www.gov.br', port=443): Failed to establish a ne",
-      "Serviço Florestal Brasileiro — Licitações: ConnectionError: HTTPSConnectionPool(host='www.gov.br', port=443): Max retries exceeded with url: /florestal/pt-br/acesso-a-informacao/licitacoes-e-contratos (Caused by NewConnectionError(\"HTTPSConnection(ho",
-      "ANA — Licitações: ConnectionError: HTTPSConnectionPool(host='www.gov.br', port=443): Max retries exceeded with url: /ana/pt-br/acesso-a-informacao/licitacoes/licitacoes-2/licitacoes (Caused by NewConnectionError(\"HTTPSConnection(host='www.gov.br', po"
+      "PNCP indisponível após 3 tentativas: HTTP 429",
+      "PNCP: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
     ],
     "avisos": [
-      "PNCP: circuito temporariamente interrompido após duas falhas; acionando a contingência oficial.",
-      "PNCP publicação não repetida porque a fonte já falhou; contingência antecipada.",
-      "PNCP indisponível; coleta nacional concluída pela contingência oficial do Compras.gov."
+      "PNCP respondeu 429 após 3 tentativas; contingência preservada.",
+      "PNCP publicacao: limite de tempo atingido; resultado parcial preservado."
     ]
   },
   "items": [
