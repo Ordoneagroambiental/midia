@@ -1,6 +1,6 @@
 {
   "versao": "6.8",
-  "atualizado_em": "05/09/2026 09:42 (horário de Brasília)",
+  "atualizado_em": "05/09/2026 11:39 (horário de Brasília)",
   "status": "coleta_concluida",
   "prioridade": "Brasil inteiro → bônus de proximidade para Goiás e Goianésia",
   "modo_busca": "AGRESSIVO — maior frequência, profundidade e fontes; aderência direta preservada",
@@ -13,11 +13,11 @@
     "sinais_ambientais": 0
   },
   "diagnostico_coleta": {
-    "requisicoes": 113,
+    "requisicoes": 110,
     "pncp_proposta": 0,
     "pncp_publicacao": 0,
-    "pncp_registros_examinados": 639,
-    "pncp_respostas_validas": 24,
+    "pncp_registros_examinados": 589,
+    "pncp_respostas_validas": 23,
     "pncp_falhas": 1,
     "pncp_retentativas_429": 4,
     "compras_gov_respostas_validas": 39,
@@ -29,7 +29,9 @@
     "html_sinais": 0,
     "paginas_aprofundadas": 30,
     "erros": [
-      "PNCP indisponível após 3 tentativas: HTTP 429"
+      "PNCP indisponível após 3 tentativas: HTTP 429",
+      "BNDES Floresta Viva: ConnectionError: HTTPSConnectionPool(host='www.bndes.gov.br', port=443): Max retries exceeded with url: /wps/portal/site/home/desenvolvimento-sustentavel/parcerias/floresta-viva (Caused by NewConnectionError(\"HTTPSConnection(host",
+      "Fundo Amazônia: ConnectionError: HTTPSConnectionPool(host='www.fundoamazonia.gov.br', port=443): Max retries exceeded with url: /pt/projetos/ (Caused by NewConnectionError(\"HTTPSConnection(host='www.fundoamazonia.gov.br', port=443): Failed to establi"
     ],
     "avisos": [
       "PNCP respondeu 429 após 3 tentativas; contingência preservada.",
