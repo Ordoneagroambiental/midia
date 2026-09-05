@@ -1,6 +1,6 @@
 {
   "versao": "1.0",
-  "atualizado_em": "2026-09-05T00:49:18.469167+00:00",
+  "atualizado_em": "2026-09-05T12:47:21.306916+00:00",
   "regra": "Somente fonte oficial; abertura só é anunciada com edital e prazo vigentes.",
   "itens": [
     {
@@ -60,7 +60,7 @@
       "fonte": "Semad Goiás",
       "url": "https://portal.meioambiente.go.gov.br/",
       "verificado_em": "2026-09-05",
-      "fonte_disponivel": true,
+      "fonte_disponivel": false,
       "http_status": 200
     }
   ]
