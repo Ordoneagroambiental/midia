@@ -26,6 +26,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - uses: actions/setup-python@v5
         with:
@@ -48,5 +50,15 @@ jobs:
             echo "Sem mudanças no radar."
           else
             git commit -m "Atualiza Radar Ordone"
-            git push
+            for tentativa in 1 2 3; do
+              git pull --rebase origin main
+              if git push origin HEAD:main; then
+                echo "Radar publicado com sucesso."
+                exit 0
+              fi
+              echo "Tentativa $tentativa falhou; atualizando o repositório antes de repetir."
+              sleep $((tentativa * 3))
+            done
+            echo "Não foi possível publicar o Radar após 3 tentativas."
+            exit 1
           fi
