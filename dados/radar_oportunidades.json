@@ -1,6 +1,6 @@
 {
   "versao": "6.8",
-  "atualizado_em": "06/09/2026 01:41 (horário de Brasília)",
+  "atualizado_em": "06/09/2026 03:43 (horário de Brasília)",
   "status": "coleta_concluida",
   "prioridade": "Brasil inteiro → bônus de proximidade para Goiás e Goianésia",
   "modo_busca": "AGRESSIVO — maior frequência, profundidade e fontes; aderência direta preservada",
@@ -13,13 +13,13 @@
     "sinais_ambientais": 0
   },
   "diagnostico_coleta": {
-    "requisicoes": 113,
+    "requisicoes": 110,
     "pncp_proposta": 0,
     "pncp_publicacao": 0,
-    "pncp_registros_examinados": 733,
-    "pncp_respostas_validas": 23,
-    "pncp_falhas": 2,
-    "pncp_retentativas_429": 5,
+    "pncp_registros_examinados": 683,
+    "pncp_respostas_validas": 22,
+    "pncp_falhas": 1,
+    "pncp_retentativas_429": 4,
     "compras_gov_respostas_validas": 39,
     "compras_gov_registros_examinados": 18074,
     "compras_gov_paginas_examinadas": 39,
@@ -30,13 +30,9 @@
     "paginas_aprofundadas": 30,
     "erros": [
       "PNCP indisponível após 3 tentativas: HTTP 429",
-      "PNCP indisponível após 3 tentativas: HTTP 429",
-      "PNCP: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",
-      "SEMAD Goiás: HTTPError: 403 Client Error: Forbidden for url: https://goias.gov.br/meioambiente/",
-      "SEMAD Goiás — Licitações: HTTPError: 403 Client Error: Forbidden for url: https://goias.gov.br/meioambiente/licitacoes-e-contratos/"
+      "PNCP: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
     ],
     "avisos": [
-      "PNCP respondeu 429 após 3 tentativas; contingência preservada.",
       "PNCP respondeu 429 após 3 tentativas; contingência preservada.",
       "PNCP publicacao: limite de tempo atingido; resultado parcial preservado."
     ]
