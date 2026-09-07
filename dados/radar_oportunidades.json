@@ -1,6 +1,6 @@
 {
   "versao": "6.8",
-  "atualizado_em": "07/09/2026 09:46 (horário de Brasília)",
+  "atualizado_em": "07/09/2026 11:42 (horário de Brasília)",
   "status": "coleta_contingencial",
   "prioridade": "Brasil inteiro → bônus de proximidade para Goiás e Goianésia",
   "modo_busca": "AGRESSIVO — maior frequência, profundidade e fontes; aderência direta preservada",
@@ -34,8 +34,8 @@
       "PNCP: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
     ],
     "avisos": [
-      "PNCP proposta: limite de tempo atingido; resultado parcial preservado.",
       "PNCP: circuito temporariamente interrompido após duas falhas; acionando a contingência oficial.",
+      "PNCP publicação não repetida porque a fonte já falhou; contingência antecipada.",
       "PNCP indisponível; coleta nacional concluída pela contingência oficial do Compras.gov."
     ]
   },
