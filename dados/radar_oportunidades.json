@@ -1,7 +1,7 @@
 {
   "versao": "6.8",
-  "atualizado_em": "07/09/2026 17:41 (horário de Brasília)",
-  "status": "coleta_contingencial",
+  "atualizado_em": "07/09/2026 19:39 (horário de Brasília)",
+  "status": "coleta_concluida",
   "prioridade": "Brasil inteiro → bônus de proximidade para Goiás e Goianésia",
   "modo_busca": "AGRESSIVO — maior frequência, profundidade e fontes; aderência direta preservada",
   "resumo": {
@@ -13,12 +13,12 @@
     "sinais_ambientais": 0
   },
   "diagnostico_coleta": {
-    "requisicoes": 89,
+    "requisicoes": 114,
     "pncp_proposta": 0,
     "pncp_publicacao": 0,
-    "pncp_registros_examinados": 0,
-    "pncp_respostas_validas": 0,
-    "pncp_falhas": 2,
+    "pncp_registros_examinados": 1173,
+    "pncp_respostas_validas": 30,
+    "pncp_falhas": 0,
     "pncp_retentativas_429": 0,
     "compras_gov_respostas_validas": 39,
     "compras_gov_registros_examinados": 18045,
@@ -28,15 +28,9 @@
     "compras_gov_itens": 9,
     "html_sinais": 0,
     "paginas_aprofundadas": 30,
-    "erros": [
-      "PNCP indisponível após 3 tentativas: ReadTimeout: HTTPSConnectionPool(host='pncp.gov.br', port=443): Read timed out. (read timeout=12)",
-      "PNCP indisponível após 3 tentativas: ReadTimeout: HTTPSConnectionPool(host='pncp.gov.br', port=443): Read timed out. (read timeout=12)",
-      "PNCP: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
-    ],
+    "erros": [],
     "avisos": [
-      "PNCP: circuito temporariamente interrompido após duas falhas; acionando a contingência oficial.",
-      "PNCP publicação não repetida porque a fonte já falhou; contingência antecipada.",
-      "PNCP indisponível; coleta nacional concluída pela contingência oficial do Compras.gov."
+      "PNCP publicacao: limite de tempo atingido; resultado parcial preservado."
     ]
   },
   "items": [
