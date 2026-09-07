@@ -1,38 +1,35 @@
 {
   "versao": "6.8",
-  "atualizado_em": "06/09/2026 23:41 (horário de Brasília)",
+  "atualizado_em": "07/09/2026 01:43 (horário de Brasília)",
   "status": "coleta_concluida",
   "prioridade": "Brasil inteiro → bônus de proximidade para Goiás e Goianésia",
   "modo_busca": "AGRESSIVO — maior frequência, profundidade e fontes; aderência direta preservada",
   "resumo": {
-    "total": 8,
-    "brasil": 8,
+    "total": 9,
+    "brasil": 9,
     "goianesia_regiao": 0,
     "goias": 0,
-    "demandas_formais": 8,
+    "demandas_formais": 9,
     "sinais_ambientais": 0
   },
   "diagnostico_coleta": {
-    "requisicoes": 113,
+    "requisicoes": 109,
     "pncp_proposta": 0,
     "pncp_publicacao": 0,
-    "pncp_registros_examinados": 797,
-    "pncp_respostas_validas": 24,
-    "pncp_falhas": 1,
-    "pncp_retentativas_429": 4,
+    "pncp_registros_examinados": 976,
+    "pncp_respostas_validas": 25,
+    "pncp_falhas": 0,
+    "pncp_retentativas_429": 0,
     "compras_gov_respostas_validas": 39,
-    "compras_gov_registros_examinados": 18074,
+    "compras_gov_registros_examinados": 18045,
     "compras_gov_paginas_examinadas": 39,
     "compras_gov_paginas_planejadas": 39,
     "compras_gov_falhas": 0,
-    "compras_gov_itens": 8,
+    "compras_gov_itens": 9,
     "html_sinais": 0,
     "paginas_aprofundadas": 30,
-    "erros": [
-      "PNCP indisponível após 3 tentativas: HTTP 429"
-    ],
+    "erros": [],
     "avisos": [
-      "PNCP respondeu 429 após 3 tentativas; contingência preservada.",
       "PNCP publicacao: limite de tempo atingido; resultado parcial preservado."
     ]
   },
@@ -278,6 +275,45 @@
       "prioridade": "ACOMPANHAR",
       "url": "https://pncp.gov.br/app/editais/18635734000102/2026/79",
       "numero_controle_pncp": "18635734000102-1-000079/2026",
+      "escopo_coleta": "Brasil",
+      "fase_pncp": "contingencia_compras_gov",
+      "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
+    },
+    {
+      "id": "10673078000120-1-000071/2026",
+      "tipo": "DEMANDA FORMAL",
+      "confirmacao": "PRÉ-SELECIONADO",
+      "fonte": "Compras.gov — Dados Abertos",
+      "titulo": "Contratação de serviço continuado do tipo apoio técnico-operacional para atender demanda dos campi do IFMS (Campus Ponta Porã, Campus Jardim, Campus Coxim, Campus Naviraí, Campus Aquidauana, Campus Corumbá, Campus Campo Grande, Campus Três Lagoas, Campus Dourados e Reitoria nos seguintes cargos (Auxiliar operacional de campo; Caseiro; Tratorista; Oficial de manutenção, Copeira e motorista).",
+      "municipio": "CAMPO GRANDE",
+      "uf": "MS",
+      "regiao_prioridade": "Brasil",
+      "organizacao": "INSTITUTO FEDERAL DE EDUCACAO, CIENCIA E TECNOLOGIA DE MATO GROSSO DO SUL",
+      "data_publicacao": "2026-09-02T04:00:13",
+      "prazo": "2026-09-22T10:00:00",
+      "valor_estimado": 8123633.04,
+      "modalidade": "Pregão - Eletrônico",
+      "situacao_compra": "Divulgada no PNCP",
+      "servicos_ordone": [
+        "Regularização ambiental rural / CAR"
+      ],
+      "tipo_aderencia": "ADERENTE_DIRETO",
+      "motivo_aceitacao": "Objeto contém serviço direto do portfólio Ordone.",
+      "relacao_comercial": "Contratação direta aderente ao portfólio",
+      "status_leitura_edital": "LEITURA INCOMPLETA",
+      "documentos_analisados": [],
+      "requisitos_minimos": [],
+      "analise_elegibilidade": "LEITURA INCOMPLETA",
+      "pendencias_identificadas": [
+        "Abrir edital e anexos oficiais antes de decidir pela participação"
+      ],
+      "palavras_encontradas": [
+        "portfólio:Regularização ambiental rural / CAR"
+      ],
+      "score": 49,
+      "prioridade": "ACOMPANHAR",
+      "url": "https://pncp.gov.br/app/editais/10673078000120/2026/71",
+      "numero_controle_pncp": "10673078000120-1-000071/2026",
       "escopo_coleta": "Brasil",
       "fase_pncp": "contingencia_compras_gov",
       "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
