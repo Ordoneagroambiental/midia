@@ -1,45 +1,81 @@
 {
   "versao": "6.8",
-  "atualizado_em": "07/09/2026 23:43 (horário de Brasília)",
+  "atualizado_em": "08/09/2026 01:43 (horário de Brasília)",
   "status": "coleta_concluida",
   "prioridade": "Brasil inteiro → bônus de proximidade para Goiás e Goianésia",
   "modo_busca": "AGRESSIVO — maior frequência, profundidade e fontes; aderência direta preservada",
   "resumo": {
-    "total": 9,
-    "brasil": 9,
+    "total": 10,
+    "brasil": 10,
     "goianesia_regiao": 0,
     "goias": 0,
-    "demandas_formais": 9,
+    "demandas_formais": 10,
     "sinais_ambientais": 0
   },
   "diagnostico_coleta": {
     "requisicoes": 112,
-    "pncp_proposta": 0,
+    "pncp_proposta": 1,
     "pncp_publicacao": 0,
-    "pncp_registros_examinados": 1017,
-    "pncp_respostas_validas": 26,
-    "pncp_falhas": 1,
-    "pncp_retentativas_429": 4,
+    "pncp_registros_examinados": 1196,
+    "pncp_respostas_validas": 27,
+    "pncp_falhas": 0,
+    "pncp_retentativas_429": 0,
     "compras_gov_respostas_validas": 39,
-    "compras_gov_registros_examinados": 18045,
+    "compras_gov_registros_examinados": 17996,
     "compras_gov_paginas_examinadas": 39,
     "compras_gov_paginas_planejadas": 39,
     "compras_gov_falhas": 0,
     "compras_gov_itens": 9,
     "html_sinais": 0,
     "paginas_aprofundadas": 30,
-    "erros": [
-      "PNCP indisponível após 3 tentativas: HTTP 429",
-      "PNCP: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",
-      "Prefeitura de Goianésia: ConnectTimeout: HTTPSConnectionPool(host='goianesia.go.gov.br', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='goianesia.go.gov.br', port=443) at 0x7f19bd170f20>, 'Connection",
-      "Editais de Goianésia: ConnectTimeout: HTTPSConnectionPool(host='goianesia.go.gov.br', port=443): Max retries exceeded with url: /editais-e-publicacoes/ (Caused by ConnectTimeoutError(<HTTPSConnection(host='goianesia.go.gov.br', port=443) at 0x7f19bd1"
-    ],
+    "erros": [],
     "avisos": [
-      "PNCP respondeu 429 após 3 tentativas; contingência preservada.",
       "PNCP publicacao: limite de tempo atingido; resultado parcial preservado."
     ]
   },
   "items": [
+    {
+      "id": "82575812000120-1-000295/2026",
+      "tipo": "DEMANDA FORMAL",
+      "confirmacao": "PRÉ-SELECIONADO",
+      "fonte": "PNCP",
+      "titulo": "Execução de Programa de Recuperação de Área Degradada (PRAD) Florestal, no Cemitério Municipal, bairro Alto Perequê, conforme as especificações contidas no Termo de Referência (Anexo I).",
+      "municipio": "Porto Belo",
+      "uf": "SC",
+      "regiao_prioridade": "Brasil",
+      "organizacao": "MUNICIPIO DE PORTO BELO",
+      "data_publicacao": "2026-07-13T17:21:16",
+      "prazo": "2026-09-10T08:30:00",
+      "valor_estimado": 368800.4,
+      "modalidade": "Concorrência - Eletrônica",
+      "servicos_ordone": [
+        "Recuperação ambiental / PRAD"
+      ],
+      "tipo_aderencia": "ADERENTE_DIRETO",
+      "motivo_aceitacao": "Objeto contém serviço direto do portfólio Ordone.",
+      "relacao_comercial": "Contratação direta aderente ao portfólio",
+      "status_leitura_edital": "LEITURA INCOMPLETA",
+      "documentos_analisados": [],
+      "requisitos_minimos": [],
+      "analise_elegibilidade": "LEITURA INCOMPLETA",
+      "pendencias_identificadas": [
+        "Abrir edital e anexos manualmente"
+      ],
+      "palavras_encontradas": [
+        "área degradada",
+        "prad",
+        "portfólio:Recuperação ambiental / PRAD",
+        "grupo:ambiental",
+        "recuperação de áreas"
+      ],
+      "score": 85,
+      "prioridade": "ALTA",
+      "url": "https://pncp.gov.br/app/editais/82575812000120/2026/295",
+      "numero_controle_pncp": "82575812000120-1-000295/2026",
+      "escopo_coleta": "Brasil",
+      "fase_pncp": "proposta",
+      "proxima_acao": "Abrir o edital/aviso oficial, validar escopo, habilitação, prazo, local de execução e viabilidade de proposta."
+    },
     {
       "id": "14085622000174-1-000024/2026",
       "tipo": "DEMANDA FORMAL",
