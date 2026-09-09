@@ -1,6 +1,6 @@
 {
   "versao": "1.0",
-  "atualizado_em": "2026-09-09T06:39:00.886436+00:00",
+  "atualizado_em": "2026-09-09T12:39:06.075039+00:00",
   "criterios": {
     "escopo": "Brasil e mundo",
     "frequencia": "a cada 6 horas",
@@ -19,8 +19,8 @@
     },
     {
       "fonte": "USGS",
-      "ok": false,
-      "erro": "HTTPSConnectionPool(host='www.usgs.gov', port=443): Read timed out. (read timeout=25)"
+      "ok": true,
+      "itens": 0
     },
     {
       "fonte": "Chinese Academy of Sciences",
