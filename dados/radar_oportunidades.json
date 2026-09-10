@@ -1,39 +1,35 @@
 {
   "versao": "6.8",
-  "atualizado_em": "09/09/2026 23:43 (horário de Brasília)",
+  "atualizado_em": "10/09/2026 01:43 (horário de Brasília)",
   "status": "coleta_concluida",
   "prioridade": "Brasil inteiro → bônus de proximidade para Goiás e Goianésia",
   "modo_busca": "AGRESSIVO — maior frequência, profundidade e fontes; aderência direta preservada",
   "resumo": {
-    "total": 8,
-    "brasil": 8,
+    "total": 9,
+    "brasil": 9,
     "goianesia_regiao": 0,
     "goias": 0,
     "demandas_formais": 8,
-    "sinais_ambientais": 0
+    "sinais_ambientais": 1
   },
   "diagnostico_coleta": {
-    "requisicoes": 110,
+    "requisicoes": 108,
     "pncp_proposta": 0,
     "pncp_publicacao": 0,
-    "pncp_registros_examinados": 867,
-    "pncp_respostas_validas": 23,
-    "pncp_falhas": 1,
-    "pncp_retentativas_429": 2,
+    "pncp_registros_examinados": 914,
+    "pncp_respostas_validas": 22,
+    "pncp_falhas": 0,
+    "pncp_retentativas_429": 0,
     "compras_gov_respostas_validas": 39,
-    "compras_gov_registros_examinados": 17624,
+    "compras_gov_registros_examinados": 17691,
     "compras_gov_paginas_examinadas": 39,
     "compras_gov_paginas_planejadas": 39,
     "compras_gov_falhas": 0,
     "compras_gov_itens": 7,
     "html_sinais": 0,
     "paginas_aprofundadas": 30,
-    "erros": [
-      "PNCP indisponível após 3 tentativas: HTTP 429",
-      "PNCP: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
-    ],
+    "erros": [],
     "avisos": [
-      "PNCP respondeu 429 após 3 tentativas; contingência preservada.",
       "PNCP proposta: limite de tempo atingido; resultado parcial preservado.",
       "PNCP publicacao: limite de tempo atingido; resultado parcial preservado."
     ]
@@ -359,6 +355,46 @@
       "escopo_coleta": "Brasil",
       "fase_pncp": "contingencia_compras_gov",
       "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
+    },
+    {
+      "id": "02070548000133-1-000044/2026",
+      "tipo": "SINAL DE CONTRATAÇÃO",
+      "confirmacao": "PRÉ-SELECIONADO",
+      "fonte": "PNCP",
+      "titulo": "CONCESSÃO DOS SERVIÇOS PÚBLICOS DE MANEJO DE RESÍDUOS SÓLIDOS NO ÂMBITO MUNICIPAL, OBJETIVANDO A “IMPLANTAÇÃO E OPERAÇÃO DA DISPOSIÇÃO FINAL DOS RESÍDUOS EM ATERRO SANITÁRIO, IMPLANTAÇÃO DE PROGRAMA DE EDUCAÇÃO AMBIENTAL”, PARA ATENDIMENTO NO ÂMBITO DO MUNICÍPIO DE GUARAÍ-TO",
+      "municipio": "Guaraí",
+      "uf": "TO",
+      "regiao_prioridade": "Brasil",
+      "organizacao": "MUNICIPIO DE GUARAI",
+      "data_publicacao": "2026-08-11T11:02:43",
+      "prazo": "2026-10-02T08:00:00",
+      "valor_estimado": 2513040.0,
+      "modalidade": "Concorrência - Eletrônica",
+      "servicos_ordone": [
+        "Educação e estruturas ambientais"
+      ],
+      "tipo_aderencia": "ADERENTE_DIRETO",
+      "motivo_aceitacao": "Objeto contém serviço direto do portfólio Ordone.",
+      "relacao_comercial": "Contratação direta aderente ao portfólio",
+      "status_leitura_edital": "LEITURA INCOMPLETA",
+      "documentos_analisados": [],
+      "requisitos_minimos": [],
+      "analise_elegibilidade": "LEITURA INCOMPLETA",
+      "pendencias_identificadas": [
+        "Abrir edital e anexos manualmente"
+      ],
+      "palavras_encontradas": [
+        "educação ambiental",
+        "portfólio:Educação e estruturas ambientais",
+        "grupo:ambiental"
+      ],
+      "score": 45,
+      "prioridade": "ACOMPANHAR",
+      "url": "https://pncp.gov.br/app/editais/02070548000133/2026/44",
+      "numero_controle_pncp": "02070548000133-1-000044/2026",
+      "escopo_coleta": "Brasil",
+      "fase_pncp": "publicacao",
+      "proxima_acao": "Abrir a publicação oficial e verificar se há prazo de proposta, futura licitação, contratação direta ou oportunidade institucional."
     }
   ],
   "fontes_monitoradas": [
