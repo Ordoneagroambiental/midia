@@ -1,6 +1,6 @@
 {
   "versao": "6.8",
-  "atualizado_em": "12/09/2026 19:30 (horário de Brasília)",
+  "atualizado_em": "12/09/2026 21:15 (horário de Brasília)",
   "status": "coleta_concluida",
   "prioridade": "Brasil inteiro → bônus de proximidade para Goiás e Goianésia",
   "modo_busca": "AGRESSIVO — maior frequência, profundidade e fontes; aderência direta preservada",
@@ -13,11 +13,11 @@
     "sinais_ambientais": 0
   },
   "diagnostico_coleta": {
-    "requisicoes": 101,
+    "requisicoes": 99,
     "pncp_proposta": 0,
     "pncp_publicacao": 0,
-    "pncp_registros_examinados": 664,
-    "pncp_respostas_validas": 17,
+    "pncp_registros_examinados": 514,
+    "pncp_respostas_validas": 14,
     "pncp_falhas": 0,
     "pncp_retentativas_429": 0,
     "compras_gov_respostas_validas": 39,
@@ -28,9 +28,7 @@
     "compras_gov_itens": 8,
     "html_sinais": 0,
     "paginas_aprofundadas": 30,
-    "erros": [
-      "PNCP: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
-    ],
+    "erros": [],
     "avisos": [
       "PNCP proposta: limite de tempo atingido; resultado parcial preservado.",
       "PNCP publicacao: limite de tempo atingido; resultado parcial preservado."
