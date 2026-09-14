@@ -1,6 +1,6 @@
 {
   "versao": "6.8",
-  "atualizado_em": "14/09/2026 16:35 (horário de Brasília)",
+  "atualizado_em": "14/09/2026 20:19 (horário de Brasília)",
   "status": "coleta_contingencial",
   "prioridade": "Brasil inteiro → bônus de proximidade para Goiás e Goianésia",
   "modo_busca": "AGRESSIVO — maior frequência, profundidade e fontes; aderência direta preservada",
@@ -13,19 +13,19 @@
     "sinais_ambientais": 0
   },
   "diagnostico_coleta": {
-    "requisicoes": 83,
+    "requisicoes": 90,
     "pncp_proposta": 0,
     "pncp_publicacao": 0,
     "pncp_registros_examinados": 0,
     "pncp_respostas_validas": 0,
     "pncp_falhas": 2,
     "pncp_retentativas_429": 0,
-    "compras_gov_respostas_validas": 30,
-    "compras_gov_registros_examinados": 14278,
-    "compras_gov_paginas_examinadas": 30,
-    "compras_gov_paginas_planejadas": 32,
-    "compras_gov_falhas": 2,
-    "compras_gov_itens": 3,
+    "compras_gov_respostas_validas": 39,
+    "compras_gov_registros_examinados": 18368,
+    "compras_gov_paginas_examinadas": 39,
+    "compras_gov_paginas_planejadas": 39,
+    "compras_gov_falhas": 0,
+    "compras_gov_itens": 8,
     "html_sinais": 0,
     "paginas_aprofundadas": 30,
     "erros": [
@@ -35,8 +35,6 @@
     "avisos": [
       "PNCP: circuito temporariamente interrompido após duas falhas; acionando a contingência oficial.",
       "PNCP publicação não repetida porque a fonte já falhou; contingência antecipada.",
-      "Compras.gov modalidade 3, página 1: HTTP 400.",
-      "Compras.gov modalidade 5, página 66: HTTP 400.",
       "PNCP indisponível; coleta nacional concluída pela contingência oficial do Compras.gov."
     ]
   },
@@ -81,8 +79,7 @@
       "numero_controle_pncp": "43052497000102-1-000420/2026",
       "escopo_coleta": "Brasil",
       "fase_pncp": "contingencia_compras_gov",
-      "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem.",
-      "origem_historica": true
+      "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
     },
     {
       "id": "22794608000178-1-000014/2026",
@@ -123,8 +120,7 @@
       "numero_controle_pncp": "22794608000178-1-000014/2026",
       "escopo_coleta": "Brasil",
       "fase_pncp": "contingencia_compras_gov",
-      "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem.",
-      "origem_historica": true
+      "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
     },
     {
       "id": "03643856000173-1-000059/2026",
@@ -204,8 +200,7 @@
       "numero_controle_pncp": "46374500000194-1-007282/2026",
       "escopo_coleta": "Brasil",
       "fase_pncp": "contingencia_compras_gov",
-      "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem.",
-      "origem_historica": true
+      "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
     },
     {
       "id": "04892707000100-1-000125/2026",
@@ -246,8 +241,7 @@
       "numero_controle_pncp": "04892707000100-1-000125/2026",
       "escopo_coleta": "Brasil",
       "fase_pncp": "contingencia_compras_gov",
-      "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem.",
-      "origem_historica": true
+      "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
     },
     {
       "id": "10673078000120-1-000071/2026",
@@ -364,8 +358,7 @@
       "numero_controle_pncp": "00394452000103-1-019238/2026",
       "escopo_coleta": "Brasil",
       "fase_pncp": "contingencia_compras_gov",
-      "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem.",
-      "origem_historica": true
+      "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
     }
   ],
   "fontes_monitoradas": [
