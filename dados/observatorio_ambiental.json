@@ -1,6 +1,6 @@
 {
   "versao": "1.0",
-  "atualizado_em": "2026-09-16T11:47:40.732850+00:00",
+  "atualizado_em": "2026-09-16T17:07:22.324041+00:00",
   "criterios": {
     "escopo": "Brasil e mundo",
     "frequencia": "a cada 6 horas",
@@ -40,7 +40,7 @@
     {
       "fonte": "Embrapa",
       "ok": true,
-      "itens": 1
+      "itens": 0
     },
     {
       "fonte": "SGB",
@@ -118,20 +118,6 @@
       "tipo": "Atualidade",
       "id": "3563b295718c",
       "pontuacao": 85
-    },
-    {
-      "id": "34c89e449455",
-      "titulo": "Centro Capoeira integra ações pela restauração na Amazônia",
-      "resumo": "Conteúdo técnico identificado pela curadoria automática. Abra a fonte oficial para verificar método, escala e resultados.",
-      "aplicacao": "Avaliar a transferência da técnica para condições brasileiras antes de qualquer recomendação.",
-      "pais": "Brasil",
-      "categoria": "Florestas e biodiversidade",
-      "fonte": "Embrapa",
-      "tipo_fonte": "Empresa pública de pesquisa",
-      "data": "",
-      "url": "https://www.embrapa.br/busca-de-noticias/-/noticia/147309949/centro-capoeira-integra-acoes-pela-restauracao-na-amazonia",
-      "tipo": "Atualidade",
-      "pontuacao": 56
     }
   ]
 }
