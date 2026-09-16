@@ -378,6 +378,12 @@ def classify_priority_opportunity(text, docs):
         partner for partner, terms in PARTNERSHIP_RULES.items()
         if any(term in t for term in terms)
     ]
+    if any(term in t for term in (
+        "obras de implantacao e pavimentacao", "rodovia", "obra aeroportuaria",
+        "servicos especializados de engenharia", "incluindo obras",
+    )):
+        partners.append("Engenharia de infraestrutura / obras")
+    partners = list(dict.fromkeys(partners))
     if partners:
         return "C", "PARCERIA TÉCNICA NECESSÁRIA", partners
 
@@ -539,6 +545,11 @@ def relevant_procurement_object(text, cfg):
         "aquisicao de", "compra de", "fornecimento de materiais",
         "fornecimento de equipamentos",
     ))
+    priority_docs, _ = priority_document_service(text)
+    # Compra de equipamento continua sendo aquisição, mesmo quando a descrição
+    # menciona usos ambientais possíveis (drone, câmera, sensor ou software).
+    if supply_object and not priority_docs:
+        return False
     service_execution = any(x in t for x in (
         "prestacao de servico", "prestacao dos servicos", "servicos tecnicos",
         "execucao de", "elaboracao de", "implantacao de", "manutencao de",
@@ -547,7 +558,17 @@ def relevant_procurement_object(text, cfg):
     if supply_object and not service_execution:
         return False
 
-    priority_docs, _ = priority_document_service(text)
+    waste_operation = any(x in t for x in (
+        "operacao de aterro", "operacao do aterro", "manutencao de aterro",
+        "coleta urbana de residuos", "coleta e transporte de residuos",
+        "transporte e destinacao de residuos", "limpeza urbana",
+    )) or (
+        "aterro sanitario" in t
+        and any(x in t for x in ("operacao", "manutencao", "execucao integrada"))
+    )
+    if waste_operation and not priority_docs:
+        return False
+
     if priority_docs:
         return True
 
@@ -1779,6 +1800,9 @@ def self_test(cfg):
     )
     assert quick_meta["oportunidade_rapida"] and quick_meta["classe_aderencia"] == "A"
     false_objects = (
+        "Aquisição de drone RTK para mapeamento e monitoramento ambiental",
+        "Talha manual 2 toneladas, corpo em aço pra maior resistência e gancho superior",
+        "Operação, manutenção e monitoramento ambiental de aterro sanitário, incluindo obras",
         "Locação de computadores, notebooks, tablets e monitores para a Secretaria de Meio Ambiente",
         "Solução SaaS de atendimento por WhatsApp com inteligência artificial",
         "Locação de caminhão coletor e compactador de resíduos sólidos",

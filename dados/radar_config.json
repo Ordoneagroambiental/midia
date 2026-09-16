@@ -234,7 +234,7 @@
     "exigir_fonte_publica": true,
     "exigir_aprovacao_humana_para_contato": true,
     "somente_aderencia_direta": true,
-    "parcerias_e_consorcios_no_painel": false,
+    "parcerias_e_consorcios_no_painel": true,
     "termo_generico_nao_aprova": true,
     "frequencia_horas": 2,
     "profundidade_compras_gov": "até 10 páginas planejadas por modalidade, 120 dias",
@@ -294,11 +294,11 @@
   "filtro_portfolio": {
     "versao": "1.2",
     "modo": "lista_positiva",
-    "regra": "O painel publica somente serviço executável diretamente pela Ordone. Termo ambiental genérico, parceria ou componente lateral não basta.",
+    "regra": "O painel prioriza serviço executável diretamente pela Ordone e separa pacotes ou parcerias quando MCE, PCA ou PGRS estiverem comprovados. Termo ambiental genérico não basta.",
     "publicacao": {
       "servico_direto": "painel_principal",
       "duvida": "nao_publicar",
-      "parceria_consorcio": "nao_publicar"
+      "parceria_consorcio": "painel_separado"
     },
     "servicos_diretos": [
       {
@@ -477,8 +477,6 @@
           "pagamento por serviços ambientais",
           "PSA Cerrado em Pé",
           "CAR",
-          "PRA",
-          "PSA",
           "inscrição no CAR",
           "cadastro no CAR",
           "retificação do cadastro ambiental rural",
