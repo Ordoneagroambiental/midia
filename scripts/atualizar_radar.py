@@ -395,8 +395,8 @@ def classify_priority_opportunity(text, docs):
     if docs and any(term in t for term in package_terms):
         return "B", "PACOTE AMBIENTAL COM ESCOPO APROVEITÁVEL", []
     if docs:
-        return "A", "CONTRATAÇÃO DIRETA ADERENTE", []
-    return "A", "CONTRATAÇÃO DIRETA ADERENTE AO PORTFÓLIO", []
+        return "A", "EXECUÇÃO DIRETA PELA ORDONE", []
+    return "A", "EXECUÇÃO DIRETA ADERENTE AO PORTFÓLIO", []
 
 
 def is_quick_opportunity(text, docs, classification, deadline, modality, value, cfg):
@@ -619,7 +619,7 @@ def environmental_evidence(text, cfg):
 
 def market_relation(text, classification_label=""):
     """Explica a rota comercial sem afirmar habilitação antes da análise documental."""
-    return classification_label or "Contratação direta aderente ao portfólio"
+    return classification_label or "Execução direta aderente ao portfólio"
 
 
 def meaningful_hits(text, cfg):
