@@ -171,14 +171,14 @@ document.querySelectorAll('a[href*="whatsapp"]').forEach(a=>{
 })();
 
 
-// V6.8 — Radar agressivo com atualização automática da tela.
+// V6.9 — Radar nacional com prioridade comercial para MCE, PCA e PGRS.
 (function(){
   const target=document.getElementById('radar-opportunity-list');
   if(!target) return;
   const base=document.body.dataset.base || '';
   let radarItems=[];
   let radarStatus='aguardando';
-  let activeFilter=document.querySelector('[data-radar-filter].active')?.dataset.radarFilter||'todos';
+  let activeFilter=document.querySelector('[data-radar-filter].active')?.dataset.radarFilter||'prioritarios';
   let refreshInFlight=false;
   let lastSuccessfulStamp='';
   const RADAR_REFRESH_MS=5*60*1000;
@@ -210,28 +210,42 @@ document.querySelectorAll('a[href*="whatsapp"]').forEach(a=>{
   function localRegion(item){return ['Goianésia','Entorno imediato','Região ampliada'].includes(item.regiao_prioridade)}
   function inBrazil(item){return String(item.uf||'').toUpperCase()!=='EX'}
   function inGoias(item){return String(item.uf||'').toUpperCase()==='GO'}
-  function draw(filter='todos'){
-    const items=radarItems.filter(x=>filter==='todos'||(filter==='brasil'&&inBrazil(x))||(filter==='goias'&&inGoias(x))||(filter==='formal'&&x.tipo==='DEMANDA FORMAL')||(filter==='alta'&&x.prioridade==='ALTA'));
+  const docs=x=>Array.isArray(x?.documentos_prioritarios)?x.documentos_prioritarios:[];
+  const hasDoc=(x,doc)=>docs(x).includes(doc);
+  const docBadges=x=>docs(x).map(doc=>`<span class="radar-doc-badge radar-doc-badge-${esc(doc.toLowerCase())}">${esc(doc)}</span>`).join('');
+  function draw(filter='prioritarios'){
+    const items=radarItems.filter(x=>
+      filter==='todos'
+      ||(filter==='prioritarios'&&docs(x).length)
+      ||(filter==='rapidos'&&x.oportunidade_rapida)
+      ||(filter==='mce'&&hasDoc(x,'MCE'))
+      ||(filter==='pca'&&hasDoc(x,'PCA'))
+      ||(filter==='pgrs'&&hasDoc(x,'PGRS'))
+      ||(filter==='goias'&&inGoias(x))
+    );
     if(!items.length){
       const unavailable=radarStatus==='fonte_principal_indisponivel';
-      target.innerHTML='<article class="radar-empty"><h3>'+(unavailable?'Fonte oficial temporariamente indisponível.':'Nenhuma oportunidade válida neste filtro.')+'</h3><p>'+(unavailable?'O PNCP não respondeu nesta tentativa. O robô não exibirá registros antigos ou vencidos e tentará novamente automaticamente.':'A fonte foi consultada, mas nenhum edital vigente com serviço direto do portfólio Ordone passou pelo filtro rigoroso.')+'</p></article>';
+      target.innerHTML='<article class="radar-empty"><h3>'+(unavailable?'Fonte oficial temporariamente indisponível.':'Nenhum projeto comprovado neste filtro.')+'</h3><p>'+(unavailable?'O PNCP não respondeu nesta tentativa. O robô não exibirá registros vencidos e tentará novamente automaticamente.':'A busca nacional foi executada, mas nenhum MCE, PCA ou PGRS com prazo válido e objeto comprovado passou por este filtro. Selecione “Todo o portfólio” para ver outras oportunidades ambientais aderentes.')+'</p></article>';
       return;
     }
-    target.innerHTML=items.map(x=>`<article class="radar-card" data-priority="${esc(x.prioridade||'')}">
+    target.innerHTML=items.map(x=>`<article class="radar-card ${x.oportunidade_rapida?'radar-card-fast':''} ${docs(x).length?'radar-card-priority':''} ${x.dias_restantes!==null&&x.dias_restantes!==undefined&&Number(x.dias_restantes)<5?'radar-card-urgent':''}" data-priority="${esc(x.prioridade||'')}">
       <div class="radar-card-head">
-        <div class="radar-tags"><span class="radar-badge">${esc(x.tipo||'SINAL')}</span>${x.confirmacao?`<span class="radar-confirm">${esc(x.confirmacao)}</span>`:''}${x.origem_historica?`<span class="radar-confirm">VIGENTE · COLETA ANTERIOR</span>`:''}</div>
+        <div class="radar-tags"><span class="radar-badge">${esc(x.tipo||'SINAL')}</span>${docBadges(x)}${x.aderencia_maxima?`<span class="radar-max-fit">ADERÊNCIA MÁXIMA</span>`:''}${x.oportunidade_rapida?`<span class="radar-fast-badge">PROJETO RÁPIDO</span>`:''}${x.confirmacao?`<span class="radar-confirm">${esc(x.confirmacao)}</span>`:''}${x.origem_historica?`<span class="radar-confirm">VIGENTE · COLETA ANTERIOR</span>`:''}</div>
         <span class="radar-score">${esc(x.prioridade||'')} · ${esc(x.score||0)}/100</span>
       </div>
       <h3>${esc(x.titulo||'Oportunidade pública')}</h3>
       ${x.relacao_comercial?`<div class="radar-market-fit">${esc(x.relacao_comercial)}</div>`:''}
       <div class="radar-meta"><span class="radar-location">${esc([x.municipio,x.uf].filter(Boolean).join(' / ')||'Local não informado')}</span><span>${esc(x.fonte||'Fonte pública')}</span></div>
       ${x.organizacao?`<p class="radar-org"><b>Organização</b><span>${esc(x.organizacao)}</span></p>`:''}
+      ${x.classificacao_comercial?`<div class="radar-commercial-class radar-class-${esc(String(x.classe_aderencia||'a').toLowerCase())}"><b>Classe ${esc(x.classe_aderencia||'A')}</b><span>${esc(x.classificacao_comercial)}</span></div>`:''}
       <div class="radar-service-block"><b>Como a Ordone pode atuar</b><p>${esc((x.servicos_ordone||[]).join(' · ')||'Avaliação técnica inicial')}</p></div>
+      ${(x.parceria_necessaria||[]).length?`<div class="radar-partner"><b>Parceiro ou especialidade necessária</b><ul>${x.parceria_necessaria.map(v=>`<li>${esc(v)}</li>`).join('')}</ul></div>`:''}
       ${x.status_leitura_edital?`<div class="radar-analysis"><b>Edital</b><span>${esc(x.status_leitura_edital)}</span></div>`:''}
       ${(x.requisitos_minimos||[]).length?`<div class="radar-requirements"><b>Requisitos identificados</b><ul>${x.requisitos_minimos.map(v=>`<li>${esc(v)}</li>`).join('')}</ul></div>`:''}
       ${x.analise_elegibilidade?`<div class="radar-eligibility"><b>Análise preliminar</b><span>${esc(x.analise_elegibilidade)}</span></div>`:''}
       ${(x.pendencias_identificadas||[]).length?`<div class="radar-pending"><b>Verificar</b><ul>${x.pendencias_identificadas.map(v=>`<li>${esc(v)}</li>`).join('')}</ul></div>`:''}
-      <div class="radar-details">${x.prazo?`<span><b>Prazo</b> ${esc(deadlineLabel(x.prazo))}</span>`:''}${brl(x.valor_estimado)?`<span><b>Estimado</b> ${esc(brl(x.valor_estimado))}</span>`:''}${x.modalidade?`<span>${esc(x.modalidade)}</span>`:''}</div>
+      <div class="radar-details">${x.prazo?`<span><b>Prazo</b> ${esc(deadlineLabel(x.prazo))}</span>`:''}${x.dias_restantes!==null&&x.dias_restantes!==undefined&&Number.isFinite(Number(x.dias_restantes))?`<span><b>Tempo restante</b> ${esc(x.dias_restantes)} dia(s)</span>`:''}${brl(x.valor_estimado)?`<span><b>Estimado</b> ${esc(brl(x.valor_estimado))}</span>`:''}${x.modalidade?`<span>${esc(x.modalidade)}</span>`:''}</div>
+      ${x.prazo_interno_decisao?`<div class="radar-internal-deadline"><b>Prioridade interna</b><span>${esc(x.prazo_interno_decisao)}</span></div>`:''}
       <p class="radar-action">${esc(x.proxima_acao||'Abrir a fonte e validar o contexto.')}</p>
       <a class="card-link" href="${safe(x.url)}" target="_blank" rel="noopener noreferrer">Abrir fonte oficial →</a>
     </article>`).join('');
@@ -239,15 +253,15 @@ document.querySelectorAll('a[href*="whatsapp"]').forEach(a=>{
   function applyRadarData(data){
       if(!data||!Array.isArray(data.items)) throw new Error('radar-payload');
       radarStatus=data.status||'aguardando';
-      radarItems=(data.items||[]).filter(x=>!generic(x)&&deadlineOpen(x)).sort((a,b)=>(Number(b.score)||0)-(Number(a.score)||0)||regionWeight(a)-regionWeight(b)).slice(0,60);
+      radarItems=(data.items||[]).filter(x=>!generic(x)&&deadlineOpen(x)).sort((a,b)=>Number(Boolean(b.oportunidade_rapida))-Number(Boolean(a.oportunidade_rapida))||Number(docs(b).length>0)-Number(docs(a).length>0)||(Number(b.score)||0)-(Number(a.score)||0)||regionWeight(a)-regionWeight(b)).slice(0,80);
       const boxes=document.querySelectorAll('#radar-summary article b');
       const visible={
-        total:radarItems.length,
-        brasil:radarItems.filter(inBrazil).length,
+        prioritarios:radarItems.filter(x=>docs(x).length).length,
+        rapidos:radarItems.filter(x=>x.oportunidade_rapida).length,
         formal:radarItems.filter(x=>x.tipo==='DEMANDA FORMAL').length,
-        sinais:radarItems.filter(x=>x.tipo==='SINAL AMBIENTAL'||x.tipo==='SINAL DE CONTRATAÇÃO').length
+        total:radarItems.length
       };
-      [visible.total,visible.brasil,visible.formal,visible.sinais].forEach((v,i)=>{if(boxes[i]) boxes[i].textContent=v});
+      [visible.prioritarios,visible.rapidos,visible.formal,visible.total].forEach((v,i)=>{if(boxes[i]) boxes[i].textContent=v});
       const stamp=document.getElementById('radar-updated-at');
       if(stamp){
         const diag=data.diagnostico_coleta||{};

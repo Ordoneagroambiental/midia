@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Radar Ordone V6.8 — radar nacional cumulativo com validação técnica contextual.
+"""Radar Ordone V6.9 — busca nacional com prioridade comercial para MCE, PCA e PGRS.
 
 Objetivo: localizar sinais e oportunidades em fontes públicas em todo o Brasil,
 mantendo Goiás e Goianésia como bônus de proximidade, sem realizar contato automático. O contato comercial permanece
@@ -42,7 +42,7 @@ OUT = ROOT / "dados" / "radar_oportunidades.json"
 BR_TZ = ZoneInfo("America/Sao_Paulo")
 
 UA = {
-    "User-Agent": "Mozilla/5.0 (compatible; OrdoneRadar/6.8; +https://ordoneagroambiental.github.io/midia/)",
+    "User-Agent": "Mozilla/5.0 (compatible; OrdoneRadar/6.9; +https://ordoneagroambiental.github.io/midia/)",
     "Accept": "application/json,text/html;q=0.9,*/*;q=0.8",
 }
 
@@ -91,6 +91,10 @@ FORMAL_TERMS = (
     "chamamento", "termo de referencia", "aviso de contratacao",
 )
 HIGH_SIGNAL_TERMS = (
+    "memorial de caracterizacao do empreendimento", "memorial de caracterizacao de empreendimento",
+    "plano de controle ambiental", "programa de controle ambiental",
+    "plano de gerenciamento de residuos solidos", "plano de gestao de residuos solidos",
+    "elaboracao de mce", "elaboracao de pca", "elaboracao de pgrs",
     "prad", "prada", "recuperacao ambiental", "area degradada", "revegetacao",
     "restauracao florestal", "reflorestamento", "irrigacao", "gotejamento",
     "microaspersao", "fertirrigacao", "erosao", "assoreamento", "bioengenharia",
@@ -100,6 +104,49 @@ HIGH_SIGNAL_TERMS = (
     "gestao ambiental de obras", "supervisao ambiental", "acompanhamento ambiental de obra",
     "programa ambiental da construcao", "controle ambiental de obra",
 )
+
+PRIORITY_DOCUMENT_LABELS = {
+    "MCE": "Memorial de Caracterização do Empreendimento",
+    "PCA": "Plano ou Programa de Controle Ambiental",
+    "PGRS": "Plano de Gerenciamento de Resíduos Sólidos",
+}
+PRIORITY_ACTION_TERMS = (
+    "elaboracao", "revisao", "atualizacao", "adequacao", "implantacao",
+    "acompanhamento", "monitoramento", "execucao", "desenvolvimento",
+    "contratacao", "prestacao de servico", "consultoria",
+)
+PRIORITY_QUICK_TERMS = (
+    "dispensa", "contratacao direta", "cotacao", "aviso de cotacao",
+    "solicitacao de proposta", "rfq", "credenciamento",
+)
+PRIORITY_FALSE_MEANINGS = (
+    "plano de contratacoes anual", "plano anual de contratacoes",
+    "prestacao de contas anual", "programa de conservacao auditiva",
+)
+PRIORITY_REQUIREMENT_ONLY = (
+    "devera possuir", "deve possuir", "devera apresentar", "deve apresentar",
+    "documento obrigatorio da contratada", "licenca ambiental vigente",
+)
+PARTNERSHIP_RULES = {
+    "PGRSS / resíduos de serviços de saúde": (
+        "pgrss", "residuos de servicos de saude", "residuo hospitalar",
+    ),
+    "PGRCC / engenharia civil": (
+        "pgrcc", "residuos da construcao civil",
+    ),
+    "Profissional de química": (
+        "engenheiro quimico", "quimico responsavel", "conselho regional de quimica",
+    ),
+    "Engenharia sanitária": (
+        "engenheiro sanitarista", "engenharia sanitaria",
+    ),
+    "Biologia / fauna": (
+        "biologo", "levantamento de fauna", "monitoramento de fauna",
+    ),
+    "Geologia": (
+        "geologo", "estudo geologico",
+    ),
+}
 
 CONSTRUCTION_MARKET_TERMS = (
     "construtora", "construcao civil", "obra", "canteiro", "terraplenagem",
@@ -220,6 +267,202 @@ def _term_position(normalized_text, phrase):
     return normalized_text.find(p)
 
 
+def _has_word(text, word):
+    return bool(re.search(rf"(?<!\w){re.escape(norm(word))}(?!\w)", text))
+
+
+def _action_near(text, anchors, distance=140):
+    """Confirma que o documento aparece associado a uma ação contratável."""
+    action_pattern = "|".join(re.escape(x) for x in PRIORITY_ACTION_TERMS)
+    for anchor in anchors:
+        position = _term_position(text, anchor)
+        if position < 0:
+            continue
+        start = max(0, position - distance)
+        end = min(len(text), position + len(norm(anchor)) + distance)
+        if re.search(rf"\b(?:{action_pattern})\w*\b", text[start:end]):
+            return True
+    return False
+
+
+def priority_documents(text):
+    """Identifica MCE, PCA e PGRS sem aceitar siglas ambíguas."""
+    t = norm(text)
+    if not t:
+        return [], []
+
+    false_meanings = [term for term in PRIORITY_FALSE_MEANINGS if term in t]
+    docs = []
+
+    mce_full = (
+        "memorial de caracterizacao do empreendimento",
+        "memorial de caracterizacao de empreendimento",
+    )
+    pca_full = (
+        "plano de controle ambiental",
+        "programa de controle ambiental",
+    )
+    pgrs_full = (
+        "plano de gerenciamento de residuos solidos",
+        "plano de gestao de residuos solidos",
+        "plano de gerenciamento dos residuos solidos",
+    )
+
+    if any(x in t for x in mce_full):
+        docs.append("MCE")
+    elif _has_word(t, "mce") and _action_near(t, ("mce",)):
+        docs.append("MCE")
+
+    if any(x in t for x in pca_full):
+        docs.append("PCA")
+    elif (
+        _has_word(t, "pca")
+        and not false_meanings
+        and _action_near(t, ("pca",))
+    ):
+        docs.append("PCA")
+
+    if any(x in t for x in pgrs_full):
+        docs.append("PGRS")
+    elif (
+        _has_word(t, "pgrs")
+        and _action_near(t, ("pgrs",))
+    ):
+        docs.append("PGRS")
+
+    return docs, false_meanings
+
+
+def priority_document_service(text):
+    """Exige documento prioritário e ação de elaboração/execução, não mera posse."""
+    t = norm(text)
+    docs, ambiguous = priority_documents(text)
+    if not docs or ambiguous:
+        return [], ambiguous
+    anchors = []
+    if "MCE" in docs:
+        anchors += ["mce", "memorial de caracterizacao do empreendimento", "memorial de caracterizacao de empreendimento"]
+    if "PCA" in docs:
+        anchors += ["pca", "plano de controle ambiental", "programa de controle ambiental"]
+    if "PGRS" in docs:
+        anchors += ["pgrs", "plano de gerenciamento de residuos solidos", "plano de gestao de residuos solidos"]
+    if not _action_near(t, anchors, distance=180):
+        return [], ambiguous
+    strict_actions = PRIORITY_ACTION_TERMS[:8]
+    requirement_only = any(marker in t for marker in PRIORITY_REQUIREMENT_ONLY)
+    if requirement_only and not any(action in t for action in strict_actions):
+        return [], ambiguous
+    return docs, ambiguous
+
+
+def days_to_deadline(value):
+    if not value:
+        return None
+    try:
+        raw = str(value).strip()
+        if re.fullmatch(r"\d{4}-\d{2}-\d{2}", raw):
+            raw += "T23:59:59-03:00"
+        parsed = datetime.fromisoformat(raw.replace("Z", "+00:00"))
+        if parsed.tzinfo is None:
+            parsed = parsed.replace(tzinfo=BR_TZ)
+        seconds = (parsed.astimezone(BR_TZ) - datetime.now(BR_TZ)).total_seconds()
+        return int(seconds // 86400)
+    except (TypeError, ValueError):
+        return None
+
+
+def classify_priority_opportunity(text, docs):
+    """Classifica execução direta, pacote aproveitável ou parceria necessária."""
+    t = norm(text)
+    partners = [
+        partner for partner, terms in PARTNERSHIP_RULES.items()
+        if any(term in t for term in terms)
+    ]
+    if partners:
+        return "C", "PARCERIA TÉCNICA NECESSÁRIA", partners
+
+    package_terms = (
+        "eia/rima", "estudo de impacto ambiental", "relatorio de impacto ambiental",
+        "programas ambientais", "servicos ambientais integrados", "equipe multidisciplinar",
+        "licenciamento ambiental completo", "fauna e flora",
+    )
+    if docs and any(term in t for term in package_terms):
+        return "B", "PACOTE AMBIENTAL COM ESCOPO APROVEITÁVEL", []
+    if docs:
+        return "A", "CONTRATAÇÃO DIRETA ADERENTE", []
+    return "A", "CONTRATAÇÃO DIRETA ADERENTE AO PORTFÓLIO", []
+
+
+def is_quick_opportunity(text, docs, classification, deadline, modality, value, cfg):
+    strategy = cfg.get("estrategia_comercial_rapida") or {}
+    if not docs or classification != "A" or deadline_expired(deadline):
+        return False
+    days = days_to_deadline(deadline)
+    if days is None or days < int(strategy.get("prazo_minimo_dias", 2)):
+        return False
+    if days > int(strategy.get("prazo_ideal_maximo_dias", 20)):
+        return False
+    commercial_text = norm(f"{text} {modality}")
+    quick_mode = any(term in commercial_text for term in PRIORITY_QUICK_TERMS)
+    try:
+        small_value = value is not None and float(value) <= float(strategy.get("valor_referencia_rapido", 200000))
+    except (TypeError, ValueError):
+        small_value = False
+    return quick_mode or small_value
+
+
+def priority_document_score(base_score, docs, uf, deadline, reading_status, value, modality, classification, ambiguous):
+    if not docs:
+        return base_score
+    score = 40
+    if deadline and not deadline_expired(deadline):
+        score += 20
+    state = str(uf or "").upper()
+    if state == "GO":
+        score += 15
+    elif state in ("DF", "MG"):
+        score += 10
+    if reading_status == "ANALISADO":
+        score += 10
+    if value is not None:
+        score += 5
+    if any(term in norm(modality) for term in PRIORITY_QUICK_TERMS):
+        score += 10
+    if classification == "B":
+        score += 5
+    if ambiguous:
+        score -= 50
+    return max(base_score, min(100, score))
+
+
+def internal_decision_deadline(deadline):
+    days = days_to_deadline(deadline)
+    if days is None:
+        return "Confirmar prazo antes de decidir"
+    if days <= 5:
+        return "Decidir e iniciar proposta hoje"
+    if days <= 10:
+        return "Decidir em até 24 horas"
+    return "Decidir em até 48 horas"
+
+
+def opportunity_metadata(text, cfg, deadline="", modality="", value=None, reading_status="LEITURA INCOMPLETA"):
+    docs, ambiguous = priority_document_service(text)
+    classification, label, partners = classify_priority_opportunity(text, docs)
+    quick = is_quick_opportunity(text, docs, classification, deadline, modality, value, cfg)
+    return {
+        "documentos_prioritarios": docs,
+        "aderencia_maxima": set(docs) == {"MCE", "PCA", "PGRS"},
+        "classe_aderencia": classification,
+        "classificacao_comercial": label,
+        "oportunidade_rapida": quick,
+        "parceria_necessaria": partners,
+        "siglas_ambiguas": ambiguous,
+        "dias_restantes": days_to_deadline(deadline),
+        "prazo_interno_decisao": internal_decision_deadline(deadline),
+    }
+
+
 def portfolio_match(text, cfg):
     """Valida aderência direta ao portfólio; na dúvida, rejeita o objeto.
 
@@ -242,6 +485,10 @@ def portfolio_match(text, cfg):
 
     matched = []
     for service in spec.get("servicos_diretos", []):
+        if service.get("id") in ("mce_pca_pgrs", "residuos_planos"):
+            priority_docs, _ = priority_document_service(text)
+            if not priority_docs:
+                continue
         found = [
             phrase for phrase in service.get("frases_fortes", [])
             if _term_position(t, phrase) >= 0
@@ -300,6 +547,10 @@ def relevant_procurement_object(text, cfg):
     if supply_object and not service_execution:
         return False
 
+    priority_docs, _ = priority_document_service(text)
+    if priority_docs:
+        return True
+
     ok, _, _ = portfolio_match(text, cfg)
     return ok
 
@@ -345,9 +596,9 @@ def environmental_evidence(text, cfg):
     return ok, keyword_hits(text, cfg) if ok else []
 
 
-def market_relation(text):
-    """O painel público V6.8 mostra somente contratações diretamente aderentes."""
-    return "Contratação direta aderente ao portfólio"
+def market_relation(text, classification_label=""):
+    """Explica a rota comercial sem afirmar habilitação antes da análise documental."""
+    return classification_label or "Contratação direta aderente ao portfólio"
 
 
 def meaningful_hits(text, cfg):
@@ -453,8 +704,17 @@ def keyword_hits(text, cfg):
 
 def services_from(text, cfg):
     """Retorna apenas categorias comprovadas pela lista positiva do portfólio."""
+    docs, _ = priority_document_service(text)
     ok, labels, _ = portfolio_match(text, cfg)
-    return labels if ok and labels else ["Avaliação técnica inicial"]
+    priority_labels = [f"{doc} — {PRIORITY_DOCUMENT_LABELS[doc]}" for doc in docs]
+    combined = priority_labels + (labels if ok and labels else [])
+    seen, out = set(), []
+    for label in combined:
+        key = norm(label)
+        if key not in seen:
+            seen.add(key)
+            out.append(label)
+    return out or ["Avaliação técnica inicial"]
 
 
 def priority(score):
@@ -786,6 +1046,28 @@ def pncp_collect(cfg, mode, diagnostics):
 
                     source = pncp_url_from_control(key) or safe_url(x.get("linkSistemaOrigem")) or "https://pncp.gov.br/app/editais"
                     edital_text, docs_read, reading_status = pncp_document_text(key, diagnostics)
+                    combined_text = f"{text} {edital_text}".strip()
+                    estimated_value = money(x.get("valorTotalEstimado"))
+                    modality_name = clean(x.get("modalidadeNome"), 80)
+                    business = opportunity_metadata(
+                        combined_text,
+                        cfg,
+                        deadline=deadline,
+                        modality=modality_name,
+                        value=estimated_value,
+                        reading_status=reading_status,
+                    )
+                    score = priority_document_score(
+                        score,
+                        business["documentos_prioritarios"],
+                        uf,
+                        deadline,
+                        reading_status,
+                        estimated_value,
+                        modality_name,
+                        business["classe_aderencia"],
+                        business["siglas_ambiguas"],
+                    )
                     requirements, eligibility, pending_docs = analyze_requirements(edital_text, profile)
                     out.append({
                         "id": key or f"pncp-{mode}-{scope_name}-{modalidade}-{len(out)+1}",
@@ -799,12 +1081,20 @@ def pncp_collect(cfg, mode, diagnostics):
                         "organizacao": clean((x.get("orgaoEntidade") or {}).get("razaoSocial"), 180),
                         "data_publicacao": clean(x.get("dataPublicacaoPncp"), 40),
                         "prazo": clean(deadline, 40),
-                        "valor_estimado": money(x.get("valorTotalEstimado")),
-                        "modalidade": clean(x.get("modalidadeNome"), 80),
-                        "servicos_ordone": services_from(text, cfg),
-                        "tipo_aderencia": "ADERENTE_DIRETO",
-                        "motivo_aceitacao": "Objeto contém serviço direto do portfólio Ordone.",
-                        "relacao_comercial": market_relation(text),
+                        "valor_estimado": estimated_value,
+                        "modalidade": modality_name,
+                        "servicos_ordone": services_from(combined_text, cfg),
+                        "tipo_aderencia": (
+                            "PARCERIA_NECESSARIA" if business["classe_aderencia"] == "C"
+                            else "PACOTE_APROVEITAVEL" if business["classe_aderencia"] == "B"
+                            else "ADERENTE_DIRETO"
+                        ),
+                        "motivo_aceitacao": (
+                            "MCE, PCA ou PGRS comprovado no objeto ou nos anexos oficiais."
+                            if business["documentos_prioritarios"]
+                            else "Objeto contém serviço direto do portfólio Ordone."
+                        ),
+                        "relacao_comercial": market_relation(text, business["classificacao_comercial"]),
                         "status_leitura_edital": reading_status,
                         "documentos_analisados": docs_read,
                         "requisitos_minimos": requirements,
@@ -817,7 +1107,10 @@ def pncp_collect(cfg, mode, diagnostics):
                         "numero_controle_pncp": key,
                         "escopo_coleta": scope_name,
                         "fase_pncp": mode,
+                        **business,
                         "proxima_acao": (
+                            "Abrir o edital agora, validar habilitação e preparar orçamento técnico-comercial no mesmo dia."
+                            if business["oportunidade_rapida"] else
                             "Abrir o edital/aviso oficial, validar escopo, habilitação, prazo, local de execução e viabilidade de proposta."
                             if mode == "proposta" else
                             "Abrir a publicação oficial e verificar se há prazo de proposta, futura licitação, contratação direta ou oportunidade institucional."
@@ -1015,8 +1308,38 @@ def compras_gov_collect(cfg, diagnostics):
                 or (row.get("orgaoEntidade") or {}).get("razaoSocial"),
                 180,
             )
+            estimated_value = money(
+                row.get("valorTotalEstimado")
+                or row.get("valorEstimado")
+                or row.get("valor_total_estimado")
+            )
+            modality_name = clean(
+                row.get("modalidadeNome")
+                or row.get("nomeModalidade")
+                or row.get("modalidade"),
+                80,
+            )
+            business = opportunity_metadata(
+                text,
+                cfg,
+                deadline=deadline,
+                modality=modality_name,
+                value=estimated_value,
+                reading_status="LEITURA INCOMPLETA",
+            )
             score, region, hits = score_item(
                 city, uf, text, "DEMANDA FORMAL", cfg, deadline
+            )
+            score = priority_document_score(
+                score,
+                business["documentos_prioritarios"],
+                uf,
+                deadline,
+                "LEITURA INCOMPLETA",
+                estimated_value,
+                modality_name,
+                business["classe_aderencia"],
+                business["siglas_ambiguas"],
             )
             if score < 45:
                 continue
@@ -1050,22 +1373,21 @@ def compras_gov_collect(cfg, diagnostics):
                     40,
                 ),
                 "prazo": deadline,
-                "valor_estimado": money(
-                    row.get("valorTotalEstimado")
-                    or row.get("valorEstimado")
-                    or row.get("valor_total_estimado")
-                ),
-                "modalidade": clean(
-                    row.get("modalidadeNome")
-                    or row.get("nomeModalidade")
-                    or row.get("modalidade"),
-                    80,
-                ),
+                "valor_estimado": estimated_value,
+                "modalidade": modality_name,
                 "situacao_compra": clean(row.get("situacaoCompraNomePncp"), 100),
                 "servicos_ordone": services_from(text, cfg),
-                        "tipo_aderencia": "ADERENTE_DIRETO",
-                        "motivo_aceitacao": "Objeto contém serviço direto do portfólio Ordone.",
-                "relacao_comercial": market_relation(text),
+                "tipo_aderencia": (
+                    "PARCERIA_NECESSARIA" if business["classe_aderencia"] == "C"
+                    else "PACOTE_APROVEITAVEL" if business["classe_aderencia"] == "B"
+                    else "ADERENTE_DIRETO"
+                ),
+                "motivo_aceitacao": (
+                    "MCE, PCA ou PGRS comprovado no objeto oficial."
+                    if business["documentos_prioritarios"]
+                    else "Objeto contém serviço direto do portfólio Ordone."
+                ),
+                "relacao_comercial": market_relation(text, business["classificacao_comercial"]),
                 "status_leitura_edital": "LEITURA INCOMPLETA",
                 "documentos_analisados": [],
                 "requisitos_minimos": [],
@@ -1080,7 +1402,10 @@ def compras_gov_collect(cfg, diagnostics):
                 "numero_controle_pncp": control,
                 "escopo_coleta": "Brasil",
                 "fase_pncp": "contingencia_compras_gov",
+                **business,
                 "proxima_acao": (
+                    "Abrir a fonte oficial agora e preparar orçamento técnico-comercial no mesmo dia."
+                    if business["oportunidade_rapida"] else
                     "Abrir a fonte oficial, confirmar escopo, habilitação, "
                     "horário da sessão e viabilidade antes de qualquer abordagem."
                 ),
@@ -1243,6 +1568,18 @@ def html_signals(cfg, diagnostics):
                     break
 
             score, region, hits = score_item(city, default_uf, combined, kind, cfg, "")
+            business = opportunity_metadata(combined, cfg)
+            score = priority_document_score(
+                score,
+                business["documentos_prioritarios"],
+                default_uf,
+                "",
+                "LEITURA INCOMPLETA",
+                None,
+                "",
+                business["classe_aderencia"],
+                business["siglas_ambiguas"],
+            )
             if kind == "SINAL AMBIENTAL":
                 score = max(0, score - 8)
             if score < 45:
@@ -1263,16 +1600,25 @@ def html_signals(cfg, diagnostics):
                 "valor_estimado": None,
                 "modalidade": "",
                 "servicos_ordone": [x for x in services_from(combined, cfg) if x != "Avaliação técnica inicial"],
-                "tipo_aderencia": "ADERENTE_DIRETO",
-                "motivo_aceitacao": "Objeto contém serviço direto do portfólio Ordone.",
+                "tipo_aderencia": (
+                    "PARCERIA_NECESSARIA" if business["classe_aderencia"] == "C"
+                    else "PACOTE_APROVEITAVEL" if business["classe_aderencia"] == "B"
+                    else "ADERENTE_DIRETO"
+                ),
+                "motivo_aceitacao": (
+                    "MCE, PCA ou PGRS identificado na publicação específica."
+                    if business["documentos_prioritarios"]
+                    else "Objeto contém serviço direto do portfólio Ordone."
+                ),
                 "relacao_comercial": (
-                    market_relation(combined) if kind == "DEMANDA FORMAL"
+                    market_relation(combined, business["classificacao_comercial"]) if kind == "DEMANDA FORMAL"
                     else "Possível aderência ambiental — validar"
                 ),
                 "palavras_encontradas": hits[:10],
                 "score": score,
                 "prioridade": priority(score),
                 "url": href,
+                **business,
                 "proxima_acao": (
                     "Abrir a publicação oficial e confirmar objeto, prazo e condições antes de qualquer abordagem."
                     if kind == "DEMANDA FORMAL" else
@@ -1288,7 +1634,13 @@ def html_signals(cfg, diagnostics):
 
 def dedupe_sort(items):
     seen, out = set(), []
-    for x in sorted(items, key=lambda z: (-int(z.get("score", 0)), z.get("municipio", ""), z.get("titulo", ""))):
+    for x in sorted(items, key=lambda z: (
+        -int(bool(z.get("oportunidade_rapida"))),
+        -int(bool(z.get("documentos_prioritarios"))),
+        -int(z.get("score", 0)),
+        z.get("municipio", ""),
+        z.get("titulo", ""),
+    )):
         if deadline_expired(x.get("prazo")):
             continue
         key = (norm(x.get("titulo")), norm(x.get("organizacao")), norm(x.get("municipio")))
@@ -1340,7 +1692,7 @@ def build_output(cfg, items, diagnostics):
         + cfg["prioridade_geografica"].get("regiao_ampliada", [])
     ))
     return {
-        "versao": "6.8",
+        "versao": "6.9",
         "atualizado_em": datetime.now(BR_TZ).strftime("%d/%m/%Y %H:%M (horário de Brasília)"),
         "status": (
             "coleta_concluida"
@@ -1351,8 +1703,8 @@ def build_output(cfg, items, diagnostics):
                 else "fonte_principal_indisponivel"
             )
         ),
-        "prioridade": "Brasil inteiro → bônus de proximidade para Goiás e Goianésia",
-        "modo_busca": "AGRESSIVO — maior frequência, profundidade e fontes; aderência direta preservada",
+        "prioridade": "MCE, PCA e PGRS em todo o Brasil → projetos rápidos → bônus para GO, DF e MG",
+        "modo_busca": "PROJETO RÁPIDO — MCE, PCA e PGRS com prazo vigente, objeto comprovado e triagem comercial",
         "resumo": {
             "total": len(items),
             "brasil": len(items),
@@ -1360,6 +1712,11 @@ def build_output(cfg, items, diagnostics):
             "goias": sum((x.get("uf") or "").upper() == "GO" for x in items),
             "demandas_formais": sum(x.get("tipo") == "DEMANDA FORMAL" for x in items),
             "sinais_ambientais": sum(x.get("tipo") in ("SINAL AMBIENTAL", "SINAL DE CONTRATAÇÃO") for x in items),
+            "prioritarios_mce_pca_pgrs": sum(bool(x.get("documentos_prioritarios")) for x in items),
+            "oportunidades_rapidas": sum(bool(x.get("oportunidade_rapida")) for x in items),
+            "mce": sum("MCE" in (x.get("documentos_prioritarios") or []) for x in items),
+            "pca": sum("PCA" in (x.get("documentos_prioritarios") or []) for x in items),
+            "pgrs": sum("PGRS" in (x.get("documentos_prioritarios") or []) for x in items),
         },
         "diagnostico_coleta": diagnostics,
         "items": items,
@@ -1400,6 +1757,27 @@ def self_test(cfg):
     assert html_signal_route("https://exemplo.gov.br/assuntos/noticias/novo-programa-ambiental")
     assert not html_signal_route("https://exemplo.gov.br/assuntos/noticias")
     assert not html_signal_route("https://exemplo.gov.br/assuntos/inventario-florestal")
+    priority_examples = {
+        "MCE": "Dispensa para elaboração de Memorial de Caracterização do Empreendimento para licenciamento ambiental",
+        "PCA": "Contratação de consultoria para revisão do Plano de Controle Ambiental do empreendimento",
+        "PGRS": "Aviso de cotação para elaboração de PGRS e gestão ambiental de resíduos sólidos",
+    }
+    for expected, example in priority_examples.items():
+        docs, ambiguous = priority_document_service(example)
+        assert expected in docs and not ambiguous, (expected, docs, ambiguous)
+        assert relevant_procurement_object(example, cfg)
+    assert priority_document_service("PCA 2027 — Plano de Contratações Anual do Município")[0] == []
+    assert priority_document_service("Coleta e transporte de lixo conforme PGRS vigente da contratada")[0] == []
+    assert priority_document_service("Elaboração de PGRSS para hospital")[0] == []
+    future_quick = (datetime.now(BR_TZ) + timedelta(days=8)).isoformat()
+    quick_meta = opportunity_metadata(
+        "Dispensa para elaboração de PGRS e gestão ambiental de resíduos sólidos",
+        cfg,
+        deadline=future_quick,
+        modality="Dispensa eletrônica",
+        value=35000,
+    )
+    assert quick_meta["oportunidade_rapida"] and quick_meta["classe_aderencia"] == "A"
     false_objects = (
         "Locação de computadores, notebooks, tablets e monitores para a Secretaria de Meio Ambiente",
         "Solução SaaS de atendimento por WhatsApp com inteligência artificial",
@@ -1445,7 +1823,7 @@ def self_test(cfg):
     assert pncp_retry_delay(1) == 3.0
     assert pncp_retry_delay(2) == 6.0
     assert pncp_retry_delay(3, "30") == PNCP_RETRY_CAP
-    print("SELF-TEST OK V6.8", s, r, len(h), len(false_objects), "falsos positivos bloqueados")
+    print("SELF-TEST OK V6.9", s, r, len(h), len(false_objects), "falsos positivos bloqueados")
 
 
 def main():
@@ -1541,7 +1919,7 @@ def main():
 
     data = build_output(cfg, items, diagnostics)
     OUT.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print("Radar V6.8 atualizado:", len(items), "itens; registros PNCP examinados:", diagnostics["pncp_registros_examinados"], "requisições:", diagnostics["requisicoes"])
+    print("Radar V6.9 atualizado:", len(items), "itens; registros PNCP examinados:", diagnostics["pncp_registros_examinados"], "requisições:", diagnostics["requisicoes"])
 
 
 if __name__ == "__main__":

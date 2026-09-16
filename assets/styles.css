@@ -284,6 +284,18 @@ body{background:#fff}
 .radar-toolbar #radar-updated-at{font-size:13px;margin-bottom:3px}
 @media(max-width:620px){.radar-card-head{flex-direction:column}.radar-score{align-self:flex-start}.radar-card h3{font-size:18px}}
 
+/* V6.9 — prioridade MCE, PCA, PGRS e projetos rápidos */
+.radar-priority-strip .radar-doc-mce{border-top:4px solid #1976b9}.radar-priority-strip .radar-doc-pca{border-top:4px solid #2f8a4c}.radar-priority-strip .radar-doc-pgrs{border-top:4px solid #dc7623}.radar-priority-strip .radar-fast{border-top:4px solid #c14b41;background:#fff8f4}
+.radar-doc-badge,.radar-fast-badge,.radar-max-fit{display:inline-flex;align-items:center;min-height:25px;padding:4px 8px;border-radius:999px;font-size:9px;font-weight:900;letter-spacing:.08em}
+.radar-doc-badge-mce{color:#0e578c;background:#e8f4fd;border:1px solid #a9d3ef}.radar-doc-badge-pca{color:#1d6835;background:#eaf7ed;border:1px solid #afd8b8}.radar-doc-badge-pgrs{color:#9b4c0e;background:#fff0e2;border:1px solid #efc39f}
+.radar-fast-badge{color:#8d332d;background:#fff0ed;border:1px solid #e7aaa5}.radar-max-fit{color:#fff;background:#6f4c00;border:1px solid #6f4c00}
+.radar-card-priority{border-width:2px}.radar-card-fast{box-shadow:0 14px 36px rgba(132,84,20,.16);border-color:#d5a858}.radar-card-urgent{border-color:#c94a42!important;box-shadow:0 14px 34px rgba(157,48,41,.16)!important}
+.radar-commercial-class{display:flex;justify-content:space-between;gap:10px;margin:0 0 11px;padding:9px 11px;border-radius:10px;font-size:11px;background:#eef4f0;color:var(--forest)}.radar-commercial-class b{white-space:nowrap}.radar-class-b{background:#eef4ff;color:#244b78}.radar-class-c{background:#fff4cf;color:#705514}
+.radar-partner{margin:0 0 12px;padding:11px 13px;border-radius:12px;background:#fff7dc;border:1px solid #ead393;color:#65511c;font-size:11px}.radar-partner ul{margin:6px 0 0;padding-left:18px}
+.radar-internal-deadline{display:flex;justify-content:space-between;gap:10px;margin:0 0 12px;padding:9px 11px;border-radius:10px;background:#f7efe5;color:#684921;font-size:11px}.radar-internal-deadline b{white-space:nowrap}
+.radar-filters{max-width:620px;justify-content:flex-end}
+@media(max-width:900px){.radar-filters{max-width:none;justify-content:flex-start}}
+
 
 /* Observatório Ambiental Mundial */
 .observatory-updated{display:block;font-size:12px;font-weight:800;color:var(--forest);margin-top:12px}

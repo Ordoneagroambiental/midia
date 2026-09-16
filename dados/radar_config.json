@@ -1,5 +1,5 @@
 {
-  "versao": "4.2",
+  "versao": "6.9",
   "escopo_padrao": "Brasil inteiro",
   "centro_operacional": {
     "municipio": "Goianésia",
@@ -98,7 +98,24 @@
     "supervisao ambiental",
     "acompanhamento ambiental de obra",
     "controle ambiental de obra",
+    "memorial de caracterização do empreendimento",
+    "memorial de caracterização de empreendimento",
+    "elaboração de MCE",
+    "revisão de MCE",
+    "atualização de MCE",
+    "plano de controle ambiental",
+    "programa de controle ambiental",
+    "elaboração de PCA",
+    "revisão de PCA",
+    "atualização de PCA",
     "PGRS",
+    "plano de gerenciamento de resíduos sólidos",
+    "plano de gestão de resíduos sólidos",
+    "elaboração de PGRS",
+    "revisão de PGRS",
+    "atualização de PGRS",
+    "cotação de serviços ambientais",
+    "contratação de responsável técnico ambiental",
     "resíduos da construção",
     "residuos da construcao",
     "estudos ambientais",
@@ -220,7 +237,59 @@
     "parcerias_e_consorcios_no_painel": false,
     "termo_generico_nao_aprova": true,
     "frequencia_horas": 2,
-    "profundidade_compras_gov": "até 10 páginas planejadas por modalidade, 120 dias"
+    "profundidade_compras_gov": "até 10 páginas planejadas por modalidade, 120 dias",
+    "prioridade_documental": [
+      "MCE",
+      "PCA",
+      "PGRS"
+    ],
+    "modo_projeto_rapido": true
+  },
+  "estrategia_comercial_rapida": {
+    "objetivo": "Priorizar oportunidades nacionais de menor ciclo comercial para elaboração, revisão, atualização, adequação, implantação ou acompanhamento de MCE, PCA e PGRS.",
+    "modalidades_preferenciais": [
+      "dispensa",
+      "contratação direta",
+      "cotação",
+      "aviso de cotação",
+      "solicitação de proposta",
+      "RFQ",
+      "credenciamento"
+    ],
+    "estados_prioritarios": [
+      "GO",
+      "DF",
+      "MG"
+    ],
+    "prazo_minimo_dias": 2,
+    "prazo_ideal_maximo_dias": 20,
+    "valor_referencia_rapido": 200000,
+    "regra": "Rapidez comercial aumenta a prioridade, mas nunca substitui prazo vigente, objeto comprovado, análise de habilitação e viabilidade econômica."
+  },
+  "documentos_prioritarios": {
+    "MCE": "Memorial de Caracterização do Empreendimento",
+    "PCA": "Plano ou Programa de Controle Ambiental",
+    "PGRS": "Plano de Gerenciamento de Resíduos Sólidos",
+    "acoes_aceitas": [
+      "elaboração",
+      "revisão",
+      "atualização",
+      "adequação",
+      "implantação",
+      "acompanhamento",
+      "monitoramento",
+      "execução"
+    ],
+    "significados_ambiguos_bloqueados": [
+      "plano de contratações anual",
+      "plano anual de contratações",
+      "prestação de contas anual",
+      "programa de conservação auditiva"
+    ],
+    "residuos_especiais_separados": [
+      "PGRSS",
+      "PGRCC"
+    ]
   },
   "filtro_portfolio": {
     "versao": "1.2",
@@ -232,6 +301,30 @@
       "parceria_consorcio": "nao_publicar"
     },
     "servicos_diretos": [
+      {
+        "id": "mce_pca_pgrs",
+        "rotulo": "MCE, PCA e PGRS",
+        "frases_fortes": [
+          "Memorial de Caracterização do Empreendimento",
+          "Memorial de Caracterização de Empreendimento",
+          "elaboração de MCE",
+          "revisão de MCE",
+          "atualização de MCE",
+          "adequação de MCE",
+          "Plano de Controle Ambiental",
+          "Programa de Controle Ambiental",
+          "elaboração de PCA ambiental",
+          "revisão de PCA ambiental",
+          "atualização de PCA ambiental",
+          "adequação de PCA ambiental",
+          "Plano de Gerenciamento de Resíduos Sólidos",
+          "Plano de Gestão de Resíduos Sólidos",
+          "elaboração de PGRS",
+          "revisão de PGRS",
+          "atualização de PGRS",
+          "adequação de PGRS"
+        ]
+      },
       {
         "id": "recuperacao_restauracao",
         "rotulo": "Recuperação ambiental / PRAD",
@@ -328,13 +421,10 @@
           "regularização ambiental",
           "plano de controle ambiental",
           "PCA ambiental",
-          "MCE ambiental",
           "condicionante ambiental",
           "acompanhamento de condicionantes ambientais",
           "relatório técnico ambiental",
           "auditoria de conformidade ambiental",
-          "PCA",
-          "MCE",
           "estudo ambiental",
           "estudos ambientais",
           "relatório de controle ambiental",
