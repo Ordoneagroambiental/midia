@@ -1,6 +1,6 @@
 {
   "versao": "6.9",
-  "atualizado_em": "16/09/2026 21:48 (horário de Brasília)",
+  "atualizado_em": "17/09/2026 04:56 (horário de Brasília)",
   "status": "coleta_contingencial",
   "prioridade": "MCE, PCA e PGRS em todo o Brasil → projetos rápidos → bônus para GO, DF e MG",
   "modo_busca": "PROJETO RÁPIDO — MCE, PCA e PGRS com prazo vigente, objeto comprovado e triagem comercial",
@@ -18,7 +18,7 @@
     "pgrs": 1
   },
   "diagnostico_coleta": {
-    "requisicoes": 87,
+    "requisicoes": 89,
     "pncp_proposta": 0,
     "pncp_publicacao": 0,
     "pncp_registros_examinados": 0,
@@ -26,7 +26,7 @@
     "pncp_falhas": 2,
     "pncp_retentativas_429": 0,
     "compras_gov_respostas_validas": 39,
-    "compras_gov_registros_examinados": 17775,
+    "compras_gov_registros_examinados": 17516,
     "compras_gov_paginas_examinadas": 39,
     "compras_gov_paginas_planejadas": 39,
     "compras_gov_falhas": 0,
@@ -36,9 +36,7 @@
     "erros": [
       "PNCP indisponível após 3 tentativas: ReadTimeout: HTTPSConnectionPool(host='pncp.gov.br', port=443): Read timed out. (read timeout=12)",
       "PNCP indisponível após 3 tentativas: ReadTimeout: HTTPSConnectionPool(host='pncp.gov.br', port=443): Read timed out. (read timeout=12)",
-      "PNCP: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",
-      "Prefeitura de Goianésia: ConnectTimeout: HTTPSConnectionPool(host='goianesia.go.gov.br', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='goianesia.go.gov.br', port=443) at 0x7f5f71271070>, 'Connection",
-      "Editais de Goianésia: ConnectTimeout: HTTPSConnectionPool(host='goianesia.go.gov.br', port=443): Max retries exceeded with url: /editais-e-publicacoes/ (Caused by ConnectTimeoutError(<HTTPSConnection(host='goianesia.go.gov.br', port=443) at 0x7f5f712"
+      "PNCP: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
     ],
     "avisos": [
       "PNCP: circuito temporariamente interrompido após duas falhas; acionando a contingência oficial.",
@@ -136,7 +134,7 @@
         "grupo:ambiental",
         "serviços ambientais"
       ],
-      "score": 70,
+      "score": 75,
       "prioridade": "MÉDIA",
       "url": "https://pncp.gov.br/app/editais/43052497000102/2026/420",
       "numero_controle_pncp": "43052497000102-1-000420/2026",
