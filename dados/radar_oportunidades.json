@@ -1,6 +1,6 @@
 {
   "versao": "6.9",
-  "atualizado_em": "17/09/2026 10:43 (horário de Brasília)",
+  "atualizado_em": "17/09/2026 15:27 (horário de Brasília)",
   "status": "coleta_concluida",
   "prioridade": "MCE, PCA e PGRS em todo o Brasil → projetos rápidos → bônus para GO, DF e MG",
   "modo_busca": "PROJETO RÁPIDO — MCE, PCA e PGRS com prazo vigente, objeto comprovado e triagem comercial",
@@ -18,11 +18,11 @@
     "pgrs": 1
   },
   "diagnostico_coleta": {
-    "requisicoes": 107,
+    "requisicoes": 104,
     "pncp_proposta": 0,
     "pncp_publicacao": 0,
-    "pncp_registros_examinados": 856,
-    "pncp_respostas_validas": 22,
+    "pncp_registros_examinados": 714,
+    "pncp_respostas_validas": 20,
     "pncp_falhas": 0,
     "pncp_retentativas_429": 0,
     "compras_gov_respostas_validas": 39,
@@ -33,7 +33,9 @@
     "compras_gov_itens": 5,
     "html_sinais": 0,
     "paginas_aprofundadas": 30,
-    "erros": [],
+    "erros": [
+      "PNCP: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+    ],
     "avisos": [
       "PNCP publicacao: limite de tempo atingido; resultado parcial preservado."
     ]
@@ -296,7 +298,7 @@
         "Engenharia de infraestrutura / obras"
       ],
       "siglas_ambiguas": [],
-      "dias_restantes": 43,
+      "dias_restantes": 42,
       "prazo_interno_decisao": "Decidir em até 48 horas",
       "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
     },
