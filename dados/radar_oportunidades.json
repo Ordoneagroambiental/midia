@@ -1,7 +1,7 @@
 {
   "versao": "6.9",
-  "atualizado_em": "16/09/2026 18:34 (horário de Brasília)",
-  "status": "coleta_concluida",
+  "atualizado_em": "16/09/2026 21:48 (horário de Brasília)",
+  "status": "coleta_contingencial",
   "prioridade": "MCE, PCA e PGRS em todo o Brasil → projetos rápidos → bônus para GO, DF e MG",
   "modo_busca": "PROJETO RÁPIDO — MCE, PCA e PGRS com prazo vigente, objeto comprovado e triagem comercial",
   "resumo": {
@@ -18,12 +18,12 @@
     "pgrs": 1
   },
   "diagnostico_coleta": {
-    "requisicoes": 97,
+    "requisicoes": 87,
     "pncp_proposta": 0,
     "pncp_publicacao": 0,
-    "pncp_registros_examinados": 104,
-    "pncp_respostas_validas": 4,
-    "pncp_falhas": 3,
+    "pncp_registros_examinados": 0,
+    "pncp_respostas_validas": 0,
+    "pncp_falhas": 2,
     "pncp_retentativas_429": 0,
     "compras_gov_respostas_validas": 39,
     "compras_gov_registros_examinados": 17775,
@@ -36,12 +36,14 @@
     "erros": [
       "PNCP indisponível após 3 tentativas: ReadTimeout: HTTPSConnectionPool(host='pncp.gov.br', port=443): Read timed out. (read timeout=12)",
       "PNCP indisponível após 3 tentativas: ReadTimeout: HTTPSConnectionPool(host='pncp.gov.br', port=443): Read timed out. (read timeout=12)",
-      "PNCP indisponível após 3 tentativas: ReadTimeout: HTTPSConnectionPool(host='pncp.gov.br', port=443): Read timed out. (read timeout=12)",
-      "PNCP: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+      "PNCP: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",
+      "Prefeitura de Goianésia: ConnectTimeout: HTTPSConnectionPool(host='goianesia.go.gov.br', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='goianesia.go.gov.br', port=443) at 0x7f5f71271070>, 'Connection",
+      "Editais de Goianésia: ConnectTimeout: HTTPSConnectionPool(host='goianesia.go.gov.br', port=443): Max retries exceeded with url: /editais-e-publicacoes/ (Caused by ConnectTimeoutError(<HTTPSConnection(host='goianesia.go.gov.br', port=443) at 0x7f5f712"
     ],
     "avisos": [
-      "PNCP proposta: limite de tempo atingido; resultado parcial preservado.",
-      "PNCP publicacao: limite de tempo atingido; resultado parcial preservado."
+      "PNCP: circuito temporariamente interrompido após duas falhas; acionando a contingência oficial.",
+      "PNCP publicação não repetida porque a fonte já falhou; contingência antecipada.",
+      "PNCP indisponível; coleta nacional concluída pela contingência oficial do Compras.gov."
     ]
   },
   "items": [
