@@ -1,7 +1,7 @@
 {
   "versao": "6.9",
-  "atualizado_em": "18/09/2026 14:49 (horário de Brasília)",
-  "status": "coleta_concluida",
+  "atualizado_em": "18/09/2026 18:08 (horário de Brasília)",
+  "status": "coleta_contingencial",
   "prioridade": "MCE, PCA e PGRS em todo o Brasil → projetos rápidos → bônus para GO, DF e MG",
   "modo_busca": "PROJETO RÁPIDO — MCE, PCA e PGRS com prazo vigente, objeto comprovado e triagem comercial",
   "resumo": {
@@ -18,13 +18,13 @@
     "pgrs": 1
   },
   "diagnostico_coleta": {
-    "requisicoes": 113,
+    "requisicoes": 89,
     "pncp_proposta": 0,
     "pncp_publicacao": 0,
-    "pncp_registros_examinados": 827,
-    "pncp_respostas_validas": 25,
-    "pncp_falhas": 1,
-    "pncp_retentativas_429": 4,
+    "pncp_registros_examinados": 0,
+    "pncp_respostas_validas": 0,
+    "pncp_falhas": 2,
+    "pncp_retentativas_429": 0,
     "compras_gov_respostas_validas": 39,
     "compras_gov_registros_examinados": 18248,
     "compras_gov_paginas_examinadas": 39,
@@ -34,12 +34,14 @@
     "html_sinais": 0,
     "paginas_aprofundadas": 30,
     "erros": [
-      "PNCP indisponível após 3 tentativas: HTTP 429",
+      "PNCP indisponível após 3 tentativas: ReadTimeout: HTTPSConnectionPool(host='pncp.gov.br', port=443): Read timed out. (read timeout=12)",
+      "PNCP indisponível após 3 tentativas: ReadTimeout: HTTPSConnectionPool(host='pncp.gov.br', port=443): Read timed out. (read timeout=12)",
       "PNCP: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
     ],
     "avisos": [
-      "PNCP respondeu 429 após 3 tentativas; contingência preservada.",
-      "PNCP publicacao: limite de tempo atingido; resultado parcial preservado."
+      "PNCP: circuito temporariamente interrompido após duas falhas; acionando a contingência oficial.",
+      "PNCP publicação não repetida porque a fonte já falhou; contingência antecipada.",
+      "PNCP indisponível; coleta nacional concluída pela contingência oficial do Compras.gov."
     ]
   },
   "items": [
@@ -300,7 +302,7 @@
         "Engenharia de infraestrutura / obras"
       ],
       "siglas_ambiguas": [],
-      "dias_restantes": 42,
+      "dias_restantes": 41,
       "prazo_interno_decisao": "Decidir em até 48 horas",
       "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
     },
