@@ -1,6 +1,6 @@
 {
   "versao": "6.9",
-  "atualizado_em": "20/09/2026 16:00 (horário de Brasília)",
+  "atualizado_em": "20/09/2026 19:39 (horário de Brasília)",
   "status": "coleta_concluida",
   "prioridade": "MCE, PCA e PGRS em todo o Brasil → projetos rápidos → bônus para GO, DF e MG",
   "modo_busca": "PROJETO RÁPIDO — MCE, PCA e PGRS com prazo vigente, objeto comprovado e triagem comercial",
@@ -18,13 +18,13 @@
     "pgrs": 1
   },
   "diagnostico_coleta": {
-    "requisicoes": 106,
+    "requisicoes": 114,
     "pncp_proposta": 0,
     "pncp_publicacao": 0,
-    "pncp_registros_examinados": 804,
-    "pncp_respostas_validas": 22,
-    "pncp_falhas": 0,
-    "pncp_retentativas_429": 0,
+    "pncp_registros_examinados": 1001,
+    "pncp_respostas_validas": 25,
+    "pncp_falhas": 1,
+    "pncp_retentativas_429": 4,
     "compras_gov_respostas_validas": 38,
     "compras_gov_registros_examinados": 17620,
     "compras_gov_paginas_examinadas": 38,
@@ -33,8 +33,11 @@
     "compras_gov_itens": 5,
     "html_sinais": 0,
     "paginas_aprofundadas": 30,
-    "erros": [],
+    "erros": [
+      "PNCP indisponível após 3 tentativas: HTTP 429"
+    ],
     "avisos": [
+      "PNCP respondeu 429 após 3 tentativas; contingência preservada.",
       "PNCP proposta: limite de tempo atingido; resultado parcial preservado.",
       "PNCP publicacao: limite de tempo atingido; resultado parcial preservado."
     ]
