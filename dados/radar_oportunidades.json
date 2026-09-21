@@ -1,7 +1,7 @@
 {
   "versao": "6.9",
-  "atualizado_em": "21/09/2026 16:43 (horário de Brasília)",
-  "status": "coleta_concluida",
+  "atualizado_em": "21/09/2026 20:30 (horário de Brasília)",
+  "status": "coleta_contingencial",
   "prioridade": "MCE, PCA e PGRS em todo o Brasil → projetos rápidos → bônus para GO, DF e MG",
   "modo_busca": "PROJETO RÁPIDO — MCE, PCA e PGRS com prazo vigente, objeto comprovado e triagem comercial",
   "resumo": {
@@ -18,12 +18,12 @@
     "pgrs": 1
   },
   "diagnostico_coleta": {
-    "requisicoes": 100,
+    "requisicoes": 88,
     "pncp_proposta": 0,
     "pncp_publicacao": 0,
-    "pncp_registros_examinados": 620,
-    "pncp_respostas_validas": 15,
-    "pncp_falhas": 0,
+    "pncp_registros_examinados": 0,
+    "pncp_respostas_validas": 0,
+    "pncp_falhas": 2,
     "pncp_retentativas_429": 0,
     "compras_gov_respostas_validas": 38,
     "compras_gov_registros_examinados": 17552,
@@ -33,10 +33,15 @@
     "compras_gov_itens": 6,
     "html_sinais": 0,
     "paginas_aprofundadas": 30,
-    "erros": [],
+    "erros": [
+      "PNCP indisponível após 3 tentativas: ReadTimeout: HTTPSConnectionPool(host='pncp.gov.br', port=443): Read timed out. (read timeout=12)",
+      "PNCP indisponível após 3 tentativas: ReadTimeout: HTTPSConnectionPool(host='pncp.gov.br', port=443): Read timed out. (read timeout=12)",
+      "PNCP: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+    ],
     "avisos": [
-      "PNCP proposta: limite de tempo atingido; resultado parcial preservado.",
-      "PNCP publicacao: limite de tempo atingido; resultado parcial preservado."
+      "PNCP: circuito temporariamente interrompido após duas falhas; acionando a contingência oficial.",
+      "PNCP publicação não repetida porque a fonte já falhou; contingência antecipada.",
+      "PNCP indisponível; coleta nacional concluída pela contingência oficial do Compras.gov."
     ]
   },
   "items": [
@@ -144,7 +149,8 @@
       "siglas_ambiguas": [],
       "dias_restantes": 1,
       "prazo_interno_decisao": "Decidir e iniciar proposta hoje",
-      "proxima_acao": "Abrir o edital/aviso oficial, validar escopo, habilitação, prazo, local de execução e viabilidade de proposta."
+      "proxima_acao": "Abrir o edital/aviso oficial, validar escopo, habilitação, prazo, local de execução e viabilidade de proposta.",
+      "origem_historica": true
     },
     {
       "id": "43052497000102-1-000420/2026",
@@ -247,7 +253,8 @@
       "siglas_ambiguas": [],
       "dias_restantes": 1,
       "prazo_interno_decisao": "Decidir e iniciar proposta hoje",
-      "proxima_acao": "Abrir o edital/aviso oficial, validar escopo, habilitação, prazo, local de execução e viabilidade de proposta."
+      "proxima_acao": "Abrir o edital/aviso oficial, validar escopo, habilitação, prazo, local de execução e viabilidade de proposta.",
+      "origem_historica": true
     },
     {
       "id": "81140303000101-1-000186/2026",
