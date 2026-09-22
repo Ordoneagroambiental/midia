@@ -1,6 +1,6 @@
 {
   "versao": "6.9",
-  "atualizado_em": "22/09/2026 14:10 (horário de Brasília)",
+  "atualizado_em": "22/09/2026 18:36 (horário de Brasília)",
   "status": "coleta_contingencial",
   "prioridade": "MCE, PCA e PGRS em todo o Brasil → projetos rápidos → bônus para GO, DF e MG",
   "modo_busca": "PROJETO RÁPIDO — MCE, PCA e PGRS com prazo vigente, objeto comprovado e triagem comercial",
@@ -404,7 +404,7 @@
         "Engenharia de infraestrutura / obras"
       ],
       "siglas_ambiguas": [],
-      "dias_restantes": 38,
+      "dias_restantes": 37,
       "prazo_interno_decisao": "Decidir em até 48 horas",
       "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
     },
