@@ -1,7 +1,7 @@
 {
   "versao": "6.9",
-  "atualizado_em": "23/09/2026 15:35 (horário de Brasília)",
-  "status": "coleta_contingencial",
+  "atualizado_em": "23/09/2026 20:05 (horário de Brasília)",
+  "status": "coleta_concluida",
   "prioridade": "MCE, PCA e PGRS em todo o Brasil → projetos rápidos → bônus para GO, DF e MG",
   "modo_busca": "PROJETO RÁPIDO — MCE, PCA e PGRS com prazo vigente, objeto comprovado e triagem comercial",
   "resumo": {
@@ -18,13 +18,13 @@
     "pgrs": 1
   },
   "diagnostico_coleta": {
-    "requisicoes": 86,
+    "requisicoes": 122,
     "pncp_proposta": 0,
     "pncp_publicacao": 0,
-    "pncp_registros_examinados": 0,
-    "pncp_respostas_validas": 0,
+    "pncp_registros_examinados": 1090,
+    "pncp_respostas_validas": 30,
     "pncp_falhas": 2,
-    "pncp_retentativas_429": 0,
+    "pncp_retentativas_429": 8,
     "compras_gov_respostas_validas": 38,
     "compras_gov_registros_examinados": 17747,
     "compras_gov_paginas_examinadas": 38,
@@ -34,16 +34,14 @@
     "html_sinais": 0,
     "paginas_aprofundadas": 30,
     "erros": [
-      "PNCP indisponível após 3 tentativas: ReadTimeout: HTTPSConnectionPool(host='pncp.gov.br', port=443): Read timed out. (read timeout=12)",
-      "PNCP indisponível após 3 tentativas: ReadTimeout: HTTPSConnectionPool(host='pncp.gov.br', port=443): Read timed out. (read timeout=12)",
-      "PNCP: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",
-      "Prefeitura de Goianésia: ConnectTimeout: HTTPSConnectionPool(host='goianesia.go.gov.br', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='goianesia.go.gov.br', port=443) at 0x7f0f1baf8d10>, 'Connection",
-      "Editais de Goianésia: ConnectTimeout: HTTPSConnectionPool(host='goianesia.go.gov.br', port=443): Max retries exceeded with url: /editais-e-publicacoes/ (Caused by ConnectTimeoutError(<HTTPSConnection(host='goianesia.go.gov.br', port=443) at 0x7f0f1ba"
+      "PNCP indisponível após 3 tentativas: HTTP 429",
+      "PNCP indisponível após 3 tentativas: HTTP 429",
+      "PNCP: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
     ],
     "avisos": [
-      "PNCP: circuito temporariamente interrompido após duas falhas; acionando a contingência oficial.",
-      "PNCP publicação não repetida porque a fonte já falhou; contingência antecipada.",
-      "PNCP indisponível; coleta nacional concluída pela contingência oficial do Compras.gov."
+      "PNCP respondeu 429 após 3 tentativas; contingência preservada.",
+      "PNCP respondeu 429 após 3 tentativas; contingência preservada.",
+      "PNCP publicacao: limite de tempo atingido; resultado parcial preservado."
     ]
   },
   "items": [
