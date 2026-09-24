@@ -1,6 +1,6 @@
 {
   "versao": "6.9",
-  "atualizado_em": "24/09/2026 14:28 (horário de Brasília)",
+  "atualizado_em": "24/09/2026 18:42 (horário de Brasília)",
   "status": "coleta_concluida",
   "prioridade": "MCE, PCA e PGRS em todo o Brasil → projetos rápidos → bônus para GO, DF e MG",
   "modo_busca": "PROJETO RÁPIDO — MCE, PCA e PGRS com prazo vigente, objeto comprovado e triagem comercial",
@@ -18,13 +18,13 @@
     "pgrs": 1
   },
   "diagnostico_coleta": {
-    "requisicoes": 123,
+    "requisicoes": 124,
     "pncp_proposta": 0,
     "pncp_publicacao": 0,
-    "pncp_registros_examinados": 1457,
-    "pncp_respostas_validas": 36,
-    "pncp_falhas": 1,
-    "pncp_retentativas_429": 4,
+    "pncp_registros_examinados": 1276,
+    "pncp_respostas_validas": 32,
+    "pncp_falhas": 2,
+    "pncp_retentativas_429": 8,
     "compras_gov_respostas_validas": 38,
     "compras_gov_registros_examinados": 17364,
     "compras_gov_paginas_examinadas": 38,
@@ -35,10 +35,13 @@
     "paginas_aprofundadas": 30,
     "erros": [
       "PNCP indisponível após 3 tentativas: HTTP 429",
+      "PNCP indisponível após 3 tentativas: HTTP 429",
       "PNCP: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
     ],
     "avisos": [
-      "PNCP respondeu 429 após 3 tentativas; contingência preservada."
+      "PNCP respondeu 429 após 3 tentativas; contingência preservada.",
+      "PNCP respondeu 429 após 3 tentativas; contingência preservada.",
+      "PNCP publicacao: limite de tempo atingido; resultado parcial preservado."
     ]
   },
   "items": [
@@ -299,7 +302,7 @@
         "Engenharia de infraestrutura / obras"
       ],
       "siglas_ambiguas": [],
-      "dias_restantes": 36,
+      "dias_restantes": 35,
       "prazo_interno_decisao": "Decidir em até 48 horas",
       "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
     },
