@@ -1,6 +1,6 @@
 {
   "versao": "6.9",
-  "atualizado_em": "25/09/2026 11:05 (horário de Brasília)",
+  "atualizado_em": "25/09/2026 15:55 (horário de Brasília)",
   "status": "coleta_concluida",
   "prioridade": "MCE, PCA e PGRS em todo o Brasil → projetos rápidos → bônus para GO, DF e MG",
   "modo_busca": "PROJETO RÁPIDO — MCE, PCA e PGRS com prazo vigente, objeto comprovado e triagem comercial",
@@ -18,28 +18,37 @@
     "pgrs": 1
   },
   "diagnostico_coleta": {
-    "requisicoes": 119,
+    "requisicoes": 106,
     "pncp_proposta": 0,
     "pncp_publicacao": 0,
-    "pncp_registros_examinados": 1173,
-    "pncp_respostas_validas": 31,
+    "pncp_registros_examinados": 1075,
+    "pncp_respostas_validas": 30,
     "pncp_falhas": 1,
     "pncp_retentativas_429": 4,
-    "compras_gov_respostas_validas": 39,
-    "compras_gov_registros_examinados": 17771,
-    "compras_gov_paginas_examinadas": 39,
-    "compras_gov_paginas_planejadas": 39,
-    "compras_gov_falhas": 0,
-    "compras_gov_itens": 9,
+    "compras_gov_respostas_validas": 19,
+    "compras_gov_registros_examinados": 8665,
+    "compras_gov_paginas_examinadas": 19,
+    "compras_gov_paginas_planejadas": 28,
+    "compras_gov_falhas": 8,
+    "compras_gov_itens": 8,
     "html_sinais": 0,
     "paginas_aprofundadas": 30,
     "erros": [
       "PNCP indisponível após 3 tentativas: HTTP 429",
+      "Compras.gov modalidade 6, página 22: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)",
+      "Compras.gov modalidade 6, página 43: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)",
+      "Compras.gov modalidade 6, página 64: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)",
+      "Compras.gov modalidade 6, página 81: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)",
+      "Compras.gov modalidade 6, página 82: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)",
+      "Compras.gov modalidade 6, página 83: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)",
+      "Compras.gov modalidade 6, página 84: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)",
+      "Compras.gov modalidade 6, página 85: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)",
       "PNCP: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
     ],
     "avisos": [
       "PNCP respondeu 429 após 3 tentativas; contingência preservada.",
-      "PNCP publicacao: limite de tempo atingido; resultado parcial preservado."
+      "PNCP publicacao: limite de tempo atingido; resultado parcial preservado.",
+      "Compras.gov: limite agressivo de 300 segundos atingido; resultado parcial preservado."
     ]
   },
   "items": [
@@ -149,7 +158,8 @@
       "siglas_ambiguas": [],
       "dias_restantes": 31,
       "prazo_interno_decisao": "Decidir em até 48 horas",
-      "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
+      "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem.",
+      "origem_historica": true
     },
     {
       "id": "43052497000102-1-000420/2026",
@@ -505,7 +515,7 @@
         "Engenharia de infraestrutura / obras"
       ],
       "siglas_ambiguas": [],
-      "dias_restantes": 35,
+      "dias_restantes": 34,
       "prazo_interno_decisao": "Decidir em até 48 horas",
       "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
     },
