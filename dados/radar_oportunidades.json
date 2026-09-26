@@ -1,15 +1,15 @@
 {
   "versao": "6.9",
-  "atualizado_em": "26/09/2026 13:41 (horário de Brasília)",
+  "atualizado_em": "26/09/2026 18:29 (horário de Brasília)",
   "status": "coleta_concluida",
   "prioridade": "MCE, PCA e PGRS em todo o Brasil → projetos rápidos → bônus para GO, DF e MG",
   "modo_busca": "PROJETO RÁPIDO — MCE, PCA e PGRS com prazo vigente, objeto comprovado e triagem comercial",
   "resumo": {
-    "total": 14,
-    "brasil": 14,
+    "total": 13,
+    "brasil": 13,
     "goianesia_regiao": 0,
     "goias": 0,
-    "demandas_formais": 13,
+    "demandas_formais": 12,
     "sinais_ambientais": 1,
     "prioritarios_mce_pca_pgrs": 1,
     "oportunidades_rapidas": 0,
@@ -18,36 +18,32 @@
     "pgrs": 1
   },
   "diagnostico_coleta": {
-    "requisicoes": 93,
+    "requisicoes": 80,
     "pncp_proposta": 0,
     "pncp_publicacao": 0,
-    "pncp_registros_examinados": 715,
+    "pncp_registros_examinados": 815,
     "pncp_respostas_validas": 20,
-    "pncp_falhas": 1,
-    "pncp_retentativas_429": 3,
-    "compras_gov_respostas_validas": 15,
-    "compras_gov_registros_examinados": 6621,
-    "compras_gov_paginas_examinadas": 15,
-    "compras_gov_paginas_planejadas": 28,
-    "compras_gov_falhas": 8,
-    "compras_gov_itens": 7,
+    "pncp_falhas": 0,
+    "pncp_retentativas_429": 0,
+    "compras_gov_respostas_validas": 6,
+    "compras_gov_registros_examinados": 2536,
+    "compras_gov_paginas_examinadas": 6,
+    "compras_gov_paginas_planejadas": 18,
+    "compras_gov_falhas": 7,
+    "compras_gov_itens": 1,
     "html_sinais": 0,
     "paginas_aprofundadas": 30,
     "erros": [
-      "PNCP indisponível após 3 tentativas: HTTP 429",
+      "Compras.gov modalidade 3, página 3: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)",
+      "Compras.gov modalidade 3, página 4: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)",
+      "Compras.gov modalidade 3, página 5: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)",
       "Compras.gov modalidade 5, página 18: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)",
       "Compras.gov modalidade 5, página 36: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)",
       "Compras.gov modalidade 5, página 53: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)",
-      "Compras.gov modalidade 5, página 66: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)",
-      "Compras.gov modalidade 6, página 21: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)",
-      "Compras.gov modalidade 6, página 42: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)",
-      "Compras.gov modalidade 6, página 64: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)",
-      "Compras.gov modalidade 6, página 80: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)",
-      "PNCP: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+      "Compras.gov modalidade 5, página 66: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)"
     ],
     "avisos": [
       "PNCP proposta: limite de tempo atingido; resultado parcial preservado.",
-      "PNCP respondeu 429 após 3 tentativas; contingência preservada.",
       "PNCP publicacao: limite de tempo atingido; resultado parcial preservado.",
       "Compras.gov: limite agressivo de 300 segundos atingido; resultado parcial preservado."
     ]
@@ -267,7 +263,8 @@
       "siglas_ambiguas": [],
       "dias_restantes": 5,
       "prazo_interno_decisao": "Decidir e iniciar proposta hoje",
-      "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
+      "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem.",
+      "origem_historica": true
     },
     {
       "id": "81140303000101-1-000186/2026",
@@ -320,56 +317,6 @@
       "prazo_interno_decisao": "Decidir em até 48 horas",
       "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem.",
       "origem_historica": true
-    },
-    {
-      "id": "04034583000122-1-000170/2026",
-      "tipo": "DEMANDA FORMAL",
-      "confirmacao": "PRÉ-SELECIONADO",
-      "fonte": "Compras.gov — Dados Abertos",
-      "titulo": "Registro de Preços para eventual e futura Aquisições de Veículos tipo Caminhonete e tipo Van.",
-      "municipio": "RIO BRANCO",
-      "uf": "AC",
-      "regiao_prioridade": "Brasil",
-      "organizacao": "MUNICIPIO DE RIO BRANCO",
-      "data_publicacao": "2026-09-22T10:57:22",
-      "prazo": "2026-10-05T10:00:00",
-      "valor_estimado": 1405318.88,
-      "modalidade": "Pregão - Eletrônico",
-      "situacao_compra": "Divulgada no PNCP",
-      "servicos_ordone": [
-        "Gestão, supervisão e monitoramento ambiental"
-      ],
-      "tipo_aderencia": "ADERENTE_DIRETO",
-      "motivo_aceitacao": "Objeto contém serviço direto do portfólio Ordone.",
-      "relacao_comercial": "EXECUÇÃO DIRETA ADERENTE AO PORTFÓLIO",
-      "status_leitura_edital": "LEITURA INCOMPLETA",
-      "documentos_analisados": [],
-      "requisitos_minimos": [],
-      "analise_elegibilidade": "LEITURA INCOMPLETA",
-      "pendencias_identificadas": [
-        "Abrir edital e anexos oficiais antes de decidir pela participação"
-      ],
-      "palavras_encontradas": [
-        "monitoramento ambiental",
-        "portfólio:Gestão, supervisão e monitoramento ambiental",
-        "grupo:ambiental"
-      ],
-      "score": 65,
-      "prioridade": "MÉDIA",
-      "url": "https://pncp.gov.br/app/editais/04034583000122/2026/170",
-      "numero_controle_pncp": "04034583000122-1-000170/2026",
-      "escopo_coleta": "Brasil",
-      "fase_pncp": "contingencia_compras_gov",
-      "documentos_prioritarios": [],
-      "aderencia_maxima": false,
-      "classe_aderencia": "A",
-      "classificacao_comercial": "EXECUÇÃO DIRETA ADERENTE AO PORTFÓLIO",
-      "oportunidade_rapida": false,
-      "parceria_necessaria": [],
-      "siglas_ambiguas": [],
-      "dias_restantes": 8,
-      "prazo_interno_decisao": "Decidir em até 24 horas",
-      "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
     },
     {
       "id": "42498600000171-1-003612/2026",
@@ -521,7 +468,8 @@
       "siglas_ambiguas": [],
       "dias_restantes": 11,
       "prazo_interno_decisao": "Decidir em até 48 horas",
-      "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
+      "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem.",
+      "origem_historica": true
     },
     {
       "id": "04892707000100-1-000125/2026",
@@ -571,7 +519,7 @@
         "Engenharia de infraestrutura / obras"
       ],
       "siglas_ambiguas": [],
-      "dias_restantes": 34,
+      "dias_restantes": 33,
       "prazo_interno_decisao": "Decidir em até 48 horas",
       "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
     },
@@ -623,7 +571,8 @@
       "siglas_ambiguas": [],
       "dias_restantes": 17,
       "prazo_interno_decisao": "Decidir em até 48 horas",
-      "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
+      "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem.",
+      "origem_historica": true
     },
     {
       "id": "27744184000150-1-000098/2026",
@@ -721,7 +670,8 @@
       "siglas_ambiguas": [],
       "dias_restantes": 10,
       "prazo_interno_decisao": "Decidir em até 24 horas",
-      "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
+      "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem.",
+      "origem_historica": true
     },
     {
       "id": "07954480000179-1-018914/2026",
@@ -769,7 +719,8 @@
       "siglas_ambiguas": [],
       "dias_restantes": 9,
       "prazo_interno_decisao": "Decidir em até 24 horas",
-      "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
+      "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem.",
+      "origem_historica": true
     }
   ],
   "fontes_monitoradas": [
