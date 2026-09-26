@@ -1,16 +1,16 @@
 {
   "versao": "6.9",
-  "atualizado_em": "25/09/2026 20:26 (horário de Brasília)",
+  "atualizado_em": "26/09/2026 02:20 (horário de Brasília)",
   "status": "coleta_concluida",
   "prioridade": "MCE, PCA e PGRS em todo o Brasil → projetos rápidos → bônus para GO, DF e MG",
   "modo_busca": "PROJETO RÁPIDO — MCE, PCA e PGRS com prazo vigente, objeto comprovado e triagem comercial",
   "resumo": {
-    "total": 12,
-    "brasil": 12,
+    "total": 14,
+    "brasil": 14,
     "goianesia_regiao": 0,
     "goias": 0,
-    "demandas_formais": 12,
-    "sinais_ambientais": 0,
+    "demandas_formais": 13,
+    "sinais_ambientais": 1,
     "prioritarios_mce_pca_pgrs": 1,
     "oportunidades_rapidas": 0,
     "mce": 0,
@@ -18,15 +18,15 @@
     "pgrs": 1
   },
   "diagnostico_coleta": {
-    "requisicoes": 124,
+    "requisicoes": 105,
     "pncp_proposta": 0,
     "pncp_publicacao": 0,
-    "pncp_registros_examinados": 982,
-    "pncp_respostas_validas": 30,
-    "pncp_falhas": 2,
-    "pncp_retentativas_429": 8,
+    "pncp_registros_examinados": 815,
+    "pncp_respostas_validas": 20,
+    "pncp_falhas": 0,
+    "pncp_retentativas_429": 0,
     "compras_gov_respostas_validas": 39,
-    "compras_gov_registros_examinados": 17771,
+    "compras_gov_registros_examinados": 17403,
     "compras_gov_paginas_examinadas": 39,
     "compras_gov_paginas_planejadas": 39,
     "compras_gov_falhas": 0,
@@ -34,12 +34,10 @@
     "html_sinais": 0,
     "paginas_aprofundadas": 30,
     "erros": [
-      "PNCP indisponível após 3 tentativas: HTTP 429",
-      "PNCP indisponível após 3 tentativas: HTTP 429"
+      "PNCP: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
     ],
     "avisos": [
-      "PNCP respondeu 429 após 3 tentativas; contingência preservada.",
-      "PNCP respondeu 429 após 3 tentativas; contingência preservada.",
+      "PNCP proposta: limite de tempo atingido; resultado parcial preservado.",
       "PNCP publicacao: limite de tempo atingido; resultado parcial preservado."
     ]
   },
@@ -99,6 +97,60 @@
       "prazo_interno_decisao": "Decidir e iniciar proposta hoje",
       "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem.",
       "origem_historica": true
+    },
+    {
+      "id": "45742707000101-1-000076/2026",
+      "tipo": "DEMANDA FORMAL",
+      "confirmacao": "PRÉ-SELECIONADO",
+      "fonte": "PNCP",
+      "titulo": "ELABORAÇÃO DE PROJETO EXECUTIVO PARA RESTAURAÇÃO ECOLÓGICA DE MATAS CILIARES DO RIBEIRÃO SOLEDADE E IMPLANTAÇÃO DE VIVEIRO DE MUDAS",
+      "municipio": "Tapiratiba",
+      "uf": "SP",
+      "regiao_prioridade": "Brasil",
+      "organizacao": "MUNICIPIO DE TAPIRATIBA",
+      "data_publicacao": "2026-08-06T23:03:53",
+      "prazo": "2026-09-28T08:30:55",
+      "valor_estimado": 351486.05,
+      "modalidade": "Concorrência - Eletrônica",
+      "servicos_ordone": [
+        "Recuperação ambiental / PRAD",
+        "Viveiros, mudas e sementes nativas"
+      ],
+      "tipo_aderencia": "ADERENTE_DIRETO",
+      "motivo_aceitacao": "Objeto contém serviço direto do portfólio Ordone.",
+      "relacao_comercial": "EXECUÇÃO DIRETA ADERENTE AO PORTFÓLIO",
+      "status_leitura_edital": "LEITURA INCOMPLETA",
+      "documentos_analisados": [],
+      "requisitos_minimos": [],
+      "analise_elegibilidade": "LEITURA INCOMPLETA",
+      "pendencias_identificadas": [
+        "Abrir edital e anexos manualmente"
+      ],
+      "palavras_encontradas": [
+        "reflorestamento",
+        "viveiro",
+        "portfólio:Recuperação ambiental / PRAD",
+        "portfólio:Viveiros, mudas e sementes nativas",
+        "grupo:ambiental",
+        "grupo:solo_agua",
+        "recuperação de áreas"
+      ],
+      "score": 87,
+      "prioridade": "ALTA",
+      "url": "https://pncp.gov.br/app/editais/45742707000101/2026/76",
+      "numero_controle_pncp": "45742707000101-1-000076/2026",
+      "escopo_coleta": "Brasil",
+      "fase_pncp": "proposta",
+      "documentos_prioritarios": [],
+      "aderencia_maxima": false,
+      "classe_aderencia": "A",
+      "classificacao_comercial": "EXECUÇÃO DIRETA ADERENTE AO PORTFÓLIO",
+      "oportunidade_rapida": false,
+      "parceria_necessaria": [],
+      "siglas_ambiguas": [],
+      "dias_restantes": 2,
+      "prazo_interno_decisao": "Decidir e iniciar proposta hoje",
+      "proxima_acao": "Abrir o edital/aviso oficial, validar escopo, habilitação, prazo, local de execução e viabilidade de proposta."
     },
     {
       "id": "00394452000103-1-020792/2026",
@@ -559,6 +611,56 @@
       "dias_restantes": 18,
       "prazo_interno_decisao": "Decidir em até 48 horas",
       "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
+    },
+    {
+      "id": "27744184000150-1-000098/2026",
+      "tipo": "SINAL DE CONTRATAÇÃO",
+      "confirmacao": "PRÉ-SELECIONADO",
+      "fonte": "PNCP",
+      "titulo": "Repasse de recursos ao Programa do Serviço de Licenciamento Ambiental do Consórcio PRODNORTE, nos termos do Art. 75, inciso XI, da Lei nº 14.133/2021, com base na Resolução Orçamentária aprovada pela Assembleia Geral, para o período de 13 de outubro de 2025 a 31 de dezembro de 2025.",
+      "municipio": "Jaguaré",
+      "uf": "ES",
+      "regiao_prioridade": "Brasil",
+      "organizacao": "MUNICIPIO DE JAGUARE",
+      "data_publicacao": "2026-08-27T08:40:03",
+      "prazo": "",
+      "valor_estimado": 58742.67,
+      "modalidade": "Dispensa",
+      "servicos_ordone": [
+        "Licenciamento e regularização ambiental"
+      ],
+      "tipo_aderencia": "ADERENTE_DIRETO",
+      "motivo_aceitacao": "Objeto contém serviço direto do portfólio Ordone.",
+      "relacao_comercial": "EXECUÇÃO DIRETA ADERENTE AO PORTFÓLIO",
+      "status_leitura_edital": "LEITURA INCOMPLETA",
+      "documentos_analisados": [],
+      "requisitos_minimos": [],
+      "analise_elegibilidade": "LEITURA INCOMPLETA",
+      "pendencias_identificadas": [
+        "Abrir edital e anexos manualmente"
+      ],
+      "palavras_encontradas": [
+        "licenciamento ambiental",
+        "portfólio:Licenciamento e regularização ambiental",
+        "grupo:ambiental",
+        "serviços ambientais"
+      ],
+      "score": 50,
+      "prioridade": "ACOMPANHAR",
+      "url": "https://pncp.gov.br/app/editais/27744184000150/2026/98",
+      "numero_controle_pncp": "27744184000150-1-000098/2026",
+      "escopo_coleta": "Brasil",
+      "fase_pncp": "publicacao",
+      "documentos_prioritarios": [],
+      "aderencia_maxima": false,
+      "classe_aderencia": "A",
+      "classificacao_comercial": "EXECUÇÃO DIRETA ADERENTE AO PORTFÓLIO",
+      "oportunidade_rapida": false,
+      "parceria_necessaria": [],
+      "siglas_ambiguas": [],
+      "dias_restantes": null,
+      "prazo_interno_decisao": "Confirmar prazo antes de decidir",
+      "proxima_acao": "Abrir a publicação oficial e verificar se há prazo de proposta, futura licitação, contratação direta ou oportunidade institucional."
     },
     {
       "id": "18635734000102-1-000088/2026",
