@@ -1,6 +1,6 @@
 {
   "versao": "6.9",
-  "atualizado_em": "26/09/2026 08:44 (horário de Brasília)",
+  "atualizado_em": "26/09/2026 13:41 (horário de Brasília)",
   "status": "coleta_concluida",
   "prioridade": "MCE, PCA e PGRS em todo o Brasil → projetos rápidos → bônus para GO, DF e MG",
   "modo_busca": "PROJETO RÁPIDO — MCE, PCA e PGRS com prazo vigente, objeto comprovado e triagem comercial",
@@ -18,32 +18,38 @@
     "pgrs": 1
   },
   "diagnostico_coleta": {
-    "requisicoes": 107,
+    "requisicoes": 93,
     "pncp_proposta": 0,
     "pncp_publicacao": 0,
-    "pncp_registros_examinados": 865,
-    "pncp_respostas_validas": 21,
-    "pncp_falhas": 0,
-    "pncp_retentativas_429": 0,
-    "compras_gov_respostas_validas": 33,
-    "compras_gov_registros_examinados": 14403,
-    "compras_gov_paginas_examinadas": 33,
-    "compras_gov_paginas_planejadas": 39,
-    "compras_gov_falhas": 6,
-    "compras_gov_itens": 9,
+    "pncp_registros_examinados": 715,
+    "pncp_respostas_validas": 20,
+    "pncp_falhas": 1,
+    "pncp_retentativas_429": 3,
+    "compras_gov_respostas_validas": 15,
+    "compras_gov_registros_examinados": 6621,
+    "compras_gov_paginas_examinadas": 15,
+    "compras_gov_paginas_planejadas": 28,
+    "compras_gov_falhas": 8,
+    "compras_gov_itens": 7,
     "html_sinais": 0,
     "paginas_aprofundadas": 30,
     "erros": [
+      "PNCP indisponível após 3 tentativas: HTTP 429",
+      "Compras.gov modalidade 5, página 18: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)",
+      "Compras.gov modalidade 5, página 36: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)",
+      "Compras.gov modalidade 5, página 53: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)",
+      "Compras.gov modalidade 5, página 66: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)",
       "Compras.gov modalidade 6, página 21: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)",
       "Compras.gov modalidade 6, página 42: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)",
       "Compras.gov modalidade 6, página 64: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)",
       "Compras.gov modalidade 6, página 80: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)",
-      "Compras.gov modalidade 6, página 81: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)",
-      "Compras.gov modalidade 6, página 82: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)"
+      "PNCP: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
     ],
     "avisos": [
       "PNCP proposta: limite de tempo atingido; resultado parcial preservado.",
-      "PNCP publicacao: limite de tempo atingido; resultado parcial preservado."
+      "PNCP respondeu 429 após 3 tentativas; contingência preservada.",
+      "PNCP publicacao: limite de tempo atingido; resultado parcial preservado.",
+      "Compras.gov: limite agressivo de 300 segundos atingido; resultado parcial preservado."
     ]
   },
   "items": [
@@ -207,7 +213,8 @@
       "siglas_ambiguas": [],
       "dias_restantes": 30,
       "prazo_interno_decisao": "Decidir em até 48 horas",
-      "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
+      "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem.",
+      "origem_historica": true
     },
     {
       "id": "43052497000102-1-000420/2026",
@@ -258,8 +265,8 @@
         "Engenharia de infraestrutura / obras"
       ],
       "siglas_ambiguas": [],
-      "dias_restantes": 6,
-      "prazo_interno_decisao": "Decidir em até 24 horas",
+      "dias_restantes": 5,
+      "prazo_interno_decisao": "Decidir e iniciar proposta hoje",
       "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
     },
     {
@@ -360,7 +367,7 @@
       "oportunidade_rapida": false,
       "parceria_necessaria": [],
       "siglas_ambiguas": [],
-      "dias_restantes": 9,
+      "dias_restantes": 8,
       "prazo_interno_decisao": "Decidir em até 24 horas",
       "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
     },
@@ -412,7 +419,8 @@
       "siglas_ambiguas": [],
       "dias_restantes": 6,
       "prazo_interno_decisao": "Decidir em até 24 horas",
-      "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
+      "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem.",
+      "origem_historica": true
     },
     {
       "id": "42498733000148-1-001850/2026",
@@ -511,7 +519,7 @@
       "oportunidade_rapida": false,
       "parceria_necessaria": [],
       "siglas_ambiguas": [],
-      "dias_restantes": 12,
+      "dias_restantes": 11,
       "prazo_interno_decisao": "Decidir em até 48 horas",
       "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
     },
@@ -613,7 +621,7 @@
       "oportunidade_rapida": false,
       "parceria_necessaria": [],
       "siglas_ambiguas": [],
-      "dias_restantes": 18,
+      "dias_restantes": 17,
       "prazo_interno_decisao": "Decidir em até 48 horas",
       "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
     },
@@ -711,8 +719,8 @@
       "oportunidade_rapida": false,
       "parceria_necessaria": [],
       "siglas_ambiguas": [],
-      "dias_restantes": 11,
-      "prazo_interno_decisao": "Decidir em até 48 horas",
+      "dias_restantes": 10,
+      "prazo_interno_decisao": "Decidir em até 24 horas",
       "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
     },
     {
@@ -759,7 +767,7 @@
       "oportunidade_rapida": false,
       "parceria_necessaria": [],
       "siglas_ambiguas": [],
-      "dias_restantes": 10,
+      "dias_restantes": 9,
       "prazo_interno_decisao": "Decidir em até 24 horas",
       "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
     }
