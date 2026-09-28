@@ -1,16 +1,16 @@
 {
   "versao": "6.9",
-  "atualizado_em": "27/09/2026 20:16 (horário de Brasília)",
+  "atualizado_em": "28/09/2026 02:48 (horário de Brasília)",
   "status": "coleta_concluida",
   "prioridade": "MCE, PCA e PGRS em todo o Brasil → projetos rápidos → bônus para GO, DF e MG",
   "modo_busca": "PROJETO RÁPIDO — MCE, PCA e PGRS com prazo vigente, objeto comprovado e triagem comercial",
   "resumo": {
-    "total": 14,
-    "brasil": 14,
+    "total": 13,
+    "brasil": 13,
     "goianesia_regiao": 0,
     "goias": 0,
     "demandas_formais": 13,
-    "sinais_ambientais": 1,
+    "sinais_ambientais": 0,
     "prioritarios_mce_pca_pgrs": 1,
     "oportunidades_rapidas": 0,
     "mce": 0,
@@ -18,26 +18,34 @@
     "pgrs": 1
   },
   "diagnostico_coleta": {
-    "requisicoes": 91,
+    "requisicoes": 109,
     "pncp_proposta": 0,
     "pncp_publicacao": 0,
-    "pncp_registros_examinados": 213,
-    "pncp_respostas_validas": 7,
-    "pncp_falhas": 0,
-    "pncp_retentativas_429": 0,
-    "compras_gov_respostas_validas": 38,
-    "compras_gov_registros_examinados": 17533,
-    "compras_gov_paginas_examinadas": 38,
-    "compras_gov_paginas_planejadas": 38,
-    "compras_gov_falhas": 0,
-    "compras_gov_itens": 9,
+    "pncp_registros_examinados": 955,
+    "pncp_respostas_validas": 22,
+    "pncp_falhas": 1,
+    "pncp_retentativas_429": 4,
+    "compras_gov_respostas_validas": 31,
+    "compras_gov_registros_examinados": 14525,
+    "compras_gov_paginas_examinadas": 31,
+    "compras_gov_paginas_planejadas": 37,
+    "compras_gov_falhas": 6,
+    "compras_gov_itens": 8,
     "html_sinais": 0,
     "paginas_aprofundadas": 30,
     "erros": [
+      "PNCP indisponível após 3 tentativas: HTTP 429",
+      "Compras.gov modalidade 5, página 18: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)",
+      "Compras.gov modalidade 5, página 35: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)",
+      "Compras.gov modalidade 5, página 52: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)",
+      "Compras.gov modalidade 6, página 21: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)",
+      "Compras.gov modalidade 6, página 42: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)",
+      "Compras.gov modalidade 6, página 63: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)",
       "PNCP: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
     ],
     "avisos": [
       "PNCP proposta: limite de tempo atingido; resultado parcial preservado.",
+      "PNCP respondeu 429 após 3 tentativas; contingência preservada.",
       "PNCP publicacao: limite de tempo atingido; resultado parcial preservado."
     ]
   },
@@ -407,7 +415,8 @@
       "siglas_ambiguas": [],
       "dias_restantes": 4,
       "prazo_interno_decisao": "Decidir e iniciar proposta hoje",
-      "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
+      "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem.",
+      "origem_historica": true
     },
     {
       "id": "42498733000148-1-001850/2026",
@@ -611,56 +620,6 @@
       "dias_restantes": 16,
       "prazo_interno_decisao": "Decidir em até 48 horas",
       "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
-    },
-    {
-      "id": "18715383000140-1-000609/2026",
-      "tipo": "SINAL DE CONTRATAÇÃO",
-      "confirmacao": "PRÉ-SELECIONADO",
-      "fonte": "PNCP",
-      "titulo": "SERVICOS DE SUPERVISAO AMBIENTAL E APOIO TECNICO A FISCALIZACAO DA OBRA DE CONTENCAO DAS MARGENS DO CORREGO TOUCINHEIROS - TRECHO A.",
-      "municipio": "Belo Horizonte",
-      "uf": "MG",
-      "regiao_prioridade": "Brasil",
-      "organizacao": "MUNICIPIO DE BELO HORIZONTE",
-      "data_publicacao": "2026-08-28T09:19:23",
-      "prazo": "2026-10-21T13:59:00",
-      "valor_estimado": 2573457.86,
-      "modalidade": "Concorrência - Eletrônica",
-      "servicos_ordone": [
-        "Gestão, supervisão e monitoramento ambiental"
-      ],
-      "tipo_aderencia": "ADERENTE_DIRETO",
-      "motivo_aceitacao": "Objeto contém serviço direto do portfólio Ordone.",
-      "relacao_comercial": "EXECUÇÃO DIRETA ADERENTE AO PORTFÓLIO",
-      "status_leitura_edital": "LEITURA INCOMPLETA",
-      "documentos_analisados": [],
-      "requisitos_minimos": [],
-      "analise_elegibilidade": "LEITURA INCOMPLETA",
-      "pendencias_identificadas": [
-        "Abrir edital e anexos manualmente"
-      ],
-      "palavras_encontradas": [
-        "supervisão ambiental",
-        "portfólio:Gestão, supervisão e monitoramento ambiental",
-        "grupo:ambiental",
-        "serviços ambientais"
-      ],
-      "score": 55,
-      "prioridade": "ACOMPANHAR",
-      "url": "https://pncp.gov.br/app/editais/18715383000140/2026/609",
-      "numero_controle_pncp": "18715383000140-1-000609/2026",
-      "escopo_coleta": "Brasil",
-      "fase_pncp": "publicacao",
-      "documentos_prioritarios": [],
-      "aderencia_maxima": false,
-      "classe_aderencia": "A",
-      "classificacao_comercial": "EXECUÇÃO DIRETA ADERENTE AO PORTFÓLIO",
-      "oportunidade_rapida": false,
-      "parceria_necessaria": [],
-      "siglas_ambiguas": [],
-      "dias_restantes": 23,
-      "prazo_interno_decisao": "Decidir em até 48 horas",
-      "proxima_acao": "Abrir a publicação oficial e verificar se há prazo de proposta, futura licitação, contratação direta ou oportunidade institucional."
     },
     {
       "id": "18635734000102-1-000088/2026",
