@@ -1,7 +1,7 @@
 {
   "versao": "6.9",
-  "atualizado_em": "29/09/2026 13:42 (horário de Brasília)",
-  "status": "coleta_concluida",
+  "atualizado_em": "29/09/2026 19:35 (horário de Brasília)",
+  "status": "coleta_contingencial",
   "prioridade": "MCE, PCA e PGRS em todo o Brasil → projetos rápidos → bônus para GO, DF e MG",
   "modo_busca": "PROJETO RÁPIDO — MCE, PCA e PGRS com prazo vigente, objeto comprovado e triagem comercial",
   "resumo": {
@@ -18,40 +18,40 @@
     "pgrs": 0
   },
   "diagnostico_coleta": {
-    "requisicoes": 106,
+    "requisicoes": 60,
     "pncp_proposta": 0,
     "pncp_publicacao": 0,
-    "pncp_registros_examinados": 1115,
-    "pncp_respostas_validas": 27,
-    "pncp_falhas": 3,
-    "pncp_retentativas_429": 10,
-    "compras_gov_respostas_validas": 15,
-    "compras_gov_registros_examinados": 6805,
-    "compras_gov_paginas_examinadas": 15,
-    "compras_gov_paginas_planejadas": 31,
-    "compras_gov_falhas": 7,
-    "compras_gov_itens": 4,
+    "pncp_registros_examinados": 0,
+    "pncp_respostas_validas": 0,
+    "pncp_falhas": 2,
+    "pncp_retentativas_429": 0,
+    "compras_gov_respostas_validas": 1,
+    "compras_gov_registros_examinados": 500,
+    "compras_gov_paginas_examinadas": 1,
+    "compras_gov_paginas_planejadas": 13,
+    "compras_gov_falhas": 9,
+    "compras_gov_itens": 0,
     "html_sinais": 0,
     "paginas_aprofundadas": 30,
     "erros": [
-      "PNCP indisponível após 3 tentativas: HTTP 429",
-      "PNCP indisponível após 3 tentativas: HTTP 429",
-      "PNCP indisponível após 3 tentativas: HTTP 429",
+      "PNCP indisponível após 3 tentativas: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",
+      "PNCP indisponível após 3 tentativas: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",
       "Compras.gov modalidade 3, página 1: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)",
-      "Compras.gov modalidade 5, página 18: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)",
-      "Compras.gov modalidade 5, página 35: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)",
-      "Compras.gov modalidade 5, página 52: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)",
-      "Compras.gov modalidade 5, página 65: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)",
-      "Compras.gov modalidade 5, página 66: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)",
-      "Compras.gov modalidade 5, página 67: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)",
+      "Compras.gov modalidade 5, página 1: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)",
+      "Compras.gov modalidade 6, página 1: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)",
+      "Compras.gov modalidade 7, página 12: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)",
+      "Compras.gov modalidade 7, página 25: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)",
+      "Compras.gov modalidade 7, página 38: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)",
+      "Compras.gov modalidade 7, página 45: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)",
+      "Compras.gov modalidade 7, página 46: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)",
+      "Compras.gov modalidade 7, página 47: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)",
       "PNCP: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
     ],
     "avisos": [
-      "PNCP respondeu 429 após 3 tentativas; contingência preservada.",
-      "PNCP respondeu 429 após 3 tentativas; contingência preservada.",
-      "PNCP respondeu 429 após 3 tentativas; contingência preservada.",
-      "PNCP publicacao: limite de tempo atingido; resultado parcial preservado.",
-      "Compras.gov: limite agressivo de 300 segundos atingido; resultado parcial preservado."
+      "PNCP: circuito temporariamente interrompido após duas falhas; acionando a contingência oficial.",
+      "PNCP publicação não repetida porque a fonte já falhou; contingência antecipada.",
+      "Compras.gov: limite agressivo de 300 segundos atingido; resultado parcial preservado.",
+      "PNCP indisponível; coleta nacional concluída pela contingência oficial do Compras.gov."
     ]
   },
   "items": [
@@ -105,7 +105,8 @@
       "siglas_ambiguas": [],
       "dias_restantes": 27,
       "prazo_interno_decisao": "Decidir em até 48 horas",
-      "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
+      "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem.",
+      "origem_historica": true
     },
     {
       "id": "43052497000102-1-000420/2026",
@@ -312,7 +313,8 @@
       "siglas_ambiguas": [],
       "dias_restantes": 14,
       "prazo_interno_decisao": "Decidir em até 48 horas",
-      "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
+      "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem.",
+      "origem_historica": true
     },
     {
       "id": "00394452000103-1-020814/2026",
@@ -362,7 +364,8 @@
       "siglas_ambiguas": [],
       "dias_restantes": 8,
       "prazo_interno_decisao": "Decidir em até 24 horas",
-      "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
+      "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem.",
+      "origem_historica": true
     },
     {
       "id": "04892707000100-1-000125/2026",
@@ -463,7 +466,8 @@
       "siglas_ambiguas": [],
       "dias_restantes": 7,
       "prazo_interno_decisao": "Decidir em até 24 horas",
-      "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
+      "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem.",
+      "origem_historica": true
     },
     {
       "id": "07954480000179-1-018914/2026",
