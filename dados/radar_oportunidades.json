@@ -1,6 +1,6 @@
 {
   "versao": "6.9",
-  "atualizado_em": "28/09/2026 23:12 (horário de Brasília)",
+  "atualizado_em": "29/09/2026 05:56 (horário de Brasília)",
   "status": "coleta_concluida",
   "prioridade": "MCE, PCA e PGRS em todo o Brasil → projetos rápidos → bônus para GO, DF e MG",
   "modo_busca": "PROJETO RÁPIDO — MCE, PCA e PGRS com prazo vigente, objeto comprovado e triagem comercial",
@@ -18,15 +18,15 @@
     "pgrs": 1
   },
   "diagnostico_coleta": {
-    "requisicoes": 116,
+    "requisicoes": 110,
     "pncp_proposta": 0,
     "pncp_publicacao": 0,
-    "pncp_registros_examinados": 1322,
-    "pncp_respostas_validas": 33,
+    "pncp_registros_examinados": 1244,
+    "pncp_respostas_validas": 29,
     "pncp_falhas": 0,
     "pncp_retentativas_429": 0,
     "compras_gov_respostas_validas": 38,
-    "compras_gov_registros_examinados": 17525,
+    "compras_gov_registros_examinados": 17464,
     "compras_gov_paginas_examinadas": 38,
     "compras_gov_paginas_planejadas": 38,
     "compras_gov_falhas": 0,
@@ -34,10 +34,13 @@
     "html_sinais": 0,
     "paginas_aprofundadas": 30,
     "erros": [
-      "PNCP: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+      "MMA: ConnectionError: HTTPSConnectionPool(host='www.gov.br', port=443): Max retries exceeded with url: /mma/pt-br/assuntos (Caused by NewConnectionError(\"HTTPSConnection(host='www.gov.br', port=443): Failed to establish a new connection: [Errno 101] "
     ],
     "avisos": [
-      "PNCP proposta: limite de tempo atingido; resultado parcial preservado."
+      "PNCP proposta: limite de tempo atingido; resultado parcial preservado.",
+      "PNCP publicacao: limite de tempo atingido; resultado parcial preservado.",
+      "Aprofundamento: ConnectionError: HTTPSConnectionPool(host='www.gov.br', port=443): Max retries exceeded with url: /ibama/pt-br/assuntos/noticias (Caused ",
+      "Aprofundamento: ConnectionError: HTTPSConnectionPool(host='www.gov.br', port=443): Max retries exceeded with url: /ibama/pt-br/composicao/estrutura (Caus"
     ]
   },
   "items": [
@@ -405,6 +408,56 @@
       "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
     },
     {
+      "id": "00489828000155-1-000541/2026",
+      "tipo": "DEMANDA FORMAL",
+      "confirmacao": "PRÉ-SELECIONADO",
+      "fonte": "Compras.gov — Dados Abertos",
+      "titulo": "Contratação de serviços contínuos, sob demanda, de serviços técnicos de poda em altura, corte, recorte e remoção de árvores de pequeno, médio e grande porte, fornecimento, plantio e manutenção de mudas para compensação ambiental e assessoramento e emissão de relatórios e laudos técnicos, incluindo remoção dos resíduos e transporte para destinação ambientalmente adequada, com fornecimento de mão de obra e equipamentos necessários, no Complexo Vila Maria da SRA-SP - Rua Eli, 1172 - São Paulo-SP.",
+      "municipio": "SÃO PAULO",
+      "uf": "SP",
+      "regiao_prioridade": "Brasil",
+      "organizacao": "MINISTERIO DA GESTAO E DA INOVACAO EM SERVICOS PUBLICOS",
+      "data_publicacao": "2026-09-24T04:03:43",
+      "prazo": "2026-10-14T10:00:00",
+      "valor_estimado": 361518.86,
+      "modalidade": "Pregão - Eletrônico",
+      "situacao_compra": "Divulgada no PNCP",
+      "servicos_ordone": [
+        "Inventário, vegetação e compensação florestal"
+      ],
+      "tipo_aderencia": "ADERENTE_DIRETO",
+      "motivo_aceitacao": "Objeto contém serviço direto do portfólio Ordone.",
+      "relacao_comercial": "EXECUÇÃO DIRETA ADERENTE AO PORTFÓLIO",
+      "status_leitura_edital": "LEITURA INCOMPLETA",
+      "documentos_analisados": [],
+      "requisitos_minimos": [],
+      "analise_elegibilidade": "LEITURA INCOMPLETA",
+      "pendencias_identificadas": [
+        "Abrir edital e anexos oficiais antes de decidir pela participação"
+      ],
+      "palavras_encontradas": [
+        "compensação ambiental",
+        "portfólio:Inventário, vegetação e compensação florestal",
+        "grupo:ambiental"
+      ],
+      "score": 65,
+      "prioridade": "MÉDIA",
+      "url": "https://pncp.gov.br/app/editais/00489828000155/2026/541",
+      "numero_controle_pncp": "00489828000155-1-000541/2026",
+      "escopo_coleta": "Brasil",
+      "fase_pncp": "contingencia_compras_gov",
+      "documentos_prioritarios": [],
+      "aderencia_maxima": false,
+      "classe_aderencia": "A",
+      "classificacao_comercial": "EXECUÇÃO DIRETA ADERENTE AO PORTFÓLIO",
+      "oportunidade_rapida": false,
+      "parceria_necessaria": [],
+      "siglas_ambiguas": [],
+      "dias_restantes": 15,
+      "prazo_interno_decisao": "Decidir em até 48 horas",
+      "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
+    },
+    {
       "id": "00394452000103-1-020814/2026",
       "tipo": "DEMANDA FORMAL",
       "confirmacao": "PRÉ-SELECIONADO",
@@ -503,56 +556,6 @@
       ],
       "siglas_ambiguas": [],
       "dias_restantes": 31,
-      "prazo_interno_decisao": "Decidir em até 48 horas",
-      "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
-    },
-    {
-      "id": "00489828000155-1-000541/2026",
-      "tipo": "DEMANDA FORMAL",
-      "confirmacao": "PRÉ-SELECIONADO",
-      "fonte": "Compras.gov — Dados Abertos",
-      "titulo": "Contratação de serviços contínuos, sob demanda, de serviços técnicos de poda em altura, corte, recorte e remoção de árvores de pequeno, médio e grande porte, fornecimento, plantio e manutenção de mudas para compensação ambiental e assessoramento e emissão de relatórios e laudos técnicos, incluindo remoção dos resíduos e transporte para destinação ambientalmente adequada, com fornecimento de mão de obra e equipamentos necessários, no Complexo Vila Maria da SRA-SP - Rua Eli, 1172 - São Paulo-SP.",
-      "municipio": "SÃO PAULO",
-      "uf": "SP",
-      "regiao_prioridade": "Brasil",
-      "organizacao": "MINISTERIO DA GESTAO E DA INOVACAO EM SERVICOS PUBLICOS",
-      "data_publicacao": "2026-09-24T04:03:43",
-      "prazo": "2026-10-14T10:00:00",
-      "valor_estimado": 361518.86,
-      "modalidade": "Pregão - Eletrônico",
-      "situacao_compra": "Divulgada no PNCP",
-      "servicos_ordone": [
-        "Inventário, vegetação e compensação florestal"
-      ],
-      "tipo_aderencia": "ADERENTE_DIRETO",
-      "motivo_aceitacao": "Objeto contém serviço direto do portfólio Ordone.",
-      "relacao_comercial": "EXECUÇÃO DIRETA ADERENTE AO PORTFÓLIO",
-      "status_leitura_edital": "LEITURA INCOMPLETA",
-      "documentos_analisados": [],
-      "requisitos_minimos": [],
-      "analise_elegibilidade": "LEITURA INCOMPLETA",
-      "pendencias_identificadas": [
-        "Abrir edital e anexos oficiais antes de decidir pela participação"
-      ],
-      "palavras_encontradas": [
-        "compensação ambiental",
-        "portfólio:Inventário, vegetação e compensação florestal",
-        "grupo:ambiental"
-      ],
-      "score": 60,
-      "prioridade": "MÉDIA",
-      "url": "https://pncp.gov.br/app/editais/00489828000155/2026/541",
-      "numero_controle_pncp": "00489828000155-1-000541/2026",
-      "escopo_coleta": "Brasil",
-      "fase_pncp": "contingencia_compras_gov",
-      "documentos_prioritarios": [],
-      "aderencia_maxima": false,
-      "classe_aderencia": "A",
-      "classificacao_comercial": "EXECUÇÃO DIRETA ADERENTE AO PORTFÓLIO",
-      "oportunidade_rapida": false,
-      "parceria_necessaria": [],
-      "siglas_ambiguas": [],
-      "dias_restantes": 15,
       "prazo_interno_decisao": "Decidir em até 48 horas",
       "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
     },
