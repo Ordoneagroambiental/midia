@@ -1,7 +1,7 @@
 {
   "versao": "6.9",
-  "atualizado_em": "30/09/2026 02:49 (horário de Brasília)",
-  "status": "coleta_contingencial",
+  "atualizado_em": "30/09/2026 09:56 (horário de Brasília)",
+  "status": "coleta_concluida",
   "prioridade": "MCE, PCA e PGRS em todo o Brasil → projetos rápidos → bônus para GO, DF e MG",
   "modo_busca": "PROJETO RÁPIDO — MCE, PCA e PGRS com prazo vigente, objeto comprovado e triagem comercial",
   "resumo": {
@@ -18,13 +18,13 @@
     "pgrs": 0
   },
   "diagnostico_coleta": {
-    "requisicoes": 89,
+    "requisicoes": 124,
     "pncp_proposta": 0,
     "pncp_publicacao": 0,
-    "pncp_registros_examinados": 0,
-    "pncp_respostas_validas": 0,
+    "pncp_registros_examinados": 1277,
+    "pncp_respostas_validas": 30,
     "pncp_falhas": 2,
-    "pncp_retentativas_429": 0,
+    "pncp_retentativas_429": 8,
     "compras_gov_respostas_validas": 39,
     "compras_gov_registros_examinados": 17576,
     "compras_gov_paginas_examinadas": 39,
@@ -34,14 +34,13 @@
     "html_sinais": 0,
     "paginas_aprofundadas": 30,
     "erros": [
-      "PNCP indisponível após 3 tentativas: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",
-      "PNCP indisponível após 3 tentativas: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",
-      "PNCP: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+      "PNCP indisponível após 3 tentativas: HTTP 429",
+      "PNCP indisponível após 3 tentativas: HTTP 429"
     ],
     "avisos": [
-      "PNCP: circuito temporariamente interrompido após duas falhas; acionando a contingência oficial.",
-      "PNCP publicação não repetida porque a fonte já falhou; contingência antecipada.",
-      "PNCP indisponível; coleta nacional concluída pela contingência oficial do Compras.gov."
+      "PNCP respondeu 429 após 3 tentativas; contingência preservada.",
+      "PNCP respondeu 429 após 3 tentativas; contingência preservada.",
+      "PNCP publicacao: limite de tempo atingido; resultado parcial preservado."
     ]
   },
   "items": [
@@ -147,7 +146,7 @@
         "Engenharia de infraestrutura / obras"
       ],
       "siglas_ambiguas": [],
-      "dias_restantes": 2,
+      "dias_restantes": 1,
       "prazo_interno_decisao": "Decidir e iniciar proposta hoje",
       "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
     },
@@ -400,7 +399,7 @@
       "oportunidade_rapida": false,
       "parceria_necessaria": [],
       "siglas_ambiguas": [],
-      "dias_restantes": 5,
+      "dias_restantes": 4,
       "prazo_interno_decisao": "Decidir e iniciar proposta hoje",
       "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
     },
@@ -450,7 +449,7 @@
       "oportunidade_rapida": false,
       "parceria_necessaria": [],
       "siglas_ambiguas": [],
-      "dias_restantes": 8,
+      "dias_restantes": 7,
       "prazo_interno_decisao": "Decidir em até 24 horas",
       "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
     },
@@ -551,7 +550,7 @@
       "oportunidade_rapida": false,
       "parceria_necessaria": [],
       "siglas_ambiguas": [],
-      "dias_restantes": 9,
+      "dias_restantes": 8,
       "prazo_interno_decisao": "Decidir em até 24 horas",
       "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
     },
@@ -599,7 +598,7 @@
       "oportunidade_rapida": false,
       "parceria_necessaria": [],
       "siglas_ambiguas": [],
-      "dias_restantes": 7,
+      "dias_restantes": 6,
       "prazo_interno_decisao": "Decidir em até 24 horas",
       "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
     },
@@ -647,8 +646,8 @@
       "oportunidade_rapida": false,
       "parceria_necessaria": [],
       "siglas_ambiguas": [],
-      "dias_restantes": 6,
-      "prazo_interno_decisao": "Decidir em até 24 horas",
+      "dias_restantes": 5,
+      "prazo_interno_decisao": "Decidir e iniciar proposta hoje",
       "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
     }
   ],
