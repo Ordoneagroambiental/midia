@@ -1,15 +1,15 @@
 {
   "versao": "6.9",
-  "atualizado_em": "29/09/2026 19:35 (horário de Brasília)",
+  "atualizado_em": "30/09/2026 02:49 (horário de Brasília)",
   "status": "coleta_contingencial",
   "prioridade": "MCE, PCA e PGRS em todo o Brasil → projetos rápidos → bônus para GO, DF e MG",
   "modo_busca": "PROJETO RÁPIDO — MCE, PCA e PGRS com prazo vigente, objeto comprovado e triagem comercial",
   "resumo": {
-    "total": 9,
-    "brasil": 9,
+    "total": 12,
+    "brasil": 12,
     "goianesia_regiao": 0,
     "goias": 0,
-    "demandas_formais": 9,
+    "demandas_formais": 12,
     "sinais_ambientais": 0,
     "prioritarios_mce_pca_pgrs": 0,
     "oportunidades_rapidas": 0,
@@ -18,39 +18,29 @@
     "pgrs": 0
   },
   "diagnostico_coleta": {
-    "requisicoes": 60,
+    "requisicoes": 89,
     "pncp_proposta": 0,
     "pncp_publicacao": 0,
     "pncp_registros_examinados": 0,
     "pncp_respostas_validas": 0,
     "pncp_falhas": 2,
     "pncp_retentativas_429": 0,
-    "compras_gov_respostas_validas": 1,
-    "compras_gov_registros_examinados": 500,
-    "compras_gov_paginas_examinadas": 1,
-    "compras_gov_paginas_planejadas": 13,
-    "compras_gov_falhas": 9,
-    "compras_gov_itens": 0,
+    "compras_gov_respostas_validas": 39,
+    "compras_gov_registros_examinados": 17576,
+    "compras_gov_paginas_examinadas": 39,
+    "compras_gov_paginas_planejadas": 39,
+    "compras_gov_falhas": 0,
+    "compras_gov_itens": 9,
     "html_sinais": 0,
     "paginas_aprofundadas": 30,
     "erros": [
       "PNCP indisponível após 3 tentativas: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",
       "PNCP indisponível após 3 tentativas: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",
-      "Compras.gov modalidade 3, página 1: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)",
-      "Compras.gov modalidade 5, página 1: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)",
-      "Compras.gov modalidade 6, página 1: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)",
-      "Compras.gov modalidade 7, página 12: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)",
-      "Compras.gov modalidade 7, página 25: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)",
-      "Compras.gov modalidade 7, página 38: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)",
-      "Compras.gov modalidade 7, página 45: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)",
-      "Compras.gov modalidade 7, página 46: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)",
-      "Compras.gov modalidade 7, página 47: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)",
       "PNCP: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
     ],
     "avisos": [
       "PNCP: circuito temporariamente interrompido após duas falhas; acionando a contingência oficial.",
       "PNCP publicação não repetida porque a fonte já falhou; contingência antecipada.",
-      "Compras.gov: limite agressivo de 300 segundos atingido; resultado parcial preservado.",
       "PNCP indisponível; coleta nacional concluída pela contingência oficial do Compras.gov."
     ]
   },
@@ -157,10 +147,9 @@
         "Engenharia de infraestrutura / obras"
       ],
       "siglas_ambiguas": [],
-      "dias_restantes": 3,
+      "dias_restantes": 2,
       "prazo_interno_decisao": "Decidir e iniciar proposta hoje",
-      "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem.",
-      "origem_historica": true
+      "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
     },
     {
       "id": "81140303000101-1-000186/2026",
@@ -213,6 +202,56 @@
       "prazo_interno_decisao": "Decidir em até 48 horas",
       "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem.",
       "origem_historica": true
+    },
+    {
+      "id": "04034583000122-1-000170/2026",
+      "tipo": "DEMANDA FORMAL",
+      "confirmacao": "PRÉ-SELECIONADO",
+      "fonte": "Compras.gov — Dados Abertos",
+      "titulo": "Registro de Preços para eventual e futura Aquisições de Veículos tipo Caminhonete e tipo Van.",
+      "municipio": "RIO BRANCO",
+      "uf": "AC",
+      "regiao_prioridade": "Brasil",
+      "organizacao": "MUNICIPIO DE RIO BRANCO",
+      "data_publicacao": "2026-09-22T10:57:22",
+      "prazo": "2026-10-05T10:00:00",
+      "valor_estimado": 1405318.88,
+      "modalidade": "Pregão - Eletrônico",
+      "situacao_compra": "Divulgada no PNCP",
+      "servicos_ordone": [
+        "Gestão, supervisão e monitoramento ambiental"
+      ],
+      "tipo_aderencia": "ADERENTE_DIRETO",
+      "motivo_aceitacao": "Objeto contém serviço direto do portfólio Ordone.",
+      "relacao_comercial": "EXECUÇÃO DIRETA ADERENTE AO PORTFÓLIO",
+      "status_leitura_edital": "LEITURA INCOMPLETA",
+      "documentos_analisados": [],
+      "requisitos_minimos": [],
+      "analise_elegibilidade": "LEITURA INCOMPLETA",
+      "pendencias_identificadas": [
+        "Abrir edital e anexos oficiais antes de decidir pela participação"
+      ],
+      "palavras_encontradas": [
+        "monitoramento ambiental",
+        "portfólio:Gestão, supervisão e monitoramento ambiental",
+        "grupo:ambiental"
+      ],
+      "score": 65,
+      "prioridade": "MÉDIA",
+      "url": "https://pncp.gov.br/app/editais/04034583000122/2026/170",
+      "numero_controle_pncp": "04034583000122-1-000170/2026",
+      "escopo_coleta": "Brasil",
+      "fase_pncp": "contingencia_compras_gov",
+      "documentos_prioritarios": [],
+      "aderencia_maxima": false,
+      "classe_aderencia": "A",
+      "classificacao_comercial": "EXECUÇÃO DIRETA ADERENTE AO PORTFÓLIO",
+      "oportunidade_rapida": false,
+      "parceria_necessaria": [],
+      "siglas_ambiguas": [],
+      "dias_restantes": 5,
+      "prazo_interno_decisao": "Decidir e iniciar proposta hoje",
+      "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
     },
     {
       "id": "42498600000171-1-003612/2026",
@@ -313,8 +352,57 @@
       "siglas_ambiguas": [],
       "dias_restantes": 14,
       "prazo_interno_decisao": "Decidir em até 48 horas",
-      "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem.",
-      "origem_historica": true
+      "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
+    },
+    {
+      "id": "08574719000148-1-000055/2026",
+      "tipo": "DEMANDA FORMAL",
+      "confirmacao": "PRÉ-SELECIONADO",
+      "fonte": "Compras.gov — Dados Abertos",
+      "titulo": "Trata-se de contratação de serviços especializados para elaboração de Estudo Prévio de Monitoramento Ambiental Simplificado relacionado à implantação do Centro de Visitação Subaquático no município de São Sebastião.",
+      "municipio": "SÃO PAULO",
+      "uf": "SP",
+      "regiao_prioridade": "Brasil",
+      "organizacao": "SECRETARIA DE TURISMO",
+      "data_publicacao": "2026-09-29T17:04:54",
+      "prazo": "2026-10-05T08:00:00",
+      "valor_estimado": 60893.0,
+      "modalidade": "Dispensa",
+      "situacao_compra": "Divulgada no PNCP",
+      "servicos_ordone": [
+        "Gestão, supervisão e monitoramento ambiental"
+      ],
+      "tipo_aderencia": "ADERENTE_DIRETO",
+      "motivo_aceitacao": "Objeto contém serviço direto do portfólio Ordone.",
+      "relacao_comercial": "EXECUÇÃO DIRETA ADERENTE AO PORTFÓLIO",
+      "status_leitura_edital": "LEITURA INCOMPLETA",
+      "documentos_analisados": [],
+      "requisitos_minimos": [],
+      "analise_elegibilidade": "LEITURA INCOMPLETA",
+      "pendencias_identificadas": [
+        "Abrir edital e anexos oficiais antes de decidir pela participação"
+      ],
+      "palavras_encontradas": [
+        "monitoramento ambiental",
+        "portfólio:Gestão, supervisão e monitoramento ambiental",
+        "grupo:ambiental"
+      ],
+      "score": 65,
+      "prioridade": "MÉDIA",
+      "url": "https://pncp.gov.br/app/editais/08574719000148/2026/55",
+      "numero_controle_pncp": "08574719000148-1-000055/2026",
+      "escopo_coleta": "Brasil",
+      "fase_pncp": "contingencia_compras_gov",
+      "documentos_prioritarios": [],
+      "aderencia_maxima": false,
+      "classe_aderencia": "A",
+      "classificacao_comercial": "EXECUÇÃO DIRETA ADERENTE AO PORTFÓLIO",
+      "oportunidade_rapida": false,
+      "parceria_necessaria": [],
+      "siglas_ambiguas": [],
+      "dias_restantes": 5,
+      "prazo_interno_decisao": "Decidir e iniciar proposta hoje",
+      "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
     },
     {
       "id": "00394452000103-1-020814/2026",
@@ -364,8 +452,7 @@
       "siglas_ambiguas": [],
       "dias_restantes": 8,
       "prazo_interno_decisao": "Decidir em até 24 horas",
-      "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem.",
-      "origem_historica": true
+      "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
     },
     {
       "id": "04892707000100-1-000125/2026",
@@ -415,10 +502,58 @@
         "Engenharia de infraestrutura / obras"
       ],
       "siglas_ambiguas": [],
-      "dias_restantes": 31,
+      "dias_restantes": 30,
       "prazo_interno_decisao": "Decidir em até 48 horas",
-      "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem.",
-      "origem_historica": true
+      "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
+    },
+    {
+      "id": "00394452000103-1-020937/2026",
+      "tipo": "DEMANDA FORMAL",
+      "confirmacao": "PRÉ-SELECIONADO",
+      "fonte": "Compras.gov — Dados Abertos",
+      "titulo": "Faz-se necessário a contratação dos serviços de hidrossemeadura para a proteção de áreas. Em virtude das especificidades do serviço e da complexidade da execução da hidrossemeadura, surgiu a necessidade de contratação de empresa especializada para que o serviço seja executado de forma eficaz e eficiente, proporcionando assim a contenção do solo exposto, bem como evitar possíveis impactos ambientais e custos adicionais para Administração Pública.",
+      "municipio": "BOA VISTA",
+      "uf": "RR",
+      "regiao_prioridade": "Brasil",
+      "organizacao": "COMANDO DO EXERCITO",
+      "data_publicacao": "2026-09-25T04:00:24",
+      "prazo": "2026-10-09T09:00:00",
+      "valor_estimado": 1056300.0,
+      "modalidade": "Pregão - Eletrônico",
+      "situacao_compra": "Divulgada no PNCP",
+      "servicos_ordone": [
+        "Hidrossemeadura e bioengenharia vegetal"
+      ],
+      "tipo_aderencia": "ADERENTE_DIRETO",
+      "motivo_aceitacao": "Objeto contém serviço direto do portfólio Ordone.",
+      "relacao_comercial": "EXECUÇÃO DIRETA ADERENTE AO PORTFÓLIO",
+      "status_leitura_edital": "LEITURA INCOMPLETA",
+      "documentos_analisados": [],
+      "requisitos_minimos": [],
+      "analise_elegibilidade": "LEITURA INCOMPLETA",
+      "pendencias_identificadas": [
+        "Abrir edital e anexos oficiais antes de decidir pela participação"
+      ],
+      "palavras_encontradas": [
+        "portfólio:Hidrossemeadura e bioengenharia vegetal",
+        "grupo:ambiental"
+      ],
+      "score": 55,
+      "prioridade": "ACOMPANHAR",
+      "url": "https://pncp.gov.br/app/editais/00394452000103/2026/20937",
+      "numero_controle_pncp": "00394452000103-1-020937/2026",
+      "escopo_coleta": "Brasil",
+      "fase_pncp": "contingencia_compras_gov",
+      "documentos_prioritarios": [],
+      "aderencia_maxima": false,
+      "classe_aderencia": "A",
+      "classificacao_comercial": "EXECUÇÃO DIRETA ADERENTE AO PORTFÓLIO",
+      "oportunidade_rapida": false,
+      "parceria_necessaria": [],
+      "siglas_ambiguas": [],
+      "dias_restantes": 9,
+      "prazo_interno_decisao": "Decidir em até 24 horas",
+      "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
     },
     {
       "id": "18635734000102-1-000088/2026",
@@ -466,8 +601,7 @@
       "siglas_ambiguas": [],
       "dias_restantes": 7,
       "prazo_interno_decisao": "Decidir em até 24 horas",
-      "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem.",
-      "origem_historica": true
+      "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
     },
     {
       "id": "07954480000179-1-018914/2026",
@@ -513,10 +647,9 @@
       "oportunidade_rapida": false,
       "parceria_necessaria": [],
       "siglas_ambiguas": [],
-      "dias_restantes": 7,
+      "dias_restantes": 6,
       "prazo_interno_decisao": "Decidir em até 24 horas",
-      "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem.",
-      "origem_historica": true
+      "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
     }
   ],
   "fontes_monitoradas": [
