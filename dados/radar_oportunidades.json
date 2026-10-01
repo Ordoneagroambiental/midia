@@ -1,6 +1,6 @@
 {
   "versao": "6.9",
-  "atualizado_em": "30/09/2026 16:36 (horário de Brasília)",
+  "atualizado_em": "30/09/2026 21:05 (horário de Brasília)",
   "status": "coleta_concluida",
   "prioridade": "MCE, PCA e PGRS em todo o Brasil → projetos rápidos → bônus para GO, DF e MG",
   "modo_busca": "PROJETO RÁPIDO — MCE, PCA e PGRS com prazo vigente, objeto comprovado e triagem comercial",
@@ -11,20 +11,20 @@
     "goias": 0,
     "demandas_formais": 12,
     "sinais_ambientais": 0,
-    "prioritarios_mce_pca_pgrs": 1,
+    "prioritarios_mce_pca_pgrs": 0,
     "oportunidades_rapidas": 0,
     "mce": 0,
-    "pca": 1,
+    "pca": 0,
     "pgrs": 0
   },
   "diagnostico_coleta": {
-    "requisicoes": 111,
+    "requisicoes": 112,
     "pncp_proposta": 0,
     "pncp_publicacao": 0,
-    "pncp_registros_examinados": 664,
-    "pncp_respostas_validas": 16,
-    "pncp_falhas": 2,
-    "pncp_retentativas_429": 8,
+    "pncp_registros_examinados": 965,
+    "pncp_respostas_validas": 23,
+    "pncp_falhas": 1,
+    "pncp_retentativas_429": 4,
     "compras_gov_respostas_validas": 39,
     "compras_gov_registros_examinados": 17576,
     "compras_gov_paginas_examinadas": 39,
@@ -35,83 +35,15 @@
     "paginas_aprofundadas": 30,
     "erros": [
       "PNCP indisponível após 3 tentativas: HTTP 429",
-      "PNCP indisponível após 3 tentativas: HTTP 429",
       "PNCP: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
     ],
     "avisos": [
-      "Lista de anexos PNCP: ReadTimeout: HTTPSConnectionPool(host='pncp.gov.br', port=443): Read timed out. (read timeout=20)",
-      "Anexos PNCP lidos pela rota numerada de contingência.",
       "PNCP proposta: limite de tempo atingido; resultado parcial preservado.",
-      "PNCP respondeu 429 após 3 tentativas; contingência preservada.",
       "PNCP respondeu 429 após 3 tentativas; contingência preservada.",
       "PNCP publicacao: limite de tempo atingido; resultado parcial preservado."
     ]
   },
   "items": [
-    {
-      "id": "43052497000102-1-000420/2026",
-      "tipo": "DEMANDA FORMAL",
-      "confirmacao": "CONFIRMADO",
-      "fonte": "PNCP",
-      "titulo": "Contratação de serviços especializados de supervisão ambiental, de forma contínua e com a frequência exigida para o adequado acompanhamento das obras, da Rodovia Osni Mateus - SP 261, no trecho compreendido entre o km 58,00 e o km 78,77, com extensão de 20,77 km, abrangendo os municípios de Águas de Santa Bárbara e Iar",
-      "municipio": "São Paulo",
-      "uf": "SP",
-      "regiao_prioridade": "Brasil",
-      "organizacao": "DEPARTAMENTO DE ESTRADAS DE RODAGEM",
-      "data_publicacao": "2026-08-12T15:10:36",
-      "prazo": "2026-10-02T09:00:00",
-      "valor_estimado": 4859662.68,
-      "modalidade": "Concorrência - Eletrônica",
-      "servicos_ordone": [
-        "PCA — Plano ou Programa de Controle Ambiental"
-      ],
-      "tipo_aderencia": "PARCERIA_NECESSARIA",
-      "motivo_aceitacao": "MCE, PCA ou PGRS comprovado no objeto ou nos anexos oficiais.",
-      "relacao_comercial": "PARCERIA TÉCNICA NECESSÁRIA",
-      "status_leitura_edital": "ANALISADO",
-      "documentos_analisados": [
-        "Anexo PNCP 1",
-        "Anexo PNCP 4"
-      ],
-      "requisitos_minimos": [
-        "Registro profissional",
-        "ART / responsabilidade técnica",
-        "Equipe técnica mínima",
-        "Visita técnica",
-        "Qualificação econômico-financeira"
-      ],
-      "analise_elegibilidade": "VERIFICAR DOCUMENTOS",
-      "pendencias_identificadas": [
-        "Validar índices e documentos financeiros"
-      ],
-      "palavras_encontradas": [
-        "supervisão ambiental",
-        "portfólio:Gestão, supervisão e monitoramento ambiental",
-        "grupo:ambiental",
-        "serviços ambientais"
-      ],
-      "score": 75,
-      "prioridade": "MÉDIA",
-      "url": "https://pncp.gov.br/app/editais/43052497000102/2026/420",
-      "numero_controle_pncp": "43052497000102-1-000420/2026",
-      "escopo_coleta": "Brasil",
-      "fase_pncp": "proposta",
-      "documentos_prioritarios": [
-        "PCA"
-      ],
-      "aderencia_maxima": false,
-      "classe_aderencia": "C",
-      "classificacao_comercial": "PARCERIA TÉCNICA NECESSÁRIA",
-      "oportunidade_rapida": false,
-      "parceria_necessaria": [
-        "Biologia / fauna",
-        "Engenharia de infraestrutura / obras"
-      ],
-      "siglas_ambiguas": [],
-      "dias_restantes": 1,
-      "prazo_interno_decisao": "Decidir e iniciar proposta hoje",
-      "proxima_acao": "Abrir o edital/aviso oficial, validar escopo, habilitação, prazo, local de execução e viabilidade de proposta."
-    },
     {
       "id": "00394452000103-1-020792/2026",
       "tipo": "DEMANDA FORMAL",
@@ -164,6 +96,59 @@
       "prazo_interno_decisao": "Decidir em até 48 horas",
       "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem.",
       "origem_historica": true
+    },
+    {
+      "id": "43052497000102-1-000420/2026",
+      "tipo": "DEMANDA FORMAL",
+      "confirmacao": "PRÉ-SELECIONADO",
+      "fonte": "Compras.gov — Dados Abertos",
+      "titulo": "Contratação de serviços especializados de supervisão ambiental, de forma contínua e com a frequência exigida para o adequado acompanhamento das obras, da Rodovia Osni Mateus - SP 261, no trecho compreendido entre o km 58,00 e o km 78,77, com extensão de 20,77 km, abrangendo os municípios de Águas de Santa Bárbara e Iaras.",
+      "municipio": "SÃO PAULO",
+      "uf": "SP",
+      "regiao_prioridade": "Brasil",
+      "organizacao": "DEPARTAMENTO DE ESTRADAS DE RODAGEM",
+      "data_publicacao": "2026-08-12T15:10:36",
+      "prazo": "2026-10-02T09:00:00",
+      "valor_estimado": 4859662.68,
+      "modalidade": "Concorrência - Eletrônica",
+      "situacao_compra": "Divulgada no PNCP",
+      "servicos_ordone": [
+        "Gestão, supervisão e monitoramento ambiental"
+      ],
+      "tipo_aderencia": "PARCERIA_NECESSARIA",
+      "motivo_aceitacao": "Objeto contém serviço direto do portfólio Ordone.",
+      "relacao_comercial": "PARCERIA TÉCNICA NECESSÁRIA",
+      "status_leitura_edital": "LEITURA INCOMPLETA",
+      "documentos_analisados": [],
+      "requisitos_minimos": [],
+      "analise_elegibilidade": "LEITURA INCOMPLETA",
+      "pendencias_identificadas": [
+        "Abrir edital e anexos oficiais antes de decidir pela participação"
+      ],
+      "palavras_encontradas": [
+        "supervisão ambiental",
+        "portfólio:Gestão, supervisão e monitoramento ambiental",
+        "grupo:ambiental",
+        "serviços ambientais"
+      ],
+      "score": 75,
+      "prioridade": "MÉDIA",
+      "url": "https://pncp.gov.br/app/editais/43052497000102/2026/420",
+      "numero_controle_pncp": "43052497000102-1-000420/2026",
+      "escopo_coleta": "Brasil",
+      "fase_pncp": "contingencia_compras_gov",
+      "documentos_prioritarios": [],
+      "aderencia_maxima": false,
+      "classe_aderencia": "C",
+      "classificacao_comercial": "PARCERIA TÉCNICA NECESSÁRIA",
+      "oportunidade_rapida": false,
+      "parceria_necessaria": [
+        "Engenharia de infraestrutura / obras"
+      ],
+      "siglas_ambiguas": [],
+      "dias_restantes": 1,
+      "prazo_interno_decisao": "Decidir e iniciar proposta hoje",
+      "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
     },
     {
       "id": "81140303000101-1-000186/2026",
