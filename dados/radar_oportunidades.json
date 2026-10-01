@@ -1,16 +1,16 @@
 {
   "versao": "6.9",
-  "atualizado_em": "01/10/2026 10:47 (horário de Brasília)",
+  "atualizado_em": "01/10/2026 16:46 (horário de Brasília)",
   "status": "coleta_concluida",
   "prioridade": "MCE, PCA e PGRS em todo o Brasil → projetos rápidos → bônus para GO, DF e MG",
   "modo_busca": "PROJETO RÁPIDO — MCE, PCA e PGRS com prazo vigente, objeto comprovado e triagem comercial",
   "resumo": {
-    "total": 12,
-    "brasil": 12,
+    "total": 13,
+    "brasil": 13,
     "goianesia_regiao": 0,
     "goias": 0,
     "demandas_formais": 12,
-    "sinais_ambientais": 0,
+    "sinais_ambientais": 1,
     "prioritarios_mce_pca_pgrs": 0,
     "oportunidades_rapidas": 0,
     "mce": 0,
@@ -21,29 +21,25 @@
     "requisicoes": 109,
     "pncp_proposta": 0,
     "pncp_publicacao": 0,
-    "pncp_registros_examinados": 781,
-    "pncp_respostas_validas": 18,
-    "pncp_falhas": 2,
-    "pncp_retentativas_429": 6,
-    "compras_gov_respostas_validas": 39,
-    "compras_gov_registros_examinados": 17675,
-    "compras_gov_paginas_examinadas": 39,
+    "pncp_registros_examinados": 1012,
+    "pncp_respostas_validas": 24,
+    "pncp_falhas": 0,
+    "pncp_retentativas_429": 0,
+    "compras_gov_respostas_validas": 38,
+    "compras_gov_registros_examinados": 17175,
+    "compras_gov_paginas_examinadas": 38,
     "compras_gov_paginas_planejadas": 39,
-    "compras_gov_falhas": 0,
+    "compras_gov_falhas": 1,
     "compras_gov_itens": 9,
     "html_sinais": 0,
     "paginas_aprofundadas": 30,
     "erros": [
-      "PNCP indisponível após 3 tentativas: HTTP 429",
-      "PNCP indisponível após 3 tentativas: HTTP 429",
-      "Prefeitura de Goianésia: ConnectTimeout: HTTPSConnectionPool(host='goianesia.go.gov.br', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='goianesia.go.gov.br', port=443) at 0x7fa4925ee7b0>, 'Connection",
-      "Editais de Goianésia: ConnectTimeout: HTTPSConnectionPool(host='goianesia.go.gov.br', port=443): Max retries exceeded with url: /editais-e-publicacoes/ (Caused by ConnectTimeoutError(<HTTPSConnection(host='goianesia.go.gov.br', port=443) at 0x7fa4926"
+      "PNCP: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
     ],
     "avisos": [
       "PNCP proposta: limite de tempo atingido; resultado parcial preservado.",
-      "PNCP respondeu 429 após 3 tentativas; contingência preservada.",
-      "PNCP respondeu 429 após 3 tentativas; contingência preservada.",
-      "PNCP publicacao: limite de tempo atingido; resultado parcial preservado."
+      "PNCP publicacao: limite de tempo atingido; resultado parcial preservado.",
+      "Compras.gov modalidade 5, página 70: HTTP 400."
     ]
   },
   "items": [
@@ -504,7 +500,7 @@
         "Engenharia de infraestrutura / obras"
       ],
       "siglas_ambiguas": [],
-      "dias_restantes": 29,
+      "dias_restantes": 28,
       "prazo_interno_decisao": "Decidir em até 48 horas",
       "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
     },
@@ -652,6 +648,55 @@
       "dias_restantes": 4,
       "prazo_interno_decisao": "Decidir e iniciar proposta hoje",
       "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
+    },
+    {
+      "id": "76417005000186-1-000366/2026",
+      "tipo": "SINAL DE CONTRATAÇÃO",
+      "confirmacao": "PRÉ-SELECIONADO",
+      "fonte": "PNCP",
+      "titulo": "Contratação de empresa especializada para o gerenciamento e supervisão ambiental e social do Programa Curitiba Carbono Neutro - Mobilidade Sustentável e Eficiência Energética-KFW.",
+      "municipio": "Curitiba",
+      "uf": "PR",
+      "regiao_prioridade": "Brasil",
+      "organizacao": "MUNICIPIO DE CURITIBA",
+      "data_publicacao": "2026-10-01T08:09:22",
+      "prazo": "2026-11-03T09:00:00",
+      "valor_estimado": 0.0,
+      "modalidade": "Pré-qualificação",
+      "servicos_ordone": [
+        "Gestão, supervisão e monitoramento ambiental"
+      ],
+      "tipo_aderencia": "ADERENTE_DIRETO",
+      "motivo_aceitacao": "Objeto contém serviço direto do portfólio Ordone.",
+      "relacao_comercial": "EXECUÇÃO DIRETA ADERENTE AO PORTFÓLIO",
+      "status_leitura_edital": "LEITURA INCOMPLETA",
+      "documentos_analisados": [],
+      "requisitos_minimos": [],
+      "analise_elegibilidade": "LEITURA INCOMPLETA",
+      "pendencias_identificadas": [
+        "Abrir edital e anexos manualmente"
+      ],
+      "palavras_encontradas": [
+        "supervisão ambiental",
+        "portfólio:Gestão, supervisão e monitoramento ambiental",
+        "grupo:ambiental"
+      ],
+      "score": 45,
+      "prioridade": "ACOMPANHAR",
+      "url": "https://pncp.gov.br/app/editais/76417005000186/2026/366",
+      "numero_controle_pncp": "76417005000186-1-000366/2026",
+      "escopo_coleta": "Brasil",
+      "fase_pncp": "publicacao",
+      "documentos_prioritarios": [],
+      "aderencia_maxima": false,
+      "classe_aderencia": "A",
+      "classificacao_comercial": "EXECUÇÃO DIRETA ADERENTE AO PORTFÓLIO",
+      "oportunidade_rapida": false,
+      "parceria_necessaria": [],
+      "siglas_ambiguas": [],
+      "dias_restantes": 32,
+      "prazo_interno_decisao": "Decidir em até 48 horas",
+      "proxima_acao": "Abrir a publicação oficial e verificar se há prazo de proposta, futura licitação, contratação direta ou oportunidade institucional."
     }
   ],
   "fontes_monitoradas": [
