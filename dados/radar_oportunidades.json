@@ -1,6 +1,6 @@
 {
   "versao": "6.9",
-  "atualizado_em": "02/10/2026 10:02 (horário de Brasília)",
+  "atualizado_em": "02/10/2026 16:30 (horário de Brasília)",
   "status": "coleta_concluida",
   "prioridade": "MCE, PCA e PGRS em todo o Brasil → projetos rápidos → bônus para GO, DF e MG",
   "modo_busca": "PROJETO RÁPIDO — MCE, PCA e PGRS com prazo vigente, objeto comprovado e triagem comercial",
@@ -18,10 +18,10 @@
     "pgrs": 0
   },
   "diagnostico_coleta": {
-    "requisicoes": 121,
+    "requisicoes": 122,
     "pncp_proposta": 0,
     "pncp_publicacao": 0,
-    "pncp_registros_examinados": 1351,
+    "pncp_registros_examinados": 1153,
     "pncp_respostas_validas": 33,
     "pncp_falhas": 1,
     "pncp_retentativas_429": 4,
@@ -34,8 +34,7 @@
     "html_sinais": 0,
     "paginas_aprofundadas": 30,
     "erros": [
-      "PNCP indisponível após 3 tentativas: HTTP 429",
-      "PNCP: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+      "PNCP indisponível após 3 tentativas: HTTP 429"
     ],
     "avisos": [
       "PNCP respondeu 429 após 3 tentativas; contingência preservada.",
@@ -396,7 +395,7 @@
         "Engenharia de infraestrutura / obras"
       ],
       "siglas_ambiguas": [],
-      "dias_restantes": 28,
+      "dias_restantes": 27,
       "prazo_interno_decisao": "Decidir em até 48 horas",
       "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
     },
