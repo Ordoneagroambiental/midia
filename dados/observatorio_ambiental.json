@@ -1,6 +1,6 @@
 {
   "versao": "1.0",
-  "atualizado_em": "2026-10-04T12:32:03.415535+00:00",
+  "atualizado_em": "2026-10-04T21:37:57.305958+00:00",
   "criterios": {
     "escopo": "Brasil e mundo",
     "frequencia": "a cada 6 horas",
@@ -19,8 +19,8 @@
     },
     {
       "fonte": "USGS",
-      "ok": false,
-      "erro": "403 Client Error: Forbidden for url: https://www.usgs.gov/news"
+      "ok": true,
+      "itens": 0
     },
     {
       "fonte": "Chinese Academy of Sciences",
