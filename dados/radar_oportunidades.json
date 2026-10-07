@@ -1,15 +1,15 @@
 {
   "versao": "6.9",
-  "atualizado_em": "07/10/2026 06:04 (horário de Brasília)",
+  "atualizado_em": "07/10/2026 14:32 (horário de Brasília)",
   "status": "coleta_concluida",
   "prioridade": "MCE, PCA e PGRS em todo o Brasil → projetos rápidos → bônus para GO, DF e MG",
   "modo_busca": "PROJETO RÁPIDO — MCE, PCA e PGRS com prazo vigente, objeto comprovado e triagem comercial",
   "resumo": {
-    "total": 7,
-    "brasil": 7,
+    "total": 6,
+    "brasil": 6,
     "goianesia_regiao": 0,
     "goias": 0,
-    "demandas_formais": 7,
+    "demandas_formais": 6,
     "sinais_ambientais": 0,
     "prioritarios_mce_pca_pgrs": 0,
     "oportunidades_rapidas": 0,
@@ -18,28 +18,23 @@
     "pgrs": 0
   },
   "diagnostico_coleta": {
-    "requisicoes": 116,
+    "requisicoes": 109,
     "pncp_proposta": 0,
     "pncp_publicacao": 0,
-    "pncp_registros_examinados": 1328,
-    "pncp_respostas_validas": 30,
-    "pncp_falhas": 1,
-    "pncp_retentativas_429": 4,
+    "pncp_registros_examinados": 1049,
+    "pncp_respostas_validas": 26,
+    "pncp_falhas": 0,
+    "pncp_retentativas_429": 0,
     "compras_gov_respostas_validas": 38,
     "compras_gov_registros_examinados": 17756,
     "compras_gov_paginas_examinadas": 38,
     "compras_gov_paginas_planejadas": 38,
     "compras_gov_falhas": 0,
-    "compras_gov_itens": 5,
+    "compras_gov_itens": 4,
     "html_sinais": 0,
     "paginas_aprofundadas": 30,
-    "erros": [
-      "PNCP indisponível após 3 tentativas: HTTP 429",
-      "PNCP: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",
-      "BNDES Floresta Viva: ReadTimeout: HTTPSConnectionPool(host='www.bndes.gov.br', port=443): Read timed out. (read timeout=18)"
-    ],
+    "erros": [],
     "avisos": [
-      "PNCP respondeu 429 após 3 tentativas; contingência preservada.",
       "PNCP publicacao: limite de tempo atingido; resultado parcial preservado."
     ]
   },
@@ -195,7 +190,7 @@
       "oportunidade_rapida": false,
       "parceria_necessaria": [],
       "siglas_ambiguas": [],
-      "dias_restantes": 7,
+      "dias_restantes": 6,
       "prazo_interno_decisao": "Decidir em até 24 horas",
       "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
     },
@@ -245,7 +240,7 @@
       "oportunidade_rapida": false,
       "parceria_necessaria": [],
       "siglas_ambiguas": [],
-      "dias_restantes": 1,
+      "dias_restantes": 0,
       "prazo_interno_decisao": "Decidir e iniciar proposta hoje",
       "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
     },
@@ -346,55 +341,7 @@
       "oportunidade_rapida": false,
       "parceria_necessaria": [],
       "siglas_ambiguas": [],
-      "dias_restantes": 2,
-      "prazo_interno_decisao": "Decidir e iniciar proposta hoje",
-      "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
-    },
-    {
-      "id": "18635734000102-1-000088/2026",
-      "tipo": "DEMANDA FORMAL",
-      "confirmacao": "PRÉ-SELECIONADO",
-      "fonte": "Compras.gov — Dados Abertos",
-      "titulo": "Contratação de empresa especializada para o fornecimento de combustível (gasolina), destinado ao abastecimento de veículo utilizado pela equipe técnica responsável pelo acompanhamento e monitoramento das ações previstas no Convênio nº 0164/2026, celebrado entre o CDS Alto Sertão e a CAR/SDR.",
-      "municipio": "CAETITÉ",
-      "uf": "BA",
-      "regiao_prioridade": "Brasil",
-      "organizacao": "CONSORCIO DE DESENVOLVIMENTO SUSTENTAVEL DO ALTO SERTAO",
-      "data_publicacao": "2026-09-24T16:36:20",
-      "prazo": "2026-10-07T09:00:00",
-      "valor_estimado": 20361.6,
-      "modalidade": "Pregão - Eletrônico",
-      "situacao_compra": "Divulgada no PNCP",
-      "servicos_ordone": [
-        "Regularização ambiental rural / CAR"
-      ],
-      "tipo_aderencia": "ADERENTE_DIRETO",
-      "motivo_aceitacao": "Objeto contém serviço direto do portfólio Ordone.",
-      "relacao_comercial": "EXECUÇÃO DIRETA ADERENTE AO PORTFÓLIO",
-      "status_leitura_edital": "LEITURA INCOMPLETA",
-      "documentos_analisados": [],
-      "requisitos_minimos": [],
-      "analise_elegibilidade": "LEITURA INCOMPLETA",
-      "pendencias_identificadas": [
-        "Abrir edital e anexos oficiais antes de decidir pela participação"
-      ],
-      "palavras_encontradas": [
-        "portfólio:Regularização ambiental rural / CAR"
-      ],
-      "score": 49,
-      "prioridade": "ACOMPANHAR",
-      "url": "https://pncp.gov.br/app/editais/18635734000102/2026/88",
-      "numero_controle_pncp": "18635734000102-1-000088/2026",
-      "escopo_coleta": "Brasil",
-      "fase_pncp": "contingencia_compras_gov",
-      "documentos_prioritarios": [],
-      "aderencia_maxima": false,
-      "classe_aderencia": "A",
-      "classificacao_comercial": "EXECUÇÃO DIRETA ADERENTE AO PORTFÓLIO",
-      "oportunidade_rapida": false,
-      "parceria_necessaria": [],
-      "siglas_ambiguas": [],
-      "dias_restantes": 0,
+      "dias_restantes": 1,
       "prazo_interno_decisao": "Decidir e iniciar proposta hoje",
       "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
     }
