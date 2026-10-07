@@ -1,6 +1,6 @@
 {
   "versao": "6.9",
-  "atualizado_em": "07/10/2026 14:32 (horário de Brasília)",
+  "atualizado_em": "07/10/2026 20:19 (horário de Brasília)",
   "status": "coleta_concluida",
   "prioridade": "MCE, PCA e PGRS em todo o Brasil → projetos rápidos → bônus para GO, DF e MG",
   "modo_busca": "PROJETO RÁPIDO — MCE, PCA e PGRS com prazo vigente, objeto comprovado e triagem comercial",
@@ -18,13 +18,13 @@
     "pgrs": 0
   },
   "diagnostico_coleta": {
-    "requisicoes": 109,
+    "requisicoes": 113,
     "pncp_proposta": 0,
     "pncp_publicacao": 0,
-    "pncp_registros_examinados": 1049,
-    "pncp_respostas_validas": 26,
-    "pncp_falhas": 0,
-    "pncp_retentativas_429": 0,
+    "pncp_registros_examinados": 1153,
+    "pncp_respostas_validas": 29,
+    "pncp_falhas": 2,
+    "pncp_retentativas_429": 8,
     "compras_gov_respostas_validas": 38,
     "compras_gov_registros_examinados": 17756,
     "compras_gov_paginas_examinadas": 38,
@@ -33,8 +33,22 @@
     "compras_gov_itens": 4,
     "html_sinais": 0,
     "paginas_aprofundadas": 30,
-    "erros": [],
+    "erros": [
+      "PNCP indisponível após 3 tentativas: HTTP 429",
+      "PNCP indisponível após 3 tentativas: HTTP 429",
+      "PNCP: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",
+      "MMA: ConnectionError: HTTPSConnectionPool(host='www.gov.br', port=443): Max retries exceeded with url: /mma/pt-br/assuntos (Caused by NewConnectionError(\"HTTPSConnection(host='www.gov.br', port=443): Failed to establish a new connection: [Errno 101] ",
+      "Ibama: ConnectionError: HTTPSConnectionPool(host='www.gov.br', port=443): Max retries exceeded with url: /ibama/pt-br/assuntos/noticias (Caused by NewConnectionError(\"HTTPSConnection(host='www.gov.br', port=443): Failed to establish a new connection:",
+      "ICMBio: ConnectionError: HTTPSConnectionPool(host='www.gov.br', port=443): Max retries exceeded with url: /icmbio/pt-br/assuntos/noticias (Caused by NewConnectionError(\"HTTPSConnection(host='www.gov.br', port=443): Failed to establish a new connectio",
+      "Ibama — Licitações: ConnectionError: HTTPSConnectionPool(host='www.gov.br', port=443): Max retries exceeded with url: /ibama/pt-br/acesso-a-informacao/licitacoes-e-contratos (Caused by NewConnectionError(\"HTTPSConnection(host='www.gov.br', port=443):",
+      "ICMBio — Licitações: ConnectionError: HTTPSConnectionPool(host='www.gov.br', port=443): Max retries exceeded with url: /icmbio/pt-br/acesso-a-informacao/licitacoes-e-contratos (Caused by NewConnectionError(\"HTTPSConnection(host='www.gov.br', port=443",
+      "DNIT — Licitações: ConnectionError: HTTPSConnectionPool(host='www.gov.br', port=443): Max retries exceeded with url: /dnit/pt-br/assuntos/licitacoes (Caused by NewConnectionError(\"HTTPSConnection(host='www.gov.br', port=443): Failed to establish a ne",
+      "Serviço Florestal Brasileiro — Licitações: ConnectionError: HTTPSConnectionPool(host='www.gov.br', port=443): Max retries exceeded with url: /florestal/pt-br/acesso-a-informacao/licitacoes-e-contratos (Caused by NewConnectionError(\"HTTPSConnection(ho",
+      "ANA — Licitações: ConnectionError: HTTPSConnectionPool(host='www.gov.br', port=443): Max retries exceeded with url: /ana/pt-br/acesso-a-informacao/licitacoes/licitacoes-2/licitacoes (Caused by NewConnectionError(\"HTTPSConnection(host='www.gov.br', po"
+    ],
     "avisos": [
+      "PNCP respondeu 429 após 3 tentativas; contingência preservada.",
+      "PNCP respondeu 429 após 3 tentativas; contingência preservada.",
       "PNCP publicacao: limite de tempo atingido; resultado parcial preservado."
     ]
   },
@@ -292,7 +306,7 @@
         "Engenharia de infraestrutura / obras"
       ],
       "siglas_ambiguas": [],
-      "dias_restantes": 23,
+      "dias_restantes": 22,
       "prazo_interno_decisao": "Decidir em até 48 horas",
       "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
     },
