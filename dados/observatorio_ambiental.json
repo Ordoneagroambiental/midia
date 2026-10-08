@@ -1,6 +1,6 @@
 {
   "versao": "1.0",
-  "atualizado_em": "2026-10-07T23:11:37.231934+00:00",
+  "atualizado_em": "2026-10-08T06:18:05.134601+00:00",
   "criterios": {
     "escopo": "Brasil e mundo",
     "frequencia": "a cada 6 horas",
@@ -19,8 +19,8 @@
     },
     {
       "fonte": "USGS",
-      "ok": true,
-      "itens": 0
+      "ok": false,
+      "erro": "504 Server Error: Gateway Time-out for url: https://www.usgs.gov/news"
     },
     {
       "fonte": "Chinese Academy of Sciences",
@@ -34,8 +34,8 @@
     },
     {
       "fonte": "MMA",
-      "ok": false,
-      "erro": "HTTPSConnectionPool(host='www.gov.br', port=443): Max retries exceeded with url: /mma/pt-br/assuntos/noticias (Caused by"
+      "ok": true,
+      "itens": 0
     },
     {
       "fonte": "Embrapa",
