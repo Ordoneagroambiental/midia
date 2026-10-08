@@ -1,4 +1,4 @@
-.hero-approved-media{background-image:url('hero-drone-pulverizacao.webp')!important;background-position:center center!important}
+.hero-approved-media{background-image:url('hero-ordone-integrada.webp')!important;background-position:center center!important}
 .hero-image-caption{position:absolute;right:24px;bottom:155px;z-index:2;color:#fff;background:rgba(6,31,22,.72);padding:6px 10px;border-radius:4px;font-size:11px;letter-spacing:.02em}
 @media(max-width:900px){.hero-approved-media{background-position:70% center!important}.hero-image-caption{bottom:275px;right:16px}}
 @media(max-width:620px){.hero-approved-media{background-size:auto 540px!important;background-repeat:no-repeat;background-position:72% 390px!important;background-color:#143a2b}.hero-image-caption{bottom:420px;font-size:10px}.hero-approved-shade{background:linear-gradient(180deg,rgba(6,29,21,.94) 0%,rgba(6,29,21,.82) 35%,rgba(6,29,21,.12) 60%,rgba(6,29,21,.4) 100%)!important}}
