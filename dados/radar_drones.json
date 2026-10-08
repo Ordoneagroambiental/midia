@@ -1,0 +1,98 @@
+{
+  "versao": "1.0",
+  "gerado_em": null,
+  "ultima_coleta_concluida_em": null,
+  "status_coleta": "nao_executada",
+  "abrangencia": "Brasil",
+  "atualizacao_programada_horas": 2,
+  "limites": {
+    "pncp": {
+      "dias_publicacao": 45,
+      "modalidades": [
+        8,
+        6,
+        4,
+        7,
+        5,
+        12
+      ],
+      "max_paginas": 30,
+      "limite_segundos": 130
+    },
+    "compras_gov": {
+      "dias_publicacao": 120,
+      "modalidades": [
+        6,
+        5,
+        3,
+        12
+      ],
+      "max_paginas": 30,
+      "limite_segundos": 150
+    },
+    "anexos_segundos": 70
+  },
+  "avisos": [
+    "Primeira coleta automática pendente; a tentativa local foi interrompida pelo controle de acesso à rede.",
+    "Zero resultados publicados ainda não comprova ausência de oportunidades.",
+    "Somente PNCP e Compras.gov.br estão integrados; portais privados, BLL, Licitanet e Portal de Compras Públicas permanecem pendentes.",
+    "Agendamento previsto a cada duas horas; horários efetivos dependem da execução e publicação do GitHub Actions."
+  ],
+  "fontes": [
+    {
+      "nome": "PNCP",
+      "url": "https://pncp.gov.br/api/consulta/v1/contratacoes/publicacao",
+      "status": "nao_consultada",
+      "paginas_consultadas": null,
+      "registros_examinados": null,
+      "candidatos": null,
+      "falhas": [
+        "Coleta local interrompida pelo controle de acesso à rede; primeira execução automática pendente."
+      ],
+      "detalhes": [
+        "Nenhum resultado de coleta completa foi publicado nesta versão inicial."
+      ],
+      "dias_publicacao": 45,
+      "modalidades_planejadas": [
+        8,
+        6,
+        4,
+        7,
+        5,
+        12
+      ],
+      "consultas": [],
+      "cobertura_completa": false
+    },
+    {
+      "nome": "Compras.gov.br",
+      "url": "https://dadosabertos.compras.gov.br/modulo-contratacoes/1_consultarContratacoes_PNCP_14133",
+      "status": "nao_consultada",
+      "paginas_consultadas": null,
+      "registros_examinados": null,
+      "candidatos": null,
+      "falhas": [
+        "Coleta local interrompida pelo controle de acesso à rede; primeira execução automática pendente."
+      ],
+      "detalhes": [
+        "Nenhum resultado de coleta completa foi publicado nesta versão inicial."
+      ],
+      "dias_publicacao": 120,
+      "modalidades_planejadas": [
+        6,
+        5,
+        3,
+        12
+      ],
+      "consultas": [],
+      "cobertura_completa": false
+    }
+  ],
+  "resumo": {
+    "oportunidades_formais": 0,
+    "parcerias": 0,
+    "analise_pendente": 0,
+    "prospeccao": 0
+  },
+  "oportunidades": []
+}

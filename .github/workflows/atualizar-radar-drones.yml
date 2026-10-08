@@ -1,0 +1,83 @@
+name: Atualizar Radar de Drones Ordone
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Horário UTC; execução real pode atrasar na fila do GitHub.
+    - cron: '43 */2 * * *'
+  push:
+    paths:
+      - 'scripts/atualizar_radar_drones.py'
+      - 'scripts/test_radar_drones.py'
+      - 'dados/radar_drones_config.json'
+      - '.github/workflows/atualizar-radar-drones.yml'
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency:
+  group: radar-drones-ordone-main
+  cancel-in-progress: false
+
+jobs:
+  radar-drones:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Instalar leitor de anexos
+        run: pip install --retries 2 --timeout 20 'pypdf>=5,<7'
+      - name: Regressões de classificação e cobertura
+        run: python -m unittest discover -s scripts -p 'test_radar_drones.py'
+      - name: Coletar fontes oficiais e anexos
+        run: python scripts/atualizar_radar_drones.py
+      - name: Publicar somente os dados do radar de drones
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "ordone-radar-drones"
+          git config user.email "actions@users.noreply.github.com"
+          payload="$(mktemp)"
+          cp dados/radar_drones.json "$payload"
+          trap 'rm -f "$payload"' EXIT
+          for tentativa in 1 2 3 4; do
+            git fetch origin main
+            # This job owns only its generated JSON. Reapply it to latest main,
+            # avoiding rebase conflicts with the independent environmental robot.
+            git reset --hard origin/main
+            cp "$payload" dados/radar_drones.json
+            git add dados/radar_drones.json
+            if git diff --cached --quiet; then
+              echo "Sem alteração nos dados."
+              exit 0
+            fi
+            git commit -m "Atualiza radar de serviços com drones"
+            if git push origin HEAD:main; then
+              exit 0
+            fi
+            sleep $((tentativa * 2))
+          done
+          echo "Publicação não concluída após quatro tentativas."
+          exit 1
+      - name: Sinalizar falha total de coleta
+        run: |
+          python - <<'PYCODE'
+          import json
+          from pathlib import Path
+          data = json.loads(Path("dados/radar_drones.json").read_text())
+          if data["status_coleta"] == "falha":
+              raise SystemExit("Diagnóstico publicado, mas nenhuma fonte respondeu: verificar falhas no JSON.")
+          PYCODE
+
+      - name: Solicitar publicação dos dados no GitHub Pages
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          # Commits by GITHUB_TOKEN do not automatically trigger another build.
+          gh api --method POST "repos/$GITHUB_REPOSITORY/pages/builds" --jq '.status'

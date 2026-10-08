@@ -1,0 +1,78 @@
+/* Drone services: scoped styles, preserving the shared Ordone identity. */
+.drone-services{--drone-muted:#53675b;--drone-paper:#f6f5ee}
+.drone-services section[id]{scroll-margin-top:92px}
+.drone-services .nav{min-height:78px}
+.drone-services .brand-symbol{width:46px;height:46px;object-fit:contain}
+.drone-services .menu a[aria-current]{color:var(--forest);text-decoration:underline;text-underline-offset:6px}
+.drone-hero{background:#15382a;color:#fff;padding:64px 0 56px}
+.drone-hero-grid{display:grid;grid-template-columns:1.1fr 1fr;align-items:center;gap:48px}
+.drone-hero .eyebrow{color:#dfc27e}
+.drone-hero h1{font-size:clamp(38px,4.7vw,61px);font-weight:650;letter-spacing:-.035em;line-height:1.06;margin:0 0 24px}
+.drone-hero h1 em{font-family:Georgia,serif;color:#dfc27e;font-weight:400}
+.drone-hero-copy>p{font-size:17px;color:#e2eae4;max-width:520px}
+.drone-services .btn{min-height:46px}
+.drone-hero .drone-btn-outline{border-color:#92aa98;color:white;background:transparent}
+.drone-availability{display:inline-block;color:#f0d594;margin-top:18px;font-size:13px;text-decoration:underline;text-underline-offset:4px}
+.drone-coverage{margin-top:34px;border-top:1px solid #41624e;padding-top:18px;color:#fff;font-size:13px}
+.drone-coverage small{display:block;color:#c9d7cf;font-size:12px;margin-top:3px}
+.drone-hero-photo{margin:0;border-radius:24px;overflow:hidden;border:1px solid #47624e;background:#284637;box-shadow:0 22px 45px #0c241c40}
+.drone-hero-photo img{width:100%;height:auto;aspect-ratio:700/462;object-fit:cover}
+.drone-hero-photo figcaption{padding:25px 28px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.drone-hero-photo figcaption span{font-size:10px;text-transform:uppercase;letter-spacing:.13em;color:#e0c689}
+.drone-hero-photo strong{font-size:16px;font-weight:500;line-height:1.5}
+.drone-anchor-nav{background:#f5f2e9;border-bottom:1px solid #dce3dc}
+.drone-anchor-nav .container{display:flex;flex-wrap:wrap;gap:12px 28px;padding:16px 0}
+.drone-anchor-nav a{font-size:12px;font-weight:750;color:#294636;padding:5px 0}
+.drone-anchor-nav a:last-child{margin-left:auto}
+.drone-services .section-head .eyebrow,.drone-quote-copy .eyebrow{color:#716131}
+.drone-services .section-head h2,.drone-quote-copy h2{color:var(--green);font-size:clamp(30px,3.5vw,42px);letter-spacing:-.025em;line-height:1.12}
+.drone-service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.drone-service-card{padding:28px;border:1px solid #d6dfd7;border-radius:18px;display:flex;flex-direction:column;background:#fff}
+.drone-service-number{font-size:10px;letter-spacing:.13em;font-weight:850;color:#716131}
+.drone-service-card h3{font-size:24px;line-height:1.2;letter-spacing:-.03em;color:var(--green);margin:22px 0 12px}
+.drone-service-card p,.drone-service-card li{font-size:14px;line-height:1.7;color:var(--drone-muted)}
+.drone-service-card ul{padding-left:18px;margin:0 0 22px}
+.drone-service-card li{margin:6px 0}
+.drone-service-card a{color:#174f34;font-size:13px;font-weight:800;margin-top:auto;padding-top:12px;text-decoration:underline;text-underline-offset:4px}
+.drone-service-highlight{background:#f4f7ef}
+.drone-service-card .drone-small-note{font-size:12px;padding:12px;border-left:2px solid #9f823f;background:#fff;margin:0 0 18px}
+.drone-audiences{margin-top:32px;padding:22px 0;border-top:1px solid #dfe6df;border-bottom:1px solid #dfe6df;display:flex;gap:26px;align-items:center;font-size:13px}
+.drone-audiences strong{white-space:nowrap;color:var(--green)}
+.drone-audiences p{margin:0;color:var(--drone-muted)}
+.drone-operation-note{font-size:12px;color:var(--drone-muted);margin:20px 0 0;max-width:1000px}
+.drone-steps{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.drone-steps li{border-top:1px solid #b6c5b7;padding:20px 0 0}
+.drone-steps span{display:block;color:#80652d;font-size:12px;font-weight:800;margin-bottom:22px}
+.drone-steps h3{color:var(--green);font-size:18px;margin:0 0 8px}
+.drone-steps p{font-size:14px;color:var(--drone-muted);margin:0}
+.drone-quote-layout{display:grid;grid-template-columns:.75fr 1.25fr;gap:60px}
+.drone-quote-copy h2{margin:0 0 20px}
+.drone-quote-copy>p{color:var(--drone-muted)}
+.drone-file-card{background:var(--drone-paper);border-left:3px solid #b99c56;border-radius:0 12px 12px 0;padding:22px;margin:28px 0 22px}
+.drone-file-card strong{font-size:14px;color:var(--green)}
+.drone-file-card p{font-size:13px;color:var(--drone-muted);margin:8px 0 0}
+.drone-direct-contact{font-size:13px;color:var(--forest);font-weight:750;text-decoration:underline;text-underline-offset:4px}
+.drone-quote-form{padding:30px;border:1px solid #d6dfd7;border-radius:20px;box-shadow:0 18px 60px #1233220a;background:#fff;min-width:0}
+.drone-quote-form .field{min-width:0;margin-bottom:12px}
+.drone-quote-form .field input,.drone-quote-form .field select,.drone-quote-form .field textarea{font-size:16px;min-height:46px;background:#fff;color:#172f22;max-width:100%}
+.drone-quote-form .field textarea{min-height:96px}
+.drone-quote-form .btn{width:100%;margin-top:5px}
+.drone-form-help{font-size:12px;color:var(--drone-muted);line-height:1.6;margin:0 0 22px}
+.drone-quote-form button+.drone-form-help{margin:12px 0 0}
+.drone-quote-result{margin-top:24px;padding:22px;background:#f0f5ea;border:1px solid #afc19a;border-radius:12px}
+.drone-quote-result[hidden]{display:none!important}
+.drone-quote-result h3{margin:0;font-size:18px;color:var(--green)}
+.drone-quote-result p{font-size:13px;color:var(--drone-muted)}
+.drone-quote-result details{margin-top:20px;font-size:13px}
+.drone-quote-result summary{cursor:pointer;color:var(--forest);font-weight:700}
+.drone-quote-result pre{font:inherit;white-space:pre-wrap;overflow-wrap:anywhere;padding:16px;background:white;border:1px solid #d5ddce;border-radius:8px}
+.drone-radar-callout{background:#15382a;color:#fff;padding:48px 0}
+.drone-radar-callout .container{display:flex;align-items:center;gap:40px;justify-content:space-between}
+.drone-radar-callout .eyebrow{color:#dfc27e}
+.drone-radar-callout h2{font-size:26px;line-height:1.25;margin:0 0 12px;letter-spacing:-.02em}
+.drone-radar-callout p{max-width:680px;color:#d5e3d9;margin:0;font-size:14px}
+.drone-radar-callout .btn{flex-shrink:0}
+@media(max-width:1000px){.drone-hero-grid{gap:30px}.drone-services .menu{gap:9px;font-size:11px}.drone-service-card{padding:22px}.drone-quote-layout{gap:32px;grid-template-columns:.7fr 1.3fr}.drone-hero-photo figcaption{flex-direction:column;align-items:start}}
+@media(max-width:900px){.drone-hero-grid{grid-template-columns:1fr}.drone-hero-photo{max-width:600px}.drone-hero h1{font-size:clamp(40px,7vw,58px)}.drone-hero-copy>p{max-width:640px}.drone-hero-photo figcaption{flex-direction:row}.drone-services .menu{font-size:14px}.drone-service-grid{grid-template-columns:1fr}.drone-service-card{padding:26px}.drone-service-card h3{margin-top:14px}.drone-steps{grid-template-columns:1fr 1fr}.drone-quote-layout{grid-template-columns:1fr}.drone-quote-copy>p{max-width:620px}.drone-audiences{align-items:start;flex-direction:column;gap:10px}.drone-radar-callout .container{align-items:start;flex-direction:column;gap:24px}.drone-anchor-nav a:last-child{margin-left:0}}
+@media(max-width:620px){.drone-services .section{padding:50px 0}.drone-hero{padding:42px 0 36px}.drone-hero h1{font-size:clamp(35px,9.5vw,49px)}.drone-hero-copy>p{font-size:16px}.drone-hero-photo figcaption{padding:20px;gap:12px}.drone-hero-photo strong{font-size:14px}.drone-hero-photo figcaption span{font-size:9px}.drone-anchor-nav .container{gap:4px 22px;padding:12px 0}.drone-anchor-nav a{font-size:11px;padding:6px 0}.drone-steps{gap:24px 18px}.drone-steps h3{font-size:16px}.drone-steps p{font-size:13px}.drone-quote-form{padding:20px}.drone-quote-form .field-grid{gap:0}.drone-quote-result{padding:16px}.drone-direct-contact{overflow-wrap:anywhere}.drone-services .mobile-cta{background:#15382a}}
+@media(prefers-reduced-motion:reduce){.drone-services{scroll-behavior:auto}.drone-services *{scroll-behavior:auto!important}}

@@ -1,0 +1,24 @@
+{
+  "versao": "1.0",
+  "abrangencia": "Brasil",
+  "prioridade_geografica": ["GO", "DF", "MG"],
+  "timeout_segundos": 10,
+  "tentativas": 2,
+  "limite_anexos_segundos": 70,
+  "max_anexos_por_processo": 8,
+  "max_paginas_pdf": 180,
+  "fontes": {
+    "pncp": {"dias_publicacao": 45, "modalidades": [8, 6, 4, 7, 5, 12], "max_paginas": 30, "limite_segundos": 130},
+    "compras_gov": {"dias_publicacao": 120, "modalidades": [6, 5, 3, 12], "max_paginas": 30, "limite_segundos": 150}
+  },
+  "integracoes_ativas": ["PNCP API de Consultas e anexos oficiais", "Compras.gov.br Dados Abertos"],
+  "integracoes_pendentes": ["BLL", "Licitanet", "Portal de Compras Públicas", "Portais privados de suprimentos", "Prospecção privada automatizada"],
+  "regras": {
+    "contato_automatico": false,
+    "propostas_automaticas": false,
+    "prazo_futuro_com_horario_obrigatorio": true,
+    "sigla_sozinha_nao_aprova": true,
+    "anexos_incompletos_fora_painel_principal": true,
+    "capacidade_empresa_deve_ser_validada": true
+  }
+}

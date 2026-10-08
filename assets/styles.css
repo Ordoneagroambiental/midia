@@ -312,6 +312,9 @@ body{background:#fff}
 @media(max-width:850px){.observatory-highlight{grid-template-columns:1fr 1fr}.observatory-grid{grid-template-columns:1fr}}
 @media(max-width:520px){.observatory-highlight{grid-template-columns:1fr}.observatory-source{align-items:flex-start;flex-direction:column}.observatory-card{padding:20px}}
 
+/* Drones: acomodar os acessos adicionais sem alargar a página. */
+@media(min-width:901px){.topbar-v32 .menu{flex:1;min-width:0;flex-wrap:wrap;row-gap:10px;padding:12px 0}.topbar-v32 .nav-wa{flex-shrink:0}}
+
 /* V6.9 — refino final de navegação, legibilidade e apresentação comercial */
 .v69 .section{padding:68px 0}
 .v69 .topbar-v32{box-shadow:0 8px 30px rgba(7,43,32,.06)}
