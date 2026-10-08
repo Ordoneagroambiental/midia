@@ -65,6 +65,13 @@ jobs:
           done
           echo "Publicação não concluída após quatro tentativas."
           exit 1
+      - name: Solicitar publicação dos dados no GitHub Pages
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          # Commits by GITHUB_TOKEN do not automatically trigger another build.
+          gh api --method POST "repos/$GITHUB_REPOSITORY/pages/builds" --jq '.status'
+
       - name: Sinalizar falha total de coleta
         run: |
           python - <<'PYCODE'
@@ -75,9 +82,3 @@ jobs:
               raise SystemExit("Diagnóstico publicado, mas nenhuma fonte respondeu: verificar falhas no JSON.")
           PYCODE
 
-      - name: Solicitar publicação dos dados no GitHub Pages
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          # Commits by GITHUB_TOKEN do not automatically trigger another build.
-          gh api --method POST "repos/$GITHUB_REPOSITORY/pages/builds" --jq '.status'
