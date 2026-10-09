@@ -1,16 +1,16 @@
 {
   "versao": "6.9",
-  "atualizado_em": "08/10/2026 21:36 (horário de Brasília)",
+  "atualizado_em": "09/10/2026 06:27 (horário de Brasília)",
   "status": "coleta_concluida",
   "prioridade": "MCE, PCA e PGRS em todo o Brasil → projetos rápidos → bônus para GO, DF e MG",
   "modo_busca": "PROJETO RÁPIDO — MCE, PCA e PGRS com prazo vigente, objeto comprovado e triagem comercial",
   "resumo": {
-    "total": 6,
-    "brasil": 6,
+    "total": 5,
+    "brasil": 5,
     "goianesia_regiao": 0,
     "goias": 0,
     "demandas_formais": 5,
-    "sinais_ambientais": 1,
+    "sinais_ambientais": 0,
     "prioritarios_mce_pca_pgrs": 0,
     "oportunidades_rapidas": 0,
     "mce": 0,
@@ -18,15 +18,15 @@
     "pgrs": 0
   },
   "diagnostico_coleta": {
-    "requisicoes": 121,
+    "requisicoes": 98,
     "pncp_proposta": 0,
     "pncp_publicacao": 0,
-    "pncp_registros_examinados": 1290,
-    "pncp_respostas_validas": 33,
-    "pncp_falhas": 1,
-    "pncp_retentativas_429": 4,
+    "pncp_registros_examinados": 537,
+    "pncp_respostas_validas": 15,
+    "pncp_falhas": 0,
+    "pncp_retentativas_429": 0,
     "compras_gov_respostas_validas": 38,
-    "compras_gov_registros_examinados": 17893,
+    "compras_gov_registros_examinados": 17615,
     "compras_gov_paginas_examinadas": 38,
     "compras_gov_paginas_planejadas": 38,
     "compras_gov_falhas": 0,
@@ -34,11 +34,9 @@
     "html_sinais": 0,
     "paginas_aprofundadas": 30,
     "erros": [
-      "PNCP indisponível após 3 tentativas: HTTP 429",
       "PNCP: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
     ],
     "avisos": [
-      "PNCP respondeu 429 após 3 tentativas; contingência preservada.",
       "PNCP publicacao: limite de tempo atingido; resultado parcial preservado."
     ]
   },
@@ -298,55 +296,6 @@
       "dias_restantes": 0,
       "prazo_interno_decisao": "Decidir e iniciar proposta hoje",
       "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
-    },
-    {
-      "id": "76417005000186-1-000366/2026",
-      "tipo": "SINAL DE CONTRATAÇÃO",
-      "confirmacao": "PRÉ-SELECIONADO",
-      "fonte": "PNCP",
-      "titulo": "Contratação de empresa especializada para o gerenciamento e supervisão ambiental e social do Programa Curitiba Carbono Neutro - Mobilidade Sustentável e Eficiência Energética-KFW.",
-      "municipio": "Curitiba",
-      "uf": "PR",
-      "regiao_prioridade": "Brasil",
-      "organizacao": "MUNICIPIO DE CURITIBA",
-      "data_publicacao": "2026-10-01T08:09:22",
-      "prazo": "2026-11-03T09:00:00",
-      "valor_estimado": 0.0,
-      "modalidade": "Pré-qualificação",
-      "servicos_ordone": [
-        "Gestão, supervisão e monitoramento ambiental"
-      ],
-      "tipo_aderencia": "ADERENTE_DIRETO",
-      "motivo_aceitacao": "Objeto contém serviço direto do portfólio Ordone.",
-      "relacao_comercial": "EXECUÇÃO DIRETA ADERENTE AO PORTFÓLIO",
-      "status_leitura_edital": "LEITURA INCOMPLETA",
-      "documentos_analisados": [],
-      "requisitos_minimos": [],
-      "analise_elegibilidade": "LEITURA INCOMPLETA",
-      "pendencias_identificadas": [
-        "Abrir edital e anexos manualmente"
-      ],
-      "palavras_encontradas": [
-        "supervisão ambiental",
-        "portfólio:Gestão, supervisão e monitoramento ambiental",
-        "grupo:ambiental"
-      ],
-      "score": 45,
-      "prioridade": "ACOMPANHAR",
-      "url": "https://pncp.gov.br/app/editais/76417005000186/2026/366",
-      "numero_controle_pncp": "76417005000186-1-000366/2026",
-      "escopo_coleta": "Brasil",
-      "fase_pncp": "publicacao",
-      "documentos_prioritarios": [],
-      "aderencia_maxima": false,
-      "classe_aderencia": "A",
-      "classificacao_comercial": "EXECUÇÃO DIRETA ADERENTE AO PORTFÓLIO",
-      "oportunidade_rapida": false,
-      "parceria_necessaria": [],
-      "siglas_ambiguas": [],
-      "dias_restantes": 25,
-      "prazo_interno_decisao": "Decidir em até 48 horas",
-      "proxima_acao": "Abrir a publicação oficial e verificar se há prazo de proposta, futura licitação, contratação direta ou oportunidade institucional."
     }
   ],
   "fontes_monitoradas": [
