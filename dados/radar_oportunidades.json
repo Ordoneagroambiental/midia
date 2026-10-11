@@ -1,6 +1,6 @@
 {
   "versao": "6.9",
-  "atualizado_em": "10/10/2026 20:46 (horário de Brasília)",
+  "atualizado_em": "11/10/2026 03:11 (horário de Brasília)",
   "status": "coleta_concluida",
   "prioridade": "MCE, PCA e PGRS em todo o Brasil → projetos rápidos → bônus para GO, DF e MG",
   "modo_busca": "PROJETO RÁPIDO — MCE, PCA e PGRS com prazo vigente, objeto comprovado e triagem comercial",
@@ -18,15 +18,15 @@
     "pgrs": 0
   },
   "diagnostico_coleta": {
-    "requisicoes": 122,
+    "requisicoes": 121,
     "pncp_proposta": 0,
     "pncp_publicacao": 0,
-    "pncp_registros_examinados": 1032,
+    "pncp_registros_examinados": 1197,
     "pncp_respostas_validas": 33,
     "pncp_falhas": 1,
     "pncp_retentativas_429": 4,
     "compras_gov_respostas_validas": 38,
-    "compras_gov_registros_examinados": 17898,
+    "compras_gov_registros_examinados": 17285,
     "compras_gov_paginas_examinadas": 38,
     "compras_gov_paginas_planejadas": 38,
     "compras_gov_falhas": 0,
@@ -34,7 +34,8 @@
     "html_sinais": 0,
     "paginas_aprofundadas": 30,
     "erros": [
-      "PNCP indisponível após 3 tentativas: HTTP 429"
+      "PNCP indisponível após 3 tentativas: HTTP 429",
+      "PNCP: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
     ],
     "avisos": [
       "PNCP respondeu 429 após 3 tentativas; contingência preservada.",
