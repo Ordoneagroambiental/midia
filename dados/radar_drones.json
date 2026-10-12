@@ -1,7 +1,7 @@
 {
   "versao": "1.0",
-  "gerado_em": "2026-10-12T03:30:37.652943-03:00",
-  "ultima_coleta_concluida_em": "2026-10-12T03:30:37.652943-03:00",
+  "gerado_em": "2026-10-12T13:04:38.051289-03:00",
+  "ultima_coleta_concluida_em": "2026-10-12T13:04:38.051289-03:00",
   "status_coleta": "parcial",
   "abrangencia": "Brasil",
   "atualizacao_programada_horas": 2,
@@ -44,12 +44,10 @@
       "nome": "PNCP",
       "url": "https://pncp.gov.br/api/consulta/v1/contratacoes/publicacao",
       "status": "parcial",
-      "paginas_consultadas": 24,
-      "registros_examinados": 1068,
+      "paginas_consultadas": 30,
+      "registros_examinados": 1368,
       "candidatos": 0,
-      "falhas": [
-        "Modalidade 8, página 1676: TimeoutError: The read operation timed out"
-      ],
+      "falhas": [],
       "detalhes": [
         "Limite de tempo/páginas, falha ou paginação desconhecida: esta fonte NÃO foi consultada integralmente.",
         "Brasil, publicações de 2026-08-28 a 2026-10-12; modalidades [8, 6, 4, 7, 5, 12]."
@@ -205,6 +203,42 @@
         {
           "modalidade": 12,
           "pagina": 57,
+          "total_paginas": 59,
+          "registros": 50
+        },
+        {
+          "modalidade": 8,
+          "pagina": 1676,
+          "total_paginas": 1679,
+          "registros": 50
+        },
+        {
+          "modalidade": 6,
+          "pagina": 949,
+          "total_paginas": 952,
+          "registros": 50
+        },
+        {
+          "modalidade": 4,
+          "pagina": 146,
+          "total_paginas": 149,
+          "registros": 50
+        },
+        {
+          "modalidade": 7,
+          "pagina": 18,
+          "total_paginas": 21,
+          "registros": 50
+        },
+        {
+          "modalidade": 5,
+          "pagina": 7,
+          "total_paginas": 10,
+          "registros": 50
+        },
+        {
+          "modalidade": 12,
+          "pagina": 56,
           "total_paginas": 59,
           "registros": 50
         }
