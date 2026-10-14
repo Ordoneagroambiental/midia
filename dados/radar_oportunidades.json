@@ -1,6 +1,6 @@
 {
   "versao": "6.9",
-  "atualizado_em": "13/10/2026 22:23 (horário de Brasília)",
+  "atualizado_em": "14/10/2026 04:57 (horário de Brasília)",
   "status": "coleta_concluida",
   "prioridade": "MCE, PCA e PGRS em todo o Brasil → projetos rápidos → bônus para GO, DF e MG",
   "modo_busca": "PROJETO RÁPIDO — MCE, PCA e PGRS com prazo vigente, objeto comprovado e triagem comercial",
@@ -18,15 +18,15 @@
     "pgrs": 0
   },
   "diagnostico_coleta": {
-    "requisicoes": 109,
+    "requisicoes": 108,
     "pncp_proposta": 0,
     "pncp_publicacao": 0,
-    "pncp_registros_examinados": 1005,
-    "pncp_respostas_validas": 24,
+    "pncp_registros_examinados": 1003,
+    "pncp_respostas_validas": 23,
     "pncp_falhas": 0,
     "pncp_retentativas_429": 0,
     "compras_gov_respostas_validas": 38,
-    "compras_gov_registros_examinados": 17248,
+    "compras_gov_registros_examinados": 17573,
     "compras_gov_paginas_examinadas": 38,
     "compras_gov_paginas_planejadas": 38,
     "compras_gov_falhas": 0,
