@@ -1,6 +1,6 @@
 {
   "versao": "6.9",
-  "atualizado_em": "13/10/2026 18:28 (horário de Brasília)",
+  "atualizado_em": "13/10/2026 22:23 (horário de Brasília)",
   "status": "coleta_concluida",
   "prioridade": "MCE, PCA e PGRS em todo o Brasil → projetos rápidos → bônus para GO, DF e MG",
   "modo_busca": "PROJETO RÁPIDO — MCE, PCA e PGRS com prazo vigente, objeto comprovado e triagem comercial",
@@ -18,7 +18,7 @@
     "pgrs": 0
   },
   "diagnostico_coleta": {
-    "requisicoes": 108,
+    "requisicoes": 109,
     "pncp_proposta": 0,
     "pncp_publicacao": 0,
     "pncp_registros_examinados": 1005,
@@ -33,9 +33,7 @@
     "compras_gov_itens": 2,
     "html_sinais": 0,
     "paginas_aprofundadas": 30,
-    "erros": [
-      "PNCP: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
-    ],
+    "erros": [],
     "avisos": [
       "PNCP proposta: limite de tempo atingido; resultado parcial preservado.",
       "PNCP publicacao: limite de tempo atingido; resultado parcial preservado."
