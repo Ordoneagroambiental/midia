@@ -1,6 +1,6 @@
 {
   "versao": "6.9",
-  "atualizado_em": "14/10/2026 20:24 (horário de Brasília)",
+  "atualizado_em": "15/10/2026 02:02 (horário de Brasília)",
   "status": "coleta_concluida",
   "prioridade": "MCE, PCA e PGRS em todo o Brasil → projetos rápidos → bônus para GO, DF e MG",
   "modo_busca": "PROJETO RÁPIDO — MCE, PCA e PGRS com prazo vigente, objeto comprovado e triagem comercial",
@@ -18,24 +18,22 @@
     "pgrs": 0
   },
   "diagnostico_coleta": {
-    "requisicoes": 104,
+    "requisicoes": 90,
     "pncp_proposta": 0,
     "pncp_publicacao": 0,
-    "pncp_registros_examinados": 911,
-    "pncp_respostas_validas": 21,
+    "pncp_registros_examinados": 158,
+    "pncp_respostas_validas": 5,
     "pncp_falhas": 0,
     "pncp_retentativas_429": 0,
     "compras_gov_respostas_validas": 38,
-    "compras_gov_registros_examinados": 17573,
+    "compras_gov_registros_examinados": 17280,
     "compras_gov_paginas_examinadas": 38,
     "compras_gov_paginas_planejadas": 38,
     "compras_gov_falhas": 0,
     "compras_gov_itens": 1,
     "html_sinais": 0,
     "paginas_aprofundadas": 30,
-    "erros": [
-      "PNCP: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
-    ],
+    "erros": [],
     "avisos": [
       "PNCP proposta: limite de tempo atingido; resultado parcial preservado.",
       "PNCP publicacao: limite de tempo atingido; resultado parcial preservado."
@@ -146,6 +144,58 @@
       "proxima_acao": "Abrir o edital/aviso oficial, validar escopo, habilitação, prazo, local de execução e viabilidade de proposta."
     },
     {
+      "id": "04892707000100-1-000125/2026",
+      "tipo": "DEMANDA FORMAL",
+      "confirmacao": "PRÉ-SELECIONADO",
+      "fonte": "Compras.gov — Dados Abertos",
+      "titulo": "Contratação de serviços técnicos especializados de engenharia para execução de gestão ambiental, abrangendo o gerenciamento ambiental, a supervisão ambiental e a implementação de programas ambientais no âmbito das obras de implantação e pavimentação da rodovia BR-285/RS/SC, entre o município de Timbé do Sul em Santa Catarina e São José dos Ausentes, no Rio Grande do Sul, com extensão total de 30,43 Km.",
+      "municipio": "BRASÍLIA",
+      "uf": "DF",
+      "regiao_prioridade": "Brasil",
+      "organizacao": "DNIT-DEPARTAMENTO NACIONAL DE INFRAEST DE TRANSPORTES",
+      "data_publicacao": "2026-09-09T04:00:03",
+      "prazo": "2026-10-30T15:00:00",
+      "valor_estimado": 11104392.42,
+      "modalidade": "Concorrência - Eletrônica",
+      "situacao_compra": "Divulgada no PNCP",
+      "servicos_ordone": [
+        "Gestão, supervisão e monitoramento ambiental"
+      ],
+      "tipo_aderencia": "PARCERIA_NECESSARIA",
+      "motivo_aceitacao": "Objeto contém serviço direto do portfólio Ordone.",
+      "relacao_comercial": "PARCERIA TÉCNICA NECESSÁRIA",
+      "status_leitura_edital": "LEITURA INCOMPLETA",
+      "documentos_analisados": [],
+      "requisitos_minimos": [],
+      "analise_elegibilidade": "LEITURA INCOMPLETA",
+      "pendencias_identificadas": [
+        "Abrir edital e anexos oficiais antes de decidir pela participação"
+      ],
+      "palavras_encontradas": [
+        "supervisão ambiental",
+        "portfólio:Gestão, supervisão e monitoramento ambiental",
+        "grupo:ambiental"
+      ],
+      "score": 65,
+      "prioridade": "MÉDIA",
+      "url": "https://pncp.gov.br/app/editais/04892707000100/2026/125",
+      "numero_controle_pncp": "04892707000100-1-000125/2026",
+      "escopo_coleta": "Brasil",
+      "fase_pncp": "contingencia_compras_gov",
+      "documentos_prioritarios": [],
+      "aderencia_maxima": false,
+      "classe_aderencia": "C",
+      "classificacao_comercial": "PARCERIA TÉCNICA NECESSÁRIA",
+      "oportunidade_rapida": false,
+      "parceria_necessaria": [
+        "Engenharia de infraestrutura / obras"
+      ],
+      "siglas_ambiguas": [],
+      "dias_restantes": 15,
+      "prazo_interno_decisao": "Decidir em até 48 horas",
+      "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
+    },
+    {
       "id": "81140303000101-1-000186/2026",
       "tipo": "DEMANDA FORMAL",
       "confirmacao": "PRÉ-SELECIONADO",
@@ -196,58 +246,6 @@
       "prazo_interno_decisao": "Decidir em até 48 horas",
       "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem.",
       "origem_historica": true
-    },
-    {
-      "id": "04892707000100-1-000125/2026",
-      "tipo": "DEMANDA FORMAL",
-      "confirmacao": "PRÉ-SELECIONADO",
-      "fonte": "Compras.gov — Dados Abertos",
-      "titulo": "Contratação de serviços técnicos especializados de engenharia para execução de gestão ambiental, abrangendo o gerenciamento ambiental, a supervisão ambiental e a implementação de programas ambientais no âmbito das obras de implantação e pavimentação da rodovia BR-285/RS/SC, entre o município de Timbé do Sul em Santa Catarina e São José dos Ausentes, no Rio Grande do Sul, com extensão total de 30,43 Km.",
-      "municipio": "BRASÍLIA",
-      "uf": "DF",
-      "regiao_prioridade": "Brasil",
-      "organizacao": "DNIT-DEPARTAMENTO NACIONAL DE INFRAEST DE TRANSPORTES",
-      "data_publicacao": "2026-09-09T04:00:03",
-      "prazo": "2026-10-30T15:00:00",
-      "valor_estimado": 11104392.42,
-      "modalidade": "Concorrência - Eletrônica",
-      "situacao_compra": "Divulgada no PNCP",
-      "servicos_ordone": [
-        "Gestão, supervisão e monitoramento ambiental"
-      ],
-      "tipo_aderencia": "PARCERIA_NECESSARIA",
-      "motivo_aceitacao": "Objeto contém serviço direto do portfólio Ordone.",
-      "relacao_comercial": "PARCERIA TÉCNICA NECESSÁRIA",
-      "status_leitura_edital": "LEITURA INCOMPLETA",
-      "documentos_analisados": [],
-      "requisitos_minimos": [],
-      "analise_elegibilidade": "LEITURA INCOMPLETA",
-      "pendencias_identificadas": [
-        "Abrir edital e anexos oficiais antes de decidir pela participação"
-      ],
-      "palavras_encontradas": [
-        "supervisão ambiental",
-        "portfólio:Gestão, supervisão e monitoramento ambiental",
-        "grupo:ambiental"
-      ],
-      "score": 60,
-      "prioridade": "MÉDIA",
-      "url": "https://pncp.gov.br/app/editais/04892707000100/2026/125",
-      "numero_controle_pncp": "04892707000100-1-000125/2026",
-      "escopo_coleta": "Brasil",
-      "fase_pncp": "contingencia_compras_gov",
-      "documentos_prioritarios": [],
-      "aderencia_maxima": false,
-      "classe_aderencia": "C",
-      "classificacao_comercial": "PARCERIA TÉCNICA NECESSÁRIA",
-      "oportunidade_rapida": false,
-      "parceria_necessaria": [
-        "Engenharia de infraestrutura / obras"
-      ],
-      "siglas_ambiguas": [],
-      "dias_restantes": 15,
-      "prazo_interno_decisao": "Decidir em até 48 horas",
-      "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
     }
   ],
   "fontes_monitoradas": [
