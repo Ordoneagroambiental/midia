@@ -1,15 +1,15 @@
 {
   "versao": "6.9",
-  "atualizado_em": "15/10/2026 21:35 (horário de Brasília)",
+  "atualizado_em": "16/10/2026 04:27 (horário de Brasília)",
   "status": "coleta_concluida",
   "prioridade": "MCE, PCA e PGRS em todo o Brasil → projetos rápidos → bônus para GO, DF e MG",
   "modo_busca": "PROJETO RÁPIDO — MCE, PCA e PGRS com prazo vigente, objeto comprovado e triagem comercial",
   "resumo": {
-    "total": 4,
-    "brasil": 4,
+    "total": 3,
+    "brasil": 3,
     "goianesia_regiao": 0,
     "goias": 0,
-    "demandas_formais": 4,
+    "demandas_formais": 3,
     "sinais_ambientais": 0,
     "prioritarios_mce_pca_pgrs": 0,
     "oportunidades_rapidas": 0,
@@ -18,15 +18,15 @@
     "pgrs": 0
   },
   "diagnostico_coleta": {
-    "requisicoes": 103,
+    "requisicoes": 117,
     "pncp_proposta": 0,
     "pncp_publicacao": 0,
-    "pncp_registros_examinados": 376,
-    "pncp_respostas_validas": 13,
+    "pncp_registros_examinados": 1396,
+    "pncp_respostas_validas": 32,
     "pncp_falhas": 1,
-    "pncp_retentativas_429": 4,
+    "pncp_retentativas_429": 2,
     "compras_gov_respostas_validas": 38,
-    "compras_gov_registros_examinados": 17280,
+    "compras_gov_registros_examinados": 17369,
     "compras_gov_paginas_examinadas": 38,
     "compras_gov_paginas_planejadas": 38,
     "compras_gov_falhas": 0,
@@ -34,11 +34,11 @@
     "html_sinais": 0,
     "paginas_aprofundadas": 30,
     "erros": [
-      "PNCP indisponível após 3 tentativas: HTTP 429"
+      "PNCP indisponível após 3 tentativas: HTTP 429",
+      "PNCP: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
     ],
     "avisos": [
       "PNCP respondeu 429 após 3 tentativas; contingência preservada.",
-      "PNCP proposta: limite de tempo atingido; resultado parcial preservado.",
       "PNCP publicacao: limite de tempo atingido; resultado parcial preservado."
     ]
   },
@@ -95,56 +95,6 @@
       "prazo_interno_decisao": "Decidir em até 48 horas",
       "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem.",
       "origem_historica": true
-    },
-    {
-      "id": "07566516000147-1-000044/2026",
-      "tipo": "DEMANDA FORMAL",
-      "confirmacao": "PRÉ-SELECIONADO",
-      "fonte": "PNCP",
-      "titulo": "Contratação de empresa para elaboração do PRAD – Plano de Recuperação de Áreas degradadas para atender as demandas deste Município",
-      "municipio": "Marco",
-      "uf": "CE",
-      "regiao_prioridade": "Brasil",
-      "organizacao": "MUNICIPIO DE MARCO",
-      "data_publicacao": "2026-10-13T07:32:45",
-      "prazo": "2026-10-15T23:59:00",
-      "valor_estimado": 25628.33,
-      "modalidade": "Dispensa",
-      "servicos_ordone": [
-        "Recuperação ambiental / PRAD"
-      ],
-      "tipo_aderencia": "ADERENTE_DIRETO",
-      "motivo_aceitacao": "Objeto contém serviço direto do portfólio Ordone.",
-      "relacao_comercial": "EXECUÇÃO DIRETA ADERENTE AO PORTFÓLIO",
-      "status_leitura_edital": "LEITURA INCOMPLETA",
-      "documentos_analisados": [],
-      "requisitos_minimos": [],
-      "analise_elegibilidade": "LEITURA INCOMPLETA",
-      "pendencias_identificadas": [
-        "Abrir edital e anexos manualmente"
-      ],
-      "palavras_encontradas": [
-        "prad",
-        "portfólio:Recuperação ambiental / PRAD",
-        "grupo:ambiental",
-        "recuperação de áreas"
-      ],
-      "score": 75,
-      "prioridade": "MÉDIA",
-      "url": "https://pncp.gov.br/app/editais/07566516000147/2026/44",
-      "numero_controle_pncp": "07566516000147-1-000044/2026",
-      "escopo_coleta": "Brasil",
-      "fase_pncp": "proposta",
-      "documentos_prioritarios": [],
-      "aderencia_maxima": false,
-      "classe_aderencia": "A",
-      "classificacao_comercial": "EXECUÇÃO DIRETA ADERENTE AO PORTFÓLIO",
-      "oportunidade_rapida": false,
-      "parceria_necessaria": [],
-      "siglas_ambiguas": [],
-      "dias_restantes": 0,
-      "prazo_interno_decisao": "Decidir e iniciar proposta hoje",
-      "proxima_acao": "Abrir o edital/aviso oficial, validar escopo, habilitação, prazo, local de execução e viabilidade de proposta."
     },
     {
       "id": "04892707000100-1-000125/2026",
