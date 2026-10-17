@@ -1,6 +1,6 @@
 {
   "versao": "6.9",
-  "atualizado_em": "17/10/2026 15:44 (horário de Brasília)",
+  "atualizado_em": "17/10/2026 19:33 (horário de Brasília)",
   "status": "coleta_concluida",
   "prioridade": "MCE, PCA e PGRS em todo o Brasil → projetos rápidos → bônus para GO, DF e MG",
   "modo_busca": "PROJETO RÁPIDO — MCE, PCA e PGRS com prazo vigente, objeto comprovado e triagem comercial",
@@ -18,10 +18,10 @@
     "pgrs": 0
   },
   "diagnostico_coleta": {
-    "requisicoes": 113,
+    "requisicoes": 112,
     "pncp_proposta": 0,
     "pncp_publicacao": 0,
-    "pncp_registros_examinados": 787,
+    "pncp_registros_examinados": 837,
     "pncp_respostas_validas": 26,
     "pncp_falhas": 1,
     "pncp_retentativas_429": 4,
@@ -35,7 +35,8 @@
     "paginas_aprofundadas": 30,
     "erros": [
       "PNCP indisponível após 3 tentativas: HTTP 429",
-      "PNCP: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+      "Prefeitura de Goianésia: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",
+      "Editais de Goianésia: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
     ],
     "avisos": [
       "PNCP respondeu 429 após 3 tentativas; contingência preservada.",
