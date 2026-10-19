@@ -1,7 +1,7 @@
 {
   "versao": "1.0",
-  "gerado_em": "2026-10-18T19:36:33.158584-03:00",
-  "ultima_coleta_concluida_em": "2026-10-18T19:36:33.158584-03:00",
+  "gerado_em": "2026-10-18T21:28:14.323078-03:00",
+  "ultima_coleta_concluida_em": "2026-10-18T21:28:14.323078-03:00",
   "status_coleta": "parcial",
   "abrangencia": "Brasil",
   "atualizacao_programada_horas": 2,
@@ -45,7 +45,7 @@
       "url": "https://pncp.gov.br/api/consulta/v1/contratacoes/publicacao",
       "status": "parcial",
       "paginas_consultadas": 30,
-      "registros_examinados": 1333,
+      "registros_examinados": 1288,
       "candidatos": 0,
       "falhas": [],
       "detalhes": [
@@ -65,7 +65,7 @@
         {
           "modalidade": 8,
           "pagina": 1,
-          "total_paginas": 1715,
+          "total_paginas": 1716,
           "registros": 50
         },
         {
@@ -100,21 +100,21 @@
         },
         {
           "modalidade": 8,
-          "pagina": 1715,
-          "total_paginas": 1715,
-          "registros": 50
+          "pagina": 1716,
+          "total_paginas": 1716,
+          "registros": 2
         },
         {
           "modalidade": 6,
           "pagina": 961,
           "total_paginas": 961,
-          "registros": 1
+          "registros": 2
         },
         {
           "modalidade": 4,
           "pagina": 151,
           "total_paginas": 151,
-          "registros": 1
+          "registros": 3
         },
         {
           "modalidade": 7,
@@ -136,8 +136,8 @@
         },
         {
           "modalidade": 8,
-          "pagina": 1714,
-          "total_paginas": 1715,
+          "pagina": 1715,
+          "total_paginas": 1716,
           "registros": 50
         },
         {
@@ -172,8 +172,8 @@
         },
         {
           "modalidade": 8,
-          "pagina": 1713,
-          "total_paginas": 1715,
+          "pagina": 1714,
+          "total_paginas": 1716,
           "registros": 50
         },
         {
@@ -208,8 +208,8 @@
         },
         {
           "modalidade": 8,
-          "pagina": 1712,
-          "total_paginas": 1715,
+          "pagina": 1713,
+          "total_paginas": 1716,
           "registros": 50
         },
         {
