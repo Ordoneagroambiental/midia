@@ -1,7 +1,7 @@
 {
   "versao": "1.0",
-  "gerado_em": "2026-10-20T02:15:18.612975-03:00",
-  "ultima_coleta_concluida_em": "2026-10-20T02:15:18.612975-03:00",
+  "gerado_em": "2026-10-20T09:07:11.069789-03:00",
+  "ultima_coleta_concluida_em": "2026-10-20T09:07:11.069789-03:00",
   "status_coleta": "parcial",
   "abrangencia": "Brasil",
   "atualizacao_programada_horas": 2,
@@ -44,11 +44,11 @@
       "nome": "PNCP",
       "url": "https://pncp.gov.br/api/consulta/v1/contratacoes/publicacao",
       "status": "parcial",
-      "paginas_consultadas": 25,
-      "registros_examinados": 1086,
+      "paginas_consultadas": 20,
+      "registros_examinados": 907,
       "candidatos": 0,
       "falhas": [
-        "Modalidade 6, página 924: TimeoutError: The read operation timed out"
+        "Modalidade 4, página 143: TimeoutError: The read operation timed out"
       ],
       "detalhes": [
         "Limite de tempo/páginas, falha ou paginação desconhecida: esta fonte NÃO foi consultada integralmente.",
@@ -67,13 +67,13 @@
         {
           "modalidade": 8,
           "pagina": 1,
-          "total_paginas": 1669,
+          "total_paginas": 1675,
           "registros": 50
         },
         {
           "modalidade": 6,
           "pagina": 1,
-          "total_paginas": 927,
+          "total_paginas": 932,
           "registros": 50
         },
         {
@@ -102,50 +102,50 @@
         },
         {
           "modalidade": 8,
-          "pagina": 1669,
-          "total_paginas": 1669,
-          "registros": 48
+          "pagina": 1675,
+          "total_paginas": 1675,
+          "registros": 50
         },
         {
           "modalidade": 6,
-          "pagina": 927,
-          "total_paginas": 927,
-          "registros": 24
+          "pagina": 932,
+          "total_paginas": 932,
+          "registros": 49
         },
         {
           "modalidade": 4,
           "pagina": 145,
           "total_paginas": 145,
-          "registros": 16
+          "registros": 47
         },
         {
           "modalidade": 7,
           "pagina": 20,
           "total_paginas": 20,
-          "registros": 11
+          "registros": 14
         },
         {
           "modalidade": 5,
           "pagina": 9,
           "total_paginas": 9,
-          "registros": 26
+          "registros": 29
         },
         {
           "modalidade": 12,
           "pagina": 55,
           "total_paginas": 55,
-          "registros": 11
+          "registros": 18
         },
         {
           "modalidade": 8,
-          "pagina": 1668,
-          "total_paginas": 1669,
+          "pagina": 1674,
+          "total_paginas": 1675,
           "registros": 50
         },
         {
           "modalidade": 6,
-          "pagina": 926,
-          "total_paginas": 927,
+          "pagina": 931,
+          "total_paginas": 932,
           "registros": 50
         },
         {
@@ -174,44 +174,14 @@
         },
         {
           "modalidade": 8,
-          "pagina": 1667,
-          "total_paginas": 1669,
+          "pagina": 1673,
+          "total_paginas": 1675,
           "registros": 50
         },
         {
           "modalidade": 6,
-          "pagina": 925,
-          "total_paginas": 927,
-          "registros": 50
-        },
-        {
-          "modalidade": 4,
-          "pagina": 143,
-          "total_paginas": 145,
-          "registros": 50
-        },
-        {
-          "modalidade": 7,
-          "pagina": 18,
-          "total_paginas": 20,
-          "registros": 50
-        },
-        {
-          "modalidade": 5,
-          "pagina": 7,
-          "total_paginas": 9,
-          "registros": 50
-        },
-        {
-          "modalidade": 12,
-          "pagina": 53,
-          "total_paginas": 55,
-          "registros": 50
-        },
-        {
-          "modalidade": 8,
-          "pagina": 1666,
-          "total_paginas": 1669,
+          "pagina": 930,
+          "total_paginas": 932,
           "registros": 50
         }
       ],
@@ -222,11 +192,9 @@
       "url": "https://dadosabertos.compras.gov.br/modulo-contratacoes/1_consultarContratacoes_PNCP_14133",
       "status": "parcial",
       "paginas_consultadas": 30,
-      "registros_examinados": 14232,
+      "registros_examinados": 13928,
       "candidatos": 0,
-      "falhas": [
-        "Modalidade 6, página 73: TimeoutError: The read operation timed out"
-      ],
+      "falhas": [],
       "detalhes": [
         "Limite de tempo/páginas, falha ou paginação desconhecida: esta fonte NÃO foi consultada integralmente.",
         "Brasil, publicações de 2026-06-22 a 2026-10-20; modalidades [6, 5, 3, 12]."
@@ -264,6 +232,12 @@
           "registros": 0
         },
         {
+          "modalidade": 6,
+          "pagina": 73,
+          "total_paginas": 73,
+          "registros": 196
+        },
+        {
           "modalidade": 5,
           "pagina": 61,
           "total_paginas": 61,
@@ -276,6 +250,12 @@
           "registros": 447
         },
         {
+          "modalidade": 6,
+          "pagina": 72,
+          "total_paginas": 73,
+          "registros": 500
+        },
+        {
           "modalidade": 5,
           "pagina": 60,
           "total_paginas": 61,
@@ -285,6 +265,12 @@
           "modalidade": 3,
           "pagina": 5,
           "total_paginas": 6,
+          "registros": 500
+        },
+        {
+          "modalidade": 6,
+          "pagina": 71,
+          "total_paginas": 73,
           "registros": 500
         },
         {
@@ -300,6 +286,12 @@
           "registros": 500
         },
         {
+          "modalidade": 6,
+          "pagina": 70,
+          "total_paginas": 73,
+          "registros": 500
+        },
+        {
           "modalidade": 5,
           "pagina": 58,
           "total_paginas": 61,
@@ -309,6 +301,12 @@
           "modalidade": 3,
           "pagina": 3,
           "total_paginas": 6,
+          "registros": 500
+        },
+        {
+          "modalidade": 6,
+          "pagina": 69,
+          "total_paginas": 73,
           "registros": 500
         },
         {
@@ -324,9 +322,21 @@
           "registros": 500
         },
         {
+          "modalidade": 6,
+          "pagina": 68,
+          "total_paginas": 73,
+          "registros": 500
+        },
+        {
           "modalidade": 5,
           "pagina": 56,
           "total_paginas": 61,
+          "registros": 500
+        },
+        {
+          "modalidade": 6,
+          "pagina": 67,
+          "total_paginas": 73,
           "registros": 500
         },
         {
@@ -336,9 +346,21 @@
           "registros": 500
         },
         {
+          "modalidade": 6,
+          "pagina": 66,
+          "total_paginas": 73,
+          "registros": 500
+        },
+        {
           "modalidade": 5,
           "pagina": 54,
           "total_paginas": 61,
+          "registros": 500
+        },
+        {
+          "modalidade": 6,
+          "pagina": 65,
+          "total_paginas": 73,
           "registros": 500
         },
         {
@@ -348,75 +370,21 @@
           "registros": 500
         },
         {
+          "modalidade": 6,
+          "pagina": 64,
+          "total_paginas": 73,
+          "registros": 500
+        },
+        {
           "modalidade": 5,
           "pagina": 52,
           "total_paginas": 61,
           "registros": 500
         },
         {
-          "modalidade": 5,
-          "pagina": 51,
-          "total_paginas": 61,
-          "registros": 500
-        },
-        {
-          "modalidade": 5,
-          "pagina": 50,
-          "total_paginas": 61,
-          "registros": 500
-        },
-        {
-          "modalidade": 5,
-          "pagina": 49,
-          "total_paginas": 61,
-          "registros": 500
-        },
-        {
-          "modalidade": 5,
-          "pagina": 48,
-          "total_paginas": 61,
-          "registros": 500
-        },
-        {
-          "modalidade": 5,
-          "pagina": 47,
-          "total_paginas": 61,
-          "registros": 500
-        },
-        {
-          "modalidade": 5,
-          "pagina": 46,
-          "total_paginas": 61,
-          "registros": 500
-        },
-        {
-          "modalidade": 5,
-          "pagina": 45,
-          "total_paginas": 61,
-          "registros": 500
-        },
-        {
-          "modalidade": 5,
-          "pagina": 44,
-          "total_paginas": 61,
-          "registros": 500
-        },
-        {
-          "modalidade": 5,
-          "pagina": 43,
-          "total_paginas": 61,
-          "registros": 500
-        },
-        {
-          "modalidade": 5,
-          "pagina": 42,
-          "total_paginas": 61,
-          "registros": 500
-        },
-        {
-          "modalidade": 5,
-          "pagina": 41,
-          "total_paginas": 61,
+          "modalidade": 6,
+          "pagina": 63,
+          "total_paginas": 73,
           "registros": 500
         }
       ],
