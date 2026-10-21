@@ -1,6 +1,6 @@
 {
   "versao": "6.9",
-  "atualizado_em": "20/10/2026 21:51 (horário de Brasília)",
+  "atualizado_em": "21/10/2026 05:00 (horário de Brasília)",
   "status": "coleta_concluida",
   "prioridade": "MCE, PCA e PGRS em todo o Brasil → projetos rápidos → bônus para GO, DF e MG",
   "modo_busca": "PROJETO RÁPIDO — MCE, PCA e PGRS com prazo vigente, objeto comprovado e triagem comercial",
@@ -21,21 +21,19 @@
     "requisicoes": 109,
     "pncp_proposta": 0,
     "pncp_publicacao": 0,
-    "pncp_registros_examinados": 1004,
-    "pncp_respostas_validas": 24,
+    "pncp_registros_examinados": 1003,
+    "pncp_respostas_validas": 23,
     "pncp_falhas": 0,
     "pncp_retentativas_429": 0,
     "compras_gov_respostas_validas": 37,
-    "compras_gov_registros_examinados": 17111,
+    "compras_gov_registros_examinados": 17313,
     "compras_gov_paginas_examinadas": 37,
     "compras_gov_paginas_planejadas": 37,
     "compras_gov_falhas": 0,
     "compras_gov_itens": 1,
     "html_sinais": 0,
     "paginas_aprofundadas": 30,
-    "erros": [
-      "PNCP: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
-    ],
+    "erros": [],
     "avisos": [
       "PNCP proposta: limite de tempo atingido; resultado parcial preservado.",
       "PNCP publicacao: limite de tempo atingido; resultado parcial preservado."
