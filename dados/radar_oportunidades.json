@@ -1,6 +1,6 @@
 {
   "versao": "6.9",
-  "atualizado_em": "23/10/2026 15:39 (horário de Brasília)",
+  "atualizado_em": "23/10/2026 20:23 (horário de Brasília)",
   "status": "coleta_concluida",
   "prioridade": "MCE, PCA e PGRS em todo o Brasil → projetos rápidos → bônus para GO, DF e MG",
   "modo_busca": "PROJETO RÁPIDO — MCE, PCA e PGRS com prazo vigente, objeto comprovado e triagem comercial",
@@ -18,13 +18,13 @@
     "pgrs": 0
   },
   "diagnostico_coleta": {
-    "requisicoes": 120,
+    "requisicoes": 122,
     "pncp_proposta": 0,
     "pncp_publicacao": 0,
-    "pncp_registros_examinados": 1149,
-    "pncp_respostas_validas": 33,
-    "pncp_falhas": 1,
-    "pncp_retentativas_429": 4,
+    "pncp_registros_examinados": 1020,
+    "pncp_respostas_validas": 31,
+    "pncp_falhas": 2,
+    "pncp_retentativas_429": 8,
     "compras_gov_respostas_validas": 37,
     "compras_gov_registros_examinados": 17530,
     "compras_gov_paginas_examinadas": 37,
@@ -35,9 +35,12 @@
     "paginas_aprofundadas": 30,
     "erros": [
       "PNCP indisponível após 3 tentativas: HTTP 429",
-      "PNCP: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+      "PNCP indisponível após 3 tentativas: HTTP 429",
+      "BNDES Floresta Viva: ConnectionError: HTTPSConnectionPool(host='www.bndes.gov.br', port=443): Max retries exceeded with url: /wps/portal/site/home/desenvolvimento-sustentavel/parcerias/floresta-viva (Caused by NewConnectionError(\"HTTPSConnection(host",
+      "Fundo Amazônia: ConnectionError: HTTPSConnectionPool(host='www.fundoamazonia.gov.br', port=443): Max retries exceeded with url: /pt/projetos/ (Caused by NewConnectionError(\"HTTPSConnection(host='www.fundoamazonia.gov.br', port=443): Failed to establi"
     ],
     "avisos": [
+      "PNCP respondeu 429 após 3 tentativas; contingência preservada.",
       "PNCP respondeu 429 após 3 tentativas; contingência preservada.",
       "PNCP publicacao: limite de tempo atingido; resultado parcial preservado."
     ]
