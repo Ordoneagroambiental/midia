@@ -1,6 +1,6 @@
 {
   "versao": "1.0",
-  "atualizado_em": "2026-10-23T05:02:34.420999+00:00",
+  "atualizado_em": "2026-10-23T11:49:29.791581+00:00",
   "criterios": {
     "escopo": "Brasil e mundo",
     "frequencia": "a cada 6 horas",
@@ -34,8 +34,8 @@
     },
     {
       "fonte": "MMA",
-      "ok": false,
-      "erro": "('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+      "ok": true,
+      "itens": 0
     },
     {
       "fonte": "Embrapa",
