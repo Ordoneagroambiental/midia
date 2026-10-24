@@ -1,6 +1,6 @@
 {
   "versao": "6.9",
-  "atualizado_em": "24/10/2026 01:58 (horário de Brasília)",
+  "atualizado_em": "24/10/2026 08:27 (horário de Brasília)",
   "status": "coleta_concluida",
   "prioridade": "MCE, PCA e PGRS em todo o Brasil → projetos rápidos → bônus para GO, DF e MG",
   "modo_busca": "PROJETO RÁPIDO — MCE, PCA e PGRS com prazo vigente, objeto comprovado e triagem comercial",
@@ -18,26 +18,31 @@
     "pgrs": 0
   },
   "diagnostico_coleta": {
-    "requisicoes": 110,
+    "requisicoes": 114,
     "pncp_proposta": 1,
     "pncp_publicacao": 0,
-    "pncp_registros_examinados": 833,
-    "pncp_respostas_validas": 27,
-    "pncp_falhas": 0,
-    "pncp_retentativas_429": 0,
-    "compras_gov_respostas_validas": 36,
-    "compras_gov_registros_examinados": 16322,
-    "compras_gov_paginas_examinadas": 36,
+    "pncp_registros_examinados": 680,
+    "pncp_respostas_validas": 23,
+    "pncp_falhas": 2,
+    "pncp_retentativas_429": 8,
+    "compras_gov_respostas_validas": 37,
+    "compras_gov_registros_examinados": 16822,
+    "compras_gov_paginas_examinadas": 37,
     "compras_gov_paginas_planejadas": 37,
-    "compras_gov_falhas": 1,
+    "compras_gov_falhas": 0,
     "compras_gov_itens": 1,
     "html_sinais": 0,
     "paginas_aprofundadas": 30,
     "erros": [
-      "Compras.gov modalidade 5, página 14: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)",
-      "PNCP: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+      "PNCP indisponível após 3 tentativas: HTTP 429",
+      "PNCP indisponível após 3 tentativas: HTTP 429",
+      "PNCP: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",
+      "Prefeitura de Goianésia: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",
+      "Editais de Goianésia: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
     ],
     "avisos": [
+      "PNCP respondeu 429 após 3 tentativas; contingência preservada.",
+      "PNCP respondeu 429 após 3 tentativas; contingência preservada.",
       "PNCP publicacao: limite de tempo atingido; resultado parcial preservado."
     ]
   },
