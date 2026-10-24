@@ -1,7 +1,7 @@
 {
   "versao": "1.0",
-  "gerado_em": "2026-10-24T04:36:25.416095-03:00",
-  "ultima_coleta_concluida_em": "2026-10-24T04:36:25.416095-03:00",
+  "gerado_em": "2026-10-24T09:56:20.333531-03:00",
+  "ultima_coleta_concluida_em": "2026-10-24T09:56:20.333531-03:00",
   "status_coleta": "parcial",
   "abrangencia": "Brasil",
   "atualizacao_programada_horas": 2,
@@ -43,18 +43,11 @@
     {
       "nome": "PNCP",
       "url": "https://pncp.gov.br/api/consulta/v1/contratacoes/publicacao",
-      "status": "falha",
-      "paginas_consultadas": 0,
-      "registros_examinados": 0,
+      "status": "parcial",
+      "paginas_consultadas": 30,
+      "registros_examinados": 1312,
       "candidatos": 0,
-      "falhas": [
-        "Modalidade 8, página 1: HTTP 503",
-        "Modalidade 6, página 1: HTTP 503",
-        "Modalidade 4, página 1: HTTP 503",
-        "Modalidade 7, página 1: HTTP 429",
-        "Modalidade 5, página 1: HTTP 429",
-        "Modalidade 12, página 1: HTTP 429"
-      ],
+      "falhas": [],
       "detalhes": [
         "Limite de tempo/páginas, falha ou paginação desconhecida: esta fonte NÃO foi consultada integralmente.",
         "Brasil, publicações de 2026-09-09 a 2026-10-24; modalidades [8, 6, 4, 7, 5, 12]."
@@ -68,20 +61,200 @@
         5,
         12
       ],
-      "consultas": [],
+      "consultas": [
+        {
+          "modalidade": 8,
+          "pagina": 1,
+          "total_paginas": 1839,
+          "registros": 50
+        },
+        {
+          "modalidade": 6,
+          "pagina": 1,
+          "total_paginas": 1027,
+          "registros": 50
+        },
+        {
+          "modalidade": 4,
+          "pagina": 1,
+          "total_paginas": 162,
+          "registros": 50
+        },
+        {
+          "modalidade": 7,
+          "pagina": 1,
+          "total_paginas": 22,
+          "registros": 50
+        },
+        {
+          "modalidade": 5,
+          "pagina": 1,
+          "total_paginas": 10,
+          "registros": 50
+        },
+        {
+          "modalidade": 12,
+          "pagina": 1,
+          "total_paginas": 59,
+          "registros": 50
+        },
+        {
+          "modalidade": 8,
+          "pagina": 1839,
+          "total_paginas": 1839,
+          "registros": 18
+        },
+        {
+          "modalidade": 6,
+          "pagina": 1027,
+          "total_paginas": 1027,
+          "registros": 13
+        },
+        {
+          "modalidade": 4,
+          "pagina": 162,
+          "total_paginas": 162,
+          "registros": 10
+        },
+        {
+          "modalidade": 7,
+          "pagina": 22,
+          "total_paginas": 22,
+          "registros": 8
+        },
+        {
+          "modalidade": 5,
+          "pagina": 10,
+          "total_paginas": 10,
+          "registros": 19
+        },
+        {
+          "modalidade": 12,
+          "pagina": 59,
+          "total_paginas": 59,
+          "registros": 44
+        },
+        {
+          "modalidade": 8,
+          "pagina": 1838,
+          "total_paginas": 1839,
+          "registros": 50
+        },
+        {
+          "modalidade": 6,
+          "pagina": 1026,
+          "total_paginas": 1027,
+          "registros": 50
+        },
+        {
+          "modalidade": 4,
+          "pagina": 161,
+          "total_paginas": 162,
+          "registros": 50
+        },
+        {
+          "modalidade": 7,
+          "pagina": 21,
+          "total_paginas": 22,
+          "registros": 50
+        },
+        {
+          "modalidade": 5,
+          "pagina": 9,
+          "total_paginas": 10,
+          "registros": 50
+        },
+        {
+          "modalidade": 12,
+          "pagina": 58,
+          "total_paginas": 59,
+          "registros": 50
+        },
+        {
+          "modalidade": 8,
+          "pagina": 1837,
+          "total_paginas": 1839,
+          "registros": 50
+        },
+        {
+          "modalidade": 6,
+          "pagina": 1025,
+          "total_paginas": 1027,
+          "registros": 50
+        },
+        {
+          "modalidade": 4,
+          "pagina": 160,
+          "total_paginas": 162,
+          "registros": 50
+        },
+        {
+          "modalidade": 7,
+          "pagina": 20,
+          "total_paginas": 22,
+          "registros": 50
+        },
+        {
+          "modalidade": 5,
+          "pagina": 8,
+          "total_paginas": 10,
+          "registros": 50
+        },
+        {
+          "modalidade": 12,
+          "pagina": 57,
+          "total_paginas": 59,
+          "registros": 50
+        },
+        {
+          "modalidade": 8,
+          "pagina": 1836,
+          "total_paginas": 1839,
+          "registros": 50
+        },
+        {
+          "modalidade": 6,
+          "pagina": 1024,
+          "total_paginas": 1027,
+          "registros": 50
+        },
+        {
+          "modalidade": 4,
+          "pagina": 159,
+          "total_paginas": 162,
+          "registros": 50
+        },
+        {
+          "modalidade": 7,
+          "pagina": 19,
+          "total_paginas": 22,
+          "registros": 50
+        },
+        {
+          "modalidade": 5,
+          "pagina": 7,
+          "total_paginas": 10,
+          "registros": 50
+        },
+        {
+          "modalidade": 12,
+          "pagina": 56,
+          "total_paginas": 59,
+          "registros": 50
+        }
+      ],
       "cobertura_completa": false
     },
     {
       "nome": "Compras.gov.br",
       "url": "https://dadosabertos.compras.gov.br/modulo-contratacoes/1_consultarContratacoes_PNCP_14133",
       "status": "parcial",
-      "paginas_consultadas": 4,
-      "registros_examinados": 1500,
+      "paginas_consultadas": 9,
+      "registros_examinados": 3812,
       "candidatos": 0,
       "falhas": [
         "Modalidade 6, página 69: TimeoutError: The read operation timed out",
-        "Modalidade 5, página 58: TimeoutError: The read operation timed out",
-        "Modalidade 3, página 6: TimeoutError: The read operation timed out"
+        "Modalidade 5, página 58: TimeoutError: The read operation timed out"
       ],
       "detalhes": [
         "Limite de tempo/páginas, falha ou paginação desconhecida: esta fonte NÃO foi consultada integralmente.",
@@ -118,6 +291,36 @@
           "pagina": 1,
           "total_paginas": 0,
           "registros": 0
+        },
+        {
+          "modalidade": 3,
+          "pagina": 6,
+          "total_paginas": 6,
+          "registros": 312
+        },
+        {
+          "modalidade": 3,
+          "pagina": 5,
+          "total_paginas": 6,
+          "registros": 500
+        },
+        {
+          "modalidade": 3,
+          "pagina": 4,
+          "total_paginas": 6,
+          "registros": 500
+        },
+        {
+          "modalidade": 3,
+          "pagina": 3,
+          "total_paginas": 6,
+          "registros": 500
+        },
+        {
+          "modalidade": 3,
+          "pagina": 2,
+          "total_paginas": 6,
+          "registros": 500
         }
       ],
       "cobertura_completa": false
