@@ -1,6 +1,6 @@
 {
   "versao": "6.9",
-  "atualizado_em": "24/10/2026 19:44 (horário de Brasília)",
+  "atualizado_em": "25/10/2026 02:08 (horário de Brasília)",
   "status": "coleta_concluida",
   "prioridade": "MCE, PCA e PGRS em todo o Brasil → projetos rápidos → bônus para GO, DF e MG",
   "modo_busca": "PROJETO RÁPIDO — MCE, PCA e PGRS com prazo vigente, objeto comprovado e triagem comercial",
@@ -18,15 +18,15 @@
     "pgrs": 0
   },
   "diagnostico_coleta": {
-    "requisicoes": 115,
-    "pncp_proposta": 1,
+    "requisicoes": 108,
+    "pncp_proposta": 0,
     "pncp_publicacao": 0,
-    "pncp_registros_examinados": 830,
-    "pncp_respostas_validas": 26,
+    "pncp_registros_examinados": 655,
+    "pncp_respostas_validas": 19,
     "pncp_falhas": 1,
     "pncp_retentativas_429": 4,
     "compras_gov_respostas_validas": 35,
-    "compras_gov_registros_examinados": 15822,
+    "compras_gov_registros_examinados": 16090,
     "compras_gov_paginas_examinadas": 35,
     "compras_gov_paginas_planejadas": 37,
     "compras_gov_falhas": 2,
@@ -36,10 +36,11 @@
     "erros": [
       "PNCP indisponível após 3 tentativas: HTTP 429",
       "Compras.gov modalidade 5, página 14: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)",
-      "Compras.gov modalidade 5, página 29: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)"
+      "Compras.gov modalidade 5, página 28: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)"
     ],
     "avisos": [
       "PNCP respondeu 429 após 3 tentativas; contingência preservada.",
+      "PNCP proposta: limite de tempo atingido; resultado parcial preservado.",
       "PNCP publicacao: limite de tempo atingido; resultado parcial preservado."
     ]
   },
@@ -251,19 +252,19 @@
       "proxima_acao": "Abrir o edital/aviso oficial, validar escopo, habilitação, prazo, local de execução e viabilidade de proposta."
     },
     {
-      "id": "04215147000150-1-000282/2026",
+      "id": "87613071000148-1-000390/2026",
       "tipo": "SINAL DE CONTRATAÇÃO",
       "confirmacao": "PRÉ-SELECIONADO",
       "fonte": "PNCP",
-      "titulo": "Contratação de empresa para prestação de serviço de Licenciamento Ambiental.",
-      "municipio": "Westfália",
+      "titulo": "CONTRATAÇÃO, ATRAVÉS DO SISTEMA DE REGISTRO DE PREÇOS, DE EMPRESA ESPECIALIZADA PARA A ELABORAÇÃO, INSTRUÇÃO, ENCAMINHAMENTO E ACOMPANHAMENTO DOS PROCESSOS DE LICENCIAMENTO AMBIENTAL PARA ATIVIDADE DE LAVRA DE ROCHA, INCLUINDO A OBTENÇÃO DAS LICENÇAS AMBIENTAIS DE INSTALAÇÃO (LI) E DE OPERAÇÃO (LO), BEM COMO A ELABORAÇ",
+      "municipio": "Santo Ângelo",
       "uf": "RS",
       "regiao_prioridade": "Brasil",
-      "organizacao": "MUNICIPIO DE WESTFALIA",
-      "data_publicacao": "2026-09-24T00:12:19",
-      "prazo": "",
-      "valor_estimado": 10830.0,
-      "modalidade": "Dispensa",
+      "organizacao": "MUNICIPIO DE SANTO ANGELO",
+      "data_publicacao": "2026-09-25T00:12:13",
+      "prazo": "2026-10-30T08:00:00",
+      "valor_estimado": 60757.5,
+      "modalidade": "Pregão - Eletrônico",
       "servicos_ordone": [
         "Licenciamento e regularização ambiental"
       ],
@@ -280,13 +281,12 @@
       "palavras_encontradas": [
         "licenciamento ambiental",
         "portfólio:Licenciamento e regularização ambiental",
-        "grupo:ambiental",
-        "serviços ambientais"
+        "grupo:ambiental"
       ],
       "score": 50,
       "prioridade": "ACOMPANHAR",
-      "url": "https://pncp.gov.br/app/editais/04215147000150/2026/282",
-      "numero_controle_pncp": "04215147000150-1-000282/2026",
+      "url": "https://pncp.gov.br/app/editais/87613071000148/2026/390",
+      "numero_controle_pncp": "87613071000148-1-000390/2026",
       "escopo_coleta": "Brasil",
       "fase_pncp": "publicacao",
       "documentos_prioritarios": [],
@@ -296,8 +296,8 @@
       "oportunidade_rapida": false,
       "parceria_necessaria": [],
       "siglas_ambiguas": [],
-      "dias_restantes": null,
-      "prazo_interno_decisao": "Confirmar prazo antes de decidir",
+      "dias_restantes": 5,
+      "prazo_interno_decisao": "Decidir e iniciar proposta hoje",
       "proxima_acao": "Abrir a publicação oficial e verificar se há prazo de proposta, futura licitação, contratação direta ou oportunidade institucional."
     }
   ],
