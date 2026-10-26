@@ -1,7 +1,7 @@
 {
   "versao": "6.9",
-  "atualizado_em": "26/10/2026 05:04 (horário de Brasília)",
-  "status": "coleta_contingencial",
+  "atualizado_em": "26/10/2026 12:26 (horário de Brasília)",
+  "status": "coleta_concluida",
   "prioridade": "MCE, PCA e PGRS em todo o Brasil → projetos rápidos → bônus para GO, DF e MG",
   "modo_busca": "PROJETO RÁPIDO — MCE, PCA e PGRS com prazo vigente, objeto comprovado e triagem comercial",
   "resumo": {
@@ -9,8 +9,8 @@
     "brasil": 4,
     "goianesia_regiao": 0,
     "goias": 0,
-    "demandas_formais": 4,
-    "sinais_ambientais": 0,
+    "demandas_formais": 3,
+    "sinais_ambientais": 1,
     "prioritarios_mce_pca_pgrs": 0,
     "oportunidades_rapidas": 0,
     "mce": 0,
@@ -18,31 +18,31 @@
     "pgrs": 0
   },
   "diagnostico_coleta": {
-    "requisicoes": 88,
+    "requisicoes": 124,
     "pncp_proposta": 0,
     "pncp_publicacao": 0,
-    "pncp_registros_examinados": 0,
-    "pncp_respostas_validas": 0,
+    "pncp_registros_examinados": 1314,
+    "pncp_respostas_validas": 31,
     "pncp_falhas": 2,
-    "pncp_retentativas_429": 0,
-    "compras_gov_respostas_validas": 35,
-    "compras_gov_registros_examinados": 16081,
-    "compras_gov_paginas_examinadas": 35,
+    "pncp_retentativas_429": 8,
+    "compras_gov_respostas_validas": 37,
+    "compras_gov_registros_examinados": 17081,
+    "compras_gov_paginas_examinadas": 37,
     "compras_gov_paginas_planejadas": 37,
-    "compras_gov_falhas": 2,
+    "compras_gov_falhas": 0,
     "compras_gov_itens": 1,
     "html_sinais": 0,
     "paginas_aprofundadas": 30,
     "erros": [
-      "PNCP indisponível após 3 tentativas: HTTPError: 503 Server Error: Service Unavailable for url: https://pncp.gov.br/api/consulta/v1/contratacoes/proposta?dataFinal=20261026&codigoModalidadeContratacao=4&pagina=1&tamanhoPagina=50",
-      "PNCP indisponível após 3 tentativas: HTTPError: 503 Server Error: Service Unavailable for url: https://pncp.gov.br/api/consulta/v1/contratacoes/proposta?dataFinal=20261027&codigoModalidadeContratacao=4&pagina=1&tamanhoPagina=50",
-      "Compras.gov modalidade 5, página 14: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)",
-      "Compras.gov modalidade 6, página 17: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)"
+      "PNCP indisponível após 3 tentativas: HTTP 429",
+      "PNCP indisponível após 3 tentativas: HTTP 429",
+      "PNCP: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
     ],
     "avisos": [
-      "PNCP: circuito temporariamente interrompido após duas falhas; acionando a contingência oficial.",
-      "PNCP publicação não repetida porque a fonte já falhou; contingência antecipada.",
-      "PNCP indisponível; coleta nacional concluída pela contingência oficial do Compras.gov."
+      "PNCP respondeu 429 após 3 tentativas; contingência preservada.",
+      "PNCP proposta: limite de tempo atingido; resultado parcial preservado.",
+      "PNCP respondeu 429 após 3 tentativas; contingência preservada.",
+      "PNCP publicacao: limite de tempo atingido; resultado parcial preservado."
     ]
   },
   "items": [
@@ -50,17 +50,16 @@
       "id": "00394452000103-1-020792/2026",
       "tipo": "DEMANDA FORMAL",
       "confirmacao": "PRÉ-SELECIONADO",
-      "fonte": "Compras.gov — Dados Abertos",
-      "titulo": "- serviço de consultoria para outorga e regularização de poço artesiano profundo existente no interior do 3º GAC AP - Rgt Mallet;- Relatório fotográfico do poço;- Elaboração dos perfis geológico e construtivo do poço, a partir de dados de poços próximos e observações feitas em teste de vazão e inspeção \"in loco\";- Teste contínuo de bombeamento e recuperação de nível, com duração mínima de 24h e 4h respectivamente, de acordo com as normas técnicas e documentação anexas.",
-      "municipio": "SANTA MARIA",
+      "fonte": "PNCP",
+      "titulo": "- serviço de consultoria para outorga e regularização de poço artesiano profundo existente no interior do 3º GAC AP - Rgt Mallet;- Relatório fotográfico do poço;- Elaboração dos perfis geológico e construtivo do poço, a partir de dados de poços próximos e observações feitas em teste de vazão e inspeção \"in loco\";- Test",
+      "municipio": "Santa Maria",
       "uf": "RS",
       "regiao_prioridade": "Brasil",
       "organizacao": "COMANDO DO EXERCITO",
       "data_publicacao": "2026-09-23T17:12:23",
       "prazo": "2026-10-27T08:00:00",
-      "valor_estimado": 28200.0,
+      "valor_estimado": 0.0,
       "modalidade": "Dispensa",
-      "situacao_compra": "Divulgada no PNCP",
       "servicos_ordone": [
         "Nascentes, APP e outorga"
       ],
@@ -72,7 +71,7 @@
       "requisitos_minimos": [],
       "analise_elegibilidade": "LEITURA INCOMPLETA",
       "pendencias_identificadas": [
-        "Abrir edital e anexos oficiais antes de decidir pela participação"
+        "Abrir edital e anexos manualmente"
       ],
       "palavras_encontradas": [
         "bombeamento",
@@ -81,12 +80,12 @@
         "grupo:solo_agua",
         "grupo:irrigacao"
       ],
-      "score": 76,
-      "prioridade": "MÉDIA",
+      "score": 81,
+      "prioridade": "ALTA",
       "url": "https://pncp.gov.br/app/editais/00394452000103/2026/20792",
       "numero_controle_pncp": "00394452000103-1-020792/2026",
       "escopo_coleta": "Brasil",
-      "fase_pncp": "contingencia_compras_gov",
+      "fase_pncp": "proposta",
       "documentos_prioritarios": [],
       "aderencia_maxima": false,
       "classe_aderencia": "A",
@@ -94,10 +93,9 @@
       "oportunidade_rapida": false,
       "parceria_necessaria": [],
       "siglas_ambiguas": [],
-      "dias_restantes": 27,
-      "prazo_interno_decisao": "Decidir em até 48 horas",
-      "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem.",
-      "origem_historica": true
+      "dias_restantes": 0,
+      "prazo_interno_decisao": "Decidir e iniciar proposta hoje",
+      "proxima_acao": "Abrir o edital/aviso oficial, validar escopo, habilitação, prazo, local de execução e viabilidade de proposta."
     },
     {
       "id": "04892707000100-1-000125/2026",
@@ -204,21 +202,21 @@
       "origem_historica": true
     },
     {
-      "id": "87958658000199-1-001088/2026",
-      "tipo": "DEMANDA FORMAL",
+      "id": "76417005000186-1-000366/2026",
+      "tipo": "SINAL DE CONTRATAÇÃO",
       "confirmacao": "PRÉ-SELECIONADO",
       "fonte": "PNCP",
-      "titulo": "Contratação de empresa especializada em desenvolvimento de projeto para obtenção de licenciamento ambiental junto a SEMA do munícipio de Caxias do Sul para o LAREN continuar prestando serviços de análises físico-químicas e microbiológicas em vinhos e derivados da uva e do vinho.",
-      "municipio": "Porto Alegre",
-      "uf": "RS",
+      "titulo": "Contratação de empresa especializada para o gerenciamento e supervisão ambiental e social do Programa Curitiba Carbono Neutro - Mobilidade Sustentável e Eficiência Energética-KFW.",
+      "municipio": "Curitiba",
+      "uf": "PR",
       "regiao_prioridade": "Brasil",
-      "organizacao": "SUBSECRETARIA DA ADMINISTRACAO CENTRAL DE LICITACOES",
-      "data_publicacao": "2026-10-09T15:40:47",
-      "prazo": "2026-10-26T09:00:00",
-      "valor_estimado": 7745.0,
-      "modalidade": "Dispensa",
+      "organizacao": "MUNICIPIO DE CURITIBA",
+      "data_publicacao": "2026-10-01T08:09:22",
+      "prazo": "2026-11-03T09:00:00",
+      "valor_estimado": 0.0,
+      "modalidade": "Pré-qualificação",
       "servicos_ordone": [
-        "Licenciamento e regularização ambiental"
+        "Gestão, supervisão e monitoramento ambiental"
       ],
       "tipo_aderencia": "ADERENTE_DIRETO",
       "motivo_aceitacao": "Objeto contém serviço direto do portfólio Ordone.",
@@ -231,16 +229,16 @@
         "Abrir edital e anexos manualmente"
       ],
       "palavras_encontradas": [
-        "licenciamento ambiental",
-        "portfólio:Licenciamento e regularização ambiental",
+        "supervisão ambiental",
+        "portfólio:Gestão, supervisão e monitoramento ambiental",
         "grupo:ambiental"
       ],
-      "score": 65,
-      "prioridade": "MÉDIA",
-      "url": "https://pncp.gov.br/app/editais/87958658000199/2026/1088",
-      "numero_controle_pncp": "87958658000199-1-001088/2026",
+      "score": 50,
+      "prioridade": "ACOMPANHAR",
+      "url": "https://pncp.gov.br/app/editais/76417005000186/2026/366",
+      "numero_controle_pncp": "76417005000186-1-000366/2026",
       "escopo_coleta": "Brasil",
-      "fase_pncp": "proposta",
+      "fase_pncp": "publicacao",
       "documentos_prioritarios": [],
       "aderencia_maxima": false,
       "classe_aderencia": "A",
@@ -248,10 +246,9 @@
       "oportunidade_rapida": false,
       "parceria_necessaria": [],
       "siglas_ambiguas": [],
-      "dias_restantes": 0,
-      "prazo_interno_decisao": "Decidir e iniciar proposta hoje",
-      "proxima_acao": "Abrir o edital/aviso oficial, validar escopo, habilitação, prazo, local de execução e viabilidade de proposta.",
-      "origem_historica": true
+      "dias_restantes": 7,
+      "prazo_interno_decisao": "Decidir em até 24 horas",
+      "proxima_acao": "Abrir a publicação oficial e verificar se há prazo de proposta, futura licitação, contratação direta ou oportunidade institucional."
     }
   ],
   "fontes_monitoradas": [
