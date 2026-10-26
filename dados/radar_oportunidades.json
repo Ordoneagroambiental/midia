@@ -1,6 +1,6 @@
 {
   "versao": "6.9",
-  "atualizado_em": "25/10/2026 18:08 (horário de Brasília)",
+  "atualizado_em": "25/10/2026 21:36 (horário de Brasília)",
   "status": "coleta_concluida",
   "prioridade": "MCE, PCA e PGRS em todo o Brasil → projetos rápidos → bônus para GO, DF e MG",
   "modo_busca": "PROJETO RÁPIDO — MCE, PCA e PGRS com prazo vigente, objeto comprovado e triagem comercial",
@@ -18,10 +18,10 @@
     "pgrs": 0
   },
   "diagnostico_coleta": {
-    "requisicoes": 103,
+    "requisicoes": 107,
     "pncp_proposta": 0,
     "pncp_publicacao": 0,
-    "pncp_registros_examinados": 654,
+    "pncp_registros_examinados": 608,
     "pncp_respostas_validas": 19,
     "pncp_falhas": 1,
     "pncp_retentativas_429": 4,
@@ -34,14 +34,10 @@
     "html_sinais": 0,
     "paginas_aprofundadas": 30,
     "erros": [
-      "PNCP indisponível após 3 tentativas: HTTP 429",
-      "PNCP: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",
-      "BNDES Floresta Viva: ConnectionError: HTTPSConnectionPool(host='www.bndes.gov.br', port=443): Max retries exceeded with url: /wps/portal/site/home/desenvolvimento-sustentavel/parcerias/floresta-viva (Caused by NameResolutionError(\"HTTPSConnection(hos",
-      "Fundo Amazônia: ConnectionError: HTTPSConnectionPool(host='www.fundoamazonia.gov.br', port=443): Max retries exceeded with url: /pt/projetos/ (Caused by NameResolutionError(\"HTTPSConnection(host='www.fundoamazonia.gov.br', port=443): Failed to resolv"
+      "PNCP indisponível após 3 tentativas: HTTP 429"
     ],
     "avisos": [
       "PNCP respondeu 429 após 3 tentativas; contingência preservada.",
-      "Lista de anexos PNCP: ReadTimeout: HTTPSConnectionPool(host='pncp.gov.br', port=443): Read timed out. (read timeout=20)",
       "PNCP proposta: limite de tempo atingido; resultado parcial preservado.",
       "Lista de anexos PNCP: ReadTimeout: HTTPSConnectionPool(host='pncp.gov.br', port=443): Read timed out. (read timeout=20)",
       "PNCP publicacao: limite de tempo atingido; resultado parcial preservado."
