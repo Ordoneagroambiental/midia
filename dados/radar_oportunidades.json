@@ -1,6 +1,6 @@
 {
   "versao": "6.9",
-  "atualizado_em": "29/10/2026 10:36 (horário de Brasília)",
+  "atualizado_em": "29/10/2026 16:50 (horário de Brasília)",
   "status": "coleta_concluida",
   "prioridade": "MCE, PCA e PGRS em todo o Brasil → projetos rápidos → bônus para GO, DF e MG",
   "modo_busca": "PROJETO RÁPIDO — MCE, PCA e PGRS com prazo vigente, objeto comprovado e triagem comercial",
@@ -18,23 +18,22 @@
     "pgrs": 1
   },
   "diagnostico_coleta": {
-    "requisicoes": 116,
+    "requisicoes": 111,
     "pncp_proposta": 0,
     "pncp_publicacao": 0,
-    "pncp_registros_examinados": 763,
+    "pncp_registros_examinados": 691,
     "pncp_respostas_validas": 20,
     "pncp_falhas": 0,
     "pncp_retentativas_429": 0,
-    "compras_gov_respostas_validas": 36,
-    "compras_gov_registros_examinados": 16651,
-    "compras_gov_paginas_examinadas": 36,
+    "compras_gov_respostas_validas": 37,
+    "compras_gov_registros_examinados": 17151,
+    "compras_gov_paginas_examinadas": 37,
     "compras_gov_paginas_planejadas": 37,
-    "compras_gov_falhas": 1,
+    "compras_gov_falhas": 0,
     "compras_gov_itens": 1,
     "html_sinais": 0,
     "paginas_aprofundadas": 30,
     "erros": [
-      "Compras.gov modalidade 6, página 61: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)",
       "PNCP: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
     ],
     "avisos": [
@@ -219,7 +218,7 @@
         "Engenharia de infraestrutura / obras"
       ],
       "siglas_ambiguas": [],
-      "dias_restantes": 1,
+      "dias_restantes": 0,
       "prazo_interno_decisao": "Decidir e iniciar proposta hoje",
       "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
     },
