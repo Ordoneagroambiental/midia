@@ -1,28 +1,28 @@
 {
   "versao": "6.9",
-  "atualizado_em": "30/10/2026 03:12 (horário de Brasília)",
+  "atualizado_em": "30/10/2026 10:19 (horário de Brasília)",
   "status": "coleta_concluida",
   "prioridade": "MCE, PCA e PGRS em todo o Brasil → projetos rápidos → bônus para GO, DF e MG",
   "modo_busca": "PROJETO RÁPIDO — MCE, PCA e PGRS com prazo vigente, objeto comprovado e triagem comercial",
   "resumo": {
-    "total": 5,
-    "brasil": 5,
+    "total": 3,
+    "brasil": 3,
     "goianesia_regiao": 0,
     "goias": 0,
-    "demandas_formais": 4,
+    "demandas_formais": 2,
     "sinais_ambientais": 1,
-    "prioritarios_mce_pca_pgrs": 2,
+    "prioritarios_mce_pca_pgrs": 0,
     "oportunidades_rapidas": 0,
     "mce": 0,
-    "pca": 1,
-    "pgrs": 1
+    "pca": 0,
+    "pgrs": 0
   },
   "diagnostico_coleta": {
-    "requisicoes": 96,
+    "requisicoes": 108,
     "pncp_proposta": 0,
     "pncp_publicacao": 0,
-    "pncp_registros_examinados": 263,
-    "pncp_respostas_validas": 9,
+    "pncp_registros_examinados": 912,
+    "pncp_respostas_validas": 25,
     "pncp_falhas": 0,
     "pncp_retentativas_429": 0,
     "compras_gov_respostas_validas": 37,
@@ -33,143 +33,14 @@
     "compras_gov_itens": 1,
     "html_sinais": 0,
     "paginas_aprofundadas": 30,
-    "erros": [],
+    "erros": [
+      "PNCP: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+    ],
     "avisos": [
-      "PNCP proposta: limite de tempo atingido; resultado parcial preservado.",
       "PNCP publicacao: limite de tempo atingido; resultado parcial preservado."
     ]
   },
   "items": [
-    {
-      "id": "87613071000148-1-000390/2026",
-      "tipo": "DEMANDA FORMAL",
-      "confirmacao": "CONFIRMADO",
-      "fonte": "PNCP",
-      "titulo": "CONTRATAÇÃO, ATRAVÉS DO SISTEMA DE REGISTRO DE PREÇOS, DE EMPRESA ESPECIALIZADA PARA A ELABORAÇÃO, INSTRUÇÃO, ENCAMINHAMENTO E ACOMPANHAMENTO DOS PROCESSOS DE LICENCIAMENTO AMBIENTAL PARA ATIVIDADE DE LAVRA DE ROCHA, INCLUINDO A OBTENÇÃO DAS LICENÇAS AMBIENTAIS DE INSTALAÇÃO (LI) E DE OPERAÇÃO (LO), BEM COMO A ELABORAÇ",
-      "municipio": "Santo Ângelo",
-      "uf": "RS",
-      "regiao_prioridade": "Brasil",
-      "organizacao": "MUNICIPIO DE SANTO ANGELO",
-      "data_publicacao": "2026-09-25T00:12:13",
-      "prazo": "2026-10-30T08:00:00",
-      "valor_estimado": 60757.5,
-      "modalidade": "Pregão - Eletrônico",
-      "servicos_ordone": [
-        "PCA — Plano ou Programa de Controle Ambiental",
-        "MCE, PCA e PGRS",
-        "Recuperação ambiental / PRAD",
-        "Inventário, vegetação e compensação florestal",
-        "Licenciamento e regularização ambiental",
-        "Geoprocessamento ambiental aplicado"
-      ],
-      "tipo_aderencia": "ADERENTE_DIRETO",
-      "motivo_aceitacao": "MCE, PCA ou PGRS comprovado no objeto ou nos anexos oficiais.",
-      "relacao_comercial": "EXECUÇÃO DIRETA PELA ORDONE",
-      "status_leitura_edital": "ANALISADO",
-      "documentos_analisados": [
-        "Aviso-publicacao",
-        "Edital",
-        "Aviso-alteracao"
-      ],
-      "requisitos_minimos": [
-        "Registro profissional",
-        "ART / responsabilidade técnica",
-        "Atestado de capacidade técnica",
-        "ME/EPP"
-      ],
-      "analise_elegibilidade": "VERIFICAR DOCUMENTOS",
-      "pendencias_identificadas": [
-        "Confirmar atestado compatível com o objeto"
-      ],
-      "palavras_encontradas": [
-        "licenciamento ambiental",
-        "portfólio:Licenciamento e regularização ambiental",
-        "grupo:ambiental"
-      ],
-      "score": 75,
-      "prioridade": "MÉDIA",
-      "url": "https://pncp.gov.br/app/editais/87613071000148/2026/390",
-      "numero_controle_pncp": "87613071000148-1-000390/2026",
-      "escopo_coleta": "Brasil",
-      "fase_pncp": "proposta",
-      "documentos_prioritarios": [
-        "PCA"
-      ],
-      "aderencia_maxima": false,
-      "classe_aderencia": "A",
-      "classificacao_comercial": "EXECUÇÃO DIRETA PELA ORDONE",
-      "oportunidade_rapida": false,
-      "parceria_necessaria": [],
-      "siglas_ambiguas": [],
-      "dias_restantes": 0,
-      "prazo_interno_decisao": "Decidir e iniciar proposta hoje",
-      "proxima_acao": "Abrir o edital/aviso oficial, validar escopo, habilitação, prazo, local de execução e viabilidade de proposta.",
-      "origem_historica": true
-    },
-    {
-      "id": "87613071000148-1-000392/2026",
-      "tipo": "DEMANDA FORMAL",
-      "confirmacao": "CONFIRMADO",
-      "fonte": "PNCP",
-      "titulo": "CONTRATAÇÃO, ATRAVÉS DO SISTEMA DE REGISTRO DE PREÇOS, DE EMPRESA ESPECIALIZADA PARA A ELABORAÇÃO, INSTRUÇÃO, ENCAMINHAMENTO E ACOMPANHAMENTO DOS PROCESSOS DE LICENCIAMENTO AMBIENTAL PARA ATIVIDADE DE LAVRA DE ROCHA.",
-      "municipio": "Santo Ângelo",
-      "uf": "RS",
-      "regiao_prioridade": "Brasil",
-      "organizacao": "MUNICIPIO DE SANTO ANGELO",
-      "data_publicacao": "2026-09-28T12:10:41",
-      "prazo": "2026-10-30T08:00:00",
-      "valor_estimado": 60757.5,
-      "modalidade": "Pregão - Eletrônico",
-      "servicos_ordone": [
-        "PGRS — Plano de Gerenciamento de Resíduos Sólidos",
-        "MCE, PCA e PGRS",
-        "Licenciamento e regularização ambiental",
-        "Gestão, supervisão e monitoramento ambiental",
-        "PGRS e planos de resíduos"
-      ],
-      "tipo_aderencia": "PARCERIA_NECESSARIA",
-      "motivo_aceitacao": "MCE, PCA ou PGRS comprovado no objeto ou nos anexos oficiais.",
-      "relacao_comercial": "PARCERIA TÉCNICA NECESSÁRIA",
-      "status_leitura_edital": "ANALISADO",
-      "documentos_analisados": [
-        "116495_ORCAMENTO PROFLORA 2.pdf",
-        "116495_ORCAMENTO INPLANTE.pdf",
-        "116495_ORCAMENTO GEO BASE.pdf"
-      ],
-      "requisitos_minimos": [
-        "Registro profissional",
-        "ART / responsabilidade técnica",
-        "Equipe técnica mínima"
-      ],
-      "analise_elegibilidade": "ANÁLISE PRELIMINAR FAVORÁVEL",
-      "pendencias_identificadas": [],
-      "palavras_encontradas": [
-        "licenciamento ambiental",
-        "portfólio:Licenciamento e regularização ambiental",
-        "grupo:ambiental"
-      ],
-      "score": 75,
-      "prioridade": "MÉDIA",
-      "url": "https://pncp.gov.br/app/editais/87613071000148/2026/392",
-      "numero_controle_pncp": "87613071000148-1-000392/2026",
-      "escopo_coleta": "Brasil",
-      "fase_pncp": "proposta",
-      "documentos_prioritarios": [
-        "PGRS"
-      ],
-      "aderencia_maxima": false,
-      "classe_aderencia": "C",
-      "classificacao_comercial": "PARCERIA TÉCNICA NECESSÁRIA",
-      "oportunidade_rapida": false,
-      "parceria_necessaria": [
-        "Geologia"
-      ],
-      "siglas_ambiguas": [],
-      "dias_restantes": 0,
-      "prazo_interno_decisao": "Decidir e iniciar proposta hoje",
-      "proxima_acao": "Abrir o edital/aviso oficial, validar escopo, habilitação, prazo, local de execução e viabilidade de proposta.",
-      "origem_historica": true
-    },
     {
       "id": "04892707000100-1-000125/2026",
       "tipo": "DEMANDA FORMAL",
@@ -319,7 +190,7 @@
       "oportunidade_rapida": false,
       "parceria_necessaria": [],
       "siglas_ambiguas": [],
-      "dias_restantes": 27,
+      "dias_restantes": 26,
       "prazo_interno_decisao": "Decidir em até 48 horas",
       "proxima_acao": "Abrir a publicação oficial e verificar se há prazo de proposta, futura licitação, contratação direta ou oportunidade institucional."
     }
