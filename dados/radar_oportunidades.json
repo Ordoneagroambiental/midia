@@ -1,6 +1,6 @@
 {
   "versao": "6.9",
-  "atualizado_em": "29/10/2026 16:50 (horário de Brasília)",
+  "atualizado_em": "29/10/2026 21:07 (horário de Brasília)",
   "status": "coleta_concluida",
   "prioridade": "MCE, PCA e PGRS em todo o Brasil → projetos rápidos → bônus para GO, DF e MG",
   "modo_busca": "PROJETO RÁPIDO — MCE, PCA e PGRS com prazo vigente, objeto comprovado e triagem comercial",
@@ -18,11 +18,11 @@
     "pgrs": 1
   },
   "diagnostico_coleta": {
-    "requisicoes": 111,
+    "requisicoes": 94,
     "pncp_proposta": 0,
     "pncp_publicacao": 0,
-    "pncp_registros_examinados": 691,
-    "pncp_respostas_validas": 20,
+    "pncp_registros_examinados": 169,
+    "pncp_respostas_validas": 8,
     "pncp_falhas": 0,
     "pncp_retentativas_429": 0,
     "compras_gov_respostas_validas": 37,
@@ -105,7 +105,8 @@
       "siglas_ambiguas": [],
       "dias_restantes": 0,
       "prazo_interno_decisao": "Decidir e iniciar proposta hoje",
-      "proxima_acao": "Abrir o edital/aviso oficial, validar escopo, habilitação, prazo, local de execução e viabilidade de proposta."
+      "proxima_acao": "Abrir o edital/aviso oficial, validar escopo, habilitação, prazo, local de execução e viabilidade de proposta.",
+      "origem_historica": true
     },
     {
       "id": "87613071000148-1-000392/2026",
@@ -168,7 +169,8 @@
       "siglas_ambiguas": [],
       "dias_restantes": 0,
       "prazo_interno_decisao": "Decidir e iniciar proposta hoje",
-      "proxima_acao": "Abrir o edital/aviso oficial, validar escopo, habilitação, prazo, local de execução e viabilidade de proposta."
+      "proxima_acao": "Abrir o edital/aviso oficial, validar escopo, habilitação, prazo, local de execução e viabilidade de proposta.",
+      "origem_historica": true
     },
     {
       "id": "04892707000100-1-000125/2026",
