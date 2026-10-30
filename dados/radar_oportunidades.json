@@ -1,15 +1,15 @@
 {
   "versao": "6.9",
-  "atualizado_em": "30/10/2026 10:19 (horário de Brasília)",
+  "atualizado_em": "30/10/2026 16:37 (horário de Brasília)",
   "status": "coleta_concluida",
   "prioridade": "MCE, PCA e PGRS em todo o Brasil → projetos rápidos → bônus para GO, DF e MG",
   "modo_busca": "PROJETO RÁPIDO — MCE, PCA e PGRS com prazo vigente, objeto comprovado e triagem comercial",
   "resumo": {
-    "total": 3,
-    "brasil": 3,
+    "total": 2,
+    "brasil": 2,
     "goianesia_regiao": 0,
     "goias": 0,
-    "demandas_formais": 2,
+    "demandas_formais": 1,
     "sinais_ambientais": 1,
     "prioritarios_mce_pca_pgrs": 0,
     "oportunidades_rapidas": 0,
@@ -18,81 +18,33 @@
     "pgrs": 0
   },
   "diagnostico_coleta": {
-    "requisicoes": 108,
+    "requisicoes": 117,
     "pncp_proposta": 0,
     "pncp_publicacao": 0,
-    "pncp_registros_examinados": 912,
-    "pncp_respostas_validas": 25,
-    "pncp_falhas": 0,
-    "pncp_retentativas_429": 0,
+    "pncp_registros_examinados": 655,
+    "pncp_respostas_validas": 24,
+    "pncp_falhas": 2,
+    "pncp_retentativas_429": 8,
     "compras_gov_respostas_validas": 37,
     "compras_gov_registros_examinados": 17082,
     "compras_gov_paginas_examinadas": 37,
     "compras_gov_paginas_planejadas": 37,
     "compras_gov_falhas": 0,
-    "compras_gov_itens": 1,
+    "compras_gov_itens": 0,
     "html_sinais": 0,
     "paginas_aprofundadas": 30,
     "erros": [
-      "PNCP: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+      "PNCP indisponível após 3 tentativas: HTTP 429",
+      "PNCP indisponível após 3 tentativas: HTTP 429",
+      "SEMAD Goiás — Licitações: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
     ],
     "avisos": [
+      "PNCP respondeu 429 após 3 tentativas; contingência preservada.",
+      "PNCP respondeu 429 após 3 tentativas; contingência preservada.",
       "PNCP publicacao: limite de tempo atingido; resultado parcial preservado."
     ]
   },
   "items": [
-    {
-      "id": "04892707000100-1-000125/2026",
-      "tipo": "DEMANDA FORMAL",
-      "confirmacao": "PRÉ-SELECIONADO",
-      "fonte": "Compras.gov — Dados Abertos",
-      "titulo": "Contratação de serviços técnicos especializados de engenharia para execução de gestão ambiental, abrangendo o gerenciamento ambiental, a supervisão ambiental e a implementação de programas ambientais no âmbito das obras de implantação e pavimentação da rodovia BR-285/RS/SC, entre o município de Timbé do Sul em Santa Catarina e São José dos Ausentes, no Rio Grande do Sul, com extensão total de 30,43 Km.",
-      "municipio": "BRASÍLIA",
-      "uf": "DF",
-      "regiao_prioridade": "Brasil",
-      "organizacao": "DNIT-DEPARTAMENTO NACIONAL DE INFRAEST DE TRANSPORTES",
-      "data_publicacao": "2026-09-09T04:00:03",
-      "prazo": "2026-10-30T15:00:00",
-      "valor_estimado": 11104392.42,
-      "modalidade": "Concorrência - Eletrônica",
-      "situacao_compra": "Divulgada no PNCP",
-      "servicos_ordone": [
-        "Gestão, supervisão e monitoramento ambiental"
-      ],
-      "tipo_aderencia": "PARCERIA_NECESSARIA",
-      "motivo_aceitacao": "Objeto contém serviço direto do portfólio Ordone.",
-      "relacao_comercial": "PARCERIA TÉCNICA NECESSÁRIA",
-      "status_leitura_edital": "LEITURA INCOMPLETA",
-      "documentos_analisados": [],
-      "requisitos_minimos": [],
-      "analise_elegibilidade": "LEITURA INCOMPLETA",
-      "pendencias_identificadas": [
-        "Abrir edital e anexos oficiais antes de decidir pela participação"
-      ],
-      "palavras_encontradas": [
-        "supervisão ambiental",
-        "portfólio:Gestão, supervisão e monitoramento ambiental",
-        "grupo:ambiental"
-      ],
-      "score": 65,
-      "prioridade": "MÉDIA",
-      "url": "https://pncp.gov.br/app/editais/04892707000100/2026/125",
-      "numero_controle_pncp": "04892707000100-1-000125/2026",
-      "escopo_coleta": "Brasil",
-      "fase_pncp": "contingencia_compras_gov",
-      "documentos_prioritarios": [],
-      "aderencia_maxima": false,
-      "classe_aderencia": "C",
-      "classificacao_comercial": "PARCERIA TÉCNICA NECESSÁRIA",
-      "oportunidade_rapida": false,
-      "parceria_necessaria": [
-        "Engenharia de infraestrutura / obras"
-      ],
-      "siglas_ambiguas": [],
-      "dias_restantes": 0,
-      "prazo_interno_decisao": "Decidir e iniciar proposta hoje",
-      "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
-    },
     {
       "id": "81140303000101-1-000186/2026",
       "tipo": "DEMANDA FORMAL",
