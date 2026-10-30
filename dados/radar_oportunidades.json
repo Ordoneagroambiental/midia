@@ -1,16 +1,16 @@
 {
   "versao": "6.9",
-  "atualizado_em": "29/10/2026 21:07 (horário de Brasília)",
+  "atualizado_em": "30/10/2026 03:12 (horário de Brasília)",
   "status": "coleta_concluida",
   "prioridade": "MCE, PCA e PGRS em todo o Brasil → projetos rápidos → bônus para GO, DF e MG",
   "modo_busca": "PROJETO RÁPIDO — MCE, PCA e PGRS com prazo vigente, objeto comprovado e triagem comercial",
   "resumo": {
-    "total": 4,
-    "brasil": 4,
+    "total": 5,
+    "brasil": 5,
     "goianesia_regiao": 0,
     "goias": 0,
     "demandas_formais": 4,
-    "sinais_ambientais": 0,
+    "sinais_ambientais": 1,
     "prioritarios_mce_pca_pgrs": 2,
     "oportunidades_rapidas": 0,
     "mce": 0,
@@ -18,24 +18,22 @@
     "pgrs": 1
   },
   "diagnostico_coleta": {
-    "requisicoes": 94,
+    "requisicoes": 96,
     "pncp_proposta": 0,
     "pncp_publicacao": 0,
-    "pncp_registros_examinados": 169,
-    "pncp_respostas_validas": 8,
+    "pncp_registros_examinados": 263,
+    "pncp_respostas_validas": 9,
     "pncp_falhas": 0,
     "pncp_retentativas_429": 0,
     "compras_gov_respostas_validas": 37,
-    "compras_gov_registros_examinados": 17151,
+    "compras_gov_registros_examinados": 17082,
     "compras_gov_paginas_examinadas": 37,
     "compras_gov_paginas_planejadas": 37,
     "compras_gov_falhas": 0,
     "compras_gov_itens": 1,
     "html_sinais": 0,
     "paginas_aprofundadas": 30,
-    "erros": [
-      "PNCP: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
-    ],
+    "erros": [],
     "avisos": [
       "PNCP proposta: limite de tempo atingido; resultado parcial preservado.",
       "PNCP publicacao: limite de tempo atingido; resultado parcial preservado."
@@ -275,6 +273,55 @@
       "prazo_interno_decisao": "Decidir em até 48 horas",
       "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem.",
       "origem_historica": true
+    },
+    {
+      "id": "39485438000142-1-000049/2026",
+      "tipo": "SINAL DE CONTRATAÇÃO",
+      "confirmacao": "PRÉ-SELECIONADO",
+      "fonte": "PNCP",
+      "titulo": "CONTRATAÇÃO DE EMPRESA ESPECIALIZADA PARA APOIO TÉCNICO, GERENCIMENTO E SUPERVISÃO DAS OBRAS DE CONTROLE DE INUNDAÇÕES E RECUPERAÇÃO AMBIENTAL DAS BACIAS DOS RIOS IGUAÇU-BOTAS – FASE 2.",
+      "municipio": "Belford Roxo",
+      "uf": "RJ",
+      "regiao_prioridade": "Brasil",
+      "organizacao": "MUNICIPIO DE BELFORD ROXO",
+      "data_publicacao": "2026-09-30T10:32:57",
+      "prazo": "2026-11-26T09:59:00",
+      "valor_estimado": 3079545.21,
+      "modalidade": "Concorrência - Eletrônica",
+      "servicos_ordone": [
+        "Recuperação ambiental / PRAD"
+      ],
+      "tipo_aderencia": "ADERENTE_DIRETO",
+      "motivo_aceitacao": "Objeto contém serviço direto do portfólio Ordone.",
+      "relacao_comercial": "EXECUÇÃO DIRETA ADERENTE AO PORTFÓLIO",
+      "status_leitura_edital": "LEITURA INCOMPLETA",
+      "documentos_analisados": [],
+      "requisitos_minimos": [],
+      "analise_elegibilidade": "LEITURA INCOMPLETA",
+      "pendencias_identificadas": [
+        "Abrir edital e anexos manualmente"
+      ],
+      "palavras_encontradas": [
+        "recuperação ambiental",
+        "portfólio:Recuperação ambiental / PRAD",
+        "grupo:ambiental"
+      ],
+      "score": 45,
+      "prioridade": "ACOMPANHAR",
+      "url": "https://pncp.gov.br/app/editais/39485438000142/2026/49",
+      "numero_controle_pncp": "39485438000142-1-000049/2026",
+      "escopo_coleta": "Brasil",
+      "fase_pncp": "publicacao",
+      "documentos_prioritarios": [],
+      "aderencia_maxima": false,
+      "classe_aderencia": "A",
+      "classificacao_comercial": "EXECUÇÃO DIRETA ADERENTE AO PORTFÓLIO",
+      "oportunidade_rapida": false,
+      "parceria_necessaria": [],
+      "siglas_ambiguas": [],
+      "dias_restantes": 27,
+      "prazo_interno_decisao": "Decidir em até 48 horas",
+      "proxima_acao": "Abrir a publicação oficial e verificar se há prazo de proposta, futura licitação, contratação direta ou oportunidade institucional."
     }
   ],
   "fontes_monitoradas": [
