@@ -1,16 +1,16 @@
 {
   "versao": "6.9",
-  "atualizado_em": "31/10/2026 03:10 (horário de Brasília)",
+  "atualizado_em": "31/10/2026 09:58 (horário de Brasília)",
   "status": "coleta_concluida",
   "prioridade": "MCE, PCA e PGRS em todo o Brasil → projetos rápidos → bônus para GO, DF e MG",
   "modo_busca": "PROJETO RÁPIDO — MCE, PCA e PGRS com prazo vigente, objeto comprovado e triagem comercial",
   "resumo": {
-    "total": 1,
-    "brasil": 1,
+    "total": 2,
+    "brasil": 2,
     "goianesia_regiao": 0,
     "goias": 0,
     "demandas_formais": 1,
-    "sinais_ambientais": 0,
+    "sinais_ambientais": 1,
     "prioritarios_mce_pca_pgrs": 0,
     "oportunidades_rapidas": 0,
     "mce": 0,
@@ -18,31 +18,29 @@
     "pgrs": 0
   },
   "diagnostico_coleta": {
-    "requisicoes": 106,
+    "requisicoes": 125,
     "pncp_proposta": 0,
     "pncp_publicacao": 0,
-    "pncp_registros_examinados": 949,
-    "pncp_respostas_validas": 31,
-    "pncp_falhas": 2,
-    "pncp_retentativas_429": 6,
-    "compras_gov_respostas_validas": 19,
-    "compras_gov_registros_examinados": 8338,
-    "compras_gov_paginas_examinadas": 19,
-    "compras_gov_paginas_planejadas": 23,
-    "compras_gov_falhas": 4,
+    "pncp_registros_examinados": 835,
+    "pncp_respostas_validas": 29,
+    "pncp_falhas": 3,
+    "pncp_retentativas_429": 8,
+    "compras_gov_respostas_validas": 37,
+    "compras_gov_registros_examinados": 16719,
+    "compras_gov_paginas_examinadas": 37,
+    "compras_gov_paginas_planejadas": 37,
+    "compras_gov_falhas": 0,
     "compras_gov_itens": 0,
     "html_sinais": 0,
     "paginas_aprofundadas": 30,
     "erros": [
       "PNCP indisponível após 3 tentativas: HTTP 429",
       "PNCP indisponível após 3 tentativas: HTTP 429",
-      "Compras.gov modalidade 3, página 1: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)",
-      "Compras.gov modalidade 5, página 1: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)",
-      "Compras.gov modalidade 6, página 16: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)",
-      "Compras.gov modalidade 7, página 10: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)",
+      "PNCP indisponível após 3 tentativas: HTTP 429",
       "PNCP: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
     ],
     "avisos": [
+      "PNCP respondeu 429 após 3 tentativas; contingência preservada.",
       "PNCP respondeu 429 após 3 tentativas; contingência preservada.",
       "PNCP respondeu 429 após 3 tentativas; contingência preservada.",
       "PNCP publicacao: limite de tempo atingido; resultado parcial preservado."
@@ -100,6 +98,63 @@
       "prazo_interno_decisao": "Decidir em até 48 horas",
       "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem.",
       "origem_historica": true
+    },
+    {
+      "id": "76417005000186-1-000366/2026",
+      "tipo": "SINAL DE CONTRATAÇÃO",
+      "confirmacao": "CONFIRMADO",
+      "fonte": "PNCP",
+      "titulo": "Contratação de empresa especializada para o gerenciamento e supervisão ambiental e social do Programa Curitiba Carbono Neutro - Mobilidade Sustentável e Eficiência Energética-KFW.",
+      "municipio": "Curitiba",
+      "uf": "PR",
+      "regiao_prioridade": "Brasil",
+      "organizacao": "MUNICIPIO DE CURITIBA",
+      "data_publicacao": "2026-10-01T08:09:22",
+      "prazo": "2026-11-03T09:00:00",
+      "valor_estimado": 0.0,
+      "modalidade": "Pré-qualificação",
+      "servicos_ordone": [
+        "Avaliação técnica inicial"
+      ],
+      "tipo_aderencia": "ADERENTE_DIRETO",
+      "motivo_aceitacao": "Objeto contém serviço direto do portfólio Ordone.",
+      "relacao_comercial": "EXECUÇÃO DIRETA ADERENTE AO PORTFÓLIO",
+      "status_leitura_edital": "ANALISADO",
+      "documentos_analisados": [
+        "EDITAL_DPQ_0012026.PDF",
+        "PAR-NAJ_SMOP-SMOP- NAJ_SMOP.PDF",
+        "AVISODPQ0012026SMOP_ASS.PDF"
+      ],
+      "requisitos_minimos": [
+        "Equipe técnica mínima",
+        "Qualificação econômico-financeira",
+        "Subcontratação"
+      ],
+      "analise_elegibilidade": "VERIFICAR DOCUMENTOS",
+      "pendencias_identificadas": [
+        "Validar índices e documentos financeiros"
+      ],
+      "palavras_encontradas": [
+        "supervisão ambiental",
+        "portfólio:Gestão, supervisão e monitoramento ambiental",
+        "grupo:ambiental"
+      ],
+      "score": 50,
+      "prioridade": "ACOMPANHAR",
+      "url": "https://pncp.gov.br/app/editais/76417005000186/2026/366",
+      "numero_controle_pncp": "76417005000186-1-000366/2026",
+      "escopo_coleta": "Brasil",
+      "fase_pncp": "publicacao",
+      "documentos_prioritarios": [],
+      "aderencia_maxima": false,
+      "classe_aderencia": "A",
+      "classificacao_comercial": "EXECUÇÃO DIRETA ADERENTE AO PORTFÓLIO",
+      "oportunidade_rapida": false,
+      "parceria_necessaria": [],
+      "siglas_ambiguas": [],
+      "dias_restantes": 2,
+      "prazo_interno_decisao": "Decidir e iniciar proposta hoje",
+      "proxima_acao": "Abrir a publicação oficial e verificar se há prazo de proposta, futura licitação, contratação direta ou oportunidade institucional."
     }
   ],
   "fontes_monitoradas": [
