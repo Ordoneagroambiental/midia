@@ -1,6 +1,6 @@
 {
   "versao": "6.9",
-  "atualizado_em": "01/11/2026 12:26 (horário de Brasília)",
+  "atualizado_em": "01/11/2026 17:46 (horário de Brasília)",
   "status": "coleta_concluida",
   "prioridade": "MCE, PCA e PGRS em todo o Brasil → projetos rápidos → bônus para GO, DF e MG",
   "modo_busca": "PROJETO RÁPIDO — MCE, PCA e PGRS com prazo vigente, objeto comprovado e triagem comercial",
@@ -18,24 +18,26 @@
     "pgrs": 0
   },
   "diagnostico_coleta": {
-    "requisicoes": 127,
+    "requisicoes": 125,
     "pncp_proposta": 0,
     "pncp_publicacao": 0,
-    "pncp_registros_examinados": 1153,
-    "pncp_respostas_validas": 33,
+    "pncp_registros_examinados": 1044,
+    "pncp_respostas_validas": 31,
     "pncp_falhas": 2,
     "pncp_retentativas_429": 8,
-    "compras_gov_respostas_validas": 39,
-    "compras_gov_registros_examinados": 18004,
-    "compras_gov_paginas_examinadas": 39,
+    "compras_gov_respostas_validas": 37,
+    "compras_gov_registros_examinados": 17004,
+    "compras_gov_paginas_examinadas": 37,
     "compras_gov_paginas_planejadas": 39,
-    "compras_gov_falhas": 0,
+    "compras_gov_falhas": 2,
     "compras_gov_itens": 7,
     "html_sinais": 0,
     "paginas_aprofundadas": 30,
     "erros": [
       "PNCP indisponível após 3 tentativas: HTTP 429",
-      "PNCP indisponível após 3 tentativas: HTTP 429"
+      "PNCP indisponível após 3 tentativas: HTTP 429",
+      "Compras.gov modalidade 5, página 18: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)",
+      "Compras.gov modalidade 6, página 22: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)"
     ],
     "avisos": [
       "PNCP respondeu 429 após 3 tentativas; contingência preservada.",
@@ -143,7 +145,7 @@
         "Engenharia de infraestrutura / obras"
       ],
       "siglas_ambiguas": [],
-      "dias_restantes": 3,
+      "dias_restantes": 2,
       "prazo_interno_decisao": "Decidir e iniciar proposta hoje",
       "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
     },
