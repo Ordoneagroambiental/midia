@@ -1,6 +1,6 @@
 {
   "versao": "6.9",
-  "atualizado_em": "03/11/2026 09:16 (horário de Brasília)",
+  "atualizado_em": "03/11/2026 16:47 (horário de Brasília)",
   "status": "coleta_concluida",
   "prioridade": "MCE, PCA e PGRS em todo o Brasil → projetos rápidos → bônus para GO, DF e MG",
   "modo_busca": "PROJETO RÁPIDO — MCE, PCA e PGRS com prazo vigente, objeto comprovado e triagem comercial",
@@ -18,30 +18,32 @@
     "pgrs": 0
   },
   "diagnostico_coleta": {
-    "requisicoes": 125,
-    "pncp_proposta": 1,
+    "requisicoes": 123,
+    "pncp_proposta": 0,
     "pncp_publicacao": 0,
-    "pncp_registros_examinados": 1275,
+    "pncp_registros_examinados": 1202,
     "pncp_respostas_validas": 30,
     "pncp_falhas": 2,
-    "pncp_retentativas_429": 5,
-    "compras_gov_respostas_validas": 38,
-    "compras_gov_registros_examinados": 17516,
-    "compras_gov_paginas_examinadas": 38,
+    "pncp_retentativas_429": 4,
+    "compras_gov_respostas_validas": 39,
+    "compras_gov_registros_examinados": 18016,
+    "compras_gov_paginas_examinadas": 39,
     "compras_gov_paginas_planejadas": 39,
-    "compras_gov_falhas": 1,
-    "compras_gov_itens": 4,
+    "compras_gov_falhas": 0,
+    "compras_gov_itens": 7,
     "html_sinais": 0,
     "paginas_aprofundadas": 30,
     "erros": [
       "PNCP indisponível após 3 tentativas: HTTP 429",
-      "PNCP indisponível após 3 tentativas: HTTP 429"
+      "PNCP indisponível após 3 tentativas: HTTP 429",
+      "PNCP: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",
+      "Serviço Florestal Brasileiro — Licitações: HTTPError: 429 Client Error: Too Many Requests for url: https://www.gov.br/florestal/pt-br/acesso-a-informacao/licitacoes-e-contratos"
     ],
     "avisos": [
       "PNCP respondeu 429 após 3 tentativas; contingência preservada.",
+      "PNCP proposta: limite de tempo atingido; resultado parcial preservado.",
       "PNCP respondeu 429 após 3 tentativas; contingência preservada.",
-      "PNCP publicacao: limite de tempo atingido; resultado parcial preservado.",
-      "Compras.gov modalidade 3, página 7: HTTP 400."
+      "PNCP publicacao: limite de tempo atingido; resultado parcial preservado."
     ]
   },
   "items": [
@@ -143,10 +145,9 @@
       "oportunidade_rapida": false,
       "parceria_necessaria": [],
       "siglas_ambiguas": [],
-      "dias_restantes": 45,
+      "dias_restantes": 44,
       "prazo_interno_decisao": "Decidir em até 48 horas",
-      "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem.",
-      "origem_historica": true
+      "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
     },
     {
       "id": "04892707000100-1-000125/2026",
@@ -196,7 +197,7 @@
         "Engenharia de infraestrutura / obras"
       ],
       "siglas_ambiguas": [],
-      "dias_restantes": 1,
+      "dias_restantes": 0,
       "prazo_interno_decisao": "Decidir e iniciar proposta hoje",
       "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
     },
@@ -348,7 +349,7 @@
       "oportunidade_rapida": false,
       "parceria_necessaria": [],
       "siglas_ambiguas": [],
-      "dias_restantes": 23,
+      "dias_restantes": 22,
       "prazo_interno_decisao": "Decidir em até 48 horas",
       "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
     },
@@ -400,10 +401,9 @@
         "Engenharia de infraestrutura / obras"
       ],
       "siglas_ambiguas": [],
-      "dias_restantes": 49,
+      "dias_restantes": 48,
       "prazo_interno_decisao": "Decidir em até 48 horas",
-      "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem.",
-      "origem_historica": true
+      "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
     },
     {
       "id": "45787678000102-1-000365/2026",
@@ -450,10 +450,9 @@
       "oportunidade_rapida": false,
       "parceria_necessaria": [],
       "siglas_ambiguas": [],
-      "dias_restantes": 42,
+      "dias_restantes": 41,
       "prazo_interno_decisao": "Decidir em até 48 horas",
-      "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem.",
-      "origem_historica": true
+      "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
     }
   ],
   "fontes_monitoradas": [
