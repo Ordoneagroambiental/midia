@@ -1,6 +1,6 @@
 {
   "versao": "6.9",
-  "atualizado_em": "03/11/2026 16:47 (horário de Brasília)",
+  "atualizado_em": "03/11/2026 21:50 (horário de Brasília)",
   "status": "coleta_concluida",
   "prioridade": "MCE, PCA e PGRS em todo o Brasil → projetos rápidos → bônus para GO, DF e MG",
   "modo_busca": "PROJETO RÁPIDO — MCE, PCA e PGRS com prazo vigente, objeto comprovado e triagem comercial",
@@ -18,31 +18,29 @@
     "pgrs": 0
   },
   "diagnostico_coleta": {
-    "requisicoes": 123,
+    "requisicoes": 120,
     "pncp_proposta": 0,
     "pncp_publicacao": 0,
-    "pncp_registros_examinados": 1202,
+    "pncp_registros_examinados": 1192,
     "pncp_respostas_validas": 30,
-    "pncp_falhas": 2,
-    "pncp_retentativas_429": 4,
-    "compras_gov_respostas_validas": 39,
-    "compras_gov_registros_examinados": 18016,
-    "compras_gov_paginas_examinadas": 39,
+    "pncp_falhas": 1,
+    "pncp_retentativas_429": 2,
+    "compras_gov_respostas_validas": 38,
+    "compras_gov_registros_examinados": 17516,
+    "compras_gov_paginas_examinadas": 38,
     "compras_gov_paginas_planejadas": 39,
-    "compras_gov_falhas": 0,
+    "compras_gov_falhas": 1,
     "compras_gov_itens": 7,
     "html_sinais": 0,
     "paginas_aprofundadas": 30,
     "erros": [
       "PNCP indisponível após 3 tentativas: HTTP 429",
-      "PNCP indisponível após 3 tentativas: HTTP 429",
-      "PNCP: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",
-      "Serviço Florestal Brasileiro — Licitações: HTTPError: 429 Client Error: Too Many Requests for url: https://www.gov.br/florestal/pt-br/acesso-a-informacao/licitacoes-e-contratos"
+      "Compras.gov modalidade 6, página 22: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)",
+      "PNCP: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
     ],
     "avisos": [
       "PNCP respondeu 429 após 3 tentativas; contingência preservada.",
       "PNCP proposta: limite de tempo atingido; resultado parcial preservado.",
-      "PNCP respondeu 429 após 3 tentativas; contingência preservada.",
       "PNCP publicacao: limite de tempo atingido; resultado parcial preservado."
     ]
   },
