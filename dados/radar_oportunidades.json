@@ -1,15 +1,15 @@
 {
   "versao": "6.9",
-  "atualizado_em": "04/11/2026 06:39 (horário de Brasília)",
+  "atualizado_em": "04/11/2026 15:13 (horário de Brasília)",
   "status": "coleta_concluida",
   "prioridade": "MCE, PCA e PGRS em todo o Brasil → projetos rápidos → bônus para GO, DF e MG",
   "modo_busca": "PROJETO RÁPIDO — MCE, PCA e PGRS com prazo vigente, objeto comprovado e triagem comercial",
   "resumo": {
-    "total": 8,
-    "brasil": 8,
+    "total": 9,
+    "brasil": 9,
     "goianesia_regiao": 0,
     "goias": 0,
-    "demandas_formais": 8,
+    "demandas_formais": 9,
     "sinais_ambientais": 0,
     "prioritarios_mce_pca_pgrs": 0,
     "oportunidades_rapidas": 0,
@@ -18,33 +18,133 @@
     "pgrs": 0
   },
   "diagnostico_coleta": {
-    "requisicoes": 122,
-    "pncp_proposta": 1,
+    "requisicoes": 107,
+    "pncp_proposta": 0,
     "pncp_publicacao": 0,
-    "pncp_registros_examinados": 1190,
-    "pncp_respostas_validas": 27,
-    "pncp_falhas": 2,
-    "pncp_retentativas_429": 6,
+    "pncp_registros_examinados": 932,
+    "pncp_respostas_validas": 24,
+    "pncp_falhas": 0,
+    "pncp_retentativas_429": 0,
     "compras_gov_respostas_validas": 39,
-    "compras_gov_registros_examinados": 17713,
+    "compras_gov_registros_examinados": 17708,
     "compras_gov_paginas_examinadas": 39,
     "compras_gov_paginas_planejadas": 39,
     "compras_gov_falhas": 0,
-    "compras_gov_itens": 7,
+    "compras_gov_itens": 8,
     "html_sinais": 0,
     "paginas_aprofundadas": 30,
     "erros": [
-      "PNCP indisponível após 3 tentativas: HTTP 429",
-      "PNCP indisponível após 3 tentativas: HTTP 429",
       "PNCP: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
     ],
     "avisos": [
-      "PNCP respondeu 429 após 3 tentativas; contingência preservada.",
-      "PNCP respondeu 429 após 3 tentativas; contingência preservada.",
       "PNCP publicacao: limite de tempo atingido; resultado parcial preservado."
     ]
   },
   "items": [
+    {
+      "id": "75825828000188-1-000084/2026",
+      "tipo": "DEMANDA FORMAL",
+      "confirmacao": "PRÉ-SELECIONADO",
+      "fonte": "Compras.gov — Dados Abertos",
+      "titulo": "Registro de Preços para futura e eventual contratação de empresa especializada para a prestação continuada de serviços técnicos de licenciamento ambiental e topografia, com disponibilização de suporte técnico ao Município e atendimento às demandas que surgirem durante a vigência contratual, compreendendo a elaboração, análise, acompanhamento e organização de documentos e procedimentos de licenciamento ambiental, bem como levantamentos topográficos, medições, locações, demarcações, elaboração de",
+      "municipio": "CONGONHINHAS",
+      "uf": "PR",
+      "regiao_prioridade": "Brasil",
+      "organizacao": "MUNICIPIO DE CONGONHINHAS",
+      "data_publicacao": "2026-11-03T15:08:43",
+      "prazo": "2026-11-24T08:00:00",
+      "valor_estimado": 255689.04,
+      "modalidade": "Pregão - Eletrônico",
+      "situacao_compra": "Divulgada no PNCP",
+      "servicos_ordone": [
+        "Licenciamento e regularização ambiental"
+      ],
+      "tipo_aderencia": "ADERENTE_DIRETO",
+      "motivo_aceitacao": "Objeto contém serviço direto do portfólio Ordone.",
+      "relacao_comercial": "EXECUÇÃO DIRETA ADERENTE AO PORTFÓLIO",
+      "status_leitura_edital": "LEITURA INCOMPLETA",
+      "documentos_analisados": [],
+      "requisitos_minimos": [],
+      "analise_elegibilidade": "LEITURA INCOMPLETA",
+      "pendencias_identificadas": [
+        "Abrir edital e anexos oficiais antes de decidir pela participação"
+      ],
+      "palavras_encontradas": [
+        "topografia",
+        "licenciamento ambiental",
+        "portfólio:Licenciamento e regularização ambiental",
+        "grupo:ambiental",
+        "grupo:geotecnologia",
+        "serviços ambientais"
+      ],
+      "score": 82,
+      "prioridade": "ALTA",
+      "url": "https://pncp.gov.br/app/editais/75825828000188/2026/84",
+      "numero_controle_pncp": "75825828000188-1-000084/2026",
+      "escopo_coleta": "Brasil",
+      "fase_pncp": "contingencia_compras_gov",
+      "documentos_prioritarios": [],
+      "aderencia_maxima": false,
+      "classe_aderencia": "A",
+      "classificacao_comercial": "EXECUÇÃO DIRETA ADERENTE AO PORTFÓLIO",
+      "oportunidade_rapida": false,
+      "parceria_necessaria": [],
+      "siglas_ambiguas": [],
+      "dias_restantes": 19,
+      "prazo_interno_decisao": "Decidir em até 48 horas",
+      "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
+    },
+    {
+      "id": "76205681000196-1-000123/2026",
+      "tipo": "DEMANDA FORMAL",
+      "confirmacao": "PRÉ-SELECIONADO",
+      "fonte": "Compras.gov — Dados Abertos",
+      "titulo": "Contratação de empresa especializada na prestação de serviços técnicos ambientais destinados à elaboração, protocolo, acompanhamento e atendimento das exigências formuladas pelo órgão ambiental competente, referentes ao processo de licenciamento ambiental para a ampliação do Cemitério Municipal de Renascença – Pr .",
+      "municipio": "RENASCENÇA",
+      "uf": "PR",
+      "regiao_prioridade": "Brasil",
+      "organizacao": "MUNICIPIO DE RENASCENCA",
+      "data_publicacao": "2026-11-03T09:52:27",
+      "prazo": "2026-11-19T08:00:00",
+      "valor_estimado": 11720.0,
+      "modalidade": "Pregão - Eletrônico",
+      "situacao_compra": "Divulgada no PNCP",
+      "servicos_ordone": [
+        "Licenciamento e regularização ambiental"
+      ],
+      "tipo_aderencia": "ADERENTE_DIRETO",
+      "motivo_aceitacao": "Objeto contém serviço direto do portfólio Ordone.",
+      "relacao_comercial": "EXECUÇÃO DIRETA ADERENTE AO PORTFÓLIO",
+      "status_leitura_edital": "LEITURA INCOMPLETA",
+      "documentos_analisados": [],
+      "requisitos_minimos": [],
+      "analise_elegibilidade": "LEITURA INCOMPLETA",
+      "pendencias_identificadas": [
+        "Abrir edital e anexos oficiais antes de decidir pela participação"
+      ],
+      "palavras_encontradas": [
+        "licenciamento ambiental",
+        "portfólio:Licenciamento e regularização ambiental",
+        "grupo:ambiental",
+        "serviços ambientais"
+      ],
+      "score": 75,
+      "prioridade": "MÉDIA",
+      "url": "https://pncp.gov.br/app/editais/76205681000196/2026/123",
+      "numero_controle_pncp": "76205681000196-1-000123/2026",
+      "escopo_coleta": "Brasil",
+      "fase_pncp": "contingencia_compras_gov",
+      "documentos_prioritarios": [],
+      "aderencia_maxima": false,
+      "classe_aderencia": "A",
+      "classificacao_comercial": "EXECUÇÃO DIRETA ADERENTE AO PORTFÓLIO",
+      "oportunidade_rapida": false,
+      "parceria_necessaria": [],
+      "siglas_ambiguas": [],
+      "dias_restantes": 14,
+      "prazo_interno_decisao": "Decidir em até 48 horas",
+      "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
+    },
     {
       "id": "96291141000180-1-007465/2026",
       "tipo": "DEMANDA FORMAL",
@@ -92,7 +192,7 @@
       "oportunidade_rapida": false,
       "parceria_necessaria": [],
       "siglas_ambiguas": [],
-      "dias_restantes": 5,
+      "dias_restantes": 4,
       "prazo_interno_decisao": "Decidir e iniciar proposta hoje",
       "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
     },
@@ -143,60 +243,8 @@
       "oportunidade_rapida": false,
       "parceria_necessaria": [],
       "siglas_ambiguas": [],
-      "dias_restantes": 44,
+      "dias_restantes": 43,
       "prazo_interno_decisao": "Decidir em até 48 horas",
-      "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
-    },
-    {
-      "id": "04892707000100-1-000125/2026",
-      "tipo": "DEMANDA FORMAL",
-      "confirmacao": "PRÉ-SELECIONADO",
-      "fonte": "Compras.gov — Dados Abertos",
-      "titulo": "Contratação de serviços técnicos especializados de engenharia para execução de gestão ambiental, abrangendo o gerenciamento ambiental, a supervisão ambiental e a implementação de programas ambientais no âmbito das obras de implantação e pavimentação da rodovia BR-285/RS/SC, entre o município de Timbé do Sul em Santa Catarina e São José dos Ausentes, no Rio Grande do Sul, com extensão total de 30,43 Km.",
-      "municipio": "BRASÍLIA",
-      "uf": "DF",
-      "regiao_prioridade": "Brasil",
-      "organizacao": "DNIT-DEPARTAMENTO NACIONAL DE INFRAEST DE TRANSPORTES",
-      "data_publicacao": "2026-09-09T04:00:03",
-      "prazo": "2026-11-04T15:00:00",
-      "valor_estimado": 11104392.42,
-      "modalidade": "Concorrência - Eletrônica",
-      "situacao_compra": "Divulgada no PNCP",
-      "servicos_ordone": [
-        "Gestão, supervisão e monitoramento ambiental"
-      ],
-      "tipo_aderencia": "PARCERIA_NECESSARIA",
-      "motivo_aceitacao": "Objeto contém serviço direto do portfólio Ordone.",
-      "relacao_comercial": "PARCERIA TÉCNICA NECESSÁRIA",
-      "status_leitura_edital": "LEITURA INCOMPLETA",
-      "documentos_analisados": [],
-      "requisitos_minimos": [],
-      "analise_elegibilidade": "LEITURA INCOMPLETA",
-      "pendencias_identificadas": [
-        "Abrir edital e anexos oficiais antes de decidir pela participação"
-      ],
-      "palavras_encontradas": [
-        "supervisão ambiental",
-        "portfólio:Gestão, supervisão e monitoramento ambiental",
-        "grupo:ambiental"
-      ],
-      "score": 65,
-      "prioridade": "MÉDIA",
-      "url": "https://pncp.gov.br/app/editais/04892707000100/2026/125",
-      "numero_controle_pncp": "04892707000100-1-000125/2026",
-      "escopo_coleta": "Brasil",
-      "fase_pncp": "contingencia_compras_gov",
-      "documentos_prioritarios": [],
-      "aderencia_maxima": false,
-      "classe_aderencia": "C",
-      "classificacao_comercial": "PARCERIA TÉCNICA NECESSÁRIA",
-      "oportunidade_rapida": false,
-      "parceria_necessaria": [
-        "Engenharia de infraestrutura / obras"
-      ],
-      "siglas_ambiguas": [],
-      "dias_restantes": 0,
-      "prazo_interno_decisao": "Decidir e iniciar proposta hoje",
       "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
     },
     {
@@ -245,7 +293,7 @@
       "oportunidade_rapida": false,
       "parceria_necessaria": [],
       "siglas_ambiguas": [],
-      "dias_restantes": 8,
+      "dias_restantes": 7,
       "prazo_interno_decisao": "Decidir em até 24 horas",
       "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
     },
@@ -347,7 +395,7 @@
       "oportunidade_rapida": false,
       "parceria_necessaria": [],
       "siglas_ambiguas": [],
-      "dias_restantes": 22,
+      "dias_restantes": 21,
       "prazo_interno_decisao": "Decidir em até 48 horas",
       "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
     },
@@ -399,7 +447,7 @@
         "Engenharia de infraestrutura / obras"
       ],
       "siglas_ambiguas": [],
-      "dias_restantes": 48,
+      "dias_restantes": 47,
       "prazo_interno_decisao": "Decidir em até 48 horas",
       "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
     },
@@ -448,7 +496,7 @@
       "oportunidade_rapida": false,
       "parceria_necessaria": [],
       "siglas_ambiguas": [],
-      "dias_restantes": 41,
+      "dias_restantes": 40,
       "prazo_interno_decisao": "Decidir em até 48 horas",
       "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
     }
