@@ -1,6 +1,6 @@
 {
   "versao": "1.0",
-  "atualizado_em": "2026-11-06T06:59:10.477900+00:00",
+  "atualizado_em": "2026-11-06T19:31:41.102517+00:00",
   "criterios": {
     "escopo": "Brasil e mundo",
     "frequencia": "a cada 6 horas",
@@ -19,8 +19,8 @@
     },
     {
       "fonte": "USGS",
-      "ok": false,
-      "erro": "504 Server Error: Gateway Time-out for url: https://www.usgs.gov/news"
+      "ok": true,
+      "itens": 0
     },
     {
       "fonte": "Chinese Academy of Sciences",
