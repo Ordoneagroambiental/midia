@@ -1,7 +1,7 @@
 {
   "versao": "6.9",
-  "atualizado_em": "05/11/2026 20:49 (horário de Brasília)",
-  "status": "coleta_concluida",
+  "atualizado_em": "06/11/2026 04:10 (horário de Brasília)",
+  "status": "coleta_contingencial",
   "prioridade": "MCE, PCA e PGRS em todo o Brasil → projetos rápidos → bônus para GO, DF e MG",
   "modo_busca": "PROJETO RÁPIDO — MCE, PCA e PGRS com prazo vigente, objeto comprovado e triagem comercial",
   "resumo": {
@@ -18,30 +18,29 @@
     "pgrs": 0
   },
   "diagnostico_coleta": {
-    "requisicoes": 120,
+    "requisicoes": 89,
     "pncp_proposta": 0,
     "pncp_publicacao": 0,
-    "pncp_registros_examinados": 1051,
-    "pncp_respostas_validas": 27,
+    "pncp_registros_examinados": 0,
+    "pncp_respostas_validas": 0,
     "pncp_falhas": 2,
-    "pncp_retentativas_429": 8,
-    "compras_gov_respostas_validas": 39,
-    "compras_gov_registros_examinados": 17712,
-    "compras_gov_paginas_examinadas": 39,
-    "compras_gov_paginas_planejadas": 39,
+    "pncp_retentativas_429": 0,
+    "compras_gov_respostas_validas": 38,
+    "compras_gov_registros_examinados": 17964,
+    "compras_gov_paginas_examinadas": 38,
+    "compras_gov_paginas_planejadas": 38,
     "compras_gov_falhas": 0,
     "compras_gov_itens": 9,
     "html_sinais": 0,
     "paginas_aprofundadas": 30,
     "erros": [
-      "PNCP indisponível após 3 tentativas: HTTP 429",
-      "PNCP indisponível após 3 tentativas: HTTP 429",
-      "PNCP: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+      "PNCP indisponível após 3 tentativas: HTTPError: 503 Server Error: Service Unavailable for url: https://pncp.gov.br/api/consulta/v1/contratacoes/proposta?dataFinal=20261106&codigoModalidadeContratacao=4&pagina=1&tamanhoPagina=50",
+      "PNCP indisponível após 3 tentativas: HTTPError: 503 Server Error: Service Unavailable for url: https://pncp.gov.br/api/consulta/v1/contratacoes/proposta?dataFinal=20261107&codigoModalidadeContratacao=4&pagina=1&tamanhoPagina=50"
     ],
     "avisos": [
-      "PNCP respondeu 429 após 3 tentativas; contingência preservada.",
-      "PNCP respondeu 429 após 3 tentativas; contingência preservada.",
-      "PNCP publicacao: limite de tempo atingido; resultado parcial preservado."
+      "PNCP: circuito temporariamente interrompido após duas falhas; acionando a contingência oficial.",
+      "PNCP publicação não repetida porque a fonte já falhou; contingência antecipada.",
+      "PNCP indisponível; coleta nacional concluída pela contingência oficial do Compras.gov."
     ]
   },
   "items": [
