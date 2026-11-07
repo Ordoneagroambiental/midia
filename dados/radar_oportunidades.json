@@ -1,15 +1,15 @@
 {
   "versao": "6.9",
-  "atualizado_em": "07/11/2026 06:05 (horário de Brasília)",
+  "atualizado_em": "07/11/2026 13:38 (horário de Brasília)",
   "status": "coleta_concluida",
   "prioridade": "MCE, PCA e PGRS em todo o Brasil → projetos rápidos → bônus para GO, DF e MG",
   "modo_busca": "PROJETO RÁPIDO — MCE, PCA e PGRS com prazo vigente, objeto comprovado e triagem comercial",
   "resumo": {
-    "total": 10,
-    "brasil": 10,
+    "total": 11,
+    "brasil": 11,
     "goianesia_regiao": 0,
     "goias": 0,
-    "demandas_formais": 10,
+    "demandas_formais": 11,
     "sinais_ambientais": 0,
     "prioritarios_mce_pca_pgrs": 0,
     "oportunidades_rapidas": 0,
@@ -18,26 +18,29 @@
     "pgrs": 0
   },
   "diagnostico_coleta": {
-    "requisicoes": 101,
+    "requisicoes": 123,
     "pncp_proposta": 0,
     "pncp_publicacao": 0,
-    "pncp_registros_examinados": 619,
-    "pncp_respostas_validas": 18,
-    "pncp_falhas": 0,
-    "pncp_retentativas_429": 0,
-    "compras_gov_respostas_validas": 38,
-    "compras_gov_registros_examinados": 17615,
-    "compras_gov_paginas_examinadas": 38,
-    "compras_gov_paginas_planejadas": 38,
+    "pncp_registros_examinados": 999,
+    "pncp_respostas_validas": 30,
+    "pncp_falhas": 2,
+    "pncp_retentativas_429": 8,
+    "compras_gov_respostas_validas": 39,
+    "compras_gov_registros_examinados": 18420,
+    "compras_gov_paginas_examinadas": 39,
+    "compras_gov_paginas_planejadas": 39,
     "compras_gov_falhas": 0,
     "compras_gov_itens": 9,
     "html_sinais": 0,
     "paginas_aprofundadas": 30,
     "erros": [
+      "PNCP indisponível após 3 tentativas: HTTP 429",
+      "PNCP indisponível após 3 tentativas: HTTP 429",
       "PNCP: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
     ],
     "avisos": [
-      "PNCP proposta: limite de tempo atingido; resultado parcial preservado.",
+      "PNCP respondeu 429 após 3 tentativas; contingência preservada.",
+      "PNCP respondeu 429 após 3 tentativas; contingência preservada.",
       "PNCP publicacao: limite de tempo atingido; resultado parcial preservado."
     ]
   },
@@ -91,7 +94,7 @@
       "oportunidade_rapida": false,
       "parceria_necessaria": [],
       "siglas_ambiguas": [],
-      "dias_restantes": 17,
+      "dias_restantes": 16,
       "prazo_interno_decisao": "Decidir em até 48 horas",
       "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
     },
@@ -142,7 +145,7 @@
       "oportunidade_rapida": false,
       "parceria_necessaria": [],
       "siglas_ambiguas": [],
-      "dias_restantes": 12,
+      "dias_restantes": 11,
       "prazo_interno_decisao": "Decidir em até 48 horas",
       "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
     },
@@ -195,7 +198,8 @@
       "siglas_ambiguas": [],
       "dias_restantes": 2,
       "prazo_interno_decisao": "Decidir e iniciar proposta hoje",
-      "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
+      "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem.",
+      "origem_historica": true
     },
     {
       "id": "25769548000121-1-000228/2026",
@@ -244,7 +248,7 @@
       "oportunidade_rapida": false,
       "parceria_necessaria": [],
       "siglas_ambiguas": [],
-      "dias_restantes": 41,
+      "dias_restantes": 40,
       "prazo_interno_decisao": "Decidir em até 48 horas",
       "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
     },
@@ -294,7 +298,7 @@
       "oportunidade_rapida": false,
       "parceria_necessaria": [],
       "siglas_ambiguas": [],
-      "dias_restantes": 5,
+      "dias_restantes": 4,
       "prazo_interno_decisao": "Decidir e iniciar proposta hoje",
       "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
     },
@@ -396,7 +400,7 @@
       "oportunidade_rapida": false,
       "parceria_necessaria": [],
       "siglas_ambiguas": [],
-      "dias_restantes": 3,
+      "dias_restantes": 2,
       "prazo_interno_decisao": "Decidir e iniciar proposta hoje",
       "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
     },
@@ -446,7 +450,7 @@
       "oportunidade_rapida": false,
       "parceria_necessaria": [],
       "siglas_ambiguas": [],
-      "dias_restantes": 19,
+      "dias_restantes": 18,
       "prazo_interno_decisao": "Decidir em até 48 horas",
       "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
     },
@@ -498,7 +502,7 @@
         "Engenharia de infraestrutura / obras"
       ],
       "siglas_ambiguas": [],
-      "dias_restantes": 45,
+      "dias_restantes": 44,
       "prazo_interno_decisao": "Decidir em até 48 horas",
       "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
     },
@@ -547,7 +551,55 @@
       "oportunidade_rapida": false,
       "parceria_necessaria": [],
       "siglas_ambiguas": [],
-      "dias_restantes": 38,
+      "dias_restantes": 37,
+      "prazo_interno_decisao": "Decidir em até 48 horas",
+      "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
+    },
+    {
+      "id": "60448040000122-1-000719/2026",
+      "tipo": "DEMANDA FORMAL",
+      "confirmacao": "PRÉ-SELECIONADO",
+      "fonte": "Compras.gov — Dados Abertos",
+      "titulo": "TICAGRELOR 90 MG COMPRIMIDO REVESTIDO, MONOETANOLAMINA (OLEATO) SOL INJ 50 MG/ML AMPOLA 2 ML, BETAMETASONA(ACETATO)+BETAMETASONA (FOSFATO DISSODICO) AMP 1ML, CEFOXITINA 1G PO PARA SOLUCAO INJETAVEL FRASCO-AMPOLA, CLINDAMICINA (CLORIDRATO) 300 MG, TEMOZOLOMIDA 100 MG CAPSULA, PRILOCAINA + FELIPRESSINA (30 MG + 0,03 UI) /ML CAR 1,8 ML, RASBURICASE 1,5 MG/ML PO LIOF SOL INJ FA 1 ML",
+      "municipio": "SÃO PAULO",
+      "uf": "SP",
+      "regiao_prioridade": "Brasil",
+      "organizacao": "HOSPITAL DAS CLINICAS DA FACULDADE DE MEDICINA DA U S P",
+      "data_publicacao": "2026-11-06T14:34:14",
+      "prazo": "2026-11-19T08:59:00",
+      "valor_estimado": null,
+      "modalidade": "Pregão - Eletrônico",
+      "situacao_compra": "Divulgada no PNCP",
+      "servicos_ordone": [
+        "Regularização ambiental rural / CAR"
+      ],
+      "tipo_aderencia": "ADERENTE_DIRETO",
+      "motivo_aceitacao": "Objeto contém serviço direto do portfólio Ordone.",
+      "relacao_comercial": "EXECUÇÃO DIRETA ADERENTE AO PORTFÓLIO",
+      "status_leitura_edital": "LEITURA INCOMPLETA",
+      "documentos_analisados": [],
+      "requisitos_minimos": [],
+      "analise_elegibilidade": "LEITURA INCOMPLETA",
+      "pendencias_identificadas": [
+        "Abrir edital e anexos oficiais antes de decidir pela participação"
+      ],
+      "palavras_encontradas": [
+        "portfólio:Regularização ambiental rural / CAR"
+      ],
+      "score": 49,
+      "prioridade": "ACOMPANHAR",
+      "url": "https://pncp.gov.br/app/editais/60448040000122/2026/719",
+      "numero_controle_pncp": "60448040000122-1-000719/2026",
+      "escopo_coleta": "Brasil",
+      "fase_pncp": "contingencia_compras_gov",
+      "documentos_prioritarios": [],
+      "aderencia_maxima": false,
+      "classe_aderencia": "A",
+      "classificacao_comercial": "EXECUÇÃO DIRETA ADERENTE AO PORTFÓLIO",
+      "oportunidade_rapida": false,
+      "parceria_necessaria": [],
+      "siglas_ambiguas": [],
+      "dias_restantes": 11,
       "prazo_interno_decisao": "Decidir em até 48 horas",
       "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
     }
