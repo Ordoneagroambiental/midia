@@ -1,6 +1,6 @@
 {
   "versao": "6.9",
-  "atualizado_em": "06/11/2026 23:12 (horário de Brasília)",
+  "atualizado_em": "07/11/2026 06:05 (horário de Brasília)",
   "status": "coleta_concluida",
   "prioridade": "MCE, PCA e PGRS em todo o Brasil → projetos rápidos → bônus para GO, DF e MG",
   "modo_busca": "PROJETO RÁPIDO — MCE, PCA e PGRS com prazo vigente, objeto comprovado e triagem comercial",
@@ -18,26 +18,26 @@
     "pgrs": 0
   },
   "diagnostico_coleta": {
-    "requisicoes": 117,
+    "requisicoes": 101,
     "pncp_proposta": 0,
     "pncp_publicacao": 0,
-    "pncp_registros_examinados": 901,
-    "pncp_respostas_validas": 28,
-    "pncp_falhas": 1,
-    "pncp_retentativas_429": 4,
-    "compras_gov_respostas_validas": 39,
-    "compras_gov_registros_examinados": 17921,
-    "compras_gov_paginas_examinadas": 39,
-    "compras_gov_paginas_planejadas": 39,
+    "pncp_registros_examinados": 619,
+    "pncp_respostas_validas": 18,
+    "pncp_falhas": 0,
+    "pncp_retentativas_429": 0,
+    "compras_gov_respostas_validas": 38,
+    "compras_gov_registros_examinados": 17615,
+    "compras_gov_paginas_examinadas": 38,
+    "compras_gov_paginas_planejadas": 38,
     "compras_gov_falhas": 0,
     "compras_gov_itens": 9,
     "html_sinais": 0,
     "paginas_aprofundadas": 30,
     "erros": [
-      "PNCP indisponível após 3 tentativas: HTTP 429"
+      "PNCP: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
     ],
     "avisos": [
-      "PNCP respondeu 429 após 3 tentativas; contingência preservada.",
+      "PNCP proposta: limite de tempo atingido; resultado parcial preservado.",
       "PNCP publicacao: limite de tempo atingido; resultado parcial preservado."
     ]
   },
@@ -483,8 +483,8 @@
         "portfólio:Licenciamento e regularização ambiental",
         "grupo:ambiental"
       ],
-      "score": 55,
-      "prioridade": "ACOMPANHAR",
+      "score": 60,
+      "prioridade": "MÉDIA",
       "url": "https://pncp.gov.br/app/editais/04892707002235/2026/64",
       "numero_controle_pncp": "04892707002235-1-000064/2026",
       "escopo_coleta": "Brasil",
