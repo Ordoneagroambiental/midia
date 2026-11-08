@@ -1,7 +1,7 @@
 {
   "versao": "1.0",
-  "gerado_em": "2026-11-08T10:52:20.191101-03:00",
-  "ultima_coleta_concluida_em": "2026-11-08T10:52:20.191101-03:00",
+  "gerado_em": "2026-11-08T16:07:34.566708-03:00",
+  "ultima_coleta_concluida_em": "2026-11-08T16:07:34.566708-03:00",
   "status_coleta": "parcial",
   "abrangencia": "Brasil",
   "atualizacao_programada_horas": 2,
@@ -44,10 +44,14 @@
       "nome": "PNCP",
       "url": "https://pncp.gov.br/api/consulta/v1/contratacoes/publicacao",
       "status": "parcial",
-      "paginas_consultadas": 25,
-      "registros_examinados": 1129,
+      "paginas_consultadas": 26,
+      "registros_examinados": 1195,
       "candidatos": 0,
-      "falhas": [],
+      "falhas": [
+        "Modalidade 4, página 147: limite de tempo",
+        "Modalidade 7, página 16: limite de tempo",
+        "Modalidade 5, página 6: limite de tempo"
+      ],
       "detalhes": [
         "Limite de tempo/páginas, falha ou paginação desconhecida: esta fonte NÃO foi consultada integralmente.",
         "Brasil, publicações de 2026-09-24 a 2026-11-08; modalidades [8, 6, 4, 7, 5, 12]."
@@ -102,13 +106,13 @@
           "modalidade": 8,
           "pagina": 1699,
           "total_paginas": 1699,
-          "registros": 33
+          "registros": 38
         },
         {
           "modalidade": 6,
           "pagina": 933,
           "total_paginas": 933,
-          "registros": 29
+          "registros": 40
         },
         {
           "modalidade": 4,
@@ -210,6 +214,12 @@
           "modalidade": 8,
           "pagina": 1696,
           "total_paginas": 1699,
+          "registros": 50
+        },
+        {
+          "modalidade": 6,
+          "pagina": 930,
+          "total_paginas": 933,
           "registros": 50
         }
       ],
