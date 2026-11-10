@@ -1,6 +1,6 @@
 {
   "versao": "6.9",
-  "atualizado_em": "10/11/2026 09:58 (horário de Brasília)",
+  "atualizado_em": "10/11/2026 17:59 (horário de Brasília)",
   "status": "coleta_concluida",
   "prioridade": "MCE, PCA e PGRS em todo o Brasil → projetos rápidos → bônus para GO, DF e MG",
   "modo_busca": "PROJETO RÁPIDO — MCE, PCA e PGRS com prazo vigente, objeto comprovado e triagem comercial",
@@ -9,8 +9,8 @@
     "brasil": 10,
     "goianesia_regiao": 0,
     "goias": 0,
-    "demandas_formais": 10,
-    "sinais_ambientais": 0,
+    "demandas_formais": 9,
+    "sinais_ambientais": 1,
     "prioritarios_mce_pca_pgrs": 0,
     "oportunidades_rapidas": 0,
     "mce": 0,
@@ -18,28 +18,23 @@
     "pgrs": 0
   },
   "diagnostico_coleta": {
-    "requisicoes": 109,
+    "requisicoes": 118,
     "pncp_proposta": 0,
     "pncp_publicacao": 0,
-    "pncp_registros_examinados": 1026,
-    "pncp_respostas_validas": 24,
+    "pncp_registros_examinados": 1312,
+    "pncp_respostas_validas": 32,
     "pncp_falhas": 0,
     "pncp_retentativas_429": 0,
-    "compras_gov_respostas_validas": 37,
-    "compras_gov_registros_examinados": 16642,
-    "compras_gov_paginas_examinadas": 37,
+    "compras_gov_respostas_validas": 39,
+    "compras_gov_registros_examinados": 17642,
+    "compras_gov_paginas_examinadas": 39,
     "compras_gov_paginas_planejadas": 39,
-    "compras_gov_falhas": 2,
-    "compras_gov_itens": 8,
+    "compras_gov_falhas": 0,
+    "compras_gov_itens": 9,
     "html_sinais": 0,
     "paginas_aprofundadas": 30,
-    "erros": [
-      "Compras.gov modalidade 5, página 56: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)",
-      "Compras.gov modalidade 7, página 26: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)",
-      "PNCP: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
-    ],
+    "erros": [],
     "avisos": [
-      "PNCP proposta: limite de tempo atingido; resultado parcial preservado.",
       "PNCP publicacao: limite de tempo atingido; resultado parcial preservado."
     ]
   },
@@ -96,59 +91,6 @@
       "dias_restantes": 13,
       "prazo_interno_decisao": "Decidir em até 48 horas",
       "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
-    },
-    {
-      "id": "07223670000116-1-000012/2026",
-      "tipo": "DEMANDA FORMAL",
-      "confirmacao": "PRÉ-SELECIONADO",
-      "fonte": "PNCP",
-      "titulo": "Serviço de Monitoramento Ambiental da Biota Aquática, Monitoramento dos Recursos Hídricos e Sedimentos Marinhos, Monitoramento da Drenagem Pluvial e Monitoramento da Água de Lastro e Sedimentos de Navios, incluindo a consolidação, sistematização e atualização de banco de dados ambiental do Porto de Fortaleza.",
-      "municipio": "Fortaleza",
-      "uf": "CE",
-      "regiao_prioridade": "Brasil",
-      "organizacao": "COMPANHIA DOCAS DO CEARá",
-      "data_publicacao": "2026-10-13T15:16:05",
-      "prazo": "2026-11-10T10:00:00",
-      "valor_estimado": 0.0,
-      "modalidade": "Pregão - Eletrônico",
-      "servicos_ordone": [
-        "Gestão, supervisão e monitoramento ambiental"
-      ],
-      "tipo_aderencia": "ADERENTE_DIRETO",
-      "motivo_aceitacao": "Objeto contém serviço direto do portfólio Ordone.",
-      "relacao_comercial": "EXECUÇÃO DIRETA ADERENTE AO PORTFÓLIO",
-      "status_leitura_edital": "LEITURA INCOMPLETA",
-      "documentos_analisados": [],
-      "requisitos_minimos": [],
-      "analise_elegibilidade": "LEITURA INCOMPLETA",
-      "pendencias_identificadas": [
-        "Abrir edital e anexos manualmente"
-      ],
-      "palavras_encontradas": [
-        "sedimento",
-        "monitoramento ambiental",
-        "recursos hídricos",
-        "portfólio:Gestão, supervisão e monitoramento ambiental",
-        "grupo:ambiental",
-        "grupo:solo_agua",
-        "serviços ambientais"
-      ],
-      "score": 87,
-      "prioridade": "ALTA",
-      "url": "https://pncp.gov.br/app/editais/07223670000116/2026/12",
-      "numero_controle_pncp": "07223670000116-1-000012/2026",
-      "escopo_coleta": "Brasil",
-      "fase_pncp": "proposta",
-      "documentos_prioritarios": [],
-      "aderencia_maxima": false,
-      "classe_aderencia": "A",
-      "classificacao_comercial": "EXECUÇÃO DIRETA ADERENTE AO PORTFÓLIO",
-      "oportunidade_rapida": false,
-      "parceria_necessaria": [],
-      "siglas_ambiguas": [],
-      "dias_restantes": 0,
-      "prazo_interno_decisao": "Decidir e iniciar proposta hoje",
-      "proxima_acao": "Abrir o edital/aviso oficial, validar escopo, habilitação, prazo, local de execução e viabilidade de proposta."
     },
     {
       "id": "76205681000196-1-000123/2026",
@@ -348,10 +290,9 @@
       "oportunidade_rapida": false,
       "parceria_necessaria": [],
       "siglas_ambiguas": [],
-      "dias_restantes": 16,
+      "dias_restantes": 15,
       "prazo_interno_decisao": "Decidir em até 48 horas",
-      "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem.",
-      "origem_historica": true
+      "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
     },
     {
       "id": "04892707002235-1-000064/2026",
@@ -401,7 +342,7 @@
         "Engenharia de infraestrutura / obras"
       ],
       "siglas_ambiguas": [],
-      "dias_restantes": 42,
+      "dias_restantes": 41,
       "prazo_interno_decisao": "Decidir em até 48 horas",
       "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
     },
@@ -454,6 +395,56 @@
       "dias_restantes": 37,
       "prazo_interno_decisao": "Decidir em até 48 horas",
       "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
+    },
+    {
+      "id": "75443812000100-1-000140/2026",
+      "tipo": "SINAL DE CONTRATAÇÃO",
+      "confirmacao": "PRÉ-SELECIONADO",
+      "fonte": "PNCP",
+      "titulo": "CONTRATACAO DA EMPRESA RL AMBIENTAL ENGENHARIA E MEIO AMBIENTE LTDA PARA A ELABORACAO DE PLANO DE RECUPERACAO DE AREA DEGRADADA NO INSTITUTO AGUA E TERRA IAT",
+      "municipio": "Guapirama",
+      "uf": "PR",
+      "regiao_prioridade": "Brasil",
+      "organizacao": "MUNICIPIO DE GUAPIRAMA",
+      "data_publicacao": "2026-10-13T09:42:45",
+      "prazo": "",
+      "valor_estimado": 9575.0,
+      "modalidade": "Inexigibilidade",
+      "servicos_ordone": [
+        "Recuperação ambiental / PRAD"
+      ],
+      "tipo_aderencia": "ADERENTE_DIRETO",
+      "motivo_aceitacao": "Objeto contém serviço direto do portfólio Ordone.",
+      "relacao_comercial": "EXECUÇÃO DIRETA ADERENTE AO PORTFÓLIO",
+      "status_leitura_edital": "LEITURA INCOMPLETA",
+      "documentos_analisados": [],
+      "requisitos_minimos": [],
+      "analise_elegibilidade": "LEITURA INCOMPLETA",
+      "pendencias_identificadas": [
+        "Abrir edital e anexos manualmente"
+      ],
+      "palavras_encontradas": [
+        "área degradada",
+        "portfólio:Recuperação ambiental / PRAD",
+        "grupo:ambiental",
+        "recuperação de áreas"
+      ],
+      "score": 50,
+      "prioridade": "ACOMPANHAR",
+      "url": "https://pncp.gov.br/app/editais/75443812000100/2026/140",
+      "numero_controle_pncp": "75443812000100-1-000140/2026",
+      "escopo_coleta": "Brasil",
+      "fase_pncp": "publicacao",
+      "documentos_prioritarios": [],
+      "aderencia_maxima": false,
+      "classe_aderencia": "A",
+      "classificacao_comercial": "EXECUÇÃO DIRETA ADERENTE AO PORTFÓLIO",
+      "oportunidade_rapida": false,
+      "parceria_necessaria": [],
+      "siglas_ambiguas": [],
+      "dias_restantes": null,
+      "prazo_interno_decisao": "Confirmar prazo antes de decidir",
+      "proxima_acao": "Abrir a publicação oficial e verificar se há prazo de proposta, futura licitação, contratação direta ou oportunidade institucional."
     },
     {
       "id": "45787678000102-1-000365/2026",
