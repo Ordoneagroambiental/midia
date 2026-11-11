@@ -1,16 +1,16 @@
 {
   "versao": "6.9",
-  "atualizado_em": "10/11/2026 17:59 (horário de Brasília)",
+  "atualizado_em": "10/11/2026 23:05 (horário de Brasília)",
   "status": "coleta_concluida",
   "prioridade": "MCE, PCA e PGRS em todo o Brasil → projetos rápidos → bônus para GO, DF e MG",
   "modo_busca": "PROJETO RÁPIDO — MCE, PCA e PGRS com prazo vigente, objeto comprovado e triagem comercial",
   "resumo": {
-    "total": 10,
-    "brasil": 10,
+    "total": 9,
+    "brasil": 9,
     "goianesia_regiao": 0,
     "goias": 0,
     "demandas_formais": 9,
-    "sinais_ambientais": 1,
+    "sinais_ambientais": 0,
     "prioritarios_mce_pca_pgrs": 0,
     "oportunidades_rapidas": 0,
     "mce": 0,
@@ -18,11 +18,11 @@
     "pgrs": 0
   },
   "diagnostico_coleta": {
-    "requisicoes": 118,
+    "requisicoes": 109,
     "pncp_proposta": 0,
     "pncp_publicacao": 0,
-    "pncp_registros_examinados": 1312,
-    "pncp_respostas_validas": 32,
+    "pncp_registros_examinados": 1004,
+    "pncp_respostas_validas": 26,
     "pncp_falhas": 0,
     "pncp_retentativas_429": 0,
     "compras_gov_respostas_validas": 39,
@@ -33,7 +33,9 @@
     "compras_gov_itens": 9,
     "html_sinais": 0,
     "paginas_aprofundadas": 30,
-    "erros": [],
+    "erros": [
+      "PNCP: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+    ],
     "avisos": [
       "PNCP publicacao: limite de tempo atingido; resultado parcial preservado."
     ]
@@ -395,56 +397,6 @@
       "dias_restantes": 37,
       "prazo_interno_decisao": "Decidir em até 48 horas",
       "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
-    },
-    {
-      "id": "75443812000100-1-000140/2026",
-      "tipo": "SINAL DE CONTRATAÇÃO",
-      "confirmacao": "PRÉ-SELECIONADO",
-      "fonte": "PNCP",
-      "titulo": "CONTRATACAO DA EMPRESA RL AMBIENTAL ENGENHARIA E MEIO AMBIENTE LTDA PARA A ELABORACAO DE PLANO DE RECUPERACAO DE AREA DEGRADADA NO INSTITUTO AGUA E TERRA IAT",
-      "municipio": "Guapirama",
-      "uf": "PR",
-      "regiao_prioridade": "Brasil",
-      "organizacao": "MUNICIPIO DE GUAPIRAMA",
-      "data_publicacao": "2026-10-13T09:42:45",
-      "prazo": "",
-      "valor_estimado": 9575.0,
-      "modalidade": "Inexigibilidade",
-      "servicos_ordone": [
-        "Recuperação ambiental / PRAD"
-      ],
-      "tipo_aderencia": "ADERENTE_DIRETO",
-      "motivo_aceitacao": "Objeto contém serviço direto do portfólio Ordone.",
-      "relacao_comercial": "EXECUÇÃO DIRETA ADERENTE AO PORTFÓLIO",
-      "status_leitura_edital": "LEITURA INCOMPLETA",
-      "documentos_analisados": [],
-      "requisitos_minimos": [],
-      "analise_elegibilidade": "LEITURA INCOMPLETA",
-      "pendencias_identificadas": [
-        "Abrir edital e anexos manualmente"
-      ],
-      "palavras_encontradas": [
-        "área degradada",
-        "portfólio:Recuperação ambiental / PRAD",
-        "grupo:ambiental",
-        "recuperação de áreas"
-      ],
-      "score": 50,
-      "prioridade": "ACOMPANHAR",
-      "url": "https://pncp.gov.br/app/editais/75443812000100/2026/140",
-      "numero_controle_pncp": "75443812000100-1-000140/2026",
-      "escopo_coleta": "Brasil",
-      "fase_pncp": "publicacao",
-      "documentos_prioritarios": [],
-      "aderencia_maxima": false,
-      "classe_aderencia": "A",
-      "classificacao_comercial": "EXECUÇÃO DIRETA ADERENTE AO PORTFÓLIO",
-      "oportunidade_rapida": false,
-      "parceria_necessaria": [],
-      "siglas_ambiguas": [],
-      "dias_restantes": null,
-      "prazo_interno_decisao": "Confirmar prazo antes de decidir",
-      "proxima_acao": "Abrir a publicação oficial e verificar se há prazo de proposta, futura licitação, contratação direta ou oportunidade institucional."
     },
     {
       "id": "45787678000102-1-000365/2026",
