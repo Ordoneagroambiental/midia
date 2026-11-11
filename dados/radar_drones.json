@@ -1,7 +1,7 @@
 {
   "versao": "1.0",
-  "gerado_em": "2026-11-11T06:51:25.899290-03:00",
-  "ultima_coleta_concluida_em": "2026-11-11T06:51:25.899290-03:00",
+  "gerado_em": "2026-11-11T15:03:45.877680-03:00",
+  "ultima_coleta_concluida_em": "2026-11-11T15:03:45.877680-03:00",
   "status_coleta": "parcial",
   "abrangencia": "Brasil",
   "atualizacao_programada_horas": 2,
@@ -44,12 +44,16 @@
       "nome": "PNCP",
       "url": "https://pncp.gov.br/api/consulta/v1/contratacoes/publicacao",
       "status": "parcial",
-      "paginas_consultadas": 12,
-      "registros_examinados": 493,
+      "paginas_consultadas": 5,
+      "registros_examinados": 250,
       "candidatos": 0,
       "falhas": [
-        "Modalidade 8, página 1720: TimeoutError: The read operation timed out",
-        "Modalidade 4, página 149: TimeoutError: The read operation timed out"
+        "Modalidade 7, página 1: TimeoutError: The read operation timed out",
+        "Modalidade 5, página 1: TimeoutError: The read operation timed out",
+        "Modalidade 8, página 1726: TimeoutError: The read operation timed out",
+        "Modalidade 4, página 151: HTTP 503",
+        "Modalidade 12, página 54: HTTP 503",
+        "Modalidade 6, página 943: HTTP 503"
       ],
       "detalhes": [
         "Limite de tempo/páginas, falha ou paginação desconhecida: esta fonte NÃO foi consultada integralmente.",
@@ -68,31 +72,19 @@
         {
           "modalidade": 8,
           "pagina": 1,
-          "total_paginas": 1720,
+          "total_paginas": 1726,
           "registros": 50
         },
         {
           "modalidade": 6,
           "pagina": 1,
-          "total_paginas": 941,
+          "total_paginas": 944,
           "registros": 50
         },
         {
           "modalidade": 4,
           "pagina": 1,
-          "total_paginas": 150,
-          "registros": 50
-        },
-        {
-          "modalidade": 7,
-          "pagina": 1,
-          "total_paginas": 19,
-          "registros": 50
-        },
-        {
-          "modalidade": 5,
-          "pagina": 1,
-          "total_paginas": 9,
+          "total_paginas": 151,
           "registros": 50
         },
         {
@@ -103,38 +95,8 @@
         },
         {
           "modalidade": 6,
-          "pagina": 941,
-          "total_paginas": 941,
-          "registros": 13
-        },
-        {
-          "modalidade": 4,
-          "pagina": 150,
-          "total_paginas": 150,
-          "registros": 43
-        },
-        {
-          "modalidade": 7,
-          "pagina": 19,
-          "total_paginas": 19,
-          "registros": 48
-        },
-        {
-          "modalidade": 5,
-          "pagina": 9,
-          "total_paginas": 9,
-          "registros": 9
-        },
-        {
-          "modalidade": 12,
-          "pagina": 54,
-          "total_paginas": 54,
-          "registros": 30
-        },
-        {
-          "modalidade": 6,
-          "pagina": 940,
-          "total_paginas": 941,
+          "pagina": 944,
+          "total_paginas": 944,
           "registros": 50
         }
       ],
