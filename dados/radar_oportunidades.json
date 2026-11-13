@@ -1,6 +1,6 @@
 {
   "versao": "6.9",
-  "atualizado_em": "12/11/2026 15:34 (horário de Brasília)",
+  "atualizado_em": "12/11/2026 22:22 (horário de Brasília)",
   "status": "coleta_concluida",
   "prioridade": "MCE, PCA e PGRS em todo o Brasil → projetos rápidos → bônus para GO, DF e MG",
   "modo_busca": "PROJETO RÁPIDO — MCE, PCA e PGRS com prazo vigente, objeto comprovado e triagem comercial",
@@ -18,29 +18,25 @@
     "pgrs": 0
   },
   "diagnostico_coleta": {
-    "requisicoes": 98,
+    "requisicoes": 97,
     "pncp_proposta": 0,
     "pncp_publicacao": 0,
-    "pncp_registros_examinados": 229,
-    "pncp_respostas_validas": 9,
+    "pncp_registros_examinados": 169,
+    "pncp_respostas_validas": 7,
     "pncp_falhas": 0,
     "pncp_retentativas_429": 0,
-    "compras_gov_respostas_validas": 37,
-    "compras_gov_registros_examinados": 16805,
-    "compras_gov_paginas_examinadas": 37,
+    "compras_gov_respostas_validas": 39,
+    "compras_gov_registros_examinados": 17805,
+    "compras_gov_paginas_examinadas": 39,
     "compras_gov_paginas_planejadas": 39,
-    "compras_gov_falhas": 2,
+    "compras_gov_falhas": 0,
     "compras_gov_itens": 6,
     "html_sinais": 0,
     "paginas_aprofundadas": 30,
-    "erros": [
-      "PNCP: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
-    ],
+    "erros": [],
     "avisos": [
       "PNCP proposta: limite de tempo atingido; resultado parcial preservado.",
-      "PNCP publicacao: limite de tempo atingido; resultado parcial preservado.",
-      "Compras.gov modalidade 7, página 50: HTTP 400.",
-      "Compras.gov modalidade 7, página 51: HTTP 400."
+      "PNCP publicacao: limite de tempo atingido; resultado parcial preservado."
     ]
   },
   "items": [
