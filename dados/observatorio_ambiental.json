@@ -1,6 +1,6 @@
 {
   "versao": "1.0",
-  "atualizado_em": "2026-11-12T20:06:33.031013+00:00",
+  "atualizado_em": "2026-11-13T06:56:23.122207+00:00",
   "criterios": {
     "escopo": "Brasil e mundo",
     "frequencia": "a cada 6 horas",
@@ -44,8 +44,8 @@
     },
     {
       "fonte": "SGB",
-      "ok": true,
-      "itens": 0
+      "ok": false,
+      "erro": "404 Client Error:  for url: https://www.sgb.gov.br/sala-de-imprensa/noticias"
     }
   ],
   "itens": [
