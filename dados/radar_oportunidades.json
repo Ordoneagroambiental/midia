@@ -1,15 +1,15 @@
 {
   "versao": "6.9",
-  "atualizado_em": "13/11/2026 06:54 (horário de Brasília)",
+  "atualizado_em": "13/11/2026 15:02 (horário de Brasília)",
   "status": "coleta_concluida",
   "prioridade": "MCE, PCA e PGRS em todo o Brasil → projetos rápidos → bônus para GO, DF e MG",
   "modo_busca": "PROJETO RÁPIDO — MCE, PCA e PGRS com prazo vigente, objeto comprovado e triagem comercial",
   "resumo": {
-    "total": 9,
-    "brasil": 9,
+    "total": 8,
+    "brasil": 8,
     "goianesia_regiao": 0,
     "goias": 0,
-    "demandas_formais": 9,
+    "demandas_formais": 8,
     "sinais_ambientais": 0,
     "prioritarios_mce_pca_pgrs": 0,
     "oportunidades_rapidas": 0,
@@ -18,22 +18,23 @@
     "pgrs": 0
   },
   "diagnostico_coleta": {
-    "requisicoes": 105,
+    "requisicoes": 94,
     "pncp_proposta": 0,
     "pncp_publicacao": 0,
-    "pncp_registros_examinados": 586,
-    "pncp_respostas_validas": 16,
+    "pncp_registros_examinados": 123,
+    "pncp_respostas_validas": 7,
     "pncp_falhas": 0,
     "pncp_retentativas_429": 0,
-    "compras_gov_respostas_validas": 39,
-    "compras_gov_registros_examinados": 17661,
-    "compras_gov_paginas_examinadas": 39,
+    "compras_gov_respostas_validas": 38,
+    "compras_gov_registros_examinados": 17161,
+    "compras_gov_paginas_examinadas": 38,
     "compras_gov_paginas_planejadas": 39,
-    "compras_gov_falhas": 0,
+    "compras_gov_falhas": 1,
     "compras_gov_itens": 6,
     "html_sinais": 0,
     "paginas_aprofundadas": 30,
     "erros": [
+      "Compras.gov modalidade 7, página 26: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)",
       "PNCP: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
     ],
     "avisos": [
@@ -195,7 +196,7 @@
       "oportunidade_rapida": false,
       "parceria_necessaria": [],
       "siglas_ambiguas": [],
-      "dias_restantes": 35,
+      "dias_restantes": 34,
       "prazo_interno_decisao": "Decidir em até 48 horas",
       "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
     },
@@ -245,7 +246,7 @@
       "oportunidade_rapida": false,
       "parceria_necessaria": [],
       "siglas_ambiguas": [],
-      "dias_restantes": 13,
+      "dias_restantes": 12,
       "prazo_interno_decisao": "Decidir em até 48 horas",
       "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
     },
@@ -297,7 +298,7 @@
         "Engenharia de infraestrutura / obras"
       ],
       "siglas_ambiguas": [],
-      "dias_restantes": 39,
+      "dias_restantes": 38,
       "prazo_interno_decisao": "Decidir em até 48 horas",
       "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
     },
@@ -347,7 +348,7 @@
       "oportunidade_rapida": false,
       "parceria_necessaria": [],
       "siglas_ambiguas": [],
-      "dias_restantes": 35,
+      "dias_restantes": 34,
       "prazo_interno_decisao": "Decidir em até 48 horas",
       "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
     },
@@ -396,56 +397,9 @@
       "oportunidade_rapida": false,
       "parceria_necessaria": [],
       "siglas_ambiguas": [],
-      "dias_restantes": 32,
+      "dias_restantes": 31,
       "prazo_interno_decisao": "Decidir em até 48 horas",
       "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
-    },
-    {
-      "id": "00394452000103-1-021044/2026",
-      "tipo": "DEMANDA FORMAL",
-      "confirmacao": "PRÉ-SELECIONADO",
-      "fonte": "PNCP",
-      "titulo": "Contratação de serviços de comunicação satelital, rastreamento e link de internet satelital.",
-      "municipio": "Boa Vista",
-      "uf": "RR",
-      "regiao_prioridade": "Brasil",
-      "organizacao": "COMANDO DO EXERCITO",
-      "data_publicacao": "2026-09-28T04:03:09",
-      "prazo": "2026-11-13T10:30:00",
-      "valor_estimado": 11222055.3,
-      "modalidade": "Pregão - Eletrônico",
-      "servicos_ordone": [
-        "Regularização ambiental rural / CAR"
-      ],
-      "tipo_aderencia": "ADERENTE_DIRETO",
-      "motivo_aceitacao": "Objeto contém serviço direto do portfólio Ordone.",
-      "relacao_comercial": "EXECUÇÃO DIRETA ADERENTE AO PORTFÓLIO",
-      "status_leitura_edital": "LEITURA INCOMPLETA",
-      "documentos_analisados": [
-        "MODELO DE PLANILHA DE CUSTOS.pdf"
-      ],
-      "requisitos_minimos": [],
-      "analise_elegibilidade": "ANÁLISE PRELIMINAR FAVORÁVEL",
-      "pendencias_identificadas": [],
-      "palavras_encontradas": [
-        "portfólio:Regularização ambiental rural / CAR"
-      ],
-      "score": 49,
-      "prioridade": "ACOMPANHAR",
-      "url": "https://pncp.gov.br/app/editais/00394452000103/2026/21044",
-      "numero_controle_pncp": "00394452000103-1-021044/2026",
-      "escopo_coleta": "Brasil",
-      "fase_pncp": "proposta",
-      "documentos_prioritarios": [],
-      "aderencia_maxima": false,
-      "classe_aderencia": "A",
-      "classificacao_comercial": "EXECUÇÃO DIRETA ADERENTE AO PORTFÓLIO",
-      "oportunidade_rapida": false,
-      "parceria_necessaria": [],
-      "siglas_ambiguas": [],
-      "dias_restantes": 0,
-      "prazo_interno_decisao": "Decidir e iniciar proposta hoje",
-      "proxima_acao": "Abrir o edital/aviso oficial, validar escopo, habilitação, prazo, local de execução e viabilidade de proposta."
     },
     {
       "id": "60448040000122-1-000719/2026",
@@ -491,8 +445,8 @@
       "oportunidade_rapida": false,
       "parceria_necessaria": [],
       "siglas_ambiguas": [],
-      "dias_restantes": 6,
-      "prazo_interno_decisao": "Decidir em até 24 horas",
+      "dias_restantes": 5,
+      "prazo_interno_decisao": "Decidir e iniciar proposta hoje",
       "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
     }
   ],
