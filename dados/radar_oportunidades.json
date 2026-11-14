@@ -1,6 +1,6 @@
 {
   "versao": "6.9",
-  "atualizado_em": "13/11/2026 20:50 (horário de Brasília)",
+  "atualizado_em": "14/11/2026 03:56 (horário de Brasília)",
   "status": "coleta_concluida",
   "prioridade": "MCE, PCA e PGRS em todo o Brasil → projetos rápidos → bônus para GO, DF e MG",
   "modo_busca": "PROJETO RÁPIDO — MCE, PCA e PGRS com prazo vigente, objeto comprovado e triagem comercial",
@@ -18,22 +18,24 @@
     "pgrs": 0
   },
   "diagnostico_coleta": {
-    "requisicoes": 104,
+    "requisicoes": 105,
     "pncp_proposta": 0,
     "pncp_publicacao": 0,
-    "pncp_registros_examinados": 531,
-    "pncp_respostas_validas": 19,
+    "pncp_registros_examinados": 594,
+    "pncp_respostas_validas": 20,
     "pncp_falhas": 0,
     "pncp_retentativas_429": 0,
-    "compras_gov_respostas_validas": 39,
-    "compras_gov_registros_examinados": 17661,
-    "compras_gov_paginas_examinadas": 39,
+    "compras_gov_respostas_validas": 38,
+    "compras_gov_registros_examinados": 17463,
+    "compras_gov_paginas_examinadas": 38,
     "compras_gov_paginas_planejadas": 39,
-    "compras_gov_falhas": 0,
+    "compras_gov_falhas": 1,
     "compras_gov_itens": 6,
     "html_sinais": 0,
     "paginas_aprofundadas": 30,
-    "erros": [],
+    "erros": [
+      "Compras.gov modalidade 5, página 37: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)"
+    ],
     "avisos": [
       "PNCP proposta: limite de tempo atingido; resultado parcial preservado.",
       "PNCP publicacao: limite de tempo atingido; resultado parcial preservado."
