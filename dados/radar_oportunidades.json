@@ -1,6 +1,6 @@
 {
   "versao": "6.9",
-  "atualizado_em": "15/11/2026 14:23 (horário de Brasília)",
+  "atualizado_em": "15/11/2026 20:07 (horário de Brasília)",
   "status": "coleta_concluida",
   "prioridade": "MCE, PCA e PGRS em todo o Brasil → projetos rápidos → bônus para GO, DF e MG",
   "modo_busca": "PROJETO RÁPIDO — MCE, PCA e PGRS com prazo vigente, objeto comprovado e triagem comercial",
@@ -18,11 +18,11 @@
     "pgrs": 0
   },
   "diagnostico_coleta": {
-    "requisicoes": 105,
+    "requisicoes": 101,
     "pncp_proposta": 0,
     "pncp_publicacao": 0,
-    "pncp_registros_examinados": 813,
-    "pncp_respostas_validas": 22,
+    "pncp_registros_examinados": 707,
+    "pncp_respostas_validas": 19,
     "pncp_falhas": 0,
     "pncp_retentativas_429": 0,
     "compras_gov_respostas_validas": 39,
@@ -34,6 +34,7 @@
     "html_sinais": 0,
     "paginas_aprofundadas": 30,
     "erros": [
+      "PNCP: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",
       "BNDES Floresta Viva: ConnectionError: HTTPSConnectionPool(host='www.bndes.gov.br', port=443): Max retries exceeded with url: /wps/portal/site/home/desenvolvimento-sustentavel/parcerias/floresta-viva (Caused by NewConnectionError(\"HTTPSConnection(host",
       "Fundo Amazônia: ConnectionError: HTTPSConnectionPool(host='www.fundoamazonia.gov.br', port=443): Max retries exceeded with url: /pt/projetos/ (Caused by NewConnectionError(\"HTTPSConnection(host='www.fundoamazonia.gov.br', port=443): Failed to establi"
     ],
