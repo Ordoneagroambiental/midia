@@ -1,7 +1,7 @@
 {
   "versao": "1.0",
-  "gerado_em": "2026-11-15T14:24:53.649995-03:00",
-  "ultima_coleta_concluida_em": "2026-11-15T14:24:53.649995-03:00",
+  "gerado_em": "2026-11-15T20:11:01.732035-03:00",
+  "ultima_coleta_concluida_em": "2026-11-15T20:11:01.732035-03:00",
   "status_coleta": "parcial",
   "abrangencia": "Brasil",
   "atualizacao_programada_horas": 2,
@@ -49,8 +49,7 @@
       "candidatos": 0,
       "falhas": [
         "Modalidade 8, página 1718: TimeoutError: The read operation timed out",
-        "Modalidade 6, página 951: TimeoutError: The read operation timed out",
-        "Modalidade 4, página 153: TimeoutError: The read operation timed out"
+        "Modalidade 6, página 951: TimeoutError: The read operation timed out"
       ],
       "detalhes": [
         "Limite de tempo/páginas, falha ou paginação desconhecida: esta fonte NÃO foi consultada integralmente.",
