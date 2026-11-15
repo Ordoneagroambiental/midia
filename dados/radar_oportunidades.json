@@ -1,6 +1,6 @@
 {
   "versao": "6.9",
-  "atualizado_em": "14/11/2026 17:55 (horário de Brasília)",
+  "atualizado_em": "14/11/2026 23:04 (horário de Brasília)",
   "status": "coleta_concluida",
   "prioridade": "MCE, PCA e PGRS em todo o Brasil → projetos rápidos → bônus para GO, DF e MG",
   "modo_busca": "PROJETO RÁPIDO — MCE, PCA e PGRS com prazo vigente, objeto comprovado e triagem comercial",
@@ -18,13 +18,13 @@
     "pgrs": 0
   },
   "diagnostico_coleta": {
-    "requisicoes": 119,
+    "requisicoes": 123,
     "pncp_proposta": 0,
     "pncp_publicacao": 0,
-    "pncp_registros_examinados": 1100,
-    "pncp_respostas_validas": 31,
-    "pncp_falhas": 1,
-    "pncp_retentativas_429": 4,
+    "pncp_registros_examinados": 1018,
+    "pncp_respostas_validas": 30,
+    "pncp_falhas": 2,
+    "pncp_retentativas_429": 8,
     "compras_gov_respostas_validas": 39,
     "compras_gov_registros_examinados": 18000,
     "compras_gov_paginas_examinadas": 39,
@@ -35,11 +35,11 @@
     "paginas_aprofundadas": 30,
     "erros": [
       "PNCP indisponível após 3 tentativas: HTTP 429",
-      "PNCP: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",
-      "SEMAD Goiás: HTTPError: 503 Server Error: Service Unavailable for url: https://goias.gov.br/meioambiente/",
-      "SEMAD Goiás — Licitações: HTTPError: 503 Server Error: Service Unavailable for url: https://goias.gov.br/meioambiente/licitacoes-e-contratos/"
+      "PNCP indisponível após 3 tentativas: HTTP 429",
+      "PNCP: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
     ],
     "avisos": [
+      "PNCP respondeu 429 após 3 tentativas; contingência preservada.",
       "PNCP respondeu 429 após 3 tentativas; contingência preservada.",
       "PNCP publicacao: limite de tempo atingido; resultado parcial preservado."
     ]
