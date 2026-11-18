@@ -1,6 +1,6 @@
 {
   "versao": "1.0",
-  "atualizado_em": "2026-11-18T07:41:46.229723+00:00",
+  "atualizado_em": "2026-11-18T20:41:23.770626+00:00",
   "criterios": {
     "escopo": "Brasil e mundo",
     "frequencia": "a cada 6 horas",
@@ -14,8 +14,8 @@
     },
     {
       "fonte": "EPA Estados Unidos",
-      "ok": true,
-      "itens": 0
+      "ok": false,
+      "erro": "405 Client Error: Not Allowed for url: https://www.epa.gov/newsreleases/search"
     },
     {
       "fonte": "USGS",
