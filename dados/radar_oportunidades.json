@@ -1,15 +1,15 @@
 {
   "versao": "6.9",
-  "atualizado_em": "18/11/2026 04:50 (horário de Brasília)",
-  "status": "coleta_contingencial",
+  "atualizado_em": "18/11/2026 14:32 (horário de Brasília)",
+  "status": "coleta_concluida",
   "prioridade": "MCE, PCA e PGRS em todo o Brasil → projetos rápidos → bônus para GO, DF e MG",
   "modo_busca": "PROJETO RÁPIDO — MCE, PCA e PGRS com prazo vigente, objeto comprovado e triagem comercial",
   "resumo": {
-    "total": 10,
-    "brasil": 10,
+    "total": 11,
+    "brasil": 11,
     "goianesia_regiao": 0,
     "goias": 0,
-    "demandas_formais": 10,
+    "demandas_formais": 11,
     "sinais_ambientais": 0,
     "prioritarios_mce_pca_pgrs": 0,
     "oportunidades_rapidas": 0,
@@ -18,29 +18,31 @@
     "pgrs": 0
   },
   "diagnostico_coleta": {
-    "requisicoes": 90,
+    "requisicoes": 103,
     "pncp_proposta": 0,
     "pncp_publicacao": 0,
-    "pncp_registros_examinados": 0,
-    "pncp_respostas_validas": 0,
-    "pncp_falhas": 2,
-    "pncp_retentativas_429": 0,
-    "compras_gov_respostas_validas": 39,
-    "compras_gov_registros_examinados": 17701,
-    "compras_gov_paginas_examinadas": 39,
+    "pncp_registros_examinados": 622,
+    "pncp_respostas_validas": 15,
+    "pncp_falhas": 1,
+    "pncp_retentativas_429": 2,
+    "compras_gov_respostas_validas": 38,
+    "compras_gov_registros_examinados": 17487,
+    "compras_gov_paginas_examinadas": 38,
     "compras_gov_paginas_planejadas": 39,
-    "compras_gov_falhas": 0,
-    "compras_gov_itens": 5,
+    "compras_gov_falhas": 1,
+    "compras_gov_itens": 6,
     "html_sinais": 0,
     "paginas_aprofundadas": 30,
     "erros": [
-      "PNCP indisponível após 3 tentativas: HTTPError: 503 Server Error: Service Unavailable for url: https://pncp.gov.br/api/consulta/v1/contratacoes/proposta?dataFinal=20261118&codigoModalidadeContratacao=4&pagina=1&tamanhoPagina=50",
-      "PNCP indisponível após 3 tentativas: HTTPError: 503 Server Error: Service Unavailable for url: https://pncp.gov.br/api/consulta/v1/contratacoes/proposta?dataFinal=20261119&codigoModalidadeContratacao=4&pagina=1&tamanhoPagina=50"
+      "PNCP indisponível após 3 tentativas: HTTP 429",
+      "Compras.gov modalidade 7, página 26: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)",
+      "PNCP: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
     ],
     "avisos": [
-      "PNCP: circuito temporariamente interrompido após duas falhas; acionando a contingência oficial.",
-      "PNCP publicação não repetida porque a fonte já falhou; contingência antecipada.",
-      "PNCP indisponível; coleta nacional concluída pela contingência oficial do Compras.gov."
+      "PNCP proposta: limite de tempo atingido; resultado parcial preservado.",
+      "PNCP respondeu 429 após 3 tentativas; contingência preservada.",
+      "PNCP publicacao: limite de tempo atingido; resultado parcial preservado.",
+      "Aprofundamento: ConnectionError: HTTPSConnectionPool(host='www.gov.br', port=443): Max retries exceeded with url: /mma/pt-br/assuntos/controle-ao-desmata"
     ]
   },
   "items": [
@@ -99,9 +101,65 @@
       "origem_historica": true
     },
     {
-      "id": "39485438000142-1-000034/2026",
+      "id": "00394452000103-1-024689/2026",
       "tipo": "DEMANDA FORMAL",
       "confirmacao": "PRÉ-SELECIONADO",
+      "fonte": "Compras.gov — Dados Abertos",
+      "titulo": "Contratação de serviços técnicos especializados para regularização de poço artesiano no 1º B Com GE Sl, contemplando retirada e reinstalação do conjunto de bombeamento conforme parâmetros operacionais, filmagem interna do poço tubular, instalação de tubo de monitoramento ambiental, adequação para hidrômetro e elaboração de documentação técnica para outorga junto ao IPAAM.",
+      "municipio": "MANAUS",
+      "uf": "AM",
+      "regiao_prioridade": "Brasil",
+      "organizacao": "COMANDO DO EXERCITO",
+      "data_publicacao": "2026-11-17T16:20:03",
+      "prazo": "2026-11-23T08:30:00",
+      "valor_estimado": 18854.0,
+      "modalidade": "Dispensa",
+      "situacao_compra": "Divulgada no PNCP",
+      "servicos_ordone": [
+        "Gestão, supervisão e monitoramento ambiental",
+        "Nascentes, APP e outorga"
+      ],
+      "tipo_aderencia": "ADERENTE_DIRETO",
+      "motivo_aceitacao": "Objeto contém serviço direto do portfólio Ordone.",
+      "relacao_comercial": "EXECUÇÃO DIRETA ADERENTE AO PORTFÓLIO",
+      "status_leitura_edital": "LEITURA INCOMPLETA",
+      "documentos_analisados": [],
+      "requisitos_minimos": [],
+      "analise_elegibilidade": "LEITURA INCOMPLETA",
+      "pendencias_identificadas": [
+        "Abrir edital e anexos oficiais antes de decidir pela participação"
+      ],
+      "palavras_encontradas": [
+        "bombeamento",
+        "outorga",
+        "monitoramento ambiental",
+        "portfólio:Gestão, supervisão e monitoramento ambiental",
+        "portfólio:Nascentes, APP e outorga",
+        "grupo:ambiental",
+        "grupo:solo_agua",
+        "grupo:irrigacao"
+      ],
+      "score": 87,
+      "prioridade": "ALTA",
+      "url": "https://pncp.gov.br/app/editais/00394452000103/2026/24689",
+      "numero_controle_pncp": "00394452000103-1-024689/2026",
+      "escopo_coleta": "Brasil",
+      "fase_pncp": "contingencia_compras_gov",
+      "documentos_prioritarios": [],
+      "aderencia_maxima": false,
+      "classe_aderencia": "A",
+      "classificacao_comercial": "EXECUÇÃO DIRETA ADERENTE AO PORTFÓLIO",
+      "oportunidade_rapida": false,
+      "parceria_necessaria": [],
+      "siglas_ambiguas": [],
+      "dias_restantes": 4,
+      "prazo_interno_decisao": "Decidir e iniciar proposta hoje",
+      "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
+    },
+    {
+      "id": "39485438000142-1-000034/2026",
+      "tipo": "DEMANDA FORMAL",
+      "confirmacao": "CONFIRMADO",
       "fonte": "PNCP",
       "titulo": "[Portal de Compras Públicas] - CONTRATAÇÃO DE EMPRESA ESPECIALIZADA DESTINADA À ELABORAÇÃO DOS LEVANTAMENTOS DE CAMPO, INVESTIGAÇÕES TÉCNICAS, ESTUDOS HIDROLÓGICOS E HIDRÁULICOS, ESTUDOS AMBIENTAIS, OBTENÇÃO DAS LICENÇAS, RECONSTRUÇÃO DE PONTES E RECUPERAÇÃO AMBIENTAL DAS BACIAS DOS RIOS IGUAÇU-BOTAS, NO MUNICÍPIO DE B",
       "municipio": "Belford Roxo",
@@ -119,12 +177,16 @@
       "tipo_aderencia": "ADERENTE_DIRETO",
       "motivo_aceitacao": "Objeto contém serviço direto do portfólio Ordone.",
       "relacao_comercial": "EXECUÇÃO DIRETA ADERENTE AO PORTFÓLIO",
-      "status_leitura_edital": "LEITURA INCOMPLETA",
-      "documentos_analisados": [],
-      "requisitos_minimos": [],
-      "analise_elegibilidade": "LEITURA INCOMPLETA",
+      "status_leitura_edital": "ANALISADO",
+      "documentos_analisados": [
+        "MANDADO_DE_SEGURAN_A.pdf"
+      ],
+      "requisitos_minimos": [
+        "Atestado de capacidade técnica"
+      ],
+      "analise_elegibilidade": "VERIFICAR DOCUMENTOS",
       "pendencias_identificadas": [
-        "Abrir edital e anexos manualmente"
+        "Confirmar atestado compatível com o objeto"
       ],
       "palavras_encontradas": [
         "recuperação ambiental",
@@ -146,10 +208,9 @@
       "oportunidade_rapida": false,
       "parceria_necessaria": [],
       "siglas_ambiguas": [],
-      "dias_restantes": 1,
+      "dias_restantes": 0,
       "prazo_interno_decisao": "Decidir e iniciar proposta hoje",
-      "proxima_acao": "Abrir o edital/aviso oficial, validar escopo, habilitação, prazo, local de execução e viabilidade de proposta.",
-      "origem_historica": true
+      "proxima_acao": "Abrir o edital/aviso oficial, validar escopo, habilitação, prazo, local de execução e viabilidade de proposta."
     },
     {
       "id": "76205681000196-1-000123/2026",
@@ -301,7 +362,7 @@
       "oportunidade_rapida": false,
       "parceria_necessaria": [],
       "siglas_ambiguas": [],
-      "dias_restantes": 8,
+      "dias_restantes": 7,
       "prazo_interno_decisao": "Decidir em até 24 horas",
       "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
     },
@@ -353,7 +414,7 @@
         "Engenharia de infraestrutura / obras"
       ],
       "siglas_ambiguas": [],
-      "dias_restantes": 34,
+      "dias_restantes": 33,
       "prazo_interno_decisao": "Decidir em até 48 horas",
       "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
     },
@@ -403,7 +464,7 @@
       "oportunidade_rapida": false,
       "parceria_necessaria": [],
       "siglas_ambiguas": [],
-      "dias_restantes": 30,
+      "dias_restantes": 29,
       "prazo_interno_decisao": "Decidir em até 48 horas",
       "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
     },
@@ -452,7 +513,7 @@
       "oportunidade_rapida": false,
       "parceria_necessaria": [],
       "siglas_ambiguas": [],
-      "dias_restantes": 14,
+      "dias_restantes": 13,
       "prazo_interno_decisao": "Decidir em até 48 horas",
       "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
     },
@@ -501,7 +562,7 @@
       "oportunidade_rapida": false,
       "parceria_necessaria": [],
       "siglas_ambiguas": [],
-      "dias_restantes": 27,
+      "dias_restantes": 26,
       "prazo_interno_decisao": "Decidir em até 48 horas",
       "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
     },
