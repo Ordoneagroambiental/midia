@@ -1,7 +1,7 @@
 {
   "versao": "6.9",
-  "atualizado_em": "17/11/2026 19:35 (horário de Brasília)",
-  "status": "coleta_concluida",
+  "atualizado_em": "18/11/2026 04:50 (horário de Brasília)",
+  "status": "coleta_contingencial",
   "prioridade": "MCE, PCA e PGRS em todo o Brasil → projetos rápidos → bônus para GO, DF e MG",
   "modo_busca": "PROJETO RÁPIDO — MCE, PCA e PGRS com prazo vigente, objeto comprovado e triagem comercial",
   "resumo": {
@@ -18,15 +18,15 @@
     "pgrs": 0
   },
   "diagnostico_coleta": {
-    "requisicoes": 115,
+    "requisicoes": 90,
     "pncp_proposta": 0,
     "pncp_publicacao": 0,
-    "pncp_registros_examinados": 925,
-    "pncp_respostas_validas": 24,
-    "pncp_falhas": 1,
-    "pncp_retentativas_429": 4,
+    "pncp_registros_examinados": 0,
+    "pncp_respostas_validas": 0,
+    "pncp_falhas": 2,
+    "pncp_retentativas_429": 0,
     "compras_gov_respostas_validas": 39,
-    "compras_gov_registros_examinados": 17986,
+    "compras_gov_registros_examinados": 17701,
     "compras_gov_paginas_examinadas": 39,
     "compras_gov_paginas_planejadas": 39,
     "compras_gov_falhas": 0,
@@ -34,12 +34,13 @@
     "html_sinais": 0,
     "paginas_aprofundadas": 30,
     "erros": [
-      "PNCP indisponível após 3 tentativas: HTTP 429"
+      "PNCP indisponível após 3 tentativas: HTTPError: 503 Server Error: Service Unavailable for url: https://pncp.gov.br/api/consulta/v1/contratacoes/proposta?dataFinal=20261118&codigoModalidadeContratacao=4&pagina=1&tamanhoPagina=50",
+      "PNCP indisponível após 3 tentativas: HTTPError: 503 Server Error: Service Unavailable for url: https://pncp.gov.br/api/consulta/v1/contratacoes/proposta?dataFinal=20261119&codigoModalidadeContratacao=4&pagina=1&tamanhoPagina=50"
     ],
     "avisos": [
-      "PNCP proposta: limite de tempo atingido; resultado parcial preservado.",
-      "PNCP respondeu 429 após 3 tentativas; contingência preservada.",
-      "PNCP publicacao: limite de tempo atingido; resultado parcial preservado."
+      "PNCP: circuito temporariamente interrompido após duas falhas; acionando a contingência oficial.",
+      "PNCP publicação não repetida porque a fonte já falhou; contingência antecipada.",
+      "PNCP indisponível; coleta nacional concluída pela contingência oficial do Compras.gov."
     ]
   },
   "items": [
@@ -147,7 +148,8 @@
       "siglas_ambiguas": [],
       "dias_restantes": 1,
       "prazo_interno_decisao": "Decidir e iniciar proposta hoje",
-      "proxima_acao": "Abrir o edital/aviso oficial, validar escopo, habilitação, prazo, local de execução e viabilidade de proposta."
+      "proxima_acao": "Abrir o edital/aviso oficial, validar escopo, habilitação, prazo, local de execução e viabilidade de proposta.",
+      "origem_historica": true
     },
     {
       "id": "76205681000196-1-000123/2026",
