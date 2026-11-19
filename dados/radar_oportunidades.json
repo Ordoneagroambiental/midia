@@ -1,15 +1,15 @@
 {
   "versao": "6.9",
-  "atualizado_em": "19/11/2026 07:38 (horário de Brasília)",
+  "atualizado_em": "19/11/2026 17:59 (horário de Brasília)",
   "status": "coleta_concluida",
   "prioridade": "MCE, PCA e PGRS em todo o Brasil → projetos rápidos → bônus para GO, DF e MG",
   "modo_busca": "PROJETO RÁPIDO — MCE, PCA e PGRS com prazo vigente, objeto comprovado e triagem comercial",
   "resumo": {
-    "total": 13,
-    "brasil": 13,
+    "total": 10,
+    "brasil": 10,
     "goianesia_regiao": 0,
     "goias": 0,
-    "demandas_formais": 12,
+    "demandas_formais": 9,
     "sinais_ambientais": 1,
     "prioritarios_mce_pca_pgrs": 0,
     "oportunidades_rapidas": 0,
@@ -18,26 +18,32 @@
     "pgrs": 0
   },
   "diagnostico_coleta": {
-    "requisicoes": 113,
+    "requisicoes": 111,
     "pncp_proposta": 0,
     "pncp_publicacao": 0,
-    "pncp_registros_examinados": 999,
-    "pncp_respostas_validas": 23,
-    "pncp_falhas": 0,
-    "pncp_retentativas_429": 0,
-    "compras_gov_respostas_validas": 39,
-    "compras_gov_registros_examinados": 17572,
-    "compras_gov_paginas_examinadas": 39,
+    "pncp_registros_examinados": 672,
+    "pncp_respostas_validas": 22,
+    "pncp_falhas": 1,
+    "pncp_retentativas_429": 2,
+    "compras_gov_respostas_validas": 35,
+    "compras_gov_registros_examinados": 16198,
+    "compras_gov_paginas_examinadas": 35,
     "compras_gov_paginas_planejadas": 39,
-    "compras_gov_falhas": 0,
+    "compras_gov_falhas": 4,
     "compras_gov_itens": 7,
     "html_sinais": 0,
     "paginas_aprofundadas": 30,
     "erros": [
-      "PNCP: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+      "PNCP indisponível após 3 tentativas: HTTP 429",
+      "Compras.gov modalidade 6, página 48: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)",
+      "Compras.gov modalidade 7, página 13: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)",
+      "Compras.gov modalidade 7, página 26: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)",
+      "Compras.gov modalidade 7, página 38: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)",
+      "PNCP: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",
+      "BNDES Floresta Viva: ReadTimeout: HTTPSConnectionPool(host='www.bndes.gov.br', port=443): Read timed out. (read timeout=18)"
     ],
     "avisos": [
-      "PNCP proposta: limite de tempo atingido; resultado parcial preservado.",
+      "PNCP respondeu 429 após 3 tentativas; contingência preservada.",
       "PNCP publicacao: limite de tempo atingido; resultado parcial preservado."
     ]
   },
@@ -148,65 +154,9 @@
       "oportunidade_rapida": false,
       "parceria_necessaria": [],
       "siglas_ambiguas": [],
-      "dias_restantes": 4,
+      "dias_restantes": 3,
       "prazo_interno_decisao": "Decidir e iniciar proposta hoje",
       "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
-    },
-    {
-      "id": "39485438000142-1-000034/2026",
-      "tipo": "DEMANDA FORMAL",
-      "confirmacao": "CONFIRMADO",
-      "fonte": "PNCP",
-      "titulo": "[Portal de Compras Públicas] - CONTRATAÇÃO DE EMPRESA ESPECIALIZADA DESTINADA À ELABORAÇÃO DOS LEVANTAMENTOS DE CAMPO, INVESTIGAÇÕES TÉCNICAS, ESTUDOS HIDROLÓGICOS E HIDRÁULICOS, ESTUDOS AMBIENTAIS, OBTENÇÃO DAS LICENÇAS, RECONSTRUÇÃO DE PONTES E RECUPERAÇÃO AMBIENTAL DAS BACIAS DOS RIOS IGUAÇU-BOTAS, NO MUNICÍPIO DE B",
-      "municipio": "Belford Roxo",
-      "uf": "RJ",
-      "regiao_prioridade": "Brasil",
-      "organizacao": "MUNICIPIO DE BELFORD ROXO",
-      "data_publicacao": "2026-08-18T12:32:28",
-      "prazo": "2026-11-19T09:59:00",
-      "valor_estimado": 125530081.96,
-      "modalidade": "Concorrência - Eletrônica",
-      "servicos_ordone": [
-        "Recuperação ambiental / PRAD",
-        "Licenciamento e regularização ambiental"
-      ],
-      "tipo_aderencia": "ADERENTE_DIRETO",
-      "motivo_aceitacao": "Objeto contém serviço direto do portfólio Ordone.",
-      "relacao_comercial": "EXECUÇÃO DIRETA ADERENTE AO PORTFÓLIO",
-      "status_leitura_edital": "ANALISADO",
-      "documentos_analisados": [
-        "MANDADO_DE_SEGURAN_A.pdf"
-      ],
-      "requisitos_minimos": [
-        "Atestado de capacidade técnica"
-      ],
-      "analise_elegibilidade": "VERIFICAR DOCUMENTOS",
-      "pendencias_identificadas": [
-        "Confirmar atestado compatível com o objeto"
-      ],
-      "palavras_encontradas": [
-        "recuperação ambiental",
-        "estudos ambientais",
-        "portfólio:Recuperação ambiental / PRAD",
-        "portfólio:Licenciamento e regularização ambiental",
-        "grupo:ambiental"
-      ],
-      "score": 85,
-      "prioridade": "ALTA",
-      "url": "https://pncp.gov.br/app/editais/39485438000142/2026/34",
-      "numero_controle_pncp": "39485438000142-1-000034/2026",
-      "escopo_coleta": "Brasil",
-      "fase_pncp": "proposta",
-      "documentos_prioritarios": [],
-      "aderencia_maxima": false,
-      "classe_aderencia": "A",
-      "classificacao_comercial": "EXECUÇÃO DIRETA ADERENTE AO PORTFÓLIO",
-      "oportunidade_rapida": false,
-      "parceria_necessaria": [],
-      "siglas_ambiguas": [],
-      "dias_restantes": 0,
-      "prazo_interno_decisao": "Decidir e iniciar proposta hoje",
-      "proxima_acao": "Abrir o edital/aviso oficial, validar escopo, habilitação, prazo, local de execução e viabilidade de proposta."
     },
     {
       "id": "00509018000113-1-002568/2026",
@@ -256,61 +206,9 @@
       "oportunidade_rapida": false,
       "parceria_necessaria": [],
       "siglas_ambiguas": [],
-      "dias_restantes": 19,
+      "dias_restantes": 18,
       "prazo_interno_decisao": "Decidir em até 48 horas",
       "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
-    },
-    {
-      "id": "76205681000196-1-000123/2026",
-      "tipo": "DEMANDA FORMAL",
-      "confirmacao": "PRÉ-SELECIONADO",
-      "fonte": "Compras.gov — Dados Abertos",
-      "titulo": "Contratação de empresa especializada na prestação de serviços técnicos ambientais destinados à elaboração, protocolo, acompanhamento e atendimento das exigências formuladas pelo órgão ambiental competente, referentes ao processo de licenciamento ambiental para a ampliação do Cemitério Municipal de Renascença – Pr .",
-      "municipio": "RENASCENÇA",
-      "uf": "PR",
-      "regiao_prioridade": "Brasil",
-      "organizacao": "MUNICIPIO DE RENASCENCA",
-      "data_publicacao": "2026-11-03T09:52:27",
-      "prazo": "2026-11-19T08:00:00",
-      "valor_estimado": 11720.0,
-      "modalidade": "Pregão - Eletrônico",
-      "situacao_compra": "Divulgada no PNCP",
-      "servicos_ordone": [
-        "Licenciamento e regularização ambiental"
-      ],
-      "tipo_aderencia": "ADERENTE_DIRETO",
-      "motivo_aceitacao": "Objeto contém serviço direto do portfólio Ordone.",
-      "relacao_comercial": "EXECUÇÃO DIRETA ADERENTE AO PORTFÓLIO",
-      "status_leitura_edital": "LEITURA INCOMPLETA",
-      "documentos_analisados": [],
-      "requisitos_minimos": [],
-      "analise_elegibilidade": "LEITURA INCOMPLETA",
-      "pendencias_identificadas": [
-        "Abrir edital e anexos oficiais antes de decidir pela participação"
-      ],
-      "palavras_encontradas": [
-        "licenciamento ambiental",
-        "portfólio:Licenciamento e regularização ambiental",
-        "grupo:ambiental",
-        "serviços ambientais"
-      ],
-      "score": 75,
-      "prioridade": "MÉDIA",
-      "url": "https://pncp.gov.br/app/editais/76205681000196/2026/123",
-      "numero_controle_pncp": "76205681000196-1-000123/2026",
-      "escopo_coleta": "Brasil",
-      "fase_pncp": "contingencia_compras_gov",
-      "documentos_prioritarios": [],
-      "aderencia_maxima": false,
-      "classe_aderencia": "A",
-      "classificacao_comercial": "EXECUÇÃO DIRETA ADERENTE AO PORTFÓLIO",
-      "oportunidade_rapida": false,
-      "parceria_necessaria": [],
-      "siglas_ambiguas": [],
-      "dias_restantes": 8,
-      "prazo_interno_decisao": "Decidir em até 24 horas",
-      "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem.",
-      "origem_historica": true
     },
     {
       "id": "25769548000121-1-000228/2026",
@@ -410,7 +308,7 @@
       "oportunidade_rapida": false,
       "parceria_necessaria": [],
       "siglas_ambiguas": [],
-      "dias_restantes": 7,
+      "dias_restantes": 6,
       "prazo_interno_decisao": "Decidir em até 24 horas",
       "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
     },
@@ -462,7 +360,7 @@
         "Engenharia de infraestrutura / obras"
       ],
       "siglas_ambiguas": [],
-      "dias_restantes": 33,
+      "dias_restantes": 32,
       "prazo_interno_decisao": "Decidir em até 48 horas",
       "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
     },
@@ -512,7 +410,7 @@
       "oportunidade_rapida": false,
       "parceria_necessaria": [],
       "siglas_ambiguas": [],
-      "dias_restantes": 29,
+      "dias_restantes": 28,
       "prazo_interno_decisao": "Decidir em até 48 horas",
       "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
     },
@@ -561,7 +459,7 @@
       "oportunidade_rapida": false,
       "parceria_necessaria": [],
       "siglas_ambiguas": [],
-      "dias_restantes": 13,
+      "dias_restantes": 12,
       "prazo_interno_decisao": "Decidir em até 48 horas",
       "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
     },
@@ -610,58 +508,9 @@
       "oportunidade_rapida": false,
       "parceria_necessaria": [],
       "siglas_ambiguas": [],
-      "dias_restantes": 26,
+      "dias_restantes": 25,
       "prazo_interno_decisao": "Decidir em até 48 horas",
       "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
-    },
-    {
-      "id": "60448040000122-1-000719/2026",
-      "tipo": "DEMANDA FORMAL",
-      "confirmacao": "PRÉ-SELECIONADO",
-      "fonte": "Compras.gov — Dados Abertos",
-      "titulo": "TICAGRELOR 90 MG COMPRIMIDO REVESTIDO, MONOETANOLAMINA (OLEATO) SOL INJ 50 MG/ML AMPOLA 2 ML, BETAMETASONA(ACETATO)+BETAMETASONA (FOSFATO DISSODICO) AMP 1ML, CEFOXITINA 1G PO PARA SOLUCAO INJETAVEL FRASCO-AMPOLA, CLINDAMICINA (CLORIDRATO) 300 MG, TEMOZOLOMIDA 100 MG CAPSULA, PRILOCAINA + FELIPRESSINA (30 MG + 0,03 UI) /ML CAR 1,8 ML, RASBURICASE 1,5 MG/ML PO LIOF SOL INJ FA 1 ML",
-      "municipio": "SÃO PAULO",
-      "uf": "SP",
-      "regiao_prioridade": "Brasil",
-      "organizacao": "HOSPITAL DAS CLINICAS DA FACULDADE DE MEDICINA DA U S P",
-      "data_publicacao": "2026-11-06T14:34:14",
-      "prazo": "2026-11-19T08:59:00",
-      "valor_estimado": null,
-      "modalidade": "Pregão - Eletrônico",
-      "situacao_compra": "Divulgada no PNCP",
-      "servicos_ordone": [
-        "Regularização ambiental rural / CAR"
-      ],
-      "tipo_aderencia": "ADERENTE_DIRETO",
-      "motivo_aceitacao": "Objeto contém serviço direto do portfólio Ordone.",
-      "relacao_comercial": "EXECUÇÃO DIRETA ADERENTE AO PORTFÓLIO",
-      "status_leitura_edital": "LEITURA INCOMPLETA",
-      "documentos_analisados": [],
-      "requisitos_minimos": [],
-      "analise_elegibilidade": "LEITURA INCOMPLETA",
-      "pendencias_identificadas": [
-        "Abrir edital e anexos oficiais antes de decidir pela participação"
-      ],
-      "palavras_encontradas": [
-        "portfólio:Regularização ambiental rural / CAR"
-      ],
-      "score": 49,
-      "prioridade": "ACOMPANHAR",
-      "url": "https://pncp.gov.br/app/editais/60448040000122/2026/719",
-      "numero_controle_pncp": "60448040000122-1-000719/2026",
-      "escopo_coleta": "Brasil",
-      "fase_pncp": "contingencia_compras_gov",
-      "documentos_prioritarios": [],
-      "aderencia_maxima": false,
-      "classe_aderencia": "A",
-      "classificacao_comercial": "EXECUÇÃO DIRETA ADERENTE AO PORTFÓLIO",
-      "oportunidade_rapida": false,
-      "parceria_necessaria": [],
-      "siglas_ambiguas": [],
-      "dias_restantes": 2,
-      "prazo_interno_decisao": "Decidir e iniciar proposta hoje",
-      "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem.",
-      "origem_historica": true
     },
     {
       "id": "83102343000194-1-000271/2026",
@@ -729,7 +578,7 @@
       "siglas_ambiguas": [
         "plano de contratacoes anual"
       ],
-      "dias_restantes": 22,
+      "dias_restantes": 21,
       "prazo_interno_decisao": "Decidir em até 48 horas",
       "proxima_acao": "Abrir a publicação oficial e verificar se há prazo de proposta, futura licitação, contratação direta ou oportunidade institucional."
     }
