@@ -1,6 +1,6 @@
 {
   "versao": "6.9",
-  "atualizado_em": "20/11/2026 10:30 (horário de Brasília)",
+  "atualizado_em": "20/11/2026 18:57 (horário de Brasília)",
   "status": "coleta_concluida",
   "prioridade": "MCE, PCA e PGRS em todo o Brasil → projetos rápidos → bônus para GO, DF e MG",
   "modo_busca": "PROJETO RÁPIDO — MCE, PCA e PGRS com prazo vigente, objeto comprovado e triagem comercial",
@@ -18,29 +18,29 @@
     "pgrs": 0
   },
   "diagnostico_coleta": {
-    "requisicoes": 97,
+    "requisicoes": 113,
     "pncp_proposta": 0,
     "pncp_publicacao": 0,
-    "pncp_registros_examinados": 296,
-    "pncp_respostas_validas": 15,
-    "pncp_falhas": 0,
-    "pncp_retentativas_429": 0,
-    "compras_gov_respostas_validas": 38,
-    "compras_gov_registros_examinados": 17460,
-    "compras_gov_paginas_examinadas": 38,
+    "pncp_registros_examinados": 716,
+    "pncp_respostas_validas": 26,
+    "pncp_falhas": 1,
+    "pncp_retentativas_429": 4,
+    "compras_gov_respostas_validas": 39,
+    "compras_gov_registros_examinados": 17960,
+    "compras_gov_paginas_examinadas": 39,
     "compras_gov_paginas_planejadas": 39,
-    "compras_gov_falhas": 1,
+    "compras_gov_falhas": 0,
     "compras_gov_itens": 8,
     "html_sinais": 0,
     "paginas_aprofundadas": 30,
     "erros": [
-      "Compras.gov modalidade 5, página 70: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)",
+      "PNCP indisponível após 3 tentativas: HTTP 429",
       "PNCP: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",
       "BNDES Floresta Viva: ConnectionError: HTTPSConnectionPool(host='www.bndes.gov.br', port=443): Max retries exceeded with url: /wps/portal/site/home/desenvolvimento-sustentavel/parcerias/floresta-viva (Caused by NewConnectionError(\"HTTPSConnection(host",
       "Fundo Amazônia: ConnectionError: HTTPSConnectionPool(host='www.fundoamazonia.gov.br', port=443): Max retries exceeded with url: /pt/projetos/ (Caused by NewConnectionError(\"HTTPSConnection(host='www.fundoamazonia.gov.br', port=443): Failed to establi"
     ],
     "avisos": [
-      "PNCP proposta: limite de tempo atingido; resultado parcial preservado.",
+      "PNCP respondeu 429 após 3 tentativas; contingência preservada.",
       "PNCP publicacao: limite de tempo atingido; resultado parcial preservado."
     ]
   },
@@ -256,7 +256,7 @@
       "oportunidade_rapida": false,
       "parceria_necessaria": [],
       "siglas_ambiguas": [],
-      "dias_restantes": 18,
+      "dias_restantes": 17,
       "prazo_interno_decisao": "Decidir em até 48 horas",
       "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
     },
@@ -410,7 +410,7 @@
         "Engenharia de infraestrutura / obras"
       ],
       "siglas_ambiguas": [],
-      "dias_restantes": 32,
+      "dias_restantes": 31,
       "prazo_interno_decisao": "Decidir em até 48 horas",
       "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
     },
