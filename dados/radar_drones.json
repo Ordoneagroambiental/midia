@@ -1,7 +1,7 @@
 {
   "versao": "1.0",
-  "gerado_em": "2026-11-20T10:35:18.303874-03:00",
-  "ultima_coleta_concluida_em": "2026-11-20T10:35:18.303874-03:00",
+  "gerado_em": "2026-11-20T18:58:46.405325-03:00",
+  "ultima_coleta_concluida_em": "2026-11-20T18:58:46.405325-03:00",
   "status_coleta": "parcial",
   "abrangencia": "Brasil",
   "atualizacao_programada_horas": 2,
@@ -44,13 +44,11 @@
       "nome": "PNCP",
       "url": "https://pncp.gov.br/api/consulta/v1/contratacoes/publicacao",
       "status": "parcial",
-      "paginas_consultadas": 10,
-      "registros_examinados": 332,
+      "paginas_consultadas": 15,
+      "registros_examinados": 589,
       "candidatos": 0,
       "falhas": [
-        "Modalidade 8, página 1802: TimeoutError: The read operation timed out",
-        "Modalidade 12, página 56: limite de tempo",
-        "Modalidade 6, página 990: limite de tempo"
+        "Modalidade 7, página 21: TimeoutError: The read operation timed out"
       ],
       "detalhes": [
         "Limite de tempo/páginas, falha ou paginação desconhecida: esta fonte NÃO foi consultada integralmente.",
@@ -69,7 +67,7 @@
         {
           "modalidade": 8,
           "pagina": 1,
-          "total_paginas": 1802,
+          "total_paginas": 1803,
           "registros": 50
         },
         {
@@ -103,28 +101,58 @@
           "registros": 50
         },
         {
+          "modalidade": 8,
+          "pagina": 1803,
+          "total_paginas": 1803,
+          "registros": 47
+        },
+        {
           "modalidade": 6,
           "pagina": 991,
           "total_paginas": 991,
-          "registros": 13
+          "registros": 34
         },
         {
           "modalidade": 4,
           "pagina": 159,
           "total_paginas": 159,
-          "registros": 8
+          "registros": 10
         },
         {
           "modalidade": 7,
           "pagina": 22,
           "total_paginas": 22,
-          "registros": 2
+          "registros": 3
         },
         {
           "modalidade": 5,
           "pagina": 9,
           "total_paginas": 9,
           "registros": 9
+        },
+        {
+          "modalidade": 12,
+          "pagina": 56,
+          "total_paginas": 56,
+          "registros": 36
+        },
+        {
+          "modalidade": 8,
+          "pagina": 1802,
+          "total_paginas": 1803,
+          "registros": 50
+        },
+        {
+          "modalidade": 6,
+          "pagina": 990,
+          "total_paginas": 991,
+          "registros": 50
+        },
+        {
+          "modalidade": 4,
+          "pagina": 158,
+          "total_paginas": 159,
+          "registros": 50
         }
       ],
       "cobertura_completa": false
