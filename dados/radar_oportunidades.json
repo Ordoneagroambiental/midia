@@ -1,6 +1,6 @@
 {
   "versao": "6.9",
-  "atualizado_em": "21/11/2026 00:24 (horário de Brasília)",
+  "atualizado_em": "21/11/2026 09:58 (horário de Brasília)",
   "status": "coleta_concluida",
   "prioridade": "MCE, PCA e PGRS em todo o Brasil → projetos rápidos → bônus para GO, DF e MG",
   "modo_busca": "PROJETO RÁPIDO — MCE, PCA e PGRS com prazo vigente, objeto comprovado e triagem comercial",
@@ -18,15 +18,15 @@
     "pgrs": 0
   },
   "diagnostico_coleta": {
-    "requisicoes": 112,
+    "requisicoes": 113,
     "pncp_proposta": 0,
     "pncp_publicacao": 0,
-    "pncp_registros_examinados": 647,
-    "pncp_respostas_validas": 22,
-    "pncp_falhas": 3,
-    "pncp_retentativas_429": 10,
+    "pncp_registros_examinados": 1048,
+    "pncp_respostas_validas": 30,
+    "pncp_falhas": 1,
+    "pncp_retentativas_429": 4,
     "compras_gov_respostas_validas": 39,
-    "compras_gov_registros_examinados": 17975,
+    "compras_gov_registros_examinados": 18031,
     "compras_gov_paginas_examinadas": 39,
     "compras_gov_paginas_planejadas": 39,
     "compras_gov_falhas": 0,
@@ -35,9 +35,6 @@
     "paginas_aprofundadas": 30,
     "erros": [
       "PNCP indisponível após 3 tentativas: HTTP 429",
-      "PNCP indisponível após 3 tentativas: HTTP 429",
-      "PNCP indisponível após 3 tentativas: HTTP 429",
-      "PNCP: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",
       "MMA: ConnectionError: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))",
       "Ibama: ConnectionError: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))",
       "ICMBio: ConnectionError: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))",
@@ -50,8 +47,6 @@
       "ANA — Licitações: ConnectionError: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))"
     ],
     "avisos": [
-      "PNCP respondeu 429 após 3 tentativas; contingência preservada.",
-      "PNCP respondeu 429 após 3 tentativas; contingência preservada.",
       "PNCP respondeu 429 após 3 tentativas; contingência preservada.",
       "PNCP publicacao: limite de tempo atingido; resultado parcial preservado."
     ]
@@ -163,7 +158,7 @@
       "oportunidade_rapida": false,
       "parceria_necessaria": [],
       "siglas_ambiguas": [],
-      "dias_restantes": 2,
+      "dias_restantes": 1,
       "prazo_interno_decisao": "Decidir e iniciar proposta hoje",
       "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
     },
@@ -216,7 +211,7 @@
       "oportunidade_rapida": false,
       "parceria_necessaria": [],
       "siglas_ambiguas": [],
-      "dias_restantes": 26,
+      "dias_restantes": 25,
       "prazo_interno_decisao": "Decidir em até 48 horas",
       "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
     },
@@ -389,7 +384,7 @@
         "Biologia / fauna"
       ],
       "siglas_ambiguas": [],
-      "dias_restantes": 16,
+      "dias_restantes": 15,
       "prazo_interno_decisao": "Decidir em até 48 horas",
       "proxima_acao": "Abrir a publicação oficial e verificar se há prazo de proposta, futura licitação, contratação direta ou oportunidade institucional."
     },
@@ -541,7 +536,7 @@
       "oportunidade_rapida": false,
       "parceria_necessaria": [],
       "siglas_ambiguas": [],
-      "dias_restantes": 27,
+      "dias_restantes": 26,
       "prazo_interno_decisao": "Decidir em até 48 horas",
       "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
     },
@@ -590,8 +585,8 @@
       "oportunidade_rapida": false,
       "parceria_necessaria": [],
       "siglas_ambiguas": [],
-      "dias_restantes": 11,
-      "prazo_interno_decisao": "Decidir em até 48 horas",
+      "dias_restantes": 10,
+      "prazo_interno_decisao": "Decidir em até 24 horas",
       "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
     },
     {
@@ -639,7 +634,7 @@
       "oportunidade_rapida": false,
       "parceria_necessaria": [],
       "siglas_ambiguas": [],
-      "dias_restantes": 24,
+      "dias_restantes": 23,
       "prazo_interno_decisao": "Decidir em até 48 horas",
       "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
     }
