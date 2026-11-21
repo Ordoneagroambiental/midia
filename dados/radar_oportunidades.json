@@ -1,6 +1,6 @@
 {
   "versao": "6.9",
-  "atualizado_em": "21/11/2026 09:58 (horário de Brasília)",
+  "atualizado_em": "21/11/2026 17:41 (horário de Brasília)",
   "status": "coleta_concluida",
   "prioridade": "MCE, PCA e PGRS em todo o Brasil → projetos rápidos → bônus para GO, DF e MG",
   "modo_busca": "PROJETO RÁPIDO — MCE, PCA e PGRS com prazo vigente, objeto comprovado e triagem comercial",
@@ -18,13 +18,13 @@
     "pgrs": 0
   },
   "diagnostico_coleta": {
-    "requisicoes": 113,
+    "requisicoes": 112,
     "pncp_proposta": 0,
     "pncp_publicacao": 0,
-    "pncp_registros_examinados": 1048,
-    "pncp_respostas_validas": 30,
-    "pncp_falhas": 1,
-    "pncp_retentativas_429": 4,
+    "pncp_registros_examinados": 743,
+    "pncp_respostas_validas": 24,
+    "pncp_falhas": 2,
+    "pncp_retentativas_429": 8,
     "compras_gov_respostas_validas": 39,
     "compras_gov_registros_examinados": 18031,
     "compras_gov_paginas_examinadas": 39,
@@ -34,6 +34,7 @@
     "html_sinais": 0,
     "paginas_aprofundadas": 30,
     "erros": [
+      "PNCP indisponível após 3 tentativas: HTTP 429",
       "PNCP indisponível após 3 tentativas: HTTP 429",
       "MMA: ConnectionError: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))",
       "Ibama: ConnectionError: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))",
@@ -47,6 +48,7 @@
       "ANA — Licitações: ConnectionError: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))"
     ],
     "avisos": [
+      "PNCP respondeu 429 após 3 tentativas; contingência preservada.",
       "PNCP respondeu 429 após 3 tentativas; contingência preservada.",
       "PNCP publicacao: limite de tempo atingido; resultado parcial preservado."
     ]
@@ -263,7 +265,7 @@
       "oportunidade_rapida": false,
       "parceria_necessaria": [],
       "siglas_ambiguas": [],
-      "dias_restantes": 17,
+      "dias_restantes": 16,
       "prazo_interno_decisao": "Decidir em até 48 horas",
       "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
     },
@@ -434,7 +436,7 @@
       "oportunidade_rapida": false,
       "parceria_necessaria": [],
       "siglas_ambiguas": [],
-      "dias_restantes": 5,
+      "dias_restantes": 4,
       "prazo_interno_decisao": "Decidir e iniciar proposta hoje",
       "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
     },
@@ -486,7 +488,7 @@
         "Engenharia de infraestrutura / obras"
       ],
       "siglas_ambiguas": [],
-      "dias_restantes": 31,
+      "dias_restantes": 30,
       "prazo_interno_decisao": "Decidir em até 48 horas",
       "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
     },
