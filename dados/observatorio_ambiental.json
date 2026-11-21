@@ -1,6 +1,6 @@
 {
   "versao": "1.0",
-  "atualizado_em": "2026-11-21T07:25:08.318341+00:00",
+  "atualizado_em": "2026-11-21T19:28:37.588636+00:00",
   "criterios": {
     "escopo": "Brasil e mundo",
     "frequencia": "a cada 6 horas",
@@ -34,8 +34,8 @@
     },
     {
       "fonte": "MMA",
-      "ok": false,
-      "erro": "('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))"
+      "ok": true,
+      "itens": 0
     },
     {
       "fonte": "Embrapa",
