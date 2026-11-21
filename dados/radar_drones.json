@@ -1,7 +1,7 @@
 {
   "versao": "1.0",
-  "gerado_em": "2026-11-21T00:28:47.693878-03:00",
-  "ultima_coleta_concluida_em": "2026-11-21T00:28:47.693878-03:00",
+  "gerado_em": "2026-11-21T10:00:25.381680-03:00",
+  "ultima_coleta_concluida_em": "2026-11-21T10:00:25.381680-03:00",
   "status_coleta": "parcial",
   "abrangencia": "Brasil",
   "atualizacao_programada_horas": 2,
@@ -44,11 +44,11 @@
       "nome": "PNCP",
       "url": "https://pncp.gov.br/api/consulta/v1/contratacoes/publicacao",
       "status": "parcial",
-      "paginas_consultadas": 16,
-      "registros_examinados": 687,
+      "paginas_consultadas": 18,
+      "registros_examinados": 775,
       "candidatos": 0,
       "falhas": [
-        "Modalidade 8, página 1745: TimeoutError: The read operation timed out",
+        "Modalidade 8, página 1743: TimeoutError: The read operation timed out",
         "Modalidade 6, página 959: TimeoutError: The read operation timed out"
       ],
       "detalhes": [
@@ -102,16 +102,22 @@
           "registros": 50
         },
         {
+          "modalidade": 8,
+          "pagina": 1745,
+          "total_paginas": 1745,
+          "registros": 36
+        },
+        {
           "modalidade": 6,
           "pagina": 961,
           "total_paginas": 961,
-          "registros": 19
+          "registros": 20
         },
         {
           "modalidade": 4,
           "pagina": 154,
           "total_paginas": 154,
-          "registros": 16
+          "registros": 17
         },
         {
           "modalidade": 7,
@@ -130,6 +136,12 @@
           "pagina": 54,
           "total_paginas": 54,
           "registros": 35
+        },
+        {
+          "modalidade": 8,
+          "pagina": 1744,
+          "total_paginas": 1745,
+          "registros": 50
         },
         {
           "modalidade": 6,
@@ -169,7 +181,7 @@
       "url": "https://dadosabertos.compras.gov.br/modulo-contratacoes/1_consultarContratacoes_PNCP_14133",
       "status": "parcial",
       "paginas_consultadas": 30,
-      "registros_examinados": 13737,
+      "registros_examinados": 13779,
       "candidatos": 0,
       "falhas": [],
       "detalhes": [
@@ -212,19 +224,19 @@
           "modalidade": 6,
           "pagina": 94,
           "total_paginas": 94,
-          "registros": 230
+          "registros": 268
         },
         {
           "modalidade": 5,
           "pagina": 74,
           "total_paginas": 74,
-          "registros": 447
+          "registros": 450
         },
         {
           "modalidade": 3,
           "pagina": 8,
           "total_paginas": 8,
-          "registros": 60
+          "registros": 61
         },
         {
           "modalidade": 6,
