@@ -1,16 +1,16 @@
 {
   "versao": "6.9",
-  "atualizado_em": "20/11/2026 18:57 (horário de Brasília)",
+  "atualizado_em": "21/11/2026 00:24 (horário de Brasília)",
   "status": "coleta_concluida",
   "prioridade": "MCE, PCA e PGRS em todo o Brasil → projetos rápidos → bônus para GO, DF e MG",
   "modo_busca": "PROJETO RÁPIDO — MCE, PCA e PGRS com prazo vigente, objeto comprovado e triagem comercial",
   "resumo": {
-    "total": 10,
-    "brasil": 10,
+    "total": 11,
+    "brasil": 11,
     "goianesia_regiao": 0,
     "goias": 0,
     "demandas_formais": 10,
-    "sinais_ambientais": 0,
+    "sinais_ambientais": 1,
     "prioritarios_mce_pca_pgrs": 0,
     "oportunidades_rapidas": 0,
     "mce": 0,
@@ -18,15 +18,15 @@
     "pgrs": 0
   },
   "diagnostico_coleta": {
-    "requisicoes": 113,
+    "requisicoes": 112,
     "pncp_proposta": 0,
     "pncp_publicacao": 0,
-    "pncp_registros_examinados": 716,
-    "pncp_respostas_validas": 26,
-    "pncp_falhas": 1,
-    "pncp_retentativas_429": 4,
+    "pncp_registros_examinados": 647,
+    "pncp_respostas_validas": 22,
+    "pncp_falhas": 3,
+    "pncp_retentativas_429": 10,
     "compras_gov_respostas_validas": 39,
-    "compras_gov_registros_examinados": 17960,
+    "compras_gov_registros_examinados": 17975,
     "compras_gov_paginas_examinadas": 39,
     "compras_gov_paginas_planejadas": 39,
     "compras_gov_falhas": 0,
@@ -35,11 +35,23 @@
     "paginas_aprofundadas": 30,
     "erros": [
       "PNCP indisponível após 3 tentativas: HTTP 429",
+      "PNCP indisponível após 3 tentativas: HTTP 429",
+      "PNCP indisponível após 3 tentativas: HTTP 429",
       "PNCP: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",
+      "MMA: ConnectionError: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))",
+      "Ibama: ConnectionError: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))",
+      "ICMBio: ConnectionError: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))",
       "BNDES Floresta Viva: ConnectionError: HTTPSConnectionPool(host='www.bndes.gov.br', port=443): Max retries exceeded with url: /wps/portal/site/home/desenvolvimento-sustentavel/parcerias/floresta-viva (Caused by NewConnectionError(\"HTTPSConnection(host",
-      "Fundo Amazônia: ConnectionError: HTTPSConnectionPool(host='www.fundoamazonia.gov.br', port=443): Max retries exceeded with url: /pt/projetos/ (Caused by NewConnectionError(\"HTTPSConnection(host='www.fundoamazonia.gov.br', port=443): Failed to establi"
+      "Fundo Amazônia: ConnectionError: HTTPSConnectionPool(host='www.fundoamazonia.gov.br', port=443): Max retries exceeded with url: /pt/projetos/ (Caused by NewConnectionError(\"HTTPSConnection(host='www.fundoamazonia.gov.br', port=443): Failed to establi",
+      "Ibama — Licitações: ConnectionError: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))",
+      "ICMBio — Licitações: ConnectionError: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))",
+      "DNIT — Licitações: ConnectionError: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))",
+      "Serviço Florestal Brasileiro — Licitações: ConnectionError: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))",
+      "ANA — Licitações: ConnectionError: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))"
     ],
     "avisos": [
+      "PNCP respondeu 429 após 3 tentativas; contingência preservada.",
+      "PNCP respondeu 429 após 3 tentativas; contingência preservada.",
       "PNCP respondeu 429 após 3 tentativas; contingência preservada.",
       "PNCP publicacao: limite de tempo atingido; resultado parcial preservado."
     ]
@@ -311,6 +323,75 @@
       "prazo_interno_decisao": "Decidir em até 48 horas",
       "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem.",
       "origem_historica": true
+    },
+    {
+      "id": "07078236000190-1-000018/2026",
+      "tipo": "SINAL DE CONTRATAÇÃO",
+      "confirmacao": "CONFIRMADO",
+      "fonte": "PNCP",
+      "titulo": "Contratação de empresa para execução dos serviços de implantação, manutenção, monitoramento e consolidação da Restauração Ecológica da futura Área de Preservação Permanente (APP) do reservatório da barragem do Ribeirão Piraí, com atendimento às obrigações ambientais aplicáveis, elaboração de relatórios técnicos e atual",
+      "municipio": "Salto",
+      "uf": "SP",
+      "regiao_prioridade": "Brasil",
+      "organizacao": "CONSORCIO INTERMUNICIPAL DO RIBEIRAO PIRAI",
+      "data_publicacao": "2026-10-22T11:51:33",
+      "prazo": "2026-12-07T07:00:00",
+      "valor_estimado": 5639929.21,
+      "modalidade": "Concorrência - Eletrônica",
+      "servicos_ordone": [
+        "Avaliação técnica inicial"
+      ],
+      "tipo_aderencia": "PARCERIA_NECESSARIA",
+      "motivo_aceitacao": "Objeto contém serviço direto do portfólio Ordone.",
+      "relacao_comercial": "PARCERIA TÉCNICA NECESSÁRIA",
+      "status_leitura_edital": "ANALISADO",
+      "documentos_analisados": [
+        "_Edital_022026",
+        "1_Anexo_I_A__Termo_de_referencia",
+        "2_Anexo_I_B__Memorial_de_Calculo"
+      ],
+      "requisitos_minimos": [
+        "Registro profissional",
+        "ART / responsabilidade técnica",
+        "Atestado de capacidade técnica",
+        "CAT / acervo técnico",
+        "Equipe técnica mínima",
+        "Visita técnica",
+        "Qualificação econômico-financeira",
+        "Subcontratação"
+      ],
+      "analise_elegibilidade": "VERIFICAR DOCUMENTOS",
+      "pendencias_identificadas": [
+        "Confirmar atestado compatível com o objeto",
+        "Confirmar CAT/acervo técnico",
+        "Validar índices e documentos financeiros"
+      ],
+      "palavras_encontradas": [
+        "app",
+        "reservatório",
+        "portfólio:Recuperação ambiental / PRAD",
+        "grupo:ambiental",
+        "grupo:solo_agua",
+        "grupo:irrigacao"
+      ],
+      "score": 67,
+      "prioridade": "MÉDIA",
+      "url": "https://pncp.gov.br/app/editais/07078236000190/2026/18",
+      "numero_controle_pncp": "07078236000190-1-000018/2026",
+      "escopo_coleta": "Brasil",
+      "fase_pncp": "publicacao",
+      "documentos_prioritarios": [],
+      "aderencia_maxima": false,
+      "classe_aderencia": "C",
+      "classificacao_comercial": "PARCERIA TÉCNICA NECESSÁRIA",
+      "oportunidade_rapida": false,
+      "parceria_necessaria": [
+        "Biologia / fauna"
+      ],
+      "siglas_ambiguas": [],
+      "dias_restantes": 16,
+      "prazo_interno_decisao": "Decidir em até 48 horas",
+      "proxima_acao": "Abrir a publicação oficial e verificar se há prazo de proposta, futura licitação, contratação direta ou oportunidade institucional."
     },
     {
       "id": "39485438000142-1-000049/2026",
