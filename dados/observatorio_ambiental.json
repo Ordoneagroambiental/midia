@@ -1,6 +1,6 @@
 {
   "versao": "1.0",
-  "atualizado_em": "2026-11-21T19:28:37.588636+00:00",
+  "atualizado_em": "2026-11-22T07:05:58.991441+00:00",
   "criterios": {
     "escopo": "Brasil e mundo",
     "frequencia": "a cada 6 horas",
@@ -19,8 +19,8 @@
     },
     {
       "fonte": "USGS",
-      "ok": true,
-      "itens": 0
+      "ok": false,
+      "erro": "HTTPSConnectionPool(host='www.usgs.gov', port=443): Read timed out. (read timeout=25)"
     },
     {
       "fonte": "Chinese Academy of Sciences",
@@ -34,13 +34,13 @@
     },
     {
       "fonte": "MMA",
-      "ok": true,
-      "itens": 0
+      "ok": false,
+      "erro": "('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))"
     },
     {
       "fonte": "Embrapa",
-      "ok": true,
-      "itens": 0
+      "ok": false,
+      "erro": "('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))"
     },
     {
       "fonte": "SGB",
