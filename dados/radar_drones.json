@@ -1,7 +1,7 @@
 {
   "versao": "1.0",
-  "gerado_em": "2026-11-21T17:41:03.077906-03:00",
-  "ultima_coleta_concluida_em": "2026-11-21T17:41:03.077906-03:00",
+  "gerado_em": "2026-11-21T21:41:26.165298-03:00",
+  "ultima_coleta_concluida_em": "2026-11-21T21:41:26.165298-03:00",
   "status_coleta": "parcial",
   "abrangencia": "Brasil",
   "atualizacao_programada_horas": 2,
@@ -45,7 +45,7 @@
       "url": "https://pncp.gov.br/api/consulta/v1/contratacoes/publicacao",
       "status": "parcial",
       "paginas_consultadas": 30,
-      "registros_examinados": 1357,
+      "registros_examinados": 1374,
       "candidatos": 0,
       "falhas": [],
       "detalhes": [
@@ -102,13 +102,13 @@
           "modalidade": 8,
           "pagina": 1746,
           "total_paginas": 1746,
-          "registros": 9
+          "registros": 24
         },
         {
           "modalidade": 6,
           "pagina": 961,
           "total_paginas": 961,
-          "registros": 28
+          "registros": 29
         },
         {
           "modalidade": 4,
@@ -132,7 +132,7 @@
           "modalidade": 12,
           "pagina": 54,
           "total_paginas": 54,
-          "registros": 35
+          "registros": 36
         },
         {
           "modalidade": 8,
