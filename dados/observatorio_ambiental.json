@@ -1,6 +1,6 @@
 {
   "versao": "1.0",
-  "atualizado_em": "2026-11-22T19:50:54.544537+00:00",
+  "atualizado_em": "2026-11-23T07:52:43.114097+00:00",
   "criterios": {
     "escopo": "Brasil e mundo",
     "frequencia": "a cada 6 horas",
@@ -34,13 +34,13 @@
     },
     {
       "fonte": "MMA",
-      "ok": false,
-      "erro": "('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))"
+      "ok": true,
+      "itens": 0
     },
     {
       "fonte": "Embrapa",
       "ok": false,
-      "erro": "HTTPSConnectionPool(host='www.embrapa.br', port=443): Read timed out. (read timeout=25)"
+      "erro": "('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))"
     },
     {
       "fonte": "SGB",
