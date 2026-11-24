@@ -1,6 +1,6 @@
 {
   "versao": "1.0",
-  "atualizado_em": "2026-11-23T07:52:43.114097+00:00",
+  "atualizado_em": "2026-11-24T00:02:56.905425+00:00",
   "criterios": {
     "escopo": "Brasil e mundo",
     "frequencia": "a cada 6 horas",
@@ -34,13 +34,13 @@
     },
     {
       "fonte": "MMA",
-      "ok": true,
-      "itens": 0
+      "ok": false,
+      "erro": "('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))"
     },
     {
       "fonte": "Embrapa",
       "ok": false,
-      "erro": "('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))"
+      "erro": "HTTPSConnectionPool(host='www.embrapa.br', port=443): Max retries exceeded with url: /noticias (Caused by ConnectTimeout"
     },
     {
       "fonte": "SGB",
