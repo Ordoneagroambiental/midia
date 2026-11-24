@@ -1,7 +1,7 @@
 {
   "versao": "1.0",
-  "gerado_em": "2026-11-23T12:20:05.386627-03:00",
-  "ultima_coleta_concluida_em": "2026-11-23T12:20:05.386627-03:00",
+  "gerado_em": "2026-11-24T00:04:02.829963-03:00",
+  "ultima_coleta_concluida_em": "2026-11-24T00:04:02.829963-03:00",
   "status_coleta": "parcial",
   "abrangencia": "Brasil",
   "atualizacao_programada_horas": 2,
@@ -48,11 +48,12 @@
       "registros_examinados": 300,
       "candidatos": 0,
       "falhas": [
-        "Modalidade 8, página 1638: TimeoutError: The read operation timed out"
+        "Modalidade 8, página 1620: TimeoutError: The read operation timed out",
+        "Modalidade 6, página 886: TimeoutError: The read operation timed out"
       ],
       "detalhes": [
         "Limite de tempo/páginas, falha ou paginação desconhecida: esta fonte NÃO foi consultada integralmente.",
-        "Brasil, publicações de 2026-10-09 a 2026-11-23; modalidades [8, 6, 4, 7, 5, 12]."
+        "Brasil, publicações de 2026-10-10 a 2026-11-24; modalidades [8, 6, 4, 7, 5, 12]."
       ],
       "dias_publicacao": 45,
       "modalidades_planejadas": [
@@ -67,25 +68,25 @@
         {
           "modalidade": 8,
           "pagina": 1,
-          "total_paginas": 1638,
+          "total_paginas": 1620,
           "registros": 50
         },
         {
           "modalidade": 6,
           "pagina": 1,
-          "total_paginas": 904,
+          "total_paginas": 886,
           "registros": 50
         },
         {
           "modalidade": 4,
           "pagina": 1,
-          "total_paginas": 145,
+          "total_paginas": 142,
           "registros": 50
         },
         {
           "modalidade": 7,
           "pagina": 1,
-          "total_paginas": 20,
+          "total_paginas": 19,
           "registros": 50
         },
         {
@@ -97,7 +98,7 @@
         {
           "modalidade": 12,
           "pagina": 1,
-          "total_paginas": 49,
+          "total_paginas": 48,
           "registros": 50
         }
       ],
@@ -108,12 +109,12 @@
       "url": "https://dadosabertos.compras.gov.br/modulo-contratacoes/1_consultarContratacoes_PNCP_14133",
       "status": "parcial",
       "paginas_consultadas": 30,
-      "registros_examinados": 13234,
+      "registros_examinados": 13232,
       "candidatos": 0,
       "falhas": [],
       "detalhes": [
         "Limite de tempo/páginas, falha ou paginação desconhecida: esta fonte NÃO foi consultada integralmente.",
-        "Brasil, publicações de 2026-07-26 a 2026-11-23; modalidades [6, 5, 3, 12]."
+        "Brasil, publicações de 2026-07-27 a 2026-11-24; modalidades [6, 5, 3, 12]."
       ],
       "dias_publicacao": 120,
       "modalidades_planejadas": [
@@ -151,7 +152,7 @@
           "modalidade": 6,
           "pagina": 93,
           "total_paginas": 93,
-          "registros": 183
+          "registros": 181
         },
         {
           "modalidade": 5,
