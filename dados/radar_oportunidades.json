@@ -1,6 +1,6 @@
 {
   "versao": "6.9",
-  "atualizado_em": "23/11/2026 12:12 (horário de Brasília)",
+  "atualizado_em": "24/11/2026 00:04 (horário de Brasília)",
   "status": "coleta_concluida",
   "prioridade": "MCE, PCA e PGRS em todo o Brasil → projetos rápidos → bônus para GO, DF e MG",
   "modo_busca": "PROJETO RÁPIDO — MCE, PCA e PGRS com prazo vigente, objeto comprovado e triagem comercial",
@@ -18,31 +18,28 @@
     "pgrs": 0
   },
   "diagnostico_coleta": {
-    "requisicoes": 102,
+    "requisicoes": 109,
     "pncp_proposta": 0,
     "pncp_publicacao": 0,
-    "pncp_registros_examinados": 836,
-    "pncp_respostas_validas": 21,
+    "pncp_registros_examinados": 1013,
+    "pncp_respostas_validas": 26,
     "pncp_falhas": 2,
     "pncp_retentativas_429": 4,
-    "compras_gov_respostas_validas": 38,
-    "compras_gov_registros_examinados": 16777,
-    "compras_gov_paginas_examinadas": 38,
+    "compras_gov_respostas_validas": 39,
+    "compras_gov_registros_examinados": 17274,
+    "compras_gov_paginas_examinadas": 39,
     "compras_gov_paginas_planejadas": 39,
-    "compras_gov_falhas": 1,
+    "compras_gov_falhas": 0,
     "compras_gov_itens": 8,
     "html_sinais": 0,
     "paginas_aprofundadas": 30,
     "erros": [
       "PNCP indisponível após 3 tentativas: HTTP 429",
       "PNCP indisponível após 3 tentativas: ReadTimeout: HTTPSConnectionPool(host='pncp.gov.br', port=443): Read timed out. (read timeout=12)",
-      "Compras.gov modalidade 5, página 18: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)",
       "PNCP: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",
       "MMA: ConnectionError: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))",
       "Ibama: ConnectionError: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))",
       "ICMBio: ConnectionError: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))",
-      "BNDES Floresta Viva: ConnectionError: HTTPSConnectionPool(host='www.bndes.gov.br', port=443): Max retries exceeded with url: /wps/portal/site/home/desenvolvimento-sustentavel/parcerias/floresta-viva (Caused by NewConnectionError(\"HTTPSConnection(host",
-      "Fundo Amazônia: ConnectionError: HTTPSConnectionPool(host='www.fundoamazonia.gov.br', port=443): Max retries exceeded with url: /pt/projetos/ (Caused by NewConnectionError(\"HTTPSConnection(host='www.fundoamazonia.gov.br', port=443): Failed to establi",
       "Ibama — Licitações: ConnectionError: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))",
       "ICMBio — Licitações: ConnectionError: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))",
       "DNIT — Licitações: ConnectionError: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))",
@@ -50,7 +47,6 @@
       "ANA — Licitações: ConnectionError: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))"
     ],
     "avisos": [
-      "PNCP proposta: limite de tempo atingido; resultado parcial preservado.",
       "PNCP respondeu 429 após 3 tentativas; contingência preservada.",
       "PNCP publicacao: limite de tempo atingido; resultado parcial preservado."
     ]
@@ -158,7 +154,7 @@
       "oportunidade_rapida": false,
       "parceria_necessaria": [],
       "siglas_ambiguas": [],
-      "dias_restantes": 15,
+      "dias_restantes": 14,
       "prazo_interno_decisao": "Decidir em até 48 horas",
       "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
     },
