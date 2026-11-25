@@ -1,7 +1,7 @@
 {
   "versao": "1.0",
-  "gerado_em": "2026-11-24T22:04:56.777250-03:00",
-  "ultima_coleta_concluida_em": "2026-11-24T22:04:56.777250-03:00",
+  "gerado_em": "2026-11-25T08:42:50.936992-03:00",
+  "ultima_coleta_concluida_em": "2026-11-25T08:42:50.936992-03:00",
   "status_coleta": "parcial",
   "abrangencia": "Brasil",
   "atualizacao_programada_horas": 2,
@@ -44,17 +44,18 @@
       "nome": "PNCP",
       "url": "https://pncp.gov.br/api/consulta/v1/contratacoes/publicacao",
       "status": "parcial",
-      "paginas_consultadas": 4,
-      "registros_examinados": 200,
+      "paginas_consultadas": 2,
+      "registros_examinados": 100,
       "candidatos": 0,
       "falhas": [
+        "Modalidade 8, página 1: TimeoutError: The read operation timed out",
         "Modalidade 6, página 1: TimeoutError: The read operation timed out",
-        "Modalidade 12, página 1: TimeoutError: The read operation timed out",
-        "Modalidade 8, página 1669: TimeoutError: The read operation timed out"
+        "Modalidade 4, página 1: TimeoutError: The read operation timed out",
+        "Modalidade 12, página 1: TimeoutError: The read operation timed out"
       ],
       "detalhes": [
         "Limite de tempo/páginas, falha ou paginação desconhecida: esta fonte NÃO foi consultada integralmente.",
-        "Brasil, publicações de 2026-10-10 a 2026-11-24; modalidades [8, 6, 4, 7, 5, 12]."
+        "Brasil, publicações de 2026-10-11 a 2026-11-25; modalidades [8, 6, 4, 7, 5, 12]."
       ],
       "dias_publicacao": 45,
       "modalidades_planejadas": [
@@ -66,18 +67,6 @@
         12
       ],
       "consultas": [
-        {
-          "modalidade": 8,
-          "pagina": 1,
-          "total_paginas": 1669,
-          "registros": 50
-        },
-        {
-          "modalidade": 4,
-          "pagina": 1,
-          "total_paginas": 145,
-          "registros": 50
-        },
         {
           "modalidade": 7,
           "pagina": 1,
@@ -98,12 +87,12 @@
       "url": "https://dadosabertos.compras.gov.br/modulo-contratacoes/1_consultarContratacoes_PNCP_14133",
       "status": "parcial",
       "paginas_consultadas": 30,
-      "registros_examinados": 13172,
+      "registros_examinados": 13351,
       "candidatos": 0,
       "falhas": [],
       "detalhes": [
         "Limite de tempo/páginas, falha ou paginação desconhecida: esta fonte NÃO foi consultada integralmente.",
-        "Brasil, publicações de 2026-07-27 a 2026-11-24; modalidades [6, 5, 3, 12]."
+        "Brasil, publicações de 2026-07-28 a 2026-11-25; modalidades [6, 5, 3, 12]."
       ],
       "dias_publicacao": 120,
       "modalidades_planejadas": [
@@ -141,19 +130,19 @@
           "modalidade": 6,
           "pagina": 95,
           "total_paginas": 95,
-          "registros": 45
+          "registros": 210
         },
         {
           "modalidade": 5,
           "pagina": 75,
           "total_paginas": 75,
-          "registros": 49
+          "registros": 80
         },
         {
           "modalidade": 3,
           "pagina": 8,
           "total_paginas": 8,
-          "registros": 78
+          "registros": 61
         },
         {
           "modalidade": 6,
