@@ -1,7 +1,7 @@
 {
   "versao": "1.0",
-  "gerado_em": "2026-11-24T12:15:54.706176-03:00",
-  "ultima_coleta_concluida_em": "2026-11-24T12:15:54.706176-03:00",
+  "gerado_em": "2026-11-24T22:04:56.777250-03:00",
+  "ultima_coleta_concluida_em": "2026-11-24T22:04:56.777250-03:00",
   "status_coleta": "parcial",
   "abrangencia": "Brasil",
   "atualizacao_programada_horas": 2,
@@ -44,14 +44,13 @@
       "nome": "PNCP",
       "url": "https://pncp.gov.br/api/consulta/v1/contratacoes/publicacao",
       "status": "parcial",
-      "paginas_consultadas": 2,
-      "registros_examinados": 100,
+      "paginas_consultadas": 4,
+      "registros_examinados": 200,
       "candidatos": 0,
       "falhas": [
-        "Modalidade 8, página 1: TimeoutError: The read operation timed out",
-        "Modalidade 7, página 1: TimeoutError: The read operation timed out",
-        "Modalidade 5, página 1: TimeoutError: The read operation timed out",
-        "Modalidade 12, página 1: TimeoutError: The read operation timed out"
+        "Modalidade 6, página 1: TimeoutError: The read operation timed out",
+        "Modalidade 12, página 1: TimeoutError: The read operation timed out",
+        "Modalidade 8, página 1669: TimeoutError: The read operation timed out"
       ],
       "detalhes": [
         "Limite de tempo/páginas, falha ou paginação desconhecida: esta fonte NÃO foi consultada integralmente.",
@@ -68,15 +67,27 @@
       ],
       "consultas": [
         {
-          "modalidade": 6,
+          "modalidade": 8,
           "pagina": 1,
-          "total_paginas": 906,
+          "total_paginas": 1669,
           "registros": 50
         },
         {
           "modalidade": 4,
           "pagina": 1,
-          "total_paginas": 144,
+          "total_paginas": 145,
+          "registros": 50
+        },
+        {
+          "modalidade": 7,
+          "pagina": 1,
+          "total_paginas": 20,
+          "registros": 50
+        },
+        {
+          "modalidade": 5,
+          "pagina": 1,
+          "total_paginas": 8,
           "registros": 50
         }
       ],
