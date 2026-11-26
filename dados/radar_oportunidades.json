@@ -1,16 +1,16 @@
 {
   "versao": "6.9",
-  "atualizado_em": "25/11/2026 19:01 (horário de Brasília)",
-  "status": "coleta_contingencial",
+  "atualizado_em": "26/11/2026 01:21 (horário de Brasília)",
+  "status": "coleta_concluida",
   "prioridade": "MCE, PCA e PGRS em todo o Brasil → projetos rápidos → bônus para GO, DF e MG",
   "modo_busca": "PROJETO RÁPIDO — MCE, PCA e PGRS com prazo vigente, objeto comprovado e triagem comercial",
   "resumo": {
-    "total": 8,
-    "brasil": 8,
+    "total": 9,
+    "brasil": 9,
     "goianesia_regiao": 0,
     "goias": 0,
     "demandas_formais": 8,
-    "sinais_ambientais": 0,
+    "sinais_ambientais": 1,
     "prioritarios_mce_pca_pgrs": 0,
     "oportunidades_rapidas": 0,
     "mce": 0,
@@ -18,24 +18,22 @@
     "pgrs": 0
   },
   "diagnostico_coleta": {
-    "requisicoes": 68,
+    "requisicoes": 95,
     "pncp_proposta": 0,
     "pncp_publicacao": 0,
-    "pncp_registros_examinados": 0,
-    "pncp_respostas_validas": 0,
-    "pncp_falhas": 2,
+    "pncp_registros_examinados": 580,
+    "pncp_respostas_validas": 15,
+    "pncp_falhas": 0,
     "pncp_retentativas_429": 0,
-    "compras_gov_respostas_validas": 27,
-    "compras_gov_registros_examinados": 12641,
-    "compras_gov_paginas_examinadas": 27,
-    "compras_gov_paginas_planejadas": 28,
+    "compras_gov_respostas_validas": 39,
+    "compras_gov_registros_examinados": 17957,
+    "compras_gov_paginas_examinadas": 39,
+    "compras_gov_paginas_planejadas": 39,
     "compras_gov_falhas": 0,
     "compras_gov_itens": 7,
     "html_sinais": 0,
     "paginas_aprofundadas": 30,
     "erros": [
-      "PNCP indisponível após 3 tentativas: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",
-      "PNCP indisponível após 3 tentativas: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",
       "PNCP: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",
       "MMA: ConnectionError: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))",
       "Ibama: ConnectionError: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))",
@@ -47,11 +45,8 @@
       "ANA — Licitações: ConnectionError: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))"
     ],
     "avisos": [
-      "PNCP: circuito temporariamente interrompido após duas falhas; acionando a contingência oficial.",
-      "PNCP publicação não repetida porque a fonte já falhou; contingência antecipada.",
-      "Compras.gov: limite agressivo de 300 segundos atingido; resultado parcial preservado.",
-      "Aprofundamento: ReadTimeout: HTTPSConnectionPool(host='www.bndes.gov.br', port=443): Read timed out. (read timeout=16)",
-      "PNCP indisponível; coleta nacional concluída pela contingência oficial do Compras.gov."
+      "PNCP proposta: limite de tempo atingido; resultado parcial preservado.",
+      "PNCP publicacao: limite de tempo atingido; resultado parcial preservado."
     ]
   },
   "items": [
@@ -458,6 +453,57 @@
       "dias_restantes": 11,
       "prazo_interno_decisao": "Decidir em até 48 horas",
       "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
+    },
+    {
+      "id": "04892707002235-1-000064/2026",
+      "tipo": "SINAL DE CONTRATAÇÃO",
+      "confirmacao": "PRÉ-SELECIONADO",
+      "fonte": "PNCP",
+      "titulo": "Contratação de empresa especializada para a Elaboração de Projeto Básico e Executivo para Contenções visando solucionar as inconformidades geológicas nos taludes em segmentos compreendidos entre as Serras da Criminosa, do Mangaval e da Jacobina e Elaboração de Estudos Ambientais necessários para a obtenção de Licença P",
+      "municipio": "Cuiabá",
+      "uf": "MT",
+      "regiao_prioridade": "Brasil",
+      "organizacao": "DNIT-DEPARTAMENTO NACIONAL DE INFRAEST DE TRANSPORTES",
+      "data_publicacao": "2026-10-27T04:03:08",
+      "prazo": "2026-12-22T10:30:00",
+      "valor_estimado": 3718490.11,
+      "modalidade": "Concorrência - Eletrônica",
+      "servicos_ordone": [
+        "Licenciamento e regularização ambiental"
+      ],
+      "tipo_aderencia": "PARCERIA_NECESSARIA",
+      "motivo_aceitacao": "Objeto contém serviço direto do portfólio Ordone.",
+      "relacao_comercial": "PARCERIA TÉCNICA NECESSÁRIA",
+      "status_leitura_edital": "LEITURA INCOMPLETA",
+      "documentos_analisados": [],
+      "requisitos_minimos": [],
+      "analise_elegibilidade": "LEITURA INCOMPLETA",
+      "pendencias_identificadas": [
+        "Abrir edital e anexos manualmente"
+      ],
+      "palavras_encontradas": [
+        "estudos ambientais",
+        "portfólio:Licenciamento e regularização ambiental",
+        "grupo:ambiental"
+      ],
+      "score": 45,
+      "prioridade": "ACOMPANHAR",
+      "url": "https://pncp.gov.br/app/editais/04892707002235/2026/64",
+      "numero_controle_pncp": "04892707002235-1-000064/2026",
+      "escopo_coleta": "Brasil",
+      "fase_pncp": "publicacao",
+      "documentos_prioritarios": [],
+      "aderencia_maxima": false,
+      "classe_aderencia": "C",
+      "classificacao_comercial": "PARCERIA TÉCNICA NECESSÁRIA",
+      "oportunidade_rapida": false,
+      "parceria_necessaria": [
+        "Engenharia de infraestrutura / obras"
+      ],
+      "siglas_ambiguas": [],
+      "dias_restantes": 26,
+      "prazo_interno_decisao": "Decidir em até 48 horas",
+      "proxima_acao": "Abrir a publicação oficial e verificar se há prazo de proposta, futura licitação, contratação direta ou oportunidade institucional."
     }
   ],
   "fontes_monitoradas": [
