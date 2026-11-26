@@ -1,6 +1,6 @@
 {
   "versao": "6.9",
-  "atualizado_em": "26/11/2026 11:18 (horário de Brasília)",
+  "atualizado_em": "26/11/2026 20:15 (horário de Brasília)",
   "status": "coleta_concluida",
   "prioridade": "MCE, PCA e PGRS em todo o Brasil → projetos rápidos → bônus para GO, DF e MG",
   "modo_busca": "PROJETO RÁPIDO — MCE, PCA e PGRS com prazo vigente, objeto comprovado e triagem comercial",
@@ -18,31 +18,27 @@
     "pgrs": 0
   },
   "diagnostico_coleta": {
-    "requisicoes": 87,
+    "requisicoes": 85,
     "pncp_proposta": 0,
     "pncp_publicacao": 0,
-    "pncp_registros_examinados": 301,
-    "pncp_respostas_validas": 8,
+    "pncp_registros_examinados": 227,
+    "pncp_respostas_validas": 7,
     "pncp_falhas": 0,
     "pncp_retentativas_429": 0,
-    "compras_gov_respostas_validas": 35,
-    "compras_gov_registros_examinados": 15756,
-    "compras_gov_paginas_examinadas": 35,
+    "compras_gov_respostas_validas": 39,
+    "compras_gov_registros_examinados": 17756,
+    "compras_gov_paginas_examinadas": 39,
     "compras_gov_paginas_planejadas": 39,
-    "compras_gov_falhas": 4,
+    "compras_gov_falhas": 0,
     "compras_gov_itens": 6,
     "html_sinais": 0,
     "paginas_aprofundadas": 30,
     "erros": [
-      "Compras.gov modalidade 6, página 24: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)",
-      "Compras.gov modalidade 6, página 48: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)",
-      "Compras.gov modalidade 7, página 12: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)",
-      "Compras.gov modalidade 7, página 38: ReadTimeout: HTTPSConnectionPool(host='dadosabertos.compras.gov.br', port=443): Read timed out. (read timeout=30)",
       "PNCP: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",
       "MMA: ConnectionError: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))",
       "Ibama: ConnectionError: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))",
       "ICMBio: ConnectionError: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))",
-      "SEMAD Goiás — Licitações: HTTPError: 503 Server Error: Service Unavailable for url: https://goias.gov.br/meioambiente/licitacoes-e-contratos/",
+      "BNDES Floresta Viva: ReadTimeout: HTTPSConnectionPool(host='www.bndes.gov.br', port=443): Read timed out. (read timeout=18)",
       "Ibama — Licitações: ConnectionError: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))",
       "ICMBio — Licitações: ConnectionError: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))",
       "DNIT — Licitações: ConnectionError: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))",
@@ -51,8 +47,7 @@
     ],
     "avisos": [
       "PNCP proposta: limite de tempo atingido; resultado parcial preservado.",
-      "PNCP publicacao: limite de tempo atingido; resultado parcial preservado.",
-      "Aprofundamento: ReadTimeout: HTTPSConnectionPool(host='www.bndes.gov.br', port=443): Read timed out. (read timeout=16)"
+      "PNCP publicacao: limite de tempo atingido; resultado parcial preservado."
     ]
   },
   "items": [
@@ -104,7 +99,7 @@
       "oportunidade_rapida": false,
       "parceria_necessaria": [],
       "siglas_ambiguas": [],
-      "dias_restantes": 12,
+      "dias_restantes": 11,
       "prazo_interno_decisao": "Decidir em até 48 horas",
       "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
     },
