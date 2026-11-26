@@ -1,7 +1,7 @@
 {
   "versao": "1.0",
-  "gerado_em": "2026-11-26T11:24:48.225742-03:00",
-  "ultima_coleta_concluida_em": "2026-11-26T11:24:48.225742-03:00",
+  "gerado_em": "2026-11-26T20:18:26.732754-03:00",
+  "ultima_coleta_concluida_em": "2026-11-26T20:18:26.732754-03:00",
   "status_coleta": "parcial",
   "abrangencia": "Brasil",
   "atualizacao_programada_horas": 2,
@@ -43,17 +43,16 @@
     {
       "nome": "PNCP",
       "url": "https://pncp.gov.br/api/consulta/v1/contratacoes/publicacao",
-      "status": "falha",
-      "paginas_consultadas": 0,
-      "registros_examinados": 0,
+      "status": "parcial",
+      "paginas_consultadas": 1,
+      "registros_examinados": 50,
       "candidatos": 0,
       "falhas": [
         "Modalidade 8, página 1: TimeoutError: The read operation timed out",
-        "Modalidade 6, página 1: TimeoutError: The read operation timed out",
         "Modalidade 4, página 1: TimeoutError: The read operation timed out",
         "Modalidade 7, página 1: TimeoutError: The read operation timed out",
         "Modalidade 5, página 1: TimeoutError: The read operation timed out",
-        "Modalidade 12, página 1: TimeoutError: The read operation timed out"
+        "Modalidade 12, página 1: URLError: <urlopen error timed out>"
       ],
       "detalhes": [
         "Limite de tempo/páginas, falha ou paginação desconhecida: esta fonte NÃO foi consultada integralmente.",
@@ -68,7 +67,14 @@
         5,
         12
       ],
-      "consultas": [],
+      "consultas": [
+        {
+          "modalidade": 6,
+          "pagina": 1,
+          "total_paginas": 980,
+          "registros": 50
+        }
+      ],
       "cobertura_completa": false
     },
     {
