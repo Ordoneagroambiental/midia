@@ -1,6 +1,6 @@
 {
   "versao": "1.0",
-  "atualizado_em": "2026-11-26T08:50:53.913971+00:00",
+  "atualizado_em": "2026-11-26T21:53:11.524748+00:00",
   "regra": "Somente fonte oficial; abertura só é anunciada com edital e prazo vigentes.",
   "itens": [
     {
@@ -20,8 +20,8 @@
       "fonte": "Semad Goiás",
       "url": "https://goias.gov.br/meioambiente/psa-cerrado-em-pe/",
       "verificado_em": "2026-11-26",
-      "fonte_disponivel": false,
-      "http_status": 503
+      "fonte_disponivel": true,
+      "http_status": 200
     },
     {
       "id": "psa-comunidades-tradicionais",
