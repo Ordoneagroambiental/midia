@@ -1,6 +1,6 @@
 {
   "versao": "6.9",
-  "atualizado_em": "26/11/2026 20:15 (horário de Brasília)",
+  "atualizado_em": "27/11/2026 06:00 (horário de Brasília)",
   "status": "coleta_concluida",
   "prioridade": "MCE, PCA e PGRS em todo o Brasil → projetos rápidos → bônus para GO, DF e MG",
   "modo_busca": "PROJETO RÁPIDO — MCE, PCA e PGRS com prazo vigente, objeto comprovado e triagem comercial",
@@ -18,15 +18,15 @@
     "pgrs": 0
   },
   "diagnostico_coleta": {
-    "requisicoes": 85,
+    "requisicoes": 92,
     "pncp_proposta": 0,
     "pncp_publicacao": 0,
-    "pncp_registros_examinados": 227,
-    "pncp_respostas_validas": 7,
+    "pncp_registros_examinados": 477,
+    "pncp_respostas_validas": 12,
     "pncp_falhas": 0,
     "pncp_retentativas_429": 0,
     "compras_gov_respostas_validas": 39,
-    "compras_gov_registros_examinados": 17756,
+    "compras_gov_registros_examinados": 18048,
     "compras_gov_paginas_examinadas": 39,
     "compras_gov_paginas_planejadas": 39,
     "compras_gov_falhas": 0,
@@ -38,7 +38,6 @@
       "MMA: ConnectionError: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))",
       "Ibama: ConnectionError: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))",
       "ICMBio: ConnectionError: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))",
-      "BNDES Floresta Viva: ReadTimeout: HTTPSConnectionPool(host='www.bndes.gov.br', port=443): Read timed out. (read timeout=18)",
       "Ibama — Licitações: ConnectionError: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))",
       "ICMBio — Licitações: ConnectionError: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))",
       "DNIT — Licitações: ConnectionError: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))",
@@ -259,6 +258,67 @@
       "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
     },
     {
+      "id": "45132495000140-1-000793/2026",
+      "tipo": "SINAL DE CONTRATAÇÃO",
+      "confirmacao": "CONFIRMADO",
+      "fonte": "PNCP",
+      "titulo": "OBRAS DE REFORMA E AMPLIACAO PARA A EMEI EF PRADA",
+      "municipio": "Limeira",
+      "uf": "SP",
+      "regiao_prioridade": "Brasil",
+      "organizacao": "MUNICIPIO DE LIMEIRA",
+      "data_publicacao": "2026-10-28T11:49:17",
+      "prazo": "2026-12-10T09:30:00",
+      "valor_estimado": 14891543.3,
+      "modalidade": "Concorrência - Eletrônica",
+      "servicos_ordone": [
+        "Avaliação técnica inicial"
+      ],
+      "tipo_aderencia": "ADERENTE_DIRETO",
+      "motivo_aceitacao": "Objeto contém serviço direto do portfólio Ordone.",
+      "relacao_comercial": "EXECUÇÃO DIRETA ADERENTE AO PORTFÓLIO",
+      "status_leitura_edital": "ANALISADO",
+      "documentos_analisados": [
+        "\"279.26.reforma.prada.pdf\""
+      ],
+      "requisitos_minimos": [
+        "Registro profissional",
+        "ART / responsabilidade técnica",
+        "CAT / acervo técnico",
+        "Visita técnica",
+        "Qualificação econômico-financeira",
+        "Garantia",
+        "Subcontratação"
+      ],
+      "analise_elegibilidade": "VERIFICAR DOCUMENTOS",
+      "pendencias_identificadas": [
+        "Confirmar CAT/acervo técnico",
+        "Validar índices e documentos financeiros"
+      ],
+      "palavras_encontradas": [
+        "prad",
+        "prada",
+        "portfólio:Recuperação ambiental / PRAD",
+        "grupo:ambiental"
+      ],
+      "score": 60,
+      "prioridade": "MÉDIA",
+      "url": "https://pncp.gov.br/app/editais/45132495000140/2026/793",
+      "numero_controle_pncp": "45132495000140-1-000793/2026",
+      "escopo_coleta": "Brasil",
+      "fase_pncp": "publicacao",
+      "documentos_prioritarios": [],
+      "aderencia_maxima": false,
+      "classe_aderencia": "A",
+      "classificacao_comercial": "EXECUÇÃO DIRETA ADERENTE AO PORTFÓLIO",
+      "oportunidade_rapida": false,
+      "parceria_necessaria": [],
+      "siglas_ambiguas": [],
+      "dias_restantes": 13,
+      "prazo_interno_decisao": "Decidir em até 48 horas",
+      "proxima_acao": "Abrir a publicação oficial e verificar se há prazo de proposta, futura licitação, contratação direta ou oportunidade institucional."
+    },
+    {
       "id": "96291141000180-1-007893/2026",
       "tipo": "DEMANDA FORMAL",
       "confirmacao": "PRÉ-SELECIONADO",
@@ -404,57 +464,6 @@
       "dias_restantes": 10,
       "prazo_interno_decisao": "Decidir em até 24 horas",
       "proxima_acao": "Abrir a fonte oficial, confirmar escopo, habilitação, horário da sessão e viabilidade antes de qualquer abordagem."
-    },
-    {
-      "id": "04892707002235-1-000064/2026",
-      "tipo": "SINAL DE CONTRATAÇÃO",
-      "confirmacao": "PRÉ-SELECIONADO",
-      "fonte": "PNCP",
-      "titulo": "Contratação de empresa especializada para a Elaboração de Projeto Básico e Executivo para Contenções visando solucionar as inconformidades geológicas nos taludes em segmentos compreendidos entre as Serras da Criminosa, do Mangaval e da Jacobina e Elaboração de Estudos Ambientais necessários para a obtenção de Licença P",
-      "municipio": "Cuiabá",
-      "uf": "MT",
-      "regiao_prioridade": "Brasil",
-      "organizacao": "DNIT-DEPARTAMENTO NACIONAL DE INFRAEST DE TRANSPORTES",
-      "data_publicacao": "2026-10-27T04:03:08",
-      "prazo": "2026-12-22T10:30:00",
-      "valor_estimado": 3718490.11,
-      "modalidade": "Concorrência - Eletrônica",
-      "servicos_ordone": [
-        "Licenciamento e regularização ambiental"
-      ],
-      "tipo_aderencia": "PARCERIA_NECESSARIA",
-      "motivo_aceitacao": "Objeto contém serviço direto do portfólio Ordone.",
-      "relacao_comercial": "PARCERIA TÉCNICA NECESSÁRIA",
-      "status_leitura_edital": "LEITURA INCOMPLETA",
-      "documentos_analisados": [],
-      "requisitos_minimos": [],
-      "analise_elegibilidade": "LEITURA INCOMPLETA",
-      "pendencias_identificadas": [
-        "Abrir edital e anexos manualmente"
-      ],
-      "palavras_encontradas": [
-        "estudos ambientais",
-        "portfólio:Licenciamento e regularização ambiental",
-        "grupo:ambiental"
-      ],
-      "score": 45,
-      "prioridade": "ACOMPANHAR",
-      "url": "https://pncp.gov.br/app/editais/04892707002235/2026/64",
-      "numero_controle_pncp": "04892707002235-1-000064/2026",
-      "escopo_coleta": "Brasil",
-      "fase_pncp": "publicacao",
-      "documentos_prioritarios": [],
-      "aderencia_maxima": false,
-      "classe_aderencia": "C",
-      "classificacao_comercial": "PARCERIA TÉCNICA NECESSÁRIA",
-      "oportunidade_rapida": false,
-      "parceria_necessaria": [
-        "Engenharia de infraestrutura / obras"
-      ],
-      "siglas_ambiguas": [],
-      "dias_restantes": 25,
-      "prazo_interno_decisao": "Decidir em até 48 horas",
-      "proxima_acao": "Abrir a publicação oficial e verificar se há prazo de proposta, futura licitação, contratação direta ou oportunidade institucional."
     }
   ],
   "fontes_monitoradas": [
